@@ -6,9 +6,8 @@ class RebelsController < ApplicationController
   def create
     @rebel = Rebel.new(rebel_params)
     if @rebel.save
-      redirect_to new_rebel_path(
-        notice: "Merci, nous te recontactons prochainement!"
-      )
+      redirect_to new_rebel_path,
+                  notice: "Merci et bienvenue! Nous prendrons prochainement contact avec toi."
     else
       render :new
     end

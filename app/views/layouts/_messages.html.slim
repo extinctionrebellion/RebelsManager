@@ -1,0 +1,16 @@
+- if flash.any?
+  #messages
+    - flash.each do |name, msg|
+      - if msg.class == Array
+        - msg.compact.each do |message|
+          div(class="#{name.to_s == "notice" ? "success" : name.to_s == "info" ? "info" : "alert"} callout")
+            = content_tag :div, id: "flash_#{name}" do
+              - if name.to_s == "notice"
+                i.fa.fa-fw.fa-check-circle
+              == message
+      - elsif !msg.nil?
+          div(class="#{name.to_s == "notice" ? "success" : name.to_s == "info" ? "info" : "alert"} callout")
+            = content_tag :div, id: "flash_#{name}" do
+              - if name.to_s == "notice"
+                i.fa.fa-fw.fa-check-circle
+              == msg

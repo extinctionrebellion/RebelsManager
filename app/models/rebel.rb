@@ -1,0 +1,2 @@
+class Rebel < ApplicationRecord
+end

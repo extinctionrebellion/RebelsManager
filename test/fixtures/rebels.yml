@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  phone: MyString
+  notes: MyText
+  on_basecamp: false
+
+two:
+  name: MyString
+  email: MyString
+  phone: MyString
+  notes: MyText
+  on_basecamp: false

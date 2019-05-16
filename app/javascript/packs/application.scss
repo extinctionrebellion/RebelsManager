@@ -40,3 +40,7 @@
 @include foundation-visibility-classes;
 // @include foundation-float-classes;
 @include foundation-flex-classes;
+
+#main {
+  padding: $global-padding;
+}

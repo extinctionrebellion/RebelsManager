@@ -22,3 +22,6 @@ App.init = () =>
 document.addEventListener('DOMContentLoaded', function(event) {
   App.init()
 });
+
+require("trix")
+require("@rails/actiontext")

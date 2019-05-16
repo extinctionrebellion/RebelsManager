@@ -1,0 +1,21 @@
+h2 = @rebel.name
+
+p
+  strong Adresse email
+  br
+  = @rebel.email
+
+p
+  strong Téléphone
+  br
+  = @rebel.phone.present? ? @rebel.phone : "-"
+
+p
+  strong Notes
+  br
+  = @rebel.notes.present? ? @rebel.notes : "-"
+
+p
+  = link_to "Modifier",
+            edit_manager_rebel_path(@rebel),
+            class: "secondary button"

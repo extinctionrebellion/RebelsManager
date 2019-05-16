@@ -1,0 +1,18 @@
+h2 Rebelles
+
+table
+  thead
+    tr
+      th Pseudo
+      th Basecamp
+  tbody
+    - @rebels.each do |rebel|
+      tr
+        td
+          = link_to rebel.name,
+                    manager_rebel_path(rebel)
+        td(style="width: 10rem")
+          - if rebel.on_basecamp?
+            | OK
+          - else
+            | XXX

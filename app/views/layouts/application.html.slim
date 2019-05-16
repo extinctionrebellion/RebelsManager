@@ -9,4 +9,5 @@ html(lang="#{I18n.locale}")
   body
     #main
       .grid-container
+        = render "layouts/messages"
         = yield

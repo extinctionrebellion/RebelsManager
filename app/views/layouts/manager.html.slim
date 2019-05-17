@@ -14,3 +14,8 @@ html(lang="#{I18n.locale}")
                     manager_rebels_path
         = render "layouts/messages"
         = yield
+
+        section#footer
+          = link_to 'Me déconnecter',
+                    destroy_user_session_path,
+                    method: :delete

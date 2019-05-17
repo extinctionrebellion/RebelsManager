@@ -1,0 +1,21 @@
+#header {
+  padding: $global-padding 0;
+  border-bottom: 1px solid $medium-gray;
+  background-color: $color-extra-light-gray;
+
+  &__logo {
+    img {
+      height: 8rem;
+    }
+  }
+}
+
+#main {
+  padding: $global-padding;
+
+  form {
+    .help-text {
+      margin: .05rem 0 .5rem;
+    }
+  }
+}

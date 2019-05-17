@@ -1,26 +1,36 @@
-= simple_form_for @rebel do |f|
-  = f.input :name,
-            label: "Pseudo",
-            placeholder: "Pseudo",
-            required: true
+.grid-x
+  .cell.small-12.medium-9.large-6
+    = simple_form_for @rebel do |f|
+      - if f.object.errors.any?
+        .warning.callout
+          | Oups, impossible d'enregistrer vos infos pour les raisons suivantes:
+          br
+          ul
+          - f.object.errors.full_messages.each do |msg|
+            li = msg
 
-  = f.input :email,
-            as: :email,
-            label: "Adresse email",
-            placeholder: "Adresse email",
-            required: true
+      = f.input :name,
+                label: "Pseudo",
+                placeholder: "Pseudo",
+                required: true
 
-  = f.input :phone,
-            label: "Numéro de GSM",
-            placeholder: "Numéro de GSM",
-            required: false,
-            hint: "Votre numéro n'est utilisé que pour vous prévenir lorsqu'une action publique est organisée par Extinction Rebellion"
+      = f.input :email,
+                as: :email,
+                label: "Adresse email",
+                placeholder: "Adresse email",
+                required: true
 
-  = f.input :notes,
-            as: :text,
-            input_html: { rows: 5 },
-            label: "Quelles sont vos compétences? Comment pouvez-vous aider Extinction Rebellion?",
-            required: false
+      = f.input :phone,
+                label: "Numéro de GSM",
+                placeholder: "Numéro de GSM",
+                required: false,
+                hint: "Votre numéro n'est utilisé que pour vous prévenir lorsqu'une action publique est organisée par Extinction Rebellion"
 
-  = f.button :submit,
-             "Je rejoins la rébellion"
+      = f.input :notes,
+                as: :text,
+                input_html: { rows: 5 },
+                label: "Quelles sont vos compétences? Comment pouvez-vous aider Extinction Rebellion?",
+                required: false
+
+      = f.button :submit,
+                 "Je rejoins la rébellion"

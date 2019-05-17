@@ -198,7 +198,7 @@ SimpleForm.setup do |config|
     b.use :placeholder
     b.wrapper tag: :label, error_class: 'is-invalid-label' do |ba|
       ba.use :label_text, wrap_with: { tag: :span, class: "label-text" }
-      ba.use :hint,  wrap_with: { tag: :p, class: "help-text" }
+      ba.use :hint,  wrap_with: { tag: :div, class: "help-text" }
       ba.use :input
       ba.use :error, wrap_with: { tag: :span, class: "form-error animated fadeInDown" }
     end

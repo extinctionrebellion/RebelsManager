@@ -1,5 +1,5 @@
-@import '../src/xr/colors';
-@import '../src/foundation-settings/application';
+@import '../colors';
+@import './foundation-settings';
 @import "~foundation-sites/scss/foundation";
 
 @include foundation-global-styles;

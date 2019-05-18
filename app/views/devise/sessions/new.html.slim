@@ -1,0 +1,18 @@
+h2 Ahoy!
+
+.grid-x
+  .cell.small-12.medium-6.large-4
+    = simple_form_for resource,
+                      as: resource_name,
+                      url: session_path(resource_name) do |f|
+      = f.input :email,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "email" }
+      = f.input :password,
+                required: false,
+                input_html: { autocomplete: "current-password" }
+
+      = f.button :submit, "Let's go!"
+
+= render "devise/shared/links"

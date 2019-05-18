@@ -120,7 +120,7 @@ class Components::MenuPresenter < PresenterBase
         class: 'menu-text show-for-large'
       },
       {
-        body: 'Rebelles',
+        body: 'Rebels',
         url: manager_rebels_path,
         active: @active_primary == 'rebels'
       }
@@ -130,7 +130,7 @@ class Components::MenuPresenter < PresenterBase
   def primary_right_items
     [
       {
-        body: 'Me déconnecter',
+        body: 'Log out',
         url: destroy_user_session_path,
         html_options: { method: :delete }
       }

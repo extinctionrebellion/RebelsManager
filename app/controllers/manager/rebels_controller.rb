@@ -8,6 +8,20 @@ module Manager
       @rebel = Rebel.find(params[:id])
     end
 
+    def new
+      @rebel = Rebel.new
+    end
+
+    def create
+      @rebel = Rebel.new(rebel_params)
+      if @rebel.save
+        redirect_to manager_rebel_path(@rebel),
+                    notice: "Congrats, we have a new rebel!"
+      else
+        render :new
+      end
+    end
+
     def edit
       @rebel = Rebel.find(params[:id])
     end

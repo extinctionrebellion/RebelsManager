@@ -1,4 +1,7 @@
-h2 Rebelles
+- content_for :page_header do
+  = render 'layouts/manager/page_header',
+           title: 'Rebelles',
+           count: @rebels.size
 
 table
   thead

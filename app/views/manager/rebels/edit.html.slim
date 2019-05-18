@@ -1,3 +1,7 @@
+- content_for :page_header do
+  = render 'layouts/manager/page_header',
+           title: "Edit: #{@rebel.name}"
+
 = simple_form_for @rebel,
                   url: manager_rebel_path(@rebel) do |f|
   = f.input :name,

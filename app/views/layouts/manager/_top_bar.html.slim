@@ -1,0 +1,23 @@
+#top-bar-container
+  .grid-container
+    / #small-top-bar.top-bar-clone(data-responsive-toggle='responsive-top-bar' data-hide-for='large')
+    /   .grid-x.grid-padding-x.align-middle
+    /     .cell.auto
+    /       = link_to image_tag(asset_pack_path('media/images/symbol.svg'), alt: 'XR Namur'),
+    /                 root_path
+    /     .cell.shrink
+    /       button#off-canvas-open-icon(type='button' data-toggle='off-canvas-menu')
+    /         = render 'layouts/icons/hamburger'
+    /         .intercom-unread-count
+    /       button#off-canvas-close-icon(type='button')
+    /         = render 'layouts/icons/navigation_left'
+
+    #responsive-top-bar.top-bar
+      .top-bar-left
+        = @menu_presenter.render_primary_left_menu
+      .top-bar-right
+        = @menu_presenter.render_primary_right_menu
+
+#secondary-navigation.show-for-large
+  .grid-container
+    = @menu_presenter.render_secondary_menu

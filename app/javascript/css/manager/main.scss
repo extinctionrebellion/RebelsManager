@@ -10,7 +10,7 @@
 // @include foundation-accordion;
 // @include foundation-accordion-menu;
 @include foundation-badge;
-// @include foundation-breadcrumbs;
+@include foundation-breadcrumbs;
 @include foundation-button-group;
 @include foundation-callout;
 @include foundation-card;
@@ -18,21 +18,21 @@
 @include foundation-menu;
 @include foundation-menu-icon;
 // @include foundation-drilldown-menu;
-// @include foundation-dropdown;
+@include foundation-dropdown;
 // @include foundation-dropdown-menu;
 // @include foundation-responsive-embed;
 @include foundation-label;
 // @include foundation-media-object;
-// @include foundation-off-canvas;
+@include foundation-off-canvas;
 // @include foundation-orbit;
-// @include foundation-pagination;
+@include foundation-pagination;
 // @include foundation-progress-bar;
 // @include foundation-slider;
-// @include foundation-reveal;
+@include foundation-reveal;
 // @include foundation-switch;
-// @include foundation-sticky;
+@include foundation-sticky;
 @include foundation-table;
-// @include foundation-tabs;
+@include foundation-tabs;
 // @include foundation-thumbnail;
 // @include foundation-title-bar;
 @include foundation-tooltip;
@@ -41,6 +41,10 @@
 // @include foundation-float-classes;
 @include foundation-flex-classes;
 
-#main {
-  padding: $global-padding;
-}
+@import './layout';
+
+@import './components/page_header';
+@import './components/topbar';
+
+@include xr-page-header;
+@include xr-topbar;

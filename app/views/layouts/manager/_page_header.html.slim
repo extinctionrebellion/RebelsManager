@@ -1,0 +1,60 @@
+#page-header-inner.sticky(data-sticky data-sticky-on="medium" data-top-anchor="page-header" data-margin-top="0")
+  .grid-container
+    .grid-x.grid-margin-x.grid-padding-x.align-top
+      .cell.auto
+        h1
+          => title
+          - if !local_assigns[:count].nil?
+            span.badge = count
+          - if !local_assigns[:secondary].nil?
+            br
+            small
+              = secondary
+
+        / - if breadcrumb_trail.count > 1
+          #breadcrumbs
+            nav
+              ul.breadcrumbs
+                - breadcrumb_trail do |name, url, current|
+                  li(class="#{current ? 'selected' : ''}")
+                    - if current
+                      = name
+                    - else
+                      = link_to name, url
+
+      - if @menu_presenter.has_actions_items?
+        .cell.shrink.header-actions
+          .actions
+            span(class="#{local_assigns[:actions_menu_class]}")
+              = link_to "#", class: "hollow light-gray dropdown button", data: { toggle: "actions-menu" } do
+                i.fa.fa-fw.fa-ellipsis-h
+                span.hide-for-small-only &nbsp;Actions
+              #actions-menu.dropdown-pane.small(data-dropdown data-close-on-click="true" data-v-offset="10" data-position="bottom" data-alignment="right")
+                = @menu_presenter.render_actions_menu
+      .cell.small-12.medium-shrink.header-links
+        .actions
+          - if local_assigns[:links] or local_assigns[:form_actions] or local_assigns[:menu]
+            .actions-wrapper
+              - if local_assigns[:menu]
+                - menu_key = SecureRandom.uuid
+                a.hollow.small.button.small-only-expanded(data-toggle="#{menu_key}-menu")
+                  = render "layouts/icons/arrow_down_1"
+                  span Actions
+                .dropdown-pane.dropdown-pane--menu(id="#{menu_key}-menu" data-dropdown data-close-on-click="true" data-position="bottom" data-alignment="right")
+                  = menu
+
+              - if local_assigns[:links]
+                - links.each do |link|
+                  = link
+
+              - if local_assigns[:form_actions]
+                - if local_assigns[:cancel_path]
+                  = link_to "Cancel",
+                            cancel_path,
+                            class: "light-gray hollow button hide-for-small-only"
+                = button_tag  "Save",
+                              class: "button hide-for-small-only",
+                              type: "submit",
+                              data: { \
+                                behavior: 'submit-form',
+                              }

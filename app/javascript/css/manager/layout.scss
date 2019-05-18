@@ -1,0 +1,24 @@
+#main {
+  margin-bottom: 4rem;
+}
+
+#footer {
+  color: $medium-gray;
+  font-size: $small-font-size;
+
+  .footer {
+    &__logo {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  a {
+    color: $medium-gray;
+
+    &:hover,
+    &:focus {
+      color: $color-almost-black;
+    }
+  }
+}

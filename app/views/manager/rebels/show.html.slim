@@ -1,4 +1,6 @@
-h2 = @rebel.name
+- content_for :page_header do
+  = render 'layouts/manager/page_header',
+           title: @rebel.name
 
 p
   strong Adresse email

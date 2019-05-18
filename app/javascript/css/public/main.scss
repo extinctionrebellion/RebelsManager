@@ -43,6 +43,6 @@
 
 @import './layout';
 
-@import '../xr/card';
+@import './components/card';
 
 @include xr-card;

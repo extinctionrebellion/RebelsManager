@@ -1,0 +1,87 @@
+@mixin xr-topbar {
+  #top-bar-container {
+    position: relative;
+    box-shadow: 0 1px 0 0 #d5dce2, 0 2px 4px 0 rgba(165, 172, 189, 0.17);
+  }
+
+  .top-bar,
+  .top-bar-clone {
+    padding: .4rem 0;
+  }
+
+  .top-bar {
+    li {
+      a {
+        padding: 0 1rem;
+        line-height: 46px;
+        color: $dark-gray;
+        transition: color .25s ease;
+
+        &:hover,
+        &:focus {
+          color: $black;
+        }
+      }
+
+      ul {
+        display: none;
+      }
+
+      &.menu-text {
+        padding: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        a {
+          padding: 0;
+
+          img {
+            height: 2.5rem;
+          }
+        }
+      }
+
+      &.active {
+        a {
+          color: $black;
+          font-weight: $global-weight-bold;
+        }
+      }
+    }
+  }
+
+  #secondary-navigation {
+    background: $color-light-green;
+
+    ul {
+      margin-left: calc(78px + .5rem);
+
+      li {
+        margin-right: 1rem;
+
+        a {
+          padding-left: .5rem;
+          padding-right: .5rem;
+          font-size: rem-calc(14);
+          font-weight: 500;
+          color: $color-almost-black;
+          border-top: 3px solid transparent;
+          border-bottom: 3px solid $color-light-green;
+          transition: border-bottom .25s ease;
+
+          &:hover,
+          &:focus {
+            border-bottom: 3px solid darken($color-light-green, 15);
+          }
+        }
+
+        &.active {
+          a {
+            background: none;
+            border-bottom: 3px solid $color-green;
+          }
+        }
+      }
+    }
+  }
+}

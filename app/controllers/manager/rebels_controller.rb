@@ -32,5 +32,11 @@ module Manager
         :notes
       )
     end
+
+    def set_presenters
+      @menu_presenter = Components::MenuPresenter.new(
+        active_primary: 'rebels'
+      )
+    end
   end
 end

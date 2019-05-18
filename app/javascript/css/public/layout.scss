@@ -1,7 +1,7 @@
 #header {
   padding: $global-padding 0;
-  border-bottom: 1px solid $medium-gray;
-  background-color: $color-extra-light-gray;
+  border-bottom: 10px solid $color-light-green;
+  background-color: $color-green;
 
   &__logo {
     img {
@@ -11,11 +11,16 @@
 }
 
 #main {
-  padding: $global-padding;
+  padding: $global-padding 0;
 
   form {
     .help-text {
       margin: .05rem 0 .5rem;
     }
   }
+}
+
+#footer {
+  padding: $global-padding 0;
+  color: $color-dark-gray;
 }

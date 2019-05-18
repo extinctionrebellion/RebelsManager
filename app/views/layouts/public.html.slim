@@ -1,6 +1,8 @@
 doctype html
 html(lang="#{I18n.locale}")
   head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
     title Extinction Rebellion Namur
     = csrf_meta_tags
     = csp_meta_tag
@@ -15,3 +17,5 @@ html(lang="#{I18n.locale}")
         = render 'layouts/messages'
         = yield
     section#footer
+      .grid-container
+        = render 'layouts/public/footer'

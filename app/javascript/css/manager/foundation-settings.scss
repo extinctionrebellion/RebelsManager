@@ -69,13 +69,12 @@ $global-font-size: rem-calc(16);// 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: $color-primary,
-  secondary: $color-secondary,
+  primary: $color-green,
+  secondary: $color-black,
   success: $color-success,
   warning: $color-warning,
   alert: $color-alert,
-  info: $color-info,
-  bright: $color-bright
+  info: $color-light-blue
 );
 $light-gray: $color-light-gray;
 $medium-gray: $color-medium-gray;
@@ -84,14 +83,14 @@ $black: $color-almost-black;
 $white: #FFFFFF;
 $body-background: $white;
 $body-font-color: $color-almost-black;
-$body-font-family: 'aktiv-grotesk', Helvetica, Arial, sans-serif;
+$body-font-family: Helvetica, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
 $global-position: 1rem;
 $global-weight-normal: 400;
-$global-weight-bold: 500;
-$global-radius: 2px;
+$global-weight-bold: 600;
+$global-radius: 0px;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1.5rem;
 $global-text-direction: ltr;
@@ -172,7 +171,7 @@ $code-padding: rem-calc(2 5 1);
 $anchor-color: $primary-color;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
-$anchor-text-decoration-hover: none;
+$anchor-text-decoration-hover: underline;
 $hr-width: $global-width;
 $hr-border: 1px solid $light-gray;
 $hr-margin: 3rem auto;
@@ -254,9 +253,9 @@ $accordionmenu-arrow-size: 6px;
 // 9. Badge
 // --------
 
-$badge-background: $color-info;
-$badge-color: $white;
-$badge-color-alt: $black;
+$badge-background: $color-lemon;
+$badge-color: $black;
+$badge-color-alt: $white;
 $badge-palette: $foundation-palette;
 $badge-padding: 0.55em;
 $badge-minwidth: 2.1em;
@@ -465,8 +464,7 @@ $label-palette: (
   green: rgba($color-label-green, 0.2),
   orange:  rgba($color-label-orange, 0.1),
   purple: rgba($color-label-purple, 0.15),
-  gray: rgba($color-label-gray, .2),
-  bright: rgba($color-bright, .25)
+  gray: rgba($color-label-gray, .2)
 );
 $label-font-size: 0.8rem;
 $label-padding: 0.33333rem 0.5rem;

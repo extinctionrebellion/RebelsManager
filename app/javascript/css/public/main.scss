@@ -41,4 +41,8 @@
 // @include foundation-float-classes;
 @include foundation-flex-classes;
 
-@import './layout'
+@import './layout';
+
+@import '../xr/card';
+
+@include xr-card;

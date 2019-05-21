@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'annotate'
+gem 'awesome_print'
 gem 'devise', '~> 4.6'
 gem 'simple_form', '~> 4.1'
 gem 'slim', '~> 4.0'

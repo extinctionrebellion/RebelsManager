@@ -58,6 +58,10 @@ GEM
       zeitwerk (~> 2.1, >= 2.1.4)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    annotate (2.7.5)
+      activerecord (>= 3.2, < 7.0)
+      rake (>= 10.4, < 13.0)
+    awesome_print (1.8.0)
     bcrypt (3.1.12)
     bindex (0.7.0)
     bootsnap (1.4.4)
@@ -226,6 +230,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
+  awesome_print
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)

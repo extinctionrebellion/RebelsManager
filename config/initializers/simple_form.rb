@@ -64,9 +64,9 @@ SimpleForm.setup do |config|
 
     ## Inputs
     # b.use :input, class: 'input', error_class: 'is-invalid', valid_class: 'is-valid'
-    b.use :label_input
+    b.use :label_input, error_class: 'is-invalid-label'
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
-    b.use :error, wrap_with: { tag: :span, class: :error }
+    b.use :error, wrap_with: { tag: :span, class: 'error form-error' }
 
     ## full_messages_for
     # If you want to display the full error message for the attribute, you can
@@ -82,7 +82,7 @@ SimpleForm.setup do |config|
   # Defaults to :nested for bootstrap config.
   #   inline: input + label
   #   nested: label > input
-  config.boolean_style = :nested
+  config.boolean_style = :inline
 
   # Default class for buttons
   config.button_class = 'button'
@@ -121,7 +121,7 @@ SimpleForm.setup do |config|
   # config.label_text = lambda { |label, required, explicit_label| "#{required} #{label}" }
 
   # You can define the class to use on all labels. Default is nil.
-  # config.label_class = nil
+  config.label_class = 'control-label'
 
   # You can define the default class to be used on forms. Can be overriden
   # with `html: { :class }`. Defaulting to none.
@@ -170,7 +170,7 @@ SimpleForm.setup do |config|
   # config.translate_labels = true
 
   # Automatically discover new inputs in Rails' autoload path.
-  # config.inputs_discovery = true
+  config.inputs_discovery = true
 
   # Cache SimpleForm inputs discovery
   # config.cache_discovery = !Rails.env.development?

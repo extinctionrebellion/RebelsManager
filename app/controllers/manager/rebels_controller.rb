@@ -43,7 +43,8 @@ module Manager
         :name,
         :email,
         :phone,
-        :notes
+        :notes,
+        :on_basecamp
       )
     end
 

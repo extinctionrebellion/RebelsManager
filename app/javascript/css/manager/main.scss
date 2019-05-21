@@ -43,8 +43,10 @@
 
 @import './layout';
 
+@import './components/form';
 @import './components/page_header';
 @import './components/topbar';
 
+@include xr-form;
 @include xr-page-header;
 @include xr-topbar;

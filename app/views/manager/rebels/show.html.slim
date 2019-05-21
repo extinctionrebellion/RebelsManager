@@ -1,23 +1,32 @@
 - content_for :page_header do
   = render 'layouts/manager/page_header',
-           title: @rebel.name
+           title: @rebel.name,
+           links: [ \
+             link_to( \
+               "Modifier",
+               edit_manager_rebel_path(@rebel),
+               class: 'secondary button' \
+             ) \
+           ]
 
-p
-  strong Adresse email
-  br
-  = @rebel.email
+.grid-x.grid-padding-x
+  .cell.auto
+    p
+      strong Adresse email
+      br
+      = @rebel.email
 
-p
-  strong Téléphone
-  br
-  = @rebel.phone.present? ? @rebel.phone : "-"
+    p
+      strong Téléphone
+      br
+      = @rebel.phone.present? ? @rebel.phone : "-"
 
-p
-  strong Notes
-  br
-  = @rebel.notes.present? ? @rebel.notes : "-"
-
-p
-  = link_to "Modifier",
-            edit_manager_rebel_path(@rebel),
-            class: "secondary button"
+    p
+      strong Notes
+      br
+      = @rebel.notes.present? ? @rebel.notes : "-"
+  .cell.auto
+    p
+      strong Basecamp
+      br
+      = @rebel.on_basecamp? ? 'OUI' : 'NON'

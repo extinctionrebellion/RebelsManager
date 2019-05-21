@@ -18,12 +18,3 @@ window.$ = $
 
 import 'controllers'
 import 'foundation-sites'
-
-window.App = {}
-
-App.init = () =>
-  $(document).foundation()
-
-document.addEventListener('DOMContentLoaded', function(event) {
-  App.init()
-});

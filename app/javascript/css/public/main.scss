@@ -44,5 +44,7 @@
 @import './layout';
 
 @import './components/card';
+@import './components/form';
 
 @include xr-card;
+@include xr-form;

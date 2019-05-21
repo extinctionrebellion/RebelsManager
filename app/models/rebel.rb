@@ -18,4 +18,8 @@ class Rebel < ApplicationRecord
   validates :email,
             presence: true,
             uniqueness: true
+
+  def has_secure_email?
+    email.include?("protonmail.")
+  end
 end

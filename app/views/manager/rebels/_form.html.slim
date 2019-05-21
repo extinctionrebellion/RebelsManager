@@ -15,6 +15,10 @@
           required: false,
           hint: "Votre numéro n'est utilisé que pour vous prévenir lorsqu'une action publique est organisée par Extinction Rebellion"
 
+= f.input :on_basecamp,
+          label: "Ce rebelle a accès au Basecamp",
+          wrapper: :foundation_checkbox
+
 = f.input :notes,
           as: :text,
           input_html: { rows: 5 },

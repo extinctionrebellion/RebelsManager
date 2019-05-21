@@ -40,11 +40,12 @@ module Manager
 
     def rebel_params
       params.require(:rebel).permit(
-        :name,
         :email,
-        :phone,
+        :irl,
+        :name,
         :notes,
-        :on_basecamp
+        :on_basecamp,
+        :phone
       )
     end
 

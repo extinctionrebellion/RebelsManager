@@ -15,6 +15,7 @@ table
     tr
       th Nickname
       th Tél
+      th IRL
       th Basecamp?
       th Proton?
   tbody
@@ -31,6 +32,11 @@ table
             | #{rebel.phone[0..5]}...
           - else
             | -
+        td(style="width: 10rem")
+          - if rebel.irl?
+            | 🤡
+          - else
+            | 👽
         td(style="width: 10rem")
           - if rebel.on_basecamp?
             | OK

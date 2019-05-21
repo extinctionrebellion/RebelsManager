@@ -10,6 +10,7 @@
 #  on_basecamp :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  irl         :boolean
 #
 
 require 'test_helper'

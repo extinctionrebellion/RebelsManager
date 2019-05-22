@@ -14,7 +14,8 @@ table
   thead
     tr
       th Nickname
-      th Tél
+      th Local Group
+      th Phone
       th IRL
       th Basecamp?
       th Proton?
@@ -27,6 +28,8 @@ table
           - if rebel.notes.present?
             small(data-tooltip title="#{rebel.notes}")
               | 🗒
+        td(style="width: 10rem")
+          = rebel.local_group.name
         td(style="width: 10rem")
           - if rebel.phone.present?
             | #{rebel.phone[0..5]}...

@@ -3,7 +3,7 @@
            title: @rebel.name,
            links: [ \
              link_to( \
-               "Modifier",
+               "Edit",
                edit_manager_rebel_path(@rebel),
                class: 'secondary button' \
              ) \
@@ -12,12 +12,12 @@
 .grid-x.grid-padding-x
   .cell.auto
     p
-      strong Adresse email
+      strong Email address
       br
       = @rebel.email
 
     p
-      strong Téléphone
+      strong Phone number
       br
       = @rebel.phone.present? ? @rebel.phone : "-"
 
@@ -29,4 +29,4 @@
     p
       strong Basecamp
       br
-      = @rebel.on_basecamp? ? 'OUI' : 'NON'
+      = @rebel.on_basecamp? ? 'YES' : 'NO'

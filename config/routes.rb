@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :manager do
     root to: 'rebels#index'
 
+    resources :local_groups
     resources :rebels
   end
 end

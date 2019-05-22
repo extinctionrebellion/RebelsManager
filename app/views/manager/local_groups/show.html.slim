@@ -1,0 +1,17 @@
+- content_for :page_header do
+  = render 'layouts/manager/page_header',
+           title: @local_group.name,
+           links: [ \
+             link_to( \
+               "Edit",
+               edit_manager_local_group_path(@local_group),
+               class: 'secondary button' \
+             ) \
+           ]
+
+.grid-x.grid-padding-x
+  .cell.auto
+    p
+      strong Name
+      br
+      = @local_group.name

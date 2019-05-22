@@ -1,0 +1,22 @@
+- content_for :page_header do
+  = render 'layouts/manager/page_header',
+           title: 'Local Groups',
+           count: @local_groups.size,
+           links: [ \
+             link_to( \
+               "Add Local Group",
+               new_manager_local_group_path,
+               class: "primary button show-for-large" \
+             ) \
+           ]
+
+table
+  thead
+    tr
+      th Name
+  tbody
+    - @local_groups.each do |local_group|
+      tr
+        td
+          = link_to local_group.name,
+                    manager_local_group_path(local_group)

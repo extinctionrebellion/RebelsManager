@@ -123,6 +123,11 @@ class Components::MenuPresenter < PresenterBase
         body: 'Rebels',
         url: manager_rebels_path,
         active: @active_primary == 'rebels'
+      },
+      {
+        body: 'Local Groups',
+        url: manager_local_groups_path,
+        active: @active_primary == 'local_groups'
       }
     ]
   end

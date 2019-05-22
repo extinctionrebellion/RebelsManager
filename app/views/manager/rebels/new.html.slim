@@ -4,7 +4,9 @@
 
 = simple_form_for @rebel,
                   url: manager_rebels_path do |f|
-  = render 'form', f: f
+  .grid-x.grid-padding-x
+    .cell.small-12.medium-8.large-6
+      = render 'form', f: f
 
-  = f.button :submit,
-             "Save"
+      = f.button :submit,
+                 "Save"

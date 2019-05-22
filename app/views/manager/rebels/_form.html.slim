@@ -1,28 +1,35 @@
 = f.input :name,
-          label: "Pseudo",
-          placeholder: "Pseudo",
+          label: "Nickname",
+          placeholder: "Nickname",
+          required: true
+
+= f.input :local_group,
+          as: :select,
+          label: "Local Group",
+          collection: LocalGroup.all.order(:name),
+          prompt: "Select a local group",
           required: true
 
 = f.input :email,
           as: :email,
-          label: "Adresse email",
-          placeholder: "Adresse email",
+          label: "Email address",
+          placeholder: "Email address",
           required: true
 
 = f.input :phone,
-          label: "Numéro de GSM",
-          placeholder: "Numéro de GSM",
+          label: "Mobile phone",
+          placeholder: "Mobile phone",
           required: false,
           hint: "Votre numéro n'est utilisé que pour vous prévenir lorsqu'une action publique est organisée par Extinction Rebellion"
 
 = f.input :on_basecamp,
           as: :boolean,
-          label: "Ce rebelle a accès au Basecamp",
+          label: "This rebel has a Basecamp account",
           wrapper: :foundation_checkbox
 
 = f.input :irl,
           as: :boolean,
-          label: "Ce rebelle a été rencontré en chair et en os",
+          label: "This rebel has been met IRL",
           wrapper: :foundation_checkbox
 
 = f.input :notes,

@@ -40,6 +40,7 @@ module Manager
 
     def local_group_params
       params.require(:local_group).permit(
+        :email,
         :name
       )
     end

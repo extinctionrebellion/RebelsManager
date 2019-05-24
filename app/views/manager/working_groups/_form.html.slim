@@ -1,0 +1,17 @@
+= f.error_notification
+
+= f.input :name,
+          label: "Group name",
+          required: true,
+          placeholder: "Group name"
+
+= f.input :local_group_id,
+          as: :select,
+          label: "Local Group",
+          collection: LocalGroup.all.order(:name),
+          prompt: "Select a local group",
+          required: true
+
+= f.input :color,
+          label: "Color",
+          hint: "eg. #CC1234"

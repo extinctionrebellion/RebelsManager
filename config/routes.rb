@@ -14,5 +14,6 @@ Rails.application.routes.draw do
 
     resources :local_groups
     resources :rebels
+    resources :working_groups
   end
 end

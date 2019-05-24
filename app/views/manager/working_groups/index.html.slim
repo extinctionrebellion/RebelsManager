@@ -1,0 +1,28 @@
+- content_for :page_header do
+  = render 'layouts/manager/page_header',
+           title: 'Working Groups',
+           count: @working_groups.size,
+           links: [ \
+             link_to( \
+               "Add Working Group",
+               new_manager_working_group_path,
+               class: "primary button show-for-large" \
+             ) \
+           ]
+
+table
+  thead
+    tr
+      th Name
+      th Rebels
+  tbody
+    - @working_groups.each do |working_group|
+      tr
+        td
+          = render "colored_circle", working_group: working_group
+          => working_group.local_group.name
+          | /
+          =< link_to working_group.name,
+                    manager_working_group_path(working_group)
+        td
+          = working_group.rebels.size

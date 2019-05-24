@@ -27,6 +27,24 @@
       = @rebel.notes.present? ? @rebel.notes : "-"
   .cell.auto
     p
+      strong Local Group
+      br
+      = @rebel.local_group.name
+
+    p
       strong Basecamp
       br
       = @rebel.on_basecamp? ? 'YES' : 'NO'
+
+- if @rebel.working_groups.any?
+  = section_heading heading: "Working Groups",
+                    spacing: :spacer
+
+  ul
+    - @rebel.working_groups.each do |working_group|
+      li = link_to working_group.name,
+                   manager_working_group_path(working_group)
+
+- else
+  = callout :info,
+            content: "This rebel didn't join a working group."

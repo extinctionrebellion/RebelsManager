@@ -1,0 +1,48 @@
+@mixin xr-callout-style($color: $callout-background) {
+  $background: scale-color($color, $lightness: $callout-background-fade);
+  color: darken($color, 15) !important;
+  border-color: scale-color($color, $lightness: 70%);
+}
+
+@mixin xr-callout {
+  .callout {
+    @each $name, $color in $foundation-palette {
+      &.#{$name} {
+        @include xr-callout-style($color);
+
+        svg {
+          stroke: $color;
+        }
+      }
+    }
+
+    position: inherit;
+    font-size: $global-font-size;
+
+    a {
+      font-weight: $global-weight-bold;
+    }
+
+    &__icon {
+      position: relative;
+
+      svg {
+        position: absolute;
+        height: 1.5rem;
+      }
+    }
+
+    &__content {
+      margin-left: 3rem;
+    }
+
+    &--tiny {
+      padding: .5rem;
+      border: none;
+
+      a {
+        font-size: map-get($button-sizes, small);
+      }
+    }
+  }
+}

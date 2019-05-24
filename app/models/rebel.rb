@@ -17,6 +17,9 @@
 class Rebel < ApplicationRecord
   belongs_to :local_group
 
+  has_many :working_group_enrollments
+  has_many :working_groups, through: :working_group_enrollments
+
   validates :name,
             presence: true
   validates :email,

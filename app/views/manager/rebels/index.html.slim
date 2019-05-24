@@ -19,6 +19,7 @@ table
       th IRL
       th Basecamp?
       th Proton?
+      th Working Groups
   tbody
     - @rebels.each do |rebel|
       tr
@@ -50,3 +51,6 @@ table
             | OK
           - else
             | -
+        td
+          - rebel.working_groups.each do |working_group|
+            = render "manager/working_groups/colored_circle", working_group: working_group

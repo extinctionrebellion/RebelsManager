@@ -125,6 +125,11 @@ class Components::MenuPresenter < PresenterBase
         active: @active_primary == 'rebels'
       },
       {
+        body: 'Working Groups',
+        url: manager_working_groups_path,
+        active: @active_primary == 'working_groups'
+      },
+      {
         body: 'Local Groups',
         url: manager_local_groups_path,
         active: @active_primary == 'local_groups'

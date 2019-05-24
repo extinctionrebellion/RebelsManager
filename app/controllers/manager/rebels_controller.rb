@@ -42,10 +42,12 @@ module Manager
       params.require(:rebel).permit(
         :email,
         :irl,
+        :local_group_id,
         :name,
         :notes,
         :on_basecamp,
-        :phone
+        :phone,
+        working_group_ids: []
       )
     end
 

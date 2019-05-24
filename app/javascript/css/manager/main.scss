@@ -43,10 +43,12 @@
 
 @import './layout';
 
+@import './components/callout';
 @import './components/form';
 @import './components/page_header';
 @import './components/topbar';
 
+@include xr-callout;
 @include xr-form;
 @include xr-page-header;
 @include xr-topbar;

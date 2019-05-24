@@ -1,0 +1,75 @@
+@mixin xr-icon {
+  h3,
+  h4 {
+    &.with-icon {
+      position: relative;
+      display: flex;
+
+      svg {
+        position: absolute;
+        top: calc(50% - .75rem);
+        height: 1.5rem;
+        stroke: $color-green;
+      }
+
+      > span:not(.badge) {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  a {
+    &.with-icon {
+      svg {
+        margin-right: .25rem;
+        height: 1rem;
+        vertical-align: middle;
+        stroke: currentColor;
+      }
+    }
+  }
+
+  .inline-icon {
+    margin: 0 .15rem;
+    height: 1rem;
+
+    svg {
+      position: static;
+      height: inherit;
+      vertical-align: middle;
+      stroke: currentColor;
+    }
+
+    &--medium-gray {
+      svg {
+        stroke: $medium-gray;
+      }
+    }
+
+    &--dark-gray {
+      svg {
+        stroke: $dark-gray;
+      }
+    }
+
+    &--success {
+      svg {
+        stroke: $color-success;
+      }
+    }
+
+    &--alert {
+      svg {
+        stroke: $color-alert;
+      }
+    }
+  }
+
+  .icons {
+    &--large {
+      .inline-icon {
+        height: 1.5rem;
+      }
+    }
+  }
+}

@@ -10,47 +10,45 @@
              ) \
            ]
 
-table
-  thead
-    tr
-      th Nickname
-      th Local Group
-      th Phone
-      th IRL
-      th Basecamp?
-      th Proton?
-      th Working Groups
-  tbody
-    - @rebels.each do |rebel|
+.icons.icons--large
+  table
+    thead
       tr
-        td
-          => link_to rebel.name,
-                    manager_rebel_path(rebel)
-          - if rebel.notes.present?
-            small(data-tooltip title="#{rebel.notes}")
-              | 🗒
-        td(style="width: 10rem")
-          = rebel.local_group.name
-        td(style="width: 10rem")
-          - if rebel.phone.present?
-            | #{rebel.phone[0..5]}...
-          - else
-            | -
-        td(style="width: 10rem")
-          - if rebel.irl?
-            | 🤡
-          - else
-            | 👽
-        td(style="width: 10rem")
-          - if rebel.on_basecamp?
-            | OK
-          - else
-            | -
-        td(style="width: 10rem")
-          - if rebel.has_secure_email?
-            | OK
-          - else
-            | -
-        td
-          - rebel.working_groups.each do |working_group|
-            = render "manager/working_groups/colored_circle", working_group: working_group
+        th Nickname
+        th Local Group
+        th Phone
+        th IRL
+        th Basecamp?
+        th Proton?
+        th Working Groups
+    tbody
+      - @rebels.each do |rebel|
+        tr
+          td
+            => link_to rebel.name,
+                      manager_rebel_path(rebel)
+            - if rebel.notes.present?
+              small(data-tooltip title="#{rebel.notes}")
+                | 🗒
+          td(style="width: 10rem")
+            = rebel.local_group.name
+          td(style="width: 10rem")
+            - if rebel.phone.present?
+              | #{rebel.phone[0..5]}...
+            - else
+              | -
+          td(style="width: 10rem")
+            - if rebel.irl?
+              .inline-icon
+                = render "layouts/icons/like_bubble"
+          td(style="width: 10rem")
+            - if rebel.on_basecamp?
+              .inline-icon
+                = render "layouts/icons/basecamp"
+          td(style="width: 10rem")
+            - if rebel.has_secure_email?
+              .inline-icon
+                = render "layouts/icons/email_action_check"
+          td
+            - rebel.working_groups.each do |working_group|
+              = render "manager/working_groups/colored_circle", working_group: working_group

@@ -44,11 +44,13 @@
 @import './layout';
 
 @import './components/callout';
+@import './components/icon';
 @import './components/form';
 @import './components/page_header';
 @import './components/topbar';
 
 @include xr-callout;
+@include xr-icon;
 @include xr-form;
 @include xr-page-header;
 @include xr-topbar;

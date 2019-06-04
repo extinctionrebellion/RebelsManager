@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_24_033035) do
+ActiveRecord::Schema.define(version: 2019_06_04_032311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_05_24_033035) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "irl"
     t.bigint "local_group_id"
+    t.boolean "consent"
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
   end
 

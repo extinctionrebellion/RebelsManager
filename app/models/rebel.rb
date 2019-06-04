@@ -21,10 +21,16 @@ class Rebel < ApplicationRecord
   has_many :working_groups, through: :working_group_enrollments
 
   validates :name,
-            presence: true
+            presence: { message: "Merci de préciser votre pseudo" }
   validates :email,
-            presence: true,
-            uniqueness: true
+            presence: { message: "Merci de préciser votre adresse email" },
+            uniqueness: { message: "Votre adresse email est déjà enregistrée" }
+  validates :consent,
+            inclusion: {
+              in: [true],
+              message: "Votre accord concernant l'usage de vos coordonnées est nécessaire"
+            },
+            on: :create
 
   def has_secure_email?
     email.include?("protonmail.")

@@ -18,6 +18,7 @@ class RebelsController < ApplicationController
 
   def rebel_params
     params.require(:rebel).permit(
+      :consent,
       :name,
       :email,
       :phone,

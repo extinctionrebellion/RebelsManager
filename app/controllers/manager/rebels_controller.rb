@@ -14,6 +14,7 @@ module Manager
 
     def create
       @rebel = Rebel.new(rebel_params)
+      @rebel.consent = true
       if @rebel.save
         redirect_to manager_rebel_path(@rebel),
                     notice: "Congrats, we have a new rebel!"

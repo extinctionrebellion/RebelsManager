@@ -282,15 +282,15 @@
           }
 
           &.selected {
-            border-bottom-color: lighten($color-light-gray, 30%) !important; // $white;
+            border-bottom-color: lighten($color-lemon, 20%) !important; // $white;
 
             td {
-              background-color: $color-extra-light-gray !important; // lighten($color-bright, 30%) !important;
+              background-color: $color-lemon !important; // lighten($color-bright, 30%) !important;
 
               &.select-checkbox {
                 &::before {
-                  background: $color-light-green; // lighten($color-bright, 30%);
-                  border-color: $color-light-green; // lighten($color-bright, 30%);
+                  background: $color-green; // lighten($color-bright, 30%);
+                  border-color: $color-green; // lighten($color-bright, 30%);
                 }
 
                 &::after {
@@ -376,7 +376,7 @@
             }
 
             a {
-              font-weight: 500;
+              font-weight: 600;
             }
 
             input {

@@ -9,12 +9,23 @@
       = section_heading heading: "Details",
                         spacing: false
 
-      = render 'form', f: f
+      = render 'manager/rebels/form/details', f: f
     .cell.small-12.medium-6.large-8
-      = section_heading heading: "Working Groups",
+      = section_heading heading: "Notes",
                         spacing: false
 
-      = render 'working_groups_form', f: f
+      = render 'manager/rebels/form/notes', f: f
+
+      - if f.object.local_group.working_groups.any?
+        = section_heading heading: "Working Groups",
+                          spacing: :spacer
+
+        = render 'manager/rebels/form/working_groups', f: f
+
+      = section_heading heading: "Tags",
+                        spacing: :spacer
+
+      = render 'manager/rebels/form/tags', f: f
 
   = f.button :submit,
              "Save"

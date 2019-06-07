@@ -22,18 +22,14 @@
           required: false,
           hint: "Votre numéro n'est utilisé que pour vous prévenir lorsqu'une action publique est organisée par Extinction Rebellion"
 
-= f.input :on_basecamp,
-          as: :boolean,
-          label: "This rebel has a Basecamp account",
-          wrapper: :foundation_checkbox
+- if f.object.new_record? or f.object.local_group.has_basecamp?
+  = f.input :on_basecamp,
+            as: :boolean,
+            label: "This rebel has a Basecamp account",
+            hint: "(Namur only)",
+            wrapper: :foundation_checkbox
 
 = f.input :irl,
           as: :boolean,
           label: "This rebel has been met IRL",
           wrapper: :foundation_checkbox
-
-= f.input :notes,
-          as: :text,
-          input_html: { rows: 5 },
-          label: "Quelles sont vos compétences? Comment pouvez-vous aider Extinction Rebellion?",
-          required: false

@@ -5,8 +5,21 @@
 = simple_form_for @rebel,
                   url: manager_rebels_path do |f|
   .grid-x.grid-padding-x
-    .cell.small-12.medium-8.large-6
-      = render 'form', f: f
+    .cell.small-12.medium-6.large-4
+      = section_heading heading: "Details",
+                        spacing: false
 
-      = f.button :submit,
-                 "Save"
+      = render 'manager/rebels/form/details', f: f
+    .cell.small-12.medium-6.large-8
+      = section_heading heading: "Notes",
+                        spacing: false
+
+      = render 'manager/rebels/form/notes', f: f
+
+      = section_heading heading: "Tags",
+                        spacing: :spacer
+
+      = render 'manager/rebels/form/tags', f: f
+
+  = f.button :submit,
+             "Save"

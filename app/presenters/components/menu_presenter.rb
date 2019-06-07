@@ -133,6 +133,11 @@ class Components::MenuPresenter < PresenterBase
         body: 'Local Groups',
         url: manager_local_groups_path,
         active: @active_primary == 'local_groups'
+      },
+      {
+        body: 'Tags',
+        url: manager_tags_path,
+        active: @active_primary == 'tags'
       }
     ]
   end

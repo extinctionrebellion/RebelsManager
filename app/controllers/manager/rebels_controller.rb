@@ -48,6 +48,7 @@ module Manager
         :notes,
         :on_basecamp,
         :phone,
+        :tag_list,
         working_group_ids: []
       )
     end

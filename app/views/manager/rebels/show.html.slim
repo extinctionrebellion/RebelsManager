@@ -34,10 +34,17 @@
       br
       = @rebel.local_group.name
 
+    - if @rebel.local_group.has_basecamp?
+      p
+        strong Basecamp
+        br
+        = @rebel.on_basecamp? ? 'YES' : 'NO'
+
     p
-      strong Basecamp
+      strong Tags
       br
-      = @rebel.on_basecamp? ? 'YES' : 'NO'
+      - @rebel.tags.each do |tag|
+        span.primary.label =< tag.name
 
 - if @rebel.working_groups.any?
   = section_heading heading: "Working Groups",

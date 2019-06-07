@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'annotate'
 gem 'awesome_print'
 gem 'devise', '~> 4.6'
+gem 'ffaker'
 gem 'simple_form', '~> 4.1'
 gem 'slim', '~> 4.0'
 

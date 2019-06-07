@@ -8,7 +8,7 @@ html(lang="#{I18n.locale}")
     = csp_meta_tag
     = stylesheet_pack_tag 'manager', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'manager', 'data-turbolinks-track': 'reload'
-  body(data-controller='manager')
+  body(data-controller='manager compose-email')
     / off-canvas menu for small screens
     #off-canvas-menu.off-canvas.position-right(data-off-canvas)
       = render 'layouts/manager/offcanvas'

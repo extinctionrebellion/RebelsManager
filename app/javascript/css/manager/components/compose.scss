@@ -1,0 +1,66 @@
+@mixin xr-compose {
+  #compose-email-modal {
+    &.full {
+      top: 0 !important;
+      bottom: 0 !important;
+    }
+
+    &:not(.full) {
+      @include breakpoint(medium) {
+        position: fixed;
+        top: auto !important;
+        left: auto !important;
+        right: $global-margin;
+        bottom: $global-margin;
+        height: calc(100% - 2rem);
+      }
+
+      @include breakpoint(large) {
+        position: fixed;
+        left: auto !important;
+        top: auto !important;
+        right: $global-margin;
+        bottom: $global-margin;
+        height: calc(100% - 2rem);
+      }
+    }
+
+    [data-behavior=selected-customers-field] {
+      @include form-element;
+      margin-bottom: 0;
+      background-color: $input-background-disabled;
+      cursor: $input-cursor-disabled;
+    }
+
+    #compose-email-success {
+      position: absolute;
+      width: 25rem;
+      height: 20rem;
+      top: calc(50% - 10rem);
+      left: calc(50% - 12.5rem);
+      display: none;
+
+      svg {
+        height: 8rem;
+        stroke: $color-green;
+      }
+    }
+
+    #compose-form-error {
+      @include form-error;
+      margin: .15rem 0 0 0;
+    }
+
+    .field {
+      margin-bottom: .5rem;
+
+      &.email_message {
+        .is-invalid-label {
+          .fr-box {
+            border-color: $input-background-invalid;
+          }
+        }
+      }
+    }
+  }
+}

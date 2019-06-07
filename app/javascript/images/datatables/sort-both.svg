@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="57px" height="74px" viewBox="0 0 57 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group" transform="translate(0.000000, -1.000000)" stroke="#1E3141">
+            <g id="arrow-up-1">
+                <path d="M56.3905016,32.0420726 L29.7323023,1.91682181 C29.2939156,1.42124913 28.5367949,1.37489079 28.0412222,1.81327753 C28.0046284,1.84564857 27.9700489,1.88022804 27.9376779,1.91682184 L1.28187462,32.0420726" id="Shape"></path>
+            </g>
+            <g id="arrow-up-1" transform="translate(28.752327, 58.702668) rotate(-180.000000) translate(-28.752327, -58.702668) translate(0.000000, 41.930477)">
+                <path d="M56.3905016,32.0420726 L29.7323023,1.91682181 C29.2939156,1.42124913 28.5367949,1.37489079 28.0412222,1.81327753 C28.0046284,1.84564857 27.9700489,1.88022804 27.9376779,1.91682184 L1.28187462,32.0420726" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

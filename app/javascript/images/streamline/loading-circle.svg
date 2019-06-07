@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+      .spinner {
+        fill:none;
+        stroke: #7E828C;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        animation: rotation 2s infinite linear;
+        transform-origin: 50% 50%;
+      }
+    </style>
+  </defs>
+  <path class="spinner" d="M12,4a8,8,0,1,1-8,8"></path>
+</svg>

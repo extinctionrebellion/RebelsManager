@@ -1,0 +1,10 @@
+#compose-email-modal.large.reveal(data-reveal data-controller="modal" data-target="modal.modal compose-email.modal" data-close-on-click="false" data-close-on-esc="false")
+  #compose-email-success.text-center(data-target="compose-email.success")
+    .spacer-3
+    = render "layouts/icons/envelope_pigeon"
+    .h3 Your emails are on the way.
+    a.hollow.button(data-close data-action="compose-email#initializeForm") thanks, close this
+    .spacer-3
+
+  #compose-email-form
+    = render "layouts/manager/compose_email_form"

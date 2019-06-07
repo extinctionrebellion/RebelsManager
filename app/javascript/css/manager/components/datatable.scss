@@ -1,0 +1,521 @@
+@mixin xr-datatable-dropdown-button {
+  @include button-hollow;
+  @include button-hollow-style($medium-gray);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2rem;
+    background: {
+      color: $white;
+      image: url('../../images/streamline/arrow-down-1.svg');
+      repeat: no-repeat;
+      size: .75rem;
+      position: center;
+    }
+    opacity: .75;
+    transition: opacity .25s;
+  }
+
+  &::after {
+    position: absolute;
+    left: calc(2rem - 2px);
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    height: auto;
+    margin: 0;
+    border: none;
+    border-left: 1px solid $dark-gray;
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin xr-datatable {
+  .dataTables_wrapper {
+    .datatable-header {
+      margin-bottom: .5rem;
+
+      .dataTables_filter {
+        @include breakpoint(small only) {
+          width: 100%;
+          margin-bottom: .25rem;
+        }
+
+        label {
+          width: 100%;
+          padding-top: 0;
+        }
+
+        input[type=search] {
+          margin: 0 !important;
+          font-size: 1rem;
+          max-width: 20rem;
+          height: auto;
+          line-height: 1;
+          padding-top: .5rem;
+          padding-bottom: .5rem;
+          padding-left: 2.25rem;
+          background: {
+            image: url('../../images/streamline/search.svg');
+            repeat: no-repeat;
+            size: 1rem;
+            position: .5rem center;
+          }
+          font-weight: $global-weight-bold;
+
+          &.processing {
+            background: {
+              image: url('../../images/streamline/loading-circle.svg');
+              size: 1.5rem;
+              position: .3rem center;
+            }
+          }
+        }
+      }
+
+      .dt-buttons {
+        margin-bottom: 0;
+
+        &.button-group {
+          .button {
+            margin: 0 0 0 .5rem;
+
+            @include breakpoint(small only) {
+              margin-left: .25rem;
+            }
+
+            &:first-of-type {
+              margin: 0;
+            }
+          }
+        }
+
+        .button {
+          margin-bottom: 0;
+          background-image: none;
+          font-size: $small-font-size;
+          padding: .75rem 1rem;
+
+          @include breakpoint(small only) {
+            padding-left: .5rem;
+            padding-right: .5rem;
+          }
+
+          &::after {
+            border-top-color: $button-background;
+          }
+
+          &.buttons-collection {
+            @include xr-datatable-dropdown-button;
+            position: relative;
+            padding-left: 2.7rem;
+            color: $color-almost-black;
+            background: $color-extra-light-gray !important;
+            border-color: $color-medium-gray !important;
+
+            &:focus {
+              color: $black !important;
+            }
+          }
+        }
+      }
+    }
+
+    .dataTables_scroll {
+      @include breakpoint(medium down) {
+        &::after {
+          content: '';
+          position: absolute;
+          top: calc(3rem + 3px);
+          right: 0;
+          width: 1rem;
+          height: calc(100% - 3rem - 3px);
+          background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15));
+        }
+
+        .dataTables_scrollHead,
+        .dataTables_scrollBody {
+          th:last-child {
+            padding-right: 2.5rem;
+            background-position-x: calc(100% - 1.5rem);
+          }
+
+          td:last-child {
+            padding-right: 2rem;
+          }
+        }
+
+        @include breakpoint(medium down) {
+          .dataTables_scrollBody {
+            .select-column {
+              .select-all-toggler {
+                visibility: hidden;
+              }
+
+              .dt-button-collection {
+                top: 0 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dataTable {
+      min-width: 100%;
+      font-size: $small-font-size;
+
+      thead {
+        tr {
+          th {
+            padding-top: .25rem;
+            padding-bottom: .25rem;
+            background-repeat: no-repeat;
+            background-size: auto .5rem;
+
+            @include breakpoint(medium down) {
+              white-space: nowrap;
+            }
+
+            @include breakpoint(small only) {
+              padding-top: .5rem;
+              padding-bottom: .5rem;
+            }
+
+            &.sorting { background-image: url('../../images/datatables/sort-both.svg'); background-size: auto .75rem; }
+            &.sorting_asc { background-image: url('../../images/datatables/sort-asc.svg'); }
+            &.sorting_desc { background-image: url('../../images/datatables/sort-desc.svg'); }
+            &.sorting_asc_disabled { background-image: url('../../images/datatables/sort-asc-disabled.svg'); }
+            &.sorting_desc_disabled { background-image: url('../../images/datatables/sort-desc-disabled.svg'); }
+
+            &.sorting,
+            &.sorting_asc,
+            &.sorting_desc,
+            &.sorting_asc_disabled,
+            &.sorting_desc_disabled {
+              background-position: calc(100% - .5rem) calc(100% - .5rem);
+              padding-right: 18px;
+              cursor: pointer;
+
+              @include breakpoint(small only) {
+                background-position-y: .75rem;
+              }
+            }
+
+            &.sorting_asc,
+            &.sorting_desc {
+              background-position: calc(100% - .5rem) calc(100% - .5rem);
+              background-color: $color-extra-light-gray;
+
+              @include breakpoint(small only) {
+                background-position-y: .8375rem;
+              }
+            }
+
+            &.select-column {
+              position: relative;
+              width: 3rem !important;
+              padding: 0;
+
+              .dataTables_sizing {
+                display: none;
+              }
+
+              .dt-buttons {
+                // position: relative;
+                // display: flex;
+                margin-bottom: 0;
+              }
+
+              .select-all-toggler {
+                @include xr-datatable-dropdown-button;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: 0;
+                border: none;
+
+                &::before {
+                  width: 100%;
+                  background-color: $table-head-background;
+                  background-image: url('../../images/streamline/check-double-1.svg');
+                  background-size: 1.25rem;
+                }
+
+                span,
+                i {
+                  display: none;
+                }
+              }
+
+              .dt-button-collection {
+                text-transform: none;
+                z-index: 1000;
+              }
+            }
+
+            &.hide-sort {
+              background: none;
+              cursor: inherit;
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          &.lighter-border {
+            border-bottom-color: $color-extra-light-gray;
+          }
+
+          &.selected {
+            border-bottom-color: lighten($color-light-gray, 30%) !important; // $white;
+
+            td {
+              background-color: $color-extra-light-gray !important; // lighten($color-bright, 30%) !important;
+
+              &.select-checkbox {
+                &::before {
+                  background: $color-light-green; // lighten($color-bright, 30%);
+                  border-color: $color-light-green; // lighten($color-bright, 30%);
+                }
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  padding: .15rem;
+                  width: 1px;
+                  height: .7rem;
+                  border: solid $white;
+                  border-width: 0 2px 2px 0;
+                  transform: rotate(45deg);
+                  -webkit-transform: rotate(45deg);
+                  -ms-transform: rotate(45deg);
+                  top: calc(50% - .35rem);
+                  left: calc(50% - .25rem);
+                }
+              }
+            }
+          }
+
+          &.alert {
+            td.status {
+              background-color: $color-alert;
+            }
+          }
+
+          &.success {
+            td.status {
+              background-color: $color-success;
+            }
+          }
+
+          &:not(:hover) {
+            td {
+              &.sorting_1 {
+                background-color: $color-extra-light-gray;
+              }
+            }
+          }
+
+          &[data-selectable=false] {
+            td {
+              &.select-checkbox {
+                &::before {
+                  display: none;
+                }
+              }
+            }
+          }
+
+          td {
+            @include breakpoint(medium down) {
+              white-space: nowrap;
+            }
+
+            @include breakpoint(small only) {
+              padding-top: .5rem;
+              padding-bottom: .5rem;
+            }
+
+            &.select-checkbox {
+              position: relative;
+
+              &::before {
+                content: '';
+                position: absolute;
+                top: calc(50% - .75rem);
+                left: calc(50% - .75rem);
+                background: $white;
+                border-radius: $global-radius;
+                border: 1px solid $medium-gray;
+                display: inline-block;
+                vertical-align: middle;
+                width: 1.5rem;
+                height: 1.5rem;
+                margin: 0;
+                transition: all .25s ease;
+              }
+            }
+
+            &.status {
+              width: 1px;
+            }
+
+            a {
+              font-weight: 500;
+            }
+
+            input {
+              margin-top: -2px;
+
+              &.hidden {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .datatable-footer {
+      .dataTables_info,
+      .dataTables_paginate {
+        padding: $global-padding 0 !important;
+      }
+
+      .dataTables_info {
+        font-size: $small-font-size;
+        color: $color-dark-gray;
+
+        .select-info {
+          display: block;
+          margin: 0;
+
+          .select-item {
+            margin: 0;
+          }
+        }
+      }
+
+      .dataTables_paginate {
+        @include pagination-container;
+
+        .paginate_button {
+          &.current {
+            @include pagination-item-current;
+          }
+
+          &.disabled {
+            @include pagination-item-disabled;
+          }
+
+          display: inline-block;
+        }
+
+        span {
+          &.ellipsis {
+            @include pagination-ellipsis;
+          }
+        }
+      }
+    }
+
+    .dropdown-pane {
+      width: auto;
+      margin: 2px 0 0 0;
+      padding: 1px;
+      list-style: none;
+
+      .dt-button-collection-title {
+        padding: .5rem 1rem;
+        color: $dark-gray;
+        font-size: $small-font-size;
+        text-align: left;
+        background-color: $color-extra-light-gray;
+        border-bottom: 1px solid $light-gray;
+
+        &:empty {
+          padding: 0;
+        }
+      }
+
+      li {
+        &:not(:last-of-type) {
+          border-bottom: 1px solid $light-gray;
+        }
+      }
+
+      .small a,
+      .button {
+        @include button($style: 'hollow');
+        display: block;
+        margin: 0;
+        padding: 1rem;
+        min-width: 12rem;
+        text-align: left;
+
+        &, &:hover, &:focus {
+          &, &.disabled, &[disabled] {
+            border-color: transparent;
+          }
+        }
+
+        @each $name, $color in $button-palette {
+          &.#{$name} {
+            @include button-hollow-style($color);
+
+            &, &:hover,
+            &:focus {
+              &,
+              &.disabled,
+              &[disabled] {
+                border-color: transparent;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    // Bootstrap
+    .row {
+      .dt-buttons {
+        float: right;
+
+        @include breakpoint(small only) {
+          // display: none;
+        }
+
+        a {
+          margin-left: .25rem;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &.no-footer {
+      .datatable-footer {
+        display: none;
+      }
+    }
+
+    &.searchable-buttons {
+      * { border: 1px solid red; }
+    }
+  }
+}

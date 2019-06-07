@@ -12,6 +12,7 @@
 #  updated_at     :datetime         not null
 #  irl            :boolean
 #  local_group_id :bigint
+#  consent        :boolean
 #
 
 require 'test_helper'

@@ -89,6 +89,7 @@ GEM
       warden (~> 1.2.3)
     erubi (1.8.0)
     execjs (2.7.0)
+    ffaker (2.11.0)
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -236,6 +237,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise (~> 4.6)
+  ffaker
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)

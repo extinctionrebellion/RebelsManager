@@ -18,3 +18,9 @@ window.$ = $
 
 import 'controllers'
 import 'foundation-sites'
+
+import 'datatables.net'
+import 'datatables.net-buttons-zf'
+import 'datatables.net-buttons/js/buttons.html5'
+import 'datatables.net-select-zf'
+import 'datatables.net-zf'

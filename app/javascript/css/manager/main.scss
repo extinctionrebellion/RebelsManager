@@ -1,6 +1,9 @@
 @import '../colors';
 @import './foundation-settings';
-@import "~foundation-sites/scss/foundation";
+@import '~foundation-sites/scss/foundation';
+
+@import '~animate.css/animate';
+@import '~trix/dist/trix';
 
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
@@ -44,13 +47,21 @@
 @import './layout';
 
 @import './components/callout';
+@import './components/compose';
+@import './components/datatable';
 @import './components/icon';
 @import './components/form';
 @import './components/page_header';
+@import './components/reveal';
+@import './components/rich_text';
 @import './components/topbar';
 
 @include xr-callout;
+@include xr-compose;
+@include xr-datatable;
 @include xr-icon;
 @include xr-form;
 @include xr-page-header;
+@include xr-reveal;
+@include xr-rich-text;
 @include xr-topbar;

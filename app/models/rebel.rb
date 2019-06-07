@@ -12,6 +12,7 @@
 #  updated_at     :datetime         not null
 #  irl            :boolean
 #  local_group_id :bigint
+#  consent        :boolean
 #
 
 class Rebel < ApplicationRecord
@@ -33,6 +34,6 @@ class Rebel < ApplicationRecord
             on: :create
 
   def has_secure_email?
-    email.include?("protonmail.")
+    email.include?("protonmail.") || email.include?("tutanota.")
   end
 end

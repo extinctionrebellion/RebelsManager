@@ -1,4 +1,4 @@
-class Email
+class Email < ActiveRecord::Base
   include ActiveModel::Conversion
 
   attr_accessor :all_rebels, :rebel_ids, :subject, :message, :error_message

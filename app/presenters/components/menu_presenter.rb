@@ -138,6 +138,11 @@ class Components::MenuPresenter < PresenterBase
         body: 'Tags',
         url: manager_tags_path,
         active: @active_primary == 'tags'
+      },
+      {
+        body: 'Users',
+        url: manager_users_path,
+        active: @active_primary == 'users'
       }
     ]
   end

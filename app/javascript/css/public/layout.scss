@@ -1,17 +1,48 @@
 #header {
-  padding: $global-padding 0;
+  padding-top: 2rem;
   border-bottom: 10px solid $color-light-green;
   background-color: $color-green;
 
   &__logo {
+    margin-bottom: 2rem;
+
     img {
       height: 8rem;
+    }
+  }
+
+  &__menu {
+    .menu {
+      li {
+        &.menu__item--purple {
+          background-color: $color-purple;
+
+          &:hover,
+          &:focus {
+            background-color: darken($color-purple, 15%);
+          }
+        }
+
+        &.menu__item--dark-blue {
+          background-color: $color-dark-blue;
+
+          &:hover,
+          &:focus {
+            background-color: darken($color-dark-blue, 15%);
+          }
+        }
+      }
+
+      a {
+        color: $white;
+        font-weight: $global-weight-bold;
+      }
     }
   }
 }
 
 #main {
-  padding: $global-padding 0;
+  padding: 2rem 0;
 
   form {
     .help-text {

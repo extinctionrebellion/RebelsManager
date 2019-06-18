@@ -6,3 +6,14 @@
                   alt: 'Extinction Rebellion Namur' \
                 ),
                 root_path
+
+.grid-x.grid-padding-x
+  .cell.auto
+    #header__menu
+      ul.menu
+        li.menu__item--purple
+          = link_to "Rejoindre la rébellion",
+                    root_path
+        li.menu__item--dark-blue
+          = link_to "Contribuer financièrement",
+                    contributing_path

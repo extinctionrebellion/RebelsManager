@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :rebels, only: [:new, :create]
 
+  get '/contribuer-financierement', to: 'pages#contributing', as: 'contributing'
+
   namespace :manager do
     root to: 'rebels#index'
 

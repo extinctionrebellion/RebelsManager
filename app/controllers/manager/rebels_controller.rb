@@ -37,6 +37,17 @@ module Manager
       end
     end
 
+    def destroy
+      @rebel = Rebel.find(params[:id])
+      if @rebel.destroy
+        redirect_to manager_rebels_path,
+                    notice: "Rebel has been deleted."
+      else
+        redirect_to manager_rebel_path(@rebel),
+                    alert: "Rebel can't be deleted."
+      end
+    end
+
     private
 
     def rebel_params

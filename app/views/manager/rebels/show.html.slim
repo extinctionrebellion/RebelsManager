@@ -3,6 +3,13 @@
            title: @rebel.name,
            links: [ \
              link_to( \
+               "Delete",
+               manager_rebel_path(@rebel),
+               method: :delete,
+               data: { confirm: 'Are you sure?' },
+               class: 'secondary button' \
+             ),
+             link_to( \
                "Edit",
                edit_manager_rebel_path(@rebel),
                class: 'secondary button' \

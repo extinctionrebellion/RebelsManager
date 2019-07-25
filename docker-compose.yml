@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  web:
+    image: jahmali/rebels_manager:v1
+    command: bin/rails server -b 0.0.0.0
+    environment:
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - RAILS_ENV
+    volumes:
+      - ./:/usr/src/app
+      - gems:/usr/local/bundle
+      - node-modules:/usr/src/app/node_modules
+    ports:
+      - 3000:3000
+
+  pg:
+    image: postgres:10.8-alpine
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+
+volumes:
+  gems:
+  pg-data:
+  node-modules:

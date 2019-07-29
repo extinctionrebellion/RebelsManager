@@ -18,7 +18,7 @@
 class Rebel < ApplicationRecord
   acts_as_taggable
 
-  belongs_to :local_group
+  belongs_to :local_group, optional: true
 
   has_many :working_group_enrollments
   has_many :working_groups, through: :working_group_enrollments

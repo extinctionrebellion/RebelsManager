@@ -37,6 +37,11 @@
       = l(@rebel.created_at.to_date)
 
     p
+      strong Postcode
+      br
+      = @rebel.postcode
+
+    p
       strong Notes
       br
       = @rebel.notes.present? ? @rebel.notes : "-"

@@ -47,7 +47,7 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
                 small(data-tooltip title="#{rebel.notes}")
                   | 🗒
             td(style="width: 10rem")
-              = rebel.local_group.name
+              = rebel.local_group&.name
             td(data-sort="#{rebel.created_at.iso8601}")
               = l(rebel.created_at.to_date)
             td(style="width: 10rem")
@@ -55,7 +55,7 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
                 .inline-icon
                   = render "layouts/icons/like_bubble"
             td(style="width: 10rem")
-              - if rebel.local_group.has_basecamp? && rebel.on_basecamp?
+              - if rebel.local_group&.has_basecamp? && rebel.on_basecamp?
                 .inline-icon
                   = render "layouts/icons/basecamp"
             td

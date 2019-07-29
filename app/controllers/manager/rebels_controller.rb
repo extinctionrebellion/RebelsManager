@@ -54,11 +54,13 @@ module Manager
       params.require(:rebel).permit(
         :email,
         :irl,
+        :language,
         :local_group_id,
         :name,
         :notes,
         :on_basecamp,
         :phone,
+        :postcode,
         :tag_list,
         working_group_ids: []
       )

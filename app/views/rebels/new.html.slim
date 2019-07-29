@@ -32,6 +32,13 @@
                 placeholder: "Adresse email",
                 required: true
 
+      = f.input :postcode,
+                as: :string,
+                label: "Code postal",
+                placeholder: "Code postal",
+                hint: "Votre code postal nous permet de vous mettre en relation avec les rebelles à proximité",
+                required: false
+
       = f.input :notes,
                 as: :text,
                 input_html: { rows: 5 },

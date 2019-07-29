@@ -22,8 +22,9 @@ class RebelsController < ApplicationController
       :email,
       :language,
       :local_group_id,
+      :notes,
       :phone,
-      :notes
+      :postcode
     )
   end
 end

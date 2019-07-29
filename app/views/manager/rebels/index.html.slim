@@ -27,8 +27,9 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
           th(data-exportable) Joined
           th IRL
           th Basecamp?
-          th(data-exportable) WG
-          th(data-exportable) Tags
+          th(data-exportable) Postcode
+          th(data-exportable data-sortable="false") WG
+          th(data-exportable data-sortable="false") Tags
           th.hide(data-exportable) Phone
           th.hide(data-exportable) IRL
           th.hide(data-exportable) Email
@@ -57,6 +58,8 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
               - if rebel.local_group.has_basecamp? && rebel.on_basecamp?
                 .inline-icon
                   = render "layouts/icons/basecamp"
+            td
+              = rebel.postcode
             td
               - rebel.working_groups.each_with_index do |working_group, index|
                 = render "manager/working_groups/colored_circle", working_group: working_group

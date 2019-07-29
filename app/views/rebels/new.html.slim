@@ -15,6 +15,12 @@
                 input_html: { value: 1 },
                 label: ""
 
+      / Set local group to 'Namur'
+      = f.input :language,
+                as: :hidden,
+                input_html: { value: "fr" },
+                label: ""
+
       = f.input :name,
                 label: "Pseudo",
                 placeholder: "Pseudo",

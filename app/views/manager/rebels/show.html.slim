@@ -41,11 +41,16 @@
       br
       = @rebel.local_group.name
 
+    p
+      strong Language
+      br
+      = @rebel.language.upcase
+
     - if @rebel.local_group.has_basecamp?
       p
         strong Basecamp
         br
-        = @rebel.on_basecamp? ? 'YES' : 'NO'
+        = @rebel.on_basecamp? ? '✓' : 'NO'
 
     p
       strong Tags

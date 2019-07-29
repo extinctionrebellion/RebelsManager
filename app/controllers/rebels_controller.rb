@@ -20,6 +20,7 @@ class RebelsController < ApplicationController
       :consent,
       :name,
       :email,
+      :language,
       :local_group_id,
       :phone,
       :notes

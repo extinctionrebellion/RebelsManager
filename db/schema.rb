@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_07_134752) do
+ActiveRecord::Schema.define(version: 2019_07_29_033450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_06_07_134752) do
     t.bigint "local_group_id"
     t.boolean "consent"
     t.text "tags"
+    t.string "language"
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
   end
 

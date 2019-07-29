@@ -5,7 +5,6 @@ class RebelsController < ApplicationController
 
   def create
     @rebel = Rebel.new(rebel_params)
-    @rebel.local_group = LocalGroup.where(name: 'Namur')&.take
     if @rebel.save
       redirect_to new_rebel_path,
                   notice: "Merci et bienvenue! Nous prendrons prochainement contact avec toi."
@@ -21,6 +20,7 @@ class RebelsController < ApplicationController
       :consent,
       :name,
       :email,
+      :local_group_id,
       :phone,
       :notes
     )

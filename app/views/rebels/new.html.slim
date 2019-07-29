@@ -9,6 +9,12 @@
           - f.object.errors.messages.values.flatten.each do |msg|
             li = msg
 
+      / Set local group to 'Namur'
+      = f.input :local_group_id,
+                as: :hidden,
+                input_html: { value: 1 },
+                label: ""
+
       = f.input :name,
                 label: "Pseudo",
                 placeholder: "Pseudo",

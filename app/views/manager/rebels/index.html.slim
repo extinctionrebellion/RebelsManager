@@ -24,12 +24,12 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
           th.select-column
           th(data-exportable) Name
           th(data-exportable) Local Group
-          th(data-exportable) Phone
+          th(data-exportable) Joined
           th IRL
           th Basecamp?
-          th Secure email?
-          th WG
-          th Tags
+          th(data-exportable) WG
+          th(data-exportable) Tags
+          th.hide(data-exportable) Phone
           th.hide(data-exportable) IRL
           th.hide(data-exportable) Email
           th.hide(data-exportable) Secure Email
@@ -47,11 +47,8 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
                   | 🗒
             td(style="width: 10rem")
               = rebel.local_group.name
-            td(style="width: 10rem")
-              - if rebel.phone.present?
-                | #{rebel.phone[0..6]}...
-              - else
-                | -
+            td(data-sort="#{rebel.created_at.iso8601}")
+              = l(rebel.created_at.to_date)
             td(style="width: 10rem")
               - if rebel.irl?
                 .inline-icon
@@ -60,16 +57,22 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
               - if rebel.local_group.has_basecamp? && rebel.on_basecamp?
                 .inline-icon
                   = render "layouts/icons/basecamp"
-            td(style="width: 10rem")
-              - if rebel.has_secure_email?
-                .inline-icon
-                  = render "layouts/icons/email_action_check"
             td
-              - rebel.working_groups.each do |working_group|
+              - rebel.working_groups.each_with_index do |working_group, index|
                 = render "manager/working_groups/colored_circle", working_group: working_group
+                - if index < rebel.working_groups.size - 1
+                  span.hide ,
             td
-              - rebel.tags.each do |tag|
+              - rebel.tags.each_with_index do |tag, index|
                 span.primary.label =< "##{tag.name}"
+                - if index < rebel.tags.size - 1
+                  span.hide ,
+            / Below, export-only columns
+            td.hide
+              - if rebel.phone.present?
+                | #{rebel.phone[0..6]}...
+              - else
+                | -
             td.hide
               = rebel.irl? ? 'yes' : 'unknown'
             td.hide

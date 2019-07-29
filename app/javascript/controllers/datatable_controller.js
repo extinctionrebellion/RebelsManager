@@ -75,7 +75,7 @@ export default class extends Controller {
         search: ''
       },
       paging: false,
-      order: [[1, 'asc']],
+      order: [[3, 'asc']],
       select: {
         style: 'multi'
       }

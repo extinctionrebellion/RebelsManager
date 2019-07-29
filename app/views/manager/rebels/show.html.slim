@@ -32,6 +32,11 @@
         | -
 
     p
+      strong Joined
+      br
+      = l(@rebel.created_at.to_date)
+
+    p
       strong Notes
       br
       = @rebel.notes.present? ? @rebel.notes : "-"

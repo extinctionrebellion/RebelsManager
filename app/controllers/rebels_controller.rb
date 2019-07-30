@@ -7,13 +7,11 @@ class RebelsController < ApplicationController
 
   def create
     @rebel = Rebel.new(rebel_params)
-    format.html {
-      if @rebel.save
-        redirect_to "https://www.extinctionrebellion.be/thank_you.html"
-      else
-        render :new
-      end
-    }
+    if @rebel.save
+      redirect_to "https://www.extinctionrebellion.be/thank_you.html"
+    else
+      render :new
+    end
   end
 
   private

@@ -30,6 +30,7 @@ gem 'annotate'
 gem 'awesome_print'
 gem 'devise', '~> 4.6'
 gem 'ffaker'
+gem 'rack-cors'
 gem 'simple_form', '~> 4.1'
 gem 'slim', '~> 4.0'
 

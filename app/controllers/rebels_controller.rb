@@ -1,16 +1,19 @@
 class RebelsController < ApplicationController
+  skip_before_action :verify_authenticity_token, on: [:create]
+
   def new
     @rebel = Rebel.new
   end
 
   def create
     @rebel = Rebel.new(rebel_params)
-    if @rebel.save
-      redirect_to new_rebel_path,
-                  notice: "Merci et bienvenue! Nous prendrons prochainement contact avec toi."
-    else
-      render :new
-    end
+    format.html {
+      if @rebel.save
+        redirect_to "https://www.extinctionrebellion.be/thank_you.html"
+      else
+        render :new
+      end
+    }
   end
 
   private

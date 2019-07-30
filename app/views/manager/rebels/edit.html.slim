@@ -16,7 +16,7 @@
 
       = render 'manager/rebels/form/notes', f: f
 
-      - if f.object.local_group.working_groups.any?
+      - if f.object.local_group&.working_groups&.any?
         = section_heading heading: "Working Groups",
                           spacing: :spacer
 

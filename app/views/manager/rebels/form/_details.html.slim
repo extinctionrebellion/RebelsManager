@@ -32,7 +32,7 @@
           collection: [["Français", "fr"], ["Nederlands", "nl"], ["English", "en"]],
           required: true
 
-- if f.object.new_record? or f.object.local_group.has_basecamp?
+- if f.object.new_record? or f.object.local_group&.has_basecamp?
   = f.input :on_basecamp,
             as: :boolean,
             label: "This rebel has a Basecamp account",

@@ -49,14 +49,14 @@
     p
       strong Local Group
       br
-      = @rebel.local_group.name
+      = @rebel.local_group&.name
 
     p
       strong Language
       br
       = @rebel.language.upcase
 
-    - if @rebel.local_group.has_basecamp?
+    - if @rebel.local_group&.has_basecamp?
       p
         strong Basecamp
         br

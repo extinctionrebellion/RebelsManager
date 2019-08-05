@@ -54,6 +54,7 @@
 @import './components/page_header';
 @import './components/reveal';
 @import './components/rich_text';
+@import './components/spacer';
 @import './components/topbar';
 
 @include xr-callout;
@@ -64,4 +65,5 @@
 @include xr-page-header;
 @include xr-reveal;
 @include xr-rich-text;
+@include xr-spacer;
 @include xr-topbar;

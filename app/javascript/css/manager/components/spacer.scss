@@ -1,0 +1,16 @@
+@mixin xr-spacer {
+  .spacer-05 { height: 1px; margin-bottom: .5rem; }
+  .spacer-1 { height: 1px; margin-bottom: 1rem; }
+  .spacer-2 { height: 1px; margin-bottom: 2rem; }
+  .spacer-3 {
+    height: 1px; margin-bottom: 3rem;
+
+    @include breakpoint(small only) {
+      margin-bottom: 1.5rem;
+    }
+
+    @include breakpoint(medium only) {
+      margin-bottom: 2rem;
+    }
+  }
+}

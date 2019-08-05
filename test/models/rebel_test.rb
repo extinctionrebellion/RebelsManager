@@ -13,6 +13,12 @@
 #  irl            :boolean
 #  local_group_id :bigint
 #  consent        :boolean
+#  tags           :text
+#  language       :string
+#  postcode       :string
+#  interests      :string
+#  internal_notes :text
+#  status         :string
 #
 
 require 'test_helper'

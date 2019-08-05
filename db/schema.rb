@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_29_041041) do
+ActiveRecord::Schema.define(version: 2019_08_05_043546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_07_29_041041) do
     t.text "tags"
     t.string "language"
     t.string "postcode"
+    t.string "interests"
+    t.text "internal_notes"
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
   end
 

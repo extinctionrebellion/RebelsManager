@@ -39,7 +39,7 @@
     p
       strong Postcode
       br
-      = @rebel.postcode
+      = @rebel.postcode.present? ? @rebel.postcode : "-"
 
     p
       strong Notes
@@ -65,8 +65,16 @@
     p
       strong Tags
       br
-      - @rebel.tags.each do |tag|
-        span.primary.label =< tag.name
+      - if @rebel.tags.any?
+        - @rebel.tags.each do |tag|
+          span.primary.label =< tag.name
+      - else
+        | -
+
+    p
+      strong WG Interests
+      br
+      = @rebel.interests.present? ? @rebel.interests : "-"
 
 - if @rebel.working_groups.any?
   = section_heading heading: "Working Groups",

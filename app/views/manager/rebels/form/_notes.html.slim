@@ -1,5 +1,19 @@
 = f.input :notes,
           as: :text,
           input_html: { rows: 5 },
-          label: "Quelles sont vos compétences? Comment pouvez-vous aider Extinction Rebellion?",
+          label: "Skills or notes",
+          hint: "Provided when signing up",
+          required: false
+
+= f.input :internal_notes,
+          as: :text,
+          input_html: { rows: 3 },
+          label: "Notes",
+          hint: "Internal use, won't be available to the rebel",
+          required: false
+
+= f.input :interests,
+          as: :text,
+          input_html: { rows: 5 },
+          label: "Working Group interests",
           required: false

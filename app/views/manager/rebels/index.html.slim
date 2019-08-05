@@ -25,6 +25,7 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
           th(data-exportable) Name
           th(data-exportable) Local Group
           th(data-exportable) Joined
+          th(data-exportable) Status
           th IRL
           th Basecamp?
           th(data-exportable) Postcode
@@ -48,8 +49,10 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
                   | 🗒
             td(style="width: 10rem")
               = rebel.local_group&.name
-            td(data-sort="#{rebel.created_at.iso8601}")
+            td(data-sort="#{rebel.created_at.iso8601}" style="width: 8rem")
               = l(rebel.created_at.to_date)
+            td
+              = rebel.status.present? ? rebel.status : "-"
             td(style="width: 10rem")
               - if rebel.irl?
                 .inline-icon

@@ -53,6 +53,8 @@ module Manager
     def rebel_params
       params.require(:rebel).permit(
         :email,
+        :interests,
+        :internal_notes,
         :irl,
         :language,
         :local_group_id,
@@ -61,6 +63,7 @@ module Manager
         :on_basecamp,
         :phone,
         :postcode,
+        :status,
         :tag_list,
         working_group_ids: []
       )

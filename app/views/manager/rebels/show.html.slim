@@ -24,6 +24,11 @@
       = @rebel.email
 
     p
+      strong Activity status
+      br
+      = @rebel.status.present? ? @rebel.status : "-"
+
+    p
       strong Phone number
       br
       - if @rebel.phone.present?
@@ -34,7 +39,7 @@
     p
       strong Joined
       br
-      = l(@rebel.created_at.to_date)
+      = l(@rebel.created_at.to_date, format: :long)
 
     p
       strong Postcode
@@ -42,7 +47,7 @@
       = @rebel.postcode.present? ? @rebel.postcode : "-"
 
     p
-      strong Notes
+      strong Skills/Notes
       br
       = @rebel.notes.present? ? @rebel.notes : "-"
   .cell.auto
@@ -75,6 +80,13 @@
       strong WG Interests
       br
       = @rebel.interests.present? ? @rebel.interests : "-"
+
+- if @rebel.internal_notes.present?
+  .spacer-2
+  .secondary.callout
+    p
+      strong Internal notes
+    = simple_format @rebel.internal_notes
 
 - if @rebel.working_groups.any?
   = section_heading heading: "Working Groups",

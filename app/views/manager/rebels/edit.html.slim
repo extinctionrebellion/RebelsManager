@@ -3,7 +3,8 @@
            title: "Edit: #{@rebel.name}"
 
 = simple_form_for @rebel,
-                  url: manager_rebel_path(@rebel) do |f|
+                  url: manager_rebel_path(@rebel),
+                  data: { abide: true } do |f|
   .grid-x.grid-padding-x
     .cell.small-12.medium-6.large-4
       = section_heading heading: "Details",
@@ -11,10 +12,10 @@
 
       = render 'manager/rebels/form/details', f: f
     .cell.small-12.medium-6.large-8
-      = section_heading heading: "Notes",
+      = section_heading heading: "Tags",
                         spacing: false
 
-      = render 'manager/rebels/form/notes', f: f
+      = render 'manager/rebels/form/tags', f: f
 
       - if f.object.local_group&.working_groups&.any?
         = section_heading heading: "Working Groups",
@@ -22,10 +23,10 @@
 
         = render 'manager/rebels/form/working_groups', f: f
 
-      = section_heading heading: "Tags",
+      = section_heading heading: "Notes",
                         spacing: :spacer
 
-      = render 'manager/rebels/form/tags', f: f
+      = render 'manager/rebels/form/notes', f: f
 
   = f.button :submit,
              "Save"

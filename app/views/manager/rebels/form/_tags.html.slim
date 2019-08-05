@@ -1,4 +1,14 @@
 = f.input :tag_list,
           as: :text,
           hint: "Separate tags with a comma (,)",
-          input_html: { rows: 3 }
+          input_html: { rows: 2 }
+
+= f.input :status,
+          label: "Activity status",
+          as: :radio_buttons,
+          wrapper: :foundation_radio_buttons,
+          collection: [ \
+            ["💥  Active", "active"],
+            ["⏸  Paused", "paused"],
+            ["🛑  Inactive", "inactive"] \
+          ]

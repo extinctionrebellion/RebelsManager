@@ -3,12 +3,13 @@
           placeholder: "Nickname",
           required: true
 
-= f.input :local_group_id,
-          as: :select,
-          label: "Local Group",
-          collection: LocalGroup.all.order(:name),
-          prompt: "Select a local group",
-          required: false
+- if !current_user.local_group
+  = f.input :local_group_id,
+            as: :select,
+            label: "Local Group",
+            collection: LocalGroup.all.order(:name),
+            prompt: "Select a local group",
+            required: false
 
 = f.input :email,
           as: :email,

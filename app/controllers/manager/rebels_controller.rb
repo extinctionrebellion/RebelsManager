@@ -1,7 +1,13 @@
 module Manager
   class RebelsController < BaseController
     def index
-      @rebels = Rebel.all.order(created_at: :desc)
+      if current_user.local_group
+        @rebels = Rebel
+          .where(local_group: current_user.local_group)
+          .order(created_at: :desc)
+      else
+        @rebels = Rebel.all.order(created_at: :desc)
+      end
     end
 
     def show
@@ -15,6 +21,7 @@ module Manager
     def create
       @rebel = Rebel.new(rebel_params)
       @rebel.consent = true
+      @rebel.local_group = current_user.local_group
       if @rebel.save
         redirect_to manager_rebel_path(@rebel),
                     notice: "Congrats, we have a new rebel!"

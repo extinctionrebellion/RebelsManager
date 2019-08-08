@@ -14,6 +14,7 @@ table
   thead
     tr
       th Email
+      th Local Group
       th Sign In Count
       th Signed In
   tbody
@@ -22,6 +23,12 @@ table
         td
           = link_to user.email,
                     manager_user_path(user)
+        td
+          - if user.local_group
+            = link_to user.local_group.name,
+                      manager_local_group_path(user.local_group)
+          - else
+            | -
         td
           = user.sign_in_count
         td

@@ -7,3 +7,11 @@
           as: :password,
           label: "Password",
           placeholder: "Password"
+
+= f.input :local_group_id,
+          as: :select,
+          label: "Local Group",
+          hint: "Selecting one will restrict access to this LG rebels only",
+          collection: LocalGroup.all.order(:name),
+          prompt: "Select a local group",
+          required: false

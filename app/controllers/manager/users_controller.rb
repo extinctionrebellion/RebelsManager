@@ -52,7 +52,8 @@ module Manager
     def user_params
       params.require(:user).permit(
         :email,
-        :password
+        :password,
+        :local_group_id
       )
     end
 

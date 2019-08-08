@@ -18,6 +18,7 @@
 #  locked_at              :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  local_group_id         :bigint
 #
 
 class User < ApplicationRecord
@@ -25,4 +26,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :recoverable,
          :lockable, :trackable, :timeoutable
+
+  belongs_to :local_group, optional: true
 end

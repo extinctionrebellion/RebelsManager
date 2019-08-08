@@ -19,6 +19,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  local_group_id         :bigint
+#  admin                  :boolean
 #
 
 require 'test_helper'

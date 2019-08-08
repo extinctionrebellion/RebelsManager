@@ -1,5 +1,7 @@
 module Manager
   class UsersController < BaseController
+    before_action :redirect_unless_admin
+
     def index
       @users = User.all.order(:email)
     end
@@ -55,6 +57,10 @@ module Manager
         :password,
         :local_group_id
       )
+    end
+
+    def redirect_unless_admin
+      redirect_to manager_root_path and return if !current_user.admin?
     end
 
     def set_presenters

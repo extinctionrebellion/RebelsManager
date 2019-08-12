@@ -101,6 +101,8 @@ GEM
       railties (>= 3.2, < 6.1)
     erubi (1.8.0)
     execjs (2.7.0)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
     ffaker (2.11.0)
     ffi (1.10.0)
     globalid (0.4.2)
@@ -126,6 +128,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     msgpack (1.2.10)
+    multipart-post (2.1.1)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -189,6 +192,8 @@ GEM
     selenium-webdriver (3.142.2)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    sentry-raven (2.11.0)
+      faraday (>= 0.7.6, < 1.0)
     simple_form (4.1.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -261,6 +266,7 @@ DEPENDENCIES
   rails (~> 6.0.0.rc1)
   sass-rails (~> 5)
   selenium-webdriver
+  sentry-raven
   simple_form (~> 4.1)
   slim (~> 4.0)
   spring

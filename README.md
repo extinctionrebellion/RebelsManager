@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is currently used by XR Belgium. You can start using it for our own national branch or even at a local group level, but the app allows to manage multiple local groups.
 
-Things you may want to cover:
+## Ruby version
 
-* Ruby version
+2.6.3
 
-* System dependencies
+## Database setup (PostgreSQL)
 
-* Configuration
+```
+rails db:create
+rails db:migrate
+```
 
-* Database creation
+## Deploying to Heroku
 
-* Database initialization
+TODO.
 
-* How to run the test suite
+## ENV variables
 
-* Services (job queues, cache servers, search engines, etc.)
+- POSTGRES_USER
+- POSTGRES_PASSWORD
+- POSTGRES_HOST
+- SENTRY_DSN (for reporting errors to Sentry)
+- MAILTRAIN_REBELS_LIST_ID
+- MAILTRAIN_API_TOKEN
+- MAILTRAIN_API_ENDPOINT (eg. https://lists.extinctionrebellion.be/api)
+- XR_BRANCH_TIMEZONE (eg. "Europe/Tallinn", "PST" or "UTC")
 
-* Deployment instructions
+## Tests
 
-* ...
+No tests yet.

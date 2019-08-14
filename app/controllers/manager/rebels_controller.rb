@@ -19,13 +19,13 @@ module Manager
     end
 
     def create
-      @rebel = Rebel.new(rebel_params)
-      @rebel.consent = true
-      @rebel.local_group = current_user.local_group
-      if @rebel.save
-        redirect_to manager_rebel_path(@rebel),
+      service = Rebels::CreateService.new
+      if service.run(rebel_params.merge(consent: true))
+        redirect_to manager_rebel_path(service.rebel),
                     notice: "Congrats, we have a new rebel!"
       else
+        @rebel = service.rebel
+        flash.now[:error] = service.error_message unless !@rebel.valid?
         render :new
       end
     end

@@ -29,6 +29,8 @@ class Rebel < ApplicationRecord
   has_many :working_group_enrollments
   has_many :working_groups, through: :working_group_enrollments
 
+  attr_accessor :redirect
+
   validates :name,
             presence: { message: "Merci de préciser votre pseudo" }
   validates :email,

@@ -4,6 +4,14 @@
 
 = simple_form_for @rebel,
                   url: manager_rebels_path do |f|
+  - if f.object.errors.any?
+    .warning.callout
+      | Oups, impossible d'enregistrer vos infos pour les raisons suivantes:
+      br
+      ul
+      - f.object.errors.messages.values.flatten.each do |msg|
+        li = msg
+
   .grid-x.grid-padding-x
     .cell.small-12.medium-6.large-4
       = section_heading heading: "Details",

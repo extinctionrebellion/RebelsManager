@@ -6,10 +6,12 @@ class RebelsController < ApplicationController
   end
 
   def create
-    @rebel = Rebel.new(rebel_params)
-    if @rebel.save
-      redirect_to "https://www.extinctionrebellion.be/thank-you.html"
+    service = Rebels::CreateService.new
+    if service.run(rebel_params)
+      redirect_to service.redirect_url
     else
+      @rebel = service.rebel
+      flash.now[:error] = service.error_message unless !@rebel.valid?
       render :new
     end
   end
@@ -25,7 +27,8 @@ class RebelsController < ApplicationController
       :local_group_id,
       :notes,
       :phone,
-      :postcode
+      :postcode,
+      :redirect
     )
   end
 end

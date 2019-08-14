@@ -22,6 +22,8 @@ class MailtrainService
         response.return!(request, result, &block)
       end
     end
+  rescue => e
+    Raven.capture_exception(e)
   end
 
 
@@ -44,5 +46,7 @@ class MailtrainService
       # subscriber is deleted even if "Cannot read property 'id' of undefined"
       end
     end
+  rescue => e
+    Raven.capture_exception(e)
   end
 end

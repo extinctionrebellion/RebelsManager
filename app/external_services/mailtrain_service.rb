@@ -4,7 +4,7 @@ class MailtrainService
   # --- API docs ---
   # see https://lists.extinctionrebellion.be/account/api
 
-  def subscribe(list_id, params = {})
+  def add_subscription(list_id, params = {})
     url = "#{ENV['MAILTRAIN_API_ENDPOINT']}/subscribe/#{list_id}?access_token=#{ENV['MAILTRAIN_API_TOKEN']}"
     RestClient::Request.execute(
       method:     :post,

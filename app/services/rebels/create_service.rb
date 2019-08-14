@@ -29,7 +29,7 @@ module Rebels
     private
 
     def subscribe_to_rebels_list
-      MailtrainService.instance.subscribe(
+      MailtrainService.instance.add_subscription(
         ENV['MAILTRAIN_REBELS_LIST_ID'],
         {
           "EMAIL": @rebel.email,

@@ -23,16 +23,38 @@
 
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  email: MyString
-  phone: MyString
-  notes: MyText
-  on_basecamp: false
+alice:
+  name: Alice
+  email: alice@example.org
+  phone: 11223344
+  notes: Alice is the first rebel
+  on_basecamp: true
+  local_group: liege
+  language: fr
 
-two:
-  name: MyString
-  email: MyString
-  phone: MyString
-  notes: MyText
+bob:
+  name: Bob
+  email: bob@example.org
+  phone: 12341234
+  notes: Bob is a friend of Anne
   on_basecamp: false
+  local_group: liege
+  language: fr
+
+carol:
+  name: Carol
+  email: carol@example.org
+  phone: 43214321
+  notes: Carol likes chocolate
+  on_basecamp: false
+  local_group: namur
+  language: fr
+
+dan:
+  name: Dan
+  email: dan@example.org
+  phone: 43214321
+  notes: Dan dances daily
+  on_basecamp: false
+  local_group: namur
+  language: fr

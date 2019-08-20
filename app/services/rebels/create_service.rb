@@ -19,6 +19,7 @@ module Rebels
       validate_email_format!
       @rebel.save!
       subscribe_to_rebels_list
+      subscribe_to_rebels_local_list
       true
     end
 
@@ -27,6 +28,21 @@ module Rebels
     end
 
     private
+
+    def subscribe_to_rebels_local_list
+      return if @rebel.local_group&.mailtrain_list_id&.nil?
+      MailtrainService.instance.add_subscription(
+        @rebel.local_group.mailtrain_list_id,
+        {
+          "EMAIL": @rebel.email,
+          "FIRST_NAME": @rebel.name,
+          "MERGE_LANGUAGE": @rebel.language,
+          "MERGE_POSTCODE": @rebel.postcode,
+          "FORCE_SUBSCRIBE": "yes",
+          "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
+        }
+      )
+    end
 
     def subscribe_to_rebels_list
       MailtrainService.instance.add_subscription(

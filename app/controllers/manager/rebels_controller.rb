@@ -46,13 +46,8 @@ module Manager
 
     def destroy
       @rebel = Rebel.find(params[:id])
-      if @rebel.destroy
-        MailtrainService.instance.delete_subscription(
-          ENV['MAILTRAIN_REBELS_LIST_ID'],
-          {
-            "EMAIL": @rebel.email
-          }
-        )
+      service = Rebels::DeleteService.new(rebel: @rebel)
+      if service.run!
         redirect_to manager_rebels_path,
                     notice: "Rebel has been deleted."
       else

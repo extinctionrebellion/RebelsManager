@@ -35,7 +35,7 @@ module Rebels
         @rebel.local_group.mailtrain_list_id,
         {
           "EMAIL": @rebel.email,
-          "FIRST_NAME": @rebel.name,
+          "MERGE_NAME": @rebel.name,
           "FORCE_SUBSCRIBE": "yes",
           "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
         }

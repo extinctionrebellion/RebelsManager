@@ -36,8 +36,6 @@ module Rebels
         {
           "EMAIL": @rebel.email,
           "FIRST_NAME": @rebel.name,
-          "MERGE_LANGUAGE": @rebel.language,
-          "MERGE_POSTCODE": @rebel.postcode,
           "FORCE_SUBSCRIBE": "yes",
           "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
         }

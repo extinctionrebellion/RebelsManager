@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Rebels Manager
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .grid-container
+      .grid-x
+        .cell.small-12.medium-8.large-6.medium-offset-2.large-offset-3
+          .spacer-2
+          = render "layouts/components/messages"
+
+          = yield

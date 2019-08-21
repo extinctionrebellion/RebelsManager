@@ -2,11 +2,18 @@ module Rebels
   class CreateService < ServiceBase
     PreconditionFailedError = Class.new(StandardError)
 
-    attr_reader :rebel
+    attr_reader :rebel, :source
+
+    def initialize(source: nil)
+      @rebel = Rebel.new
+      @source = source
+    end
+
 
     def run(params = {})
       context = {
-        params: params
+        params: params,
+        source: source
       }
 
       catch_error(context: context) do
@@ -15,7 +22,13 @@ module Rebels
     end
 
     def run!(params = {})
-      @rebel = Rebel.new(params)
+      case @source
+      when "admin"
+        @rebel.consent = true
+        @rebel.attributes = rebel_admin_params(params)
+      when "public"
+        @rebel.attributes = rebel_public_params(params)
+      end
       validate_email_format!
       @rebel.save!
       subscribe_to_rebels_list
@@ -28,6 +41,41 @@ module Rebels
     end
 
     private
+
+    def rebel_admin_params(params)
+      params
+        .require(:rebel)
+        .permit(
+          :email,
+          :interests,
+          :internal_notes,
+          :irl,
+          :language,
+          :local_group_id,
+          :name,
+          :notes,
+          :on_basecamp,
+          :phone,
+          :postcode,
+          :status,
+          :tag_list,
+          working_group_ids: []
+        )
+    end
+
+    def rebel_public_params(params)
+      params.require(:rebel).permit(
+        :consent,
+        :name,
+        :email,
+        :language,
+        :local_group_id,
+        :notes,
+        :phone,
+        :postcode,
+        :redirect
+      )
+    end
 
     def subscribe_to_rebels_local_list
       return if @rebel.local_group&.mailtrain_list_id&.nil?

@@ -16,6 +16,7 @@ table
       th Name
       th Email
       th # Rebels
+      th Mailtrain List ID
   tbody
     - @local_groups.each do |local_group|
       tr
@@ -27,3 +28,5 @@ table
                     local_group.email
         td
           = local_group.rebels.count
+        td
+          = local_group.mailtrain_list_id

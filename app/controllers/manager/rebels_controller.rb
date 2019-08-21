@@ -19,8 +19,8 @@ module Manager
     end
 
     def create
-      service = Rebels::CreateService.new
-      if service.run(rebel_params.merge(consent: true))
+      service = Rebels::CreateService.new(source: "admin")
+      if service.run(params)
         redirect_to manager_rebel_path(service.rebel),
                     notice: "Congrats, we have a new rebel!"
       else
@@ -35,47 +35,27 @@ module Manager
     end
 
     def update
-      @rebel = Rebel.find(params[:id])
-      if @rebel.update(rebel_params)
-        redirect_to manager_rebel_path(@rebel),
-                    notice: "La fiche du rebelle a été mise à jour."
+      service = Rebels::UpdateService.new(rebel: Rebel.find(params[:id]))
+      if service.run(params)
+        redirect_to manager_rebel_path(service.rebel),
+                    notice: "Rebel has been updated."
       else
         render :edit
       end
     end
 
     def destroy
-      @rebel = Rebel.find(params[:id])
-      service = Rebels::DeleteService.new(rebel: @rebel)
+      service = Rebels::DeleteService.new(rebel: Rebel.find(params[:id]))
       if service.run!
         redirect_to manager_rebels_path,
                     notice: "Rebel has been deleted."
       else
-        redirect_to manager_rebel_path(@rebel),
+        redirect_to manager_rebel_path(service.rebel),
                     alert: "Rebel can't be deleted."
       end
     end
 
     private
-
-    def rebel_params
-      params.require(:rebel).permit(
-        :email,
-        :interests,
-        :internal_notes,
-        :irl,
-        :language,
-        :local_group_id,
-        :name,
-        :notes,
-        :on_basecamp,
-        :phone,
-        :postcode,
-        :status,
-        :tag_list,
-        working_group_ids: []
-      )
-    end
 
     def set_presenters
       @menu_presenter = Components::MenuPresenter.new(

@@ -6,8 +6,8 @@ class RebelsController < ApplicationController
   end
 
   def create
-    service = Rebels::CreateService.new
-    if service.run(rebel_params)
+    service = Rebels::CreateService.new(source: "public")
+    if service.run(params)
       redirect_to service.redirect_url
     else
       @rebel = service.rebel
@@ -18,17 +18,5 @@ class RebelsController < ApplicationController
 
   private
 
-  def rebel_params
-    params.require(:rebel).permit(
-      :consent,
-      :name,
-      :email,
-      :language,
-      :local_group_id,
-      :notes,
-      :phone,
-      :postcode,
-      :redirect
-    )
-  end
+  
 end

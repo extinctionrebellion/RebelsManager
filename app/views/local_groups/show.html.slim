@@ -1,0 +1,32 @@
+- content_for :page_header do
+  = render 'layouts/components/page_header',
+           title: @local_group.name,
+           links: [ \
+             link_to( \
+               "Edit",
+               edit_local_group_path(@local_group),
+               class: 'secondary button' \
+             ) \
+           ]
+
+.grid-x.grid-padding-x
+  .cell.auto
+    p
+      strong Name
+      br
+      = @local_group.name
+
+    p
+      strong Email
+      br
+      = @local_group.email
+
+    p
+      strong Rebels
+      br
+      = @local_group.rebels.count
+
+    p
+      strong Mailtrain List ID
+      br
+      = @local_group.mailtrain_list_id.present? ? @local_group.mailtrain_list_id : "-"

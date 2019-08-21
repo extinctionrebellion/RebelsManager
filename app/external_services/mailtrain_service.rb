@@ -49,4 +49,24 @@ class MailtrainService
   rescue => e
     Raven.capture_exception(e)
   end
+
+  def get_subscriptions(email)
+    url = "#{ENV['MAILTRAIN_API_ENDPOINT']}/lists/#{email}?access_token=#{ENV['MAILTRAIN_API_TOKEN']}"
+    RestClient::Request.execute(
+      method:     :get,
+      url:        url,
+      headers:    {
+                    accept: :json
+                  }
+    ) do |response, request, result, block|
+      case response.code
+      when 200
+        JSON.parse(response)['data']
+      else
+        response.return!(request, result, &block)
+      end
+    end
+  rescue => e
+    Raven.capture_exception(e)
+  end
 end

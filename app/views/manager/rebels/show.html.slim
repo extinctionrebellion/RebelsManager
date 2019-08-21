@@ -88,15 +88,31 @@
       strong Internal notes
     = simple_format @rebel.internal_notes
 
-- if @rebel.working_groups.any?
-  = section_heading heading: "Working Groups",
-                    spacing: :spacer
+/ Working groups
 
+= section_heading heading: "Working Groups",
+                  spacing: :spacer
+
+- if @rebel.working_groups.any?
   ul
     - @rebel.working_groups.each do |working_group|
       li = link_to working_group.name,
                    manager_working_group_path(working_group)
-
 - else
-  = callout :info,
-            content: "This rebel didn't join a working group."
+  p This rebel didn't join a working group.
+
+/ Subscriptions
+
+= section_heading heading: "Subscriptions on Mailtrain",
+                  spacing: :spacer
+
+- if @mailtrain_lists
+  p
+    strong This rebel is subscribed to:
+
+  ul
+    - @mailtrain_lists.each do |mailtrain_list|
+      li = mailtrain_list['name']
+- else
+  p
+    strong This rebel is not subscribed to any list.

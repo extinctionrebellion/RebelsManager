@@ -19,15 +19,16 @@ TODO.
 
 ## ENV variables
 
+- ALLOWED_ORIGINS (eg. "extinctionrebellion.be,www.extinctionrebellion.be")
 - POSTGRES_USER
 - POSTGRES_PASSWORD
 - POSTGRES_HOST
 - SENTRY_DSN (for reporting errors to Sentry)
 - MAILTRAIN_REBELS_LIST_ID
 - MAILTRAIN_API_TOKEN
-- MAILTRAIN_API_ENDPOINT (eg. https://lists.extinctionrebellion.be/api)
+- MAILTRAIN_API_ENDPOINT (eg. "https://lists.extinctionrebellion.be/api")
 - XR_BRANCH_TIMEZONE (eg. "Europe/Tallinn", "PST" or "UTC")
 
 ## Tests
 
-No tests yet.
+No tests yet. Contributions welcome!

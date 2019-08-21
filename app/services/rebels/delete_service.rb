@@ -22,7 +22,7 @@ module Rebels
     private
 
     def unsubscribe_from_rebels_local_list
-      return if @rebel.local_group&.mailtrain_list_id&.nil?
+      return if @rebel.local_group&.mailtrain_list_id.nil?
       MailtrainService.instance.delete_subscription(
         @rebel.local_group.mailtrain_list_id,
         {

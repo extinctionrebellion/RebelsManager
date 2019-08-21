@@ -44,7 +44,7 @@ module Rebels
     private
 
     def subscribe_to_rebels_local_list
-      return if @rebel.local_group&.mailtrain_list_id&.nil?
+      return if @rebel.local_group&.mailtrain_list_id.nil?
       MailtrainService.instance.add_subscription(
         @rebel.local_group.mailtrain_list_id,
         {
@@ -93,7 +93,7 @@ module Rebels
     end
 
     def unsubscribe_from_rebels_local_list(local_group, email)
-      return if local_group&.mailtrain_list_id&.nil?
+      return if local_group&.mailtrain_list_id.nil?
       MailtrainService.instance.delete_subscription(
         local_group.mailtrain_list_id,
         {

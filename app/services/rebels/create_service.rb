@@ -78,7 +78,7 @@ module Rebels
     end
 
     def subscribe_to_rebels_local_list
-      return if @rebel.local_group&.mailtrain_list_id&.nil?
+      return if @rebel.local_group&.mailtrain_list_id.nil?
       MailtrainService.instance.add_subscription(
         @rebel.local_group.mailtrain_list_id,
         {

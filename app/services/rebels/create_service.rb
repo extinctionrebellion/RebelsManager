@@ -2,10 +2,11 @@ module Rebels
   class CreateService < ServiceBase
     PreconditionFailedError = Class.new(StandardError)
 
-    attr_reader :rebel, :source
+    attr_reader :rebel, :local_group, :source
 
-    def initialize(source: nil)
+    def initialize(source: nil, local_group: nil)
       @rebel = Rebel.new
+      @local_group = local_group
       @source = source
     end
 
@@ -13,6 +14,7 @@ module Rebels
     def run(params = {})
       context = {
         params: params,
+        local_group: local_group,
         source: source
       }
 
@@ -25,6 +27,7 @@ module Rebels
       case @source
       when "admin"
         @rebel.consent = true
+        @rebel.local_group ||= @local_group
         @rebel.attributes = rebel_admin_params(params)
       when "public"
         @rebel.attributes = rebel_public_params(params)

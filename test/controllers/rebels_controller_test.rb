@@ -27,4 +27,9 @@ class RebelsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
+
+  # A rebel can be added from a public form
+
+  # as a local group user
+  # I can add a new rebel to my local group
 end

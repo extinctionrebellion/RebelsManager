@@ -26,7 +26,7 @@ module Rebels
       rebel.save!
 
       # rebel switches from one local group to another
-      if rebel.local_group_id != current_local_group.id
+      if rebel.local_group_id != current_local_group&.id
         unsubscribe_from_rebels_local_list(current_local_group, current_email)
         subscribe_to_rebels_local_list
       end

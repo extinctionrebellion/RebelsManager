@@ -5,6 +5,8 @@
 = simple_form_for @rebel,
                   url: manager_rebel_path(@rebel),
                   data: { abide: true } do |f|
+  = render "layouts/components/form_errors", object: f.object
+  
   .grid-x.grid-padding-x
     .cell.small-12.medium-6.large-4
       = section_heading heading: "Details",

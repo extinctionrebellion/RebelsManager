@@ -1,0 +1,46 @@
+= f.input :name,
+          label: "Nickname",
+          placeholder: "Nickname",
+          required: true
+
+- if !current_user.local_group
+  = f.input :local_group_id,
+            as: :select,
+            label: "Local Group",
+            collection: LocalGroup.all.order(:name),
+            prompt: "Select a local group",
+            required: false
+
+= f.input :email,
+          as: :email,
+          label: "Email address",
+          placeholder: "Email address",
+          required: true
+
+= f.input :phone,
+          label: "Mobile phone",
+          placeholder: "Mobile phone",
+          required: false,
+          hint: "Votre numéro n'est utilisé que pour vous prévenir lorsqu'une action publique est organisée par Extinction Rebellion"
+
+= f.input :postcode,
+          label: "Postcode",
+          placeholder: "Postcode",
+          required: false
+
+= f.input :language,
+          label: "Language",
+          collection: [["Français", "fr"], ["Nederlands", "nl"], ["English", "en"]],
+          required: true
+
+- if f.object.new_record? or f.object.local_group&.has_basecamp?
+  = f.input :on_basecamp,
+            as: :boolean,
+            label: "This rebel has a Basecamp account",
+            hint: "Relevant if the local group uses Basecamp",
+            wrapper: :foundation_checkbox
+
+= f.input :irl,
+          as: :boolean,
+          label: "This rebel has been met IRL",
+          wrapper: :foundation_checkbox

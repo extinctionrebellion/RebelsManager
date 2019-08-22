@@ -112,31 +112,28 @@ class Components::MenuPresenter < PresenterBase
   def primary_left_items
     [
       {
-        body: ::ApplicationController.helpers.image_tag(
-          asset_pack_path('media/images/symbol.svg'),
-          alt: 'XR Namur'
-        ),
-        url: manager_root_path,
+        body: 'XR',
+        url: root_path,
         class: 'menu-text show-for-large'
       },
       {
         body: 'Rebels',
-        url: manager_rebels_path,
+        url: rebels_path,
         active: @active_primary == 'rebels'
       },
       {
         body: 'Working Groups',
-        url: manager_working_groups_path,
+        url: working_groups_path,
         active: @active_primary == 'working_groups'
       },
       {
         body: 'Local Groups',
-        url: manager_local_groups_path,
+        url: local_groups_path,
         active: @active_primary == 'local_groups'
       },
       {
         body: 'Tags',
-        url: manager_tags_path,
+        url: tags_path,
         active: @active_primary == 'tags'
       }
     ]

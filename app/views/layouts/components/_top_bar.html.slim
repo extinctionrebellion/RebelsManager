@@ -1,0 +1,11 @@
+#top-bar-container
+  .grid-container
+    #responsive-top-bar.top-bar
+      .top-bar-left
+        = @menu_presenter.render_primary_left_menu
+      .top-bar-right
+        = @menu_presenter.render_primary_right_menu
+
+#secondary-navigation.show-for-large
+  .grid-container
+    = @menu_presenter.render_secondary_menu

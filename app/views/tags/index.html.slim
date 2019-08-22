@@ -1,0 +1,18 @@
+- content_for :page_header do
+  = render 'layouts/components/page_header',
+           title: 'Tags',
+           count: @tags.size
+
+table
+  thead
+    tr
+      th Tag
+      th Count
+  tbody
+    - @tags.each do |tag|
+      tr
+        td
+          = link_to tag.name,
+                    edit_tag_path(tag)
+        td
+          = tag.taggings_count

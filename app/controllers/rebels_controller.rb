@@ -20,7 +20,9 @@ class RebelsController < ApplicationController
   end
 
   def create
-    service = Rebels::CreateService.new(source: "admin")
+    service = Rebels::CreateService.new(
+      source: (current_user ? "admin" : "public")
+    )
     if service.run(params)
       redirect_to rebel_path(service.rebel),
                   notice: "Congrats, we have a new rebel!"

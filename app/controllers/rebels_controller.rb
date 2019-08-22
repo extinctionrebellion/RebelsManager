@@ -29,7 +29,7 @@ class RebelsController < ApplicationController
       local_group: current_user&.local_group
     )
     if service.run(params)
-      redirect_to rebel_path(service.rebel),
+      redirect_to service.redirect_url,
                   notice: "Congrats, we have a new rebel!"
     else
       @rebel = service.rebel

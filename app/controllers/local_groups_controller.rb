@@ -1,4 +1,6 @@
 class LocalGroupsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @local_groups = LocalGroup.all.order(:name)
   end

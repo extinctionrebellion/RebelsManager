@@ -1,4 +1,6 @@
 class WorkingGroupsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @working_groups = WorkingGroup.all.order(:local_group_id)
   end

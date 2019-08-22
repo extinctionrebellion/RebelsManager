@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   layout :layout_by_resource
 
-  before_action :authenticate_user!
   before_action :set_raven_context
 
   def render *args

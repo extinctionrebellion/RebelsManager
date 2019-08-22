@@ -23,7 +23,8 @@ class RebelsController < ApplicationController
 
   def create
     service = Rebels::CreateService.new(
-      source: (current_user ? "admin" : "public")
+      source: (current_user ? "admin" : "public"),
+      local_group: current_user&.local_group
     )
     if service.run(params)
       redirect_to rebel_path(service.rebel),

@@ -1,21 +1,18 @@
 doctype html
-html(lang="#{I18n.locale}")
+html(lang="en")
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    title Extinction Rebellion Namur
+    title Rebels Manager
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag 'public', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'public', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    section#header
-      .grid-container
-        = render 'layouts/public/header'
-    section#main
-      .grid-container
-        = render 'layouts/public/messages'
-        = yield
-    section#footer
-      .grid-container
-        = render 'layouts/public/footer'
+    .grid-container
+      .grid-x
+        .cell.small-12.medium-8.large-6.medium-offset-2.large-offset-3
+          .spacer-2
+          = render "layouts/components/messages"
+
+          = yield

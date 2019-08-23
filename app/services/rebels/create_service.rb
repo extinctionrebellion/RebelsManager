@@ -40,7 +40,12 @@ module Rebels
     end
 
     def redirect_url
-      rebel.redirect || "https://www.extinctionrebellion.be/thank-you.html"
+      case @source
+      when "admin"
+        @rebel
+      when "public"
+        rebel.redirect || "https://www.extinctionrebellion.be/thank-you.html"
+      end
     end
 
     private

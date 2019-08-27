@@ -24,6 +24,7 @@ TODO.
 - POSTGRES_PASSWORD
 - POSTGRES_HOST
 - SENTRY_DSN (for reporting errors to Sentry)
+- MAILTRAIN_LOCAL_GROUPS_LIST_ID
 - MAILTRAIN_REBELS_LIST_ID
 - MAILTRAIN_API_TOKEN
 - MAILTRAIN_API_ENDPOINT (eg. "https://lists.extinctionrebellion.be/api")

@@ -15,8 +15,8 @@ class RebelsController < ApplicationController
 
   def show
     @rebel = Rebel.find(params[:id])
-    @mailtrain_lists = MailtrainService.instance
-      .get_subscriptions(@rebel.email)
+    # @mailtrain_lists = MailtrainService.instance
+    #   .get_subscriptions(@rebel.email)
   end
 
   def new

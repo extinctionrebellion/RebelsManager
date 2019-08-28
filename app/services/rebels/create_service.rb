@@ -103,7 +103,7 @@ module Rebels
         ENV['MAILTRAIN_REBELS_LIST_ID'],
         {
           "EMAIL": @rebel.email,
-          "FIRST_NAME": @rebel.name,
+          "MERGE_NAME": @rebel.name,
           "MERGE_LOCAL_GROUP": @rebel.local_group&.name,
           "MERGE_LANGUAGE": @rebel.language,
           "MERGE_POSTCODE": @rebel.postcode,

@@ -106,13 +106,13 @@
 = section_heading heading: "Subscriptions on Mailtrain",
                   spacing: :spacer
 
-/ - if @mailtrain_lists
-/   p
-/     strong This rebel is subscribed to:
-/
-/   ul
-/     - @mailtrain_lists.each do |mailtrain_list|
-/       li = mailtrain_list['name']
-/ - else
-/   p
-/     strong This rebel is not subscribed to any list.
+- if @mailtrain_lists
+  p
+    strong This rebel is subscribed to:
+
+  ul
+    - @mailtrain_lists.each do |mailtrain_list|
+      li = mailtrain_list['name']
+- else
+  p
+    strong This rebel is not subscribed to any list.

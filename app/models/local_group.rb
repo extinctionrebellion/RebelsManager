@@ -14,6 +14,10 @@ class LocalGroup < ApplicationRecord
   has_many :rebels
   has_many :working_groups
 
+  def destroyable?
+    !rebels.any?
+  end
+
   def has_basecamp?
     name == "Namur"
   end

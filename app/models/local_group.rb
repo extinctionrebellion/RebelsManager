@@ -14,8 +14,8 @@ class LocalGroup < ApplicationRecord
   has_many :rebels
   has_many :working_groups
 
-  def destroyable?
-    !rebels.any?
+  def destroyable_by?(user)
+    user.admin? && !rebels.any?
   end
 
   def has_basecamp?

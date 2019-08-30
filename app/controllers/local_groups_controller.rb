@@ -27,7 +27,6 @@ class LocalGroupsController < ApplicationController
   end
 
   def update
-    
     if @local_group.update(local_group_params)
       redirect_to local_group_path(@local_group),
                   notice: "The local group has been updated."
@@ -37,12 +36,12 @@ class LocalGroupsController < ApplicationController
   end
 
   def destroy
-    if @local_group.destroy
+    if @local_group.destroyable_by?(current_user) && @local_group.destroy
       redirect_to local_groups_path(),
-                  notice: "The local group has been deleted"
+                  notice: "The local group has been deleted."
     else
-      render :show,
-      notice: "The local group can't be deleted"
+      flash.now[:alert] = "A local group must have no rebel anymore to be deleted."
+      render :show
     end
   end
 

@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   resources :tags
   resources :users
   resources :working_groups
+
+  namespace :rebels do
+    resources :imports, only: [:new, :create]
+  end
 end

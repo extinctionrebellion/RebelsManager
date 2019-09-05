@@ -1,0 +1,70 @@
+- content_for :page_header do
+  = render 'layouts/components/page_header',
+           title: "Import Rebels"
+
+- if @csv_import.import_errors.any?
+  .warning.callout
+    p
+      |
+        #{@csv_import.imports_count} rebels have been imported successfully, but
+        some have NOT been imported. Please review errors below.
+
+    ul
+      - @csv_import.import_errors.each do |import_error|
+        li = import_error
+
+= simple_form_for @csv_import,
+                  url: rebels_imports_path do |f|
+  - if f.object.errors.any?
+    .warning.callout
+      | Oops, can't import rebels. Please check that:
+      br
+      ul
+      - f.object.errors.messages.values.flatten.each do |msg|
+        li = msg
+
+  = f.input :content,
+            as: :text,
+            required: true,
+            label: "Copy-pasted CSV content",
+            hint: "Format: local_group_id, name, email, phone, postcode, language (see details below)",
+            input_html: { rows: 20 }
+
+  = f.button :submit,
+             "Import"
+
+  .info.callout
+    p
+      strong Example
+      br
+      | 12,John,john.doe@gmail.com,+14151234567,1050,en
+
+    p
+      strong Validation
+
+    small
+      ul
+        li
+          strong Local group ID
+          br
+          = LocalGroup.all.collect { |local_group| "#{local_group.id} (#{local_group.name})" }.join(", ")
+        li
+          strong Name
+          br
+          | must be present
+        li
+          strong Email
+          br
+          | must be present, unique and valid
+        li
+          strong Phone
+          br
+          | optional
+        li
+          strong Postcode
+          br
+          | optional
+        li
+          strong Language
+          br
+          | en, nl, fr

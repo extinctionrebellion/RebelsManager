@@ -34,7 +34,7 @@ class Rebel < ApplicationRecord
   validates :name,
             presence: { message: "Please provide a name or nickname" }
   validates :email,
-            presence: { message: "Please provive an email address" },
+            presence: { message: "Please provide an email address" },
             uniqueness: { message: "This email address is already linked to a rebel" }
   validates :consent,
             inclusion: {

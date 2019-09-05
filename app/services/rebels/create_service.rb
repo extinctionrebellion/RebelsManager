@@ -32,7 +32,7 @@ module Rebels
       when "public"
         @rebel.attributes = rebel_public_params(params)
       end
-      validate_email_format!
+      validate_email_format! if @rebel.valid?
       @rebel.save!
       subscribe_to_rebels_list
       subscribe_to_rebels_local_list

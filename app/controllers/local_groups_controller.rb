@@ -14,11 +14,13 @@ class LocalGroupsController < ApplicationController
   end
 
   def create
-    @local_group = LocalGroup.new(local_group_params)
-    if @local_group.save
-      redirect_to local_group_path(@local_group),
+    service = LocalGroups::CreateService.new
+    if service.run(params)
+      redirect_to local_group_path(service.local_group),
                   notice: "Congrats, we have a new local group!"
     else
+      @local_group = service.local_group
+      set_error_flash(service.local_group, service.error_message)
       render :new
     end
   end
@@ -27,10 +29,15 @@ class LocalGroupsController < ApplicationController
   end
 
   def update
-    if @local_group.update(local_group_params)
-      redirect_to local_group_path(@local_group),
+    service = LocalGroups::UpdateService.new(
+      local_group: LocalGroup.find(params[:id])
+    )
+    if service.run(params)
+      redirect_to local_group_path(service.local_group),
                   notice: "The local group has been updated."
     else
+      @local_group = service.local_group
+      set_error_flash(service.local_group, service.error_message)
       render :edit
     end
   end
@@ -47,17 +54,9 @@ class LocalGroupsController < ApplicationController
 
   private
 
-  def local_group_params
-    params.require(:local_group).permit(
-      :email,
-      :mailtrain_list_id,
-      :name
-    )
-  end
-
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
-      active_primary: 'local_groups'
+      active_primary: "local_groups"
     )
   end
 

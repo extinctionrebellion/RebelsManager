@@ -13,14 +13,9 @@
 .grid-x.grid-padding-x
   .cell.auto
     p
-      strong Name
-      br
-      = @local_group.name
-
-    p
       strong Email
       br
-      = @local_group.email
+      = @local_group.email.present? ? @local_group.email : "-"
 
     p
       strong Rebels

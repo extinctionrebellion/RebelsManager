@@ -10,7 +10,7 @@ class Rebels::ImportsController < ApplicationController
     if service.run(params)
       @csv_import = service.csv_import
       if !@csv_import.import_errors.any?
-        flash.now[:notice] = "Congrats, #{service.imports_count} rebels imported successfully!"
+        flash.now[:notice] = "Congrats, #{@csv_import.imports_count} rebels imported successfully!"
       end
       render :new
     else

@@ -43,12 +43,12 @@ module Rebels
         ActiveRecord::Base.transaction do
           rebel_params = {
             rebel: {
-              local_group: row[0]&.strip,
+              local_group_id: row[0]&.strip,
               name: row[1]&.strip,
               email: row[2]&.strip,
               phone: row[3]&.strip,
               postcode: row[4]&.strip,
-              language: row[5]&.strip
+              language: row[5]&.strip&.downcase
             }
           }
           service = Rebels::CreateService.new(source: "admin")

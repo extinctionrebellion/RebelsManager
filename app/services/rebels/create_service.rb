@@ -81,7 +81,8 @@ module Rebels
         :notes,
         :phone,
         :postcode,
-        :redirect
+        :redirect,
+        :tag_list
       )
     end
 

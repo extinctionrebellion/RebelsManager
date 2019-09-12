@@ -1,0 +1,12 @@
+alice-sneezy:
+  taggable: alice
+  tag: sneezy
+alice-dopey:
+  taggable: alice
+  tag: dopey
+bob-sneezy:
+  taggable: bob
+  tag: sneezy
+bob-bashful:
+  taggable: bob
+  tag: bashful

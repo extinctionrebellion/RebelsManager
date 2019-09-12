@@ -269,7 +269,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  devise (~> 4.6)
+  devise (~> 4.7)
   dotenv-rails
   ffaker
   jbuilder (~> 2.5)

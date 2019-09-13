@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     devise_controller? ? "devise" : "application"
   end
 
+  def public_controller?
+    self.class.to_s.split("::")&.first == "Public"
+  end
+
   private
 
   def set_raven_context

@@ -1,0 +1,54 @@
+h1 My Rebel Profile
+
+= simple_form_for @rebel,
+                  url: public_rebel_path(@rebel, email: @rebel.email) do |f|
+  = render "layouts/public/components/form_errors", object: f.object
+
+  = f.input :name,
+            label: "Name or nickname",
+            placeholder: "Name or nickname",
+            required: true
+
+  = f.input :local_group_id,
+            as: :select,
+            label: "Local Group",
+            collection: LocalGroup.all.order(:name),
+            prompt: "Select a local group",
+            required: false
+
+  = f.input :email,
+            as: :email,
+            label: "Email address",
+            placeholder: "Email address",
+            required: true
+
+  = f.input :phone,
+            label: "Mobile phone",
+            placeholder: "Mobile phone",
+            required: false,
+            hint: "Votre numéro n'est utilisé que pour vous prévenir lorsqu'une action publique est organisée par Extinction Rebellion"
+
+  = f.input :postcode,
+            label: "Postcode",
+            placeholder: "Postcode",
+            required: false
+
+  = f.input :language,
+            label: "Language",
+            collection: [["Français", "fr"], ["Nederlands", "nl"], ["English", "en"]],
+            required: true
+
+  = f.input :notes,
+            as: :text,
+            input_html: { rows: 5 },
+            label: "Skills or notes",
+            required: false
+
+  = f.input :interests,
+            as: :text,
+            input_html: { rows: 5 },
+            label: "Working Group interests",
+            required: false
+
+  = f.button :submit,
+             "Update"

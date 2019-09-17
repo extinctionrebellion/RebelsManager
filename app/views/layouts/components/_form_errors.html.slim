@@ -1,7 +1,0 @@
-- if object.errors.any?
-  .warning.callout
-    | Sorry, can't save this record:
-    br
-    ul
-    - object.errors.messages.values.flatten.each do |msg|
-      li = msg

@@ -90,6 +90,18 @@
       strong Internal notes
     = simple_format @rebel.internal_notes
 
+/ Skills
+
+= section_heading heading: "Skills",
+                  spacing: :spacer
+
+- if @rebel.skills.any?
+  ul
+    - @rebel.skills.each do |skill|
+      li = skill.name
+- else
+  p This rebel has no skill defined yet.
+
 / Working groups
 
 = section_heading heading: "Working Groups",

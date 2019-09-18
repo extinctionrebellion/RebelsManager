@@ -1,0 +1,25 @@
+- content_for :page_header do
+  = render 'layouts/components/page_header',
+           title: 'Skills',
+           count: @skills.size,
+           links: [ \
+             link_to( \
+               "Add Skill",
+               new_skill_path,
+               class: "primary button show-for-large" \
+             ) \
+           ]
+
+table
+  thead
+    tr
+      th Name
+      th # Rebels
+  tbody
+    - @skills.each do |skill|
+      tr
+        td
+          = link_to skill.name,
+                    skill_path(skill)
+        td
+          = skill.rebels.size

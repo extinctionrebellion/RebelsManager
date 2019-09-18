@@ -88,6 +88,7 @@ module Rebels
           :postcode,
           :status,
           :tag_list,
+          skill_ids: [],
           working_group_ids: []
         )
     end

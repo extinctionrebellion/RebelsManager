@@ -19,6 +19,11 @@
 
       = render 'rebels/form/details', f: f
     .cell.small-12.medium-6.large-8
+      = section_heading heading: "Skills",
+                        spacing: :spacer
+
+      = render 'rebels/form/skills', f: f
+
       = section_heading heading: "Notes",
                         spacing: false
 

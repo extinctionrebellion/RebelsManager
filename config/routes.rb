@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :local_groups
   resources :rebels
+  resources :skills
   resources :tags
   resources :users
   resources :working_groups

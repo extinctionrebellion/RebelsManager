@@ -19,6 +19,7 @@
 #  interests      :string
 #  internal_notes :text
 #  status         :string
+#  source         :string
 #
 
 require 'test_helper'

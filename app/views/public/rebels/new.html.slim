@@ -1,0 +1,70 @@
+- content_for :page_title, "Join us!"
+
+- content_for :header do
+  h1 Join the Rebellion
+
+p
+  |
+    By answering the following questions, you will be listed in our secure Rebels database.
+     Your data can be deleted anytime by sending an email to <a href="mailto:recruitment@extinctionrebellion.be">recruitment@extinctionrebellion.be</a>.
+
+p
+  |
+    Both national and your local group coordinators will be notified about your
+     signup and will be there to support you.
+
+= simple_form_for @rebel,
+                  url: public_rebels_path,
+                  data: { \
+                    abide: true \
+                  } do |f|
+
+  = f.input :name,
+            label: "Name or nickname *",
+            placeholder: "Name or nickname",
+            required: true
+
+  = f.input :local_group_id,
+            as: :select,
+            label: "Local Group *",
+            collection: LocalGroup.all.order(:name),
+            prompt: "Select a local group",
+            hint: "No local group (yet) next to you? Please select the one that makes the more sense to you.",
+            required: true
+
+  = f.input :email,
+            as: :email,
+            label: "Email address *",
+            placeholder: "Email address",
+            required: true
+
+  = f.input :phone,
+            label: "Mobile phone",
+            placeholder: "Mobile phone",
+            required: false,
+            hint: "Your phone number is only used in case we have information to share widely about a public action"
+
+  = f.input :postcode,
+            label: "Postcode",
+            placeholder: "Postcode",
+            required: false
+
+  = f.input :language,
+            label: "Preferred language *",
+            collection: [["English", "en"], ["Français", "fr"], ["Nederlands", "nl"]],
+            required: true
+
+  = f.input :notes,
+            as: :text,
+            input_html: { rows: 5 },
+            label: "Skills or notes",
+            hint: "How can you help Extinction Rebellion?",
+            required: false
+
+  = f.input :consent,
+            as: :boolean,
+            wrapper: :foundation_checkbox,
+            label: "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
+
+  = f.button :submit,
+             "Join!"

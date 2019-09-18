@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   resources :users
   resources :working_groups
 
+  namespace :public do
+    resources :rebels, only: [:new, :create]
+  end
+  get '/join', to: 'public/rebels#new'
+
   namespace :rebels do
     resources :imports, only: [:new, :create]
   end

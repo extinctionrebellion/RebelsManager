@@ -1,6 +1,4 @@
-class Rebels::ImportsController < ApplicationController
-  before_action :authenticate_user!
-
+class Rebels::ImportsController < BaseController
   def new
     @csv_import = CsvImport.new
   end

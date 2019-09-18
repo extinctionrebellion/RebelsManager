@@ -40,6 +40,8 @@
       strong Joined
       br
       = l(@rebel.created_at.to_date, format: :long)
+      br
+      small = @rebel.source || "unknown source"
 
     p
       strong Postcode

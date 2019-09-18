@@ -10,7 +10,6 @@ module Rebels
       @source = source
     end
 
-
     def run(params = {})
       context = {
         params: params,
@@ -24,6 +23,7 @@ module Rebels
     end
 
     def run!(params = {})
+      @rebel.source = @source
       case @source
       when "admin"
         @rebel.consent = true
@@ -32,6 +32,7 @@ module Rebels
       when "public"
         @rebel.attributes = rebel_public_params(params)
       end
+      @rebel.email = nil
       validate_email_format! if @rebel.valid?
       @rebel.save!
       subscribe_to_rebels_list

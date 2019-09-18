@@ -1,7 +1,5 @@
-class RebelsController < ApplicationController
+class RebelsController < BaseController
   skip_before_action :verify_authenticity_token, on: [:create]
-
-  before_action :authenticate_user!, except: [:create]
 
   def index
     if current_user.local_group

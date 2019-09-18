@@ -1,5 +1,4 @@
-class UsersController < ApplicationController
-  before_action :authenticate_user!
+class UsersController < BaseController
   before_action :redirect_unless_admin
 
   def index

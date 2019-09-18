@@ -3,9 +3,8 @@ class CollectionCheckBoxesInput < SimpleForm::Inputs::CollectionCheckBoxesInput
     label_method, value_method = detect_collection_methods
     iopts = {
       :item_wrapper_tag => 'label',
-      :item_wrapper_class => options[:item_wrapper_class] || 'field cell small-12 medium-6 large-4',
-      :collection_wrapper_tag => 'div',
-      :collection_wrapper_class => 'grid-x grid-padding-x'
+      :item_wrapper_class => options[:item_wrapper_class] || 'field',
+      :collection_wrapper_tag => 'div'
      }
     return @builder.send(
       "collection_check_boxes",

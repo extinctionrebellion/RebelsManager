@@ -51,11 +51,18 @@ p
             collection: [["English", "en"], ["Français", "fr"], ["Nederlands", "nl"]],
             required: true
 
+  = f.input :skill_ids,
+            as: :check_boxes,
+            wrapper: :foundation_radio_buttons,
+            collection: Skill.all.order(:name),
+            label: "In which areas would you like to participate?",
+            hint: "Please select a maximum of 2 answers."
+
   = f.input :notes,
             as: :text,
             input_html: { rows: 5 },
-            label: "Skills or notes",
-            hint: "How can you help Extinction Rebellion?",
+            label: "What specific skills/experience/resources do you have?",
+            hint: "Feel free to let us know about anything that can help Extinction Rebellion.",
             required: false
 
   = f.input :consent,

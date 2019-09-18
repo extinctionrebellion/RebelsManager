@@ -1,5 +1,4 @@
-class LocalGroupsController < ApplicationController
-  before_action :authenticate_user!
+class LocalGroupsController < BaseController
   before_action :get_local_group, only: [:show, :edit, :update, :destroy]
 
   def index

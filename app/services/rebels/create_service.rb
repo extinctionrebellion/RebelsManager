@@ -10,7 +10,6 @@ module Rebels
       @source = source
     end
 
-
     def run(params = {})
       context = {
         params: params,
@@ -24,6 +23,7 @@ module Rebels
     end
 
     def run!(params = {})
+      @rebel.source = @source
       case @source
       when "admin"
         @rebel.consent = true

@@ -19,6 +19,7 @@
 #  interests      :string
 #  internal_notes :text
 #  status         :string
+#  source         :string
 #
 
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

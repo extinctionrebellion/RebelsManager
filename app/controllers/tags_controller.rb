@@ -1,6 +1,4 @@
-class TagsController < ApplicationController
-  before_action :authenticate_user!
-  
+class TagsController < BaseController
   def index
     @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc)
   end

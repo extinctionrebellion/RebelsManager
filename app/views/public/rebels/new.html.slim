@@ -14,10 +14,7 @@ p
      signup and will be there to support you.
 
 = simple_form_for @rebel,
-                  url: public_rebels_path,
-                  data: { \
-                    abide: true \
-                  } do |f|
+                  url: public_rebels_path do |f|
 
   = f.input :name,
             label: "Name or nickname *",

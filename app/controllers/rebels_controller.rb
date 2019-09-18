@@ -21,7 +21,7 @@ class RebelsController < BaseController
 
   def create
     service = Rebels::CreateService.new(
-      source: (current_user ? "admin" : "public"),
+      source: "admin",
       local_group: current_user&.local_group
     )
     if service.run(params)

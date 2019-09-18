@@ -1,6 +1,8 @@
 class Public::RebelsController < Public::BaseController
   layout "public"
 
+  skip_before_action :verify_authenticity_token, on: [:create]
+
   def new
     @rebel = Rebel.new
   end

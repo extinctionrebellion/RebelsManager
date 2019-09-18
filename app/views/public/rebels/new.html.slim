@@ -61,7 +61,8 @@ p
   = f.input :consent,
             as: :boolean,
             wrapper: :foundation_checkbox,
-            label: "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
+            label: "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form",
+            required: true
 
   = f.button :submit,
              "Join!"

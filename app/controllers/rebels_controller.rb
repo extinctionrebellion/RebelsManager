@@ -1,5 +1,6 @@
 class RebelsController < BaseController
   skip_before_action :verify_authenticity_token, on: [:create]
+  skip_before_action :authenticate_user!, on: [:create]
 
   def index
     if current_user.local_group

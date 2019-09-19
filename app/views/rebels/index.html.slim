@@ -24,13 +24,15 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
           th(data-exportable) Local Group
           th(data-exportable) Joined
           th(data-exportable) Status
-          th IRL
+          th(title="Willingness to be arrested") Arrest?
+          th(title="We met in real life") IRL
           th Basecamp?
           th(data-exportable) Postcode
           th(data-exportable data-sortable="false") WG
           th(data-exportable data-sortable="false") Tags
           th.hide(data-exportable) Phone
           th.hide(data-exportable) IRL
+          th.hide(data-exportable) Willingness to be arrested
           th.hide(data-exportable) Email
           th.hide(data-exportable) Secure Email
           th.hide(data-exportable) WG
@@ -51,6 +53,10 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
               = l(rebel.created_at.to_date)
             td
               = rebel.status.present? ? rebel.status : "-"
+            td
+              - if rebel.willingness_to_be_arrested?
+                .inline-icon
+                  = render "layouts/icons/check_square"
             td(style="width: 10rem")
               - if rebel.irl?
                 .inline-icon
@@ -79,6 +85,8 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
                 | -
             td.hide
               = rebel.irl? ? 'yes' : 'unknown'
+            td.hide
+              = rebel.willingness_to_be_arrested? ? 'yes' : 'unknown'
             td.hide
               = rebel.email
             td.hide

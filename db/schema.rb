@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_085148) do
+ActiveRecord::Schema.define(version: 2019_09_19_040831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_085148) do
     t.text "internal_notes"
     t.string "status"
     t.string "source"
+    t.boolean "willingness_to_be_arrested"
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
   end
 

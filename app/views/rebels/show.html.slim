@@ -16,79 +16,116 @@
              ) \
            ]
 
-.grid-x.grid-padding-x
-  .cell.auto
-    p
-      strong Email address
-      br
-      = @rebel.email
-
-    p
-      strong Activity status
-      br
-      = @rebel.status.present? ? @rebel.status : "-"
-
-    p
-      strong Phone number
-      br
-      - if @rebel.phone.present?
-        | #{@rebel.phone[0..6]}...
-      - else
-        | -
-
-    p
-      strong Joined
-      br
-      = l(@rebel.created_at.to_date, format: :long)
-      br
-      small = @rebel.source || "unknown source"
-
-    p
-      strong Postcode
-      br
-      = @rebel.postcode.present? ? @rebel.postcode : "-"
-
-    p
-      strong Skills/Notes
-      br
-      = @rebel.notes.present? ? @rebel.notes : "-"
-  .cell.auto
-    p
-      strong Local Group
-      br
-      = @rebel.local_group&.name || "-"
-
-    p
-      strong Language
-      br
-      = @rebel.language.upcase
-
-    - if @rebel.local_group&.has_basecamp?
-      p
-        strong Basecamp
-        br
-        = @rebel.on_basecamp? ? '✓' : 'NO'
-
-    p
-      strong Tags
-      br
-      - if @rebel.tags.any?
-        - @rebel.tags.each do |tag|
-          span.primary.label =< tag.name
-      - else
-        | -
-
-    p
-      strong WG Interests
-      br
-      = @rebel.interests.present? ? @rebel.interests : "-"
+/ Notes
 
 - if @rebel.internal_notes.present?
-  .spacer-2
   .secondary.callout
     p
       strong Internal notes
     = simple_format @rebel.internal_notes
+  .spacer-2
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Local Group
+  .cell.small-6.medium-8
+    = @rebel.local_group&.name || "-"
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Email address
+  .cell.small-6.medium-8
+    = @rebel.email
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Phone number
+  .cell.small-6.medium-8
+    - if @rebel.phone.present?
+      | #{@rebel.phone[0..6]}...
+    - else
+      | -
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Postcode
+  .cell.small-6.medium-8
+    = @rebel.postcode
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Language
+  .cell.small-6.medium-8
+    = @rebel.language.upcase
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Willingness to be arrested
+  .cell.small-6.medium-8
+    = @rebel.willingness_to_be_arrested? ? '✓' : 'NO'
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Notes added when signing up
+  .cell.small-6.medium-8
+    = @rebel.notes.present? ? @rebel.notes : "-"
+
+.spacer-2
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Tags
+  .cell.small-6.medium-8
+    - if @rebel.tags.any?
+      - @rebel.tags.each do |tag|
+        span.primary.label =< tag.name
+    - else
+      | -
+
+- if @rebel.interests.present?
+  .grid-x.grid-padding-x
+    .cell.small-6.medium-4
+      p
+        strong WG Interests (legacy)
+    .cell.small-6.medium-8
+      = @rebel.interests
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Joined
+  .cell.small-6.medium-8
+    = l(@rebel.created_at.to_date, format: :long)
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Source
+  .cell.small-6.medium-8
+    = @rebel.source || "unknown source"
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Activity Status
+  .cell.small-6.medium-8
+    = @rebel.status.present? ? @rebel.status : "-"
+
+- if @rebel.local_group&.has_basecamp?
+  .grid-x.grid-padding-x
+    .cell.small-6.medium-4
+      p
+        strong Basecamp
+    .cell.small-6.medium-8
+      = @rebel.on_basecamp? ? '✓' : 'NO'
 
 / Skills
 

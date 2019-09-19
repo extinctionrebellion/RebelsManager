@@ -67,6 +67,7 @@ module Rebels
           :postcode,
           :status,
           :tag_list,
+          :willingness_to_be_arrested,
           skill_ids: [],
           working_group_ids: []
         )
@@ -83,7 +84,9 @@ module Rebels
         :phone,
         :postcode,
         :redirect,
-        :tag_list
+        :willingness_to_be_arrested,
+        :tag_list,
+        skill_ids: []
       )
     end
 

@@ -1,0 +1,5 @@
+= f.input :skill_ids,
+          as: :check_boxes,
+          wrapper: :foundation_radio_buttons,
+          collection: Skill.all.order(:name),
+          label: ""

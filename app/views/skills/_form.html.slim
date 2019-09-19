@@ -1,0 +1,12 @@
+= f.error_notification
+
+= f.input :name,
+          label: "Skill name *",
+          required: true,
+          placeholder: "Skill name"
+
+= f.input :description,
+          as: :text,
+          input_html: { rows: 3 },
+          label: "Skill description",
+          required: false

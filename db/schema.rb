@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_042932) do
+ActiveRecord::Schema.define(version: 2019_09_18_085148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(version: 2019_09_18_042932) do
     t.string "mailtrain_list_id"
   end
 
+  create_table "rebel_skills", force: :cascade do |t|
+    t.bigint "rebel_id", null: false
+    t.bigint "skill_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rebel_id"], name: "index_rebel_skills_on_rebel_id"
+    t.index ["skill_id"], name: "index_rebel_skills_on_skill_id"
+  end
+
   create_table "rebels", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -73,6 +82,13 @@ ActiveRecord::Schema.define(version: 2019_09_18_042932) do
     t.string "status"
     t.string "source"
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -145,6 +161,8 @@ ActiveRecord::Schema.define(version: 2019_09_18_042932) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "rebel_skills", "rebels"
+  add_foreign_key "rebel_skills", "skills"
   add_foreign_key "rebels", "local_groups"
   add_foreign_key "taggings", "tags"
   add_foreign_key "users", "local_groups"

@@ -29,6 +29,8 @@ class Rebel < ApplicationRecord
 
   has_many :working_group_enrollments
   has_many :working_groups, through: :working_group_enrollments
+  has_many :rebel_skills
+  has_many :skills, through: :rebel_skills
 
   attr_accessor :redirect
 

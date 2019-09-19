@@ -1,0 +1,29 @@
+- content_for :page_header do
+  = render 'layouts/components/page_header',
+           title: @skill.name,
+           links: [ \
+             link_to( \
+               "Delete",
+               skill_path(@skill),
+               method: :delete,
+               data: { confirm: 'Are you sure?' },
+               class: 'secondary button' \
+             ),
+             link_to( \
+               "Edit",
+               edit_skill_path(@skill),
+               class: 'secondary button' \
+             ) \
+           ]
+
+.grid-x.grid-padding-x
+  .cell.auto
+    p
+      strong Name
+      br
+      = @skill.name
+
+    p
+      strong Description
+      br
+      = simple_format @skill.description

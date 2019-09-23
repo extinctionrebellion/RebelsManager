@@ -29,3 +29,18 @@
     }
   }
 }
+
+.field.rich_text_area.optional.local_group_welcome_email_body {
+  button.trix-button--icon-code {
+    display: none;
+  }
+  button.trix-button--icon-increase-nesting-level {
+    display: none;
+  }
+  button.trix-button--icon-decrease-nesting-level {
+    display: none;
+  }
+  button.trix-button--icon-attach {
+    display: none;
+  }
+}

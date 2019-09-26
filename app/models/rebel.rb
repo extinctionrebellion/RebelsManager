@@ -21,6 +21,7 @@
 #  status                     :string
 #  source                     :string
 #  willingness_to_be_arrested :boolean
+#  token                      :string
 #
 
 class Rebel < ApplicationRecord

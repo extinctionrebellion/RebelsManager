@@ -19,7 +19,7 @@ class LocalGroup < ApplicationRecord
   validates :name,
             presence: { message: "Please provide a name for the local group (eg. <em>Ibiza</em>)" },
             uniqueness: { message: "A local group with this name has been found - Please provide another name" }
-  
+
   def destroyable_by?(user)
     user.admin? && !rebels.any?
   end

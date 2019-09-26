@@ -30,4 +30,4 @@
     p
       strong Welcome Message
       br
-      = @local_group.welcome_email_body.body.html_safe
+      = @local_group.welcome_email_body.body.html_safe unless @local_group.nil?

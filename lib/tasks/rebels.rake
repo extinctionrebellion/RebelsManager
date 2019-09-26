@@ -1,7 +1,13 @@
 require 'csv'
 
 namespace :rebels do
-  desc "Get a CSV-ready list of all translations available in YML files"
+  desc "Generate token for all rebels missing one"
+  task generate_token: :environment do
+    Rebel.where(token: nil).find_each do |rebel|
+      rebel.update_column(:token, SecureRandom.hex(16).to_i(16).to_s(36))
+    end
+  end
+
   task import: :environment do
     CSV.foreach(Rails.root.join("rebels.csv"), headers: false) do |row|
       email = row[1]

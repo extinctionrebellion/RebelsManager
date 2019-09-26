@@ -40,3 +40,11 @@
 @include foundation-visibility-classes;
 // @include foundation-float-classes;
 @include foundation-flex-classes;
+
+@import './public/components/form';
+
+@include xr-public-form;
+
+body {
+  padding: $global-padding 0;
+}

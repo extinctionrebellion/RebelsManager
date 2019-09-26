@@ -51,4 +51,9 @@ class Rebel < ApplicationRecord
   def has_secure_email?
     email.include?("protonmail.") || email.include?("tutanota.")
   end
+
+  # Public profile url for this rebel
+  def profile_url
+    "#{ENV['APP_URL']}/public/rebels/#{id}/edit?a=#{created_at.to_i}&b=#{email}&c=#{token}"
+  end
 end

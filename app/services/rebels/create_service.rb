@@ -33,6 +33,7 @@ module Rebels
         @rebel.attributes = rebel_public_params(params)
       end
       validate_email_format! if @rebel.valid?
+      generate_token
       @rebel.save!
       subscribe_to_rebels_list
       subscribe_to_rebels_local_list
@@ -49,6 +50,10 @@ module Rebels
     end
 
     private
+
+    def generate_token
+      @rebel.token = SecureRandom.hex(16).to_i(16).to_s(36)
+    end
 
     def rebel_admin_params(params)
       params

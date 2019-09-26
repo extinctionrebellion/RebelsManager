@@ -1,7 +1,7 @@
 h1 My Rebel Profile
 
 = simple_form_for @rebel,
-                  url: public_rebel_path(@rebel, email: @rebel.email) do |f|
+                  url: public_rebel_path(@rebel, a: @rebel.created_at.to_i, b: @rebel.email, c: @rebel.token) do |f|
   = render "layouts/public/components/form_errors", object: f.object
 
   = f.input :name,

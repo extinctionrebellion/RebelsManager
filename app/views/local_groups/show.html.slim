@@ -26,3 +26,8 @@
       strong Mailtrain List ID
       br
       = @local_group.mailtrain_list_id.present? ? @local_group.mailtrain_list_id : "-"
+
+    p
+      strong Welcome Message
+      br
+      = @local_group.welcome_email_body.body.html_safe unless @local_group.nil?

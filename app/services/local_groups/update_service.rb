@@ -53,7 +53,8 @@ module LocalGroups
         .permit(
           :email,
           :mailtrain_list_id,
-          :name
+          :name,
+          :welcome_email_body
         )
     end
 

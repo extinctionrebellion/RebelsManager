@@ -11,6 +11,10 @@ class BaseController < ActionController::Base
 
   private
 
+  def redirect_unless_admin
+    redirect_to root_path and return if !current_user.admin?
+  end
+
   def set_error_flash(object, error_message)
     if object.valid?
       flash.now[:error] = "Unexpected error: #{error_message}"

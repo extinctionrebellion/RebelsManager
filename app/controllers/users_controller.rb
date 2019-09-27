@@ -58,10 +58,6 @@ class UsersController < BaseController
     )
   end
 
-  def redirect_unless_admin
-    redirect_to root_path and return if !current_user.admin?
-  end
-
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
       active_primary: 'users'

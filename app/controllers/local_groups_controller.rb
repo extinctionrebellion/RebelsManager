@@ -1,4 +1,5 @@
 class LocalGroupsController < BaseController
+  before_action :redirect_unless_admin
   before_action :get_local_group, only: [:show, :edit, :update, :destroy]
 
   def index

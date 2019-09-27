@@ -30,6 +30,7 @@ gem 'annotate'
 gem 'awesome_print'
 gem 'devise', '~> 4.7'
 gem 'ffaker'
+gem 'gettext_i18n_rails'
 gem 'rack-cors'
 gem 'rest-client'
 gem 'sentry-raven'
@@ -47,9 +48,13 @@ group :development, :test do
 end
 
 group :development do
+  # Find translations or build .mo files
+  gem 'gettext', '>=3.0.2', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  # Find translations inside haml/slim files
+  gem 'ruby_parser', require: false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

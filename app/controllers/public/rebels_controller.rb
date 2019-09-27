@@ -13,7 +13,7 @@ class Public::RebelsController < Public::BaseController
     )
     if service.run(params)
       redirect_to service.redirect_url,
-                  notice: "Welcome to the Rebellion!"
+                  notice: _("Welcome to the Rebellion!")
     else
       @rebel = service.rebel
       set_error_flash(service.rebel, service.error_message)
@@ -38,7 +38,7 @@ class Public::RebelsController < Public::BaseController
     service = Rebels::Public::UpdateService.new(rebel: @rebel)
     if service.run(params)
       redirect_to edit_public_rebel_path(@rebel, a: @rebel.created_at.to_i, b: @rebel.email, c: @rebel.token),
-                  notice: "Thanks a lot! Your rebel profile is now up-to-date."
+                  notice: _("Thanks a lot! Your rebel profile is now up-to-date.")
     else
       render :edit
     end

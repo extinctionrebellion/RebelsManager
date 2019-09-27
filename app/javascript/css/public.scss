@@ -42,8 +42,10 @@
 @include foundation-flex-classes;
 
 @import './public/components/form';
+@import './public/components/spacer';
 
 @include xr-public-form;
+@include xr-public-spacer;
 
 body {
   padding: $global-padding 0;

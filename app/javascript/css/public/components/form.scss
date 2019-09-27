@@ -258,12 +258,16 @@
         .label-text {
           cursor: pointer;
 
+          &.not-selected {
+            opacity: .65;
+          }
+
           a {
             cursor: default;
           }
 
-          &.not-selected {
-            opacity: .65;
+          small {
+            font-weight: $global-weight-normal;
           }
         }
       }
@@ -272,11 +276,6 @@
     div.radio_buttons {
       > label {
         margin-bottom: .5rem;
-
-        // .label-text,
-        // .help-text {
-        //   margin-bottom: .5rem;
-        // }
       }
 
       div.radio {

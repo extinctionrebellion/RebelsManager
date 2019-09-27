@@ -22,6 +22,7 @@
 #  source                     :string
 #  willingness_to_be_arrested :boolean
 #  token                      :string
+#  self_updated_at            :datetime
 #
 
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

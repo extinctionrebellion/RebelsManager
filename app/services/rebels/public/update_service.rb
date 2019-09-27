@@ -19,7 +19,7 @@ module Rebels
     def run!(params = {})
       service = Rebels::UpdateService.new(rebel: rebel)
       if service.run(params)
-        
+        rebel.update_column :self_updated_at, DateTime.now
       else
         raise service.error
       end

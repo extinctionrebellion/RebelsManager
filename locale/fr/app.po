@@ -17,8 +17,83 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 "\n"
 
+msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
+msgstr ""
+
+msgid "By answering the following questions, you will be listed in our secure Rebels database."
+msgstr ""
+
+msgid "Email address"
+msgstr ""
+
+msgid "Feel free to let us know about anything that can help Extinction Rebellion."
+msgstr ""
+
+msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
+msgstr ""
+
+msgid "In which areas would you like to participate?"
+msgstr ""
+
+msgid "Join the Rebellion"
+msgstr ""
+
+msgid "Join the Rebellion!"
+msgstr ""
+
+msgid "Join us!"
+msgstr ""
+
+msgid "Local group"
+msgstr ""
+
+msgid "Mobile phone"
+msgstr ""
+
+msgid "My Rebel Profile"
+msgstr ""
+
+msgid "Name or nickname"
+msgstr ""
+
+msgid "No local group (yet) next to you? Please select the one that makes the more sense to you."
+msgstr ""
+
+msgid "Of course, your opinion can change over time, depending on the action"
+msgstr ""
+
+msgid "Please select a language"
+msgstr ""
+
+msgid "Postcode"
+msgstr ""
+
+msgid "Preferred language"
+msgstr ""
+
+msgid "Select a local group"
+msgstr ""
+
+msgid "Sorry, can't save this record:"
+msgstr ""
+
 msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr ""
 
+msgid "Update"
+msgstr ""
+
+msgid "We may send text messages about public actions."
+msgstr ""
+
+msgid "We recommend that you select a maximum of 2 answers."
+msgstr ""
+
 msgid "Welcome to the Rebellion!"
+msgstr ""
+
+msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
+msgstr ""
+
+msgid "Yes, I am willing to be arrested during an action"
 msgstr ""

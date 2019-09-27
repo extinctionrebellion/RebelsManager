@@ -1,0 +1,342 @@
+@mixin xr-public-form {
+  form {
+    [data-toggle-state=hidden] {
+      display: none;
+    }
+
+    fieldset {
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .field {
+      &:not(.hidden) {
+        margin-bottom: 2rem;
+      }
+
+      &.no-margin-bottom-small {
+        @include breakpoint(small only) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .fields--less-spacing {
+      .field {
+        &:not(.hidden) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    button[type="submit"] {
+      margin-top: 2rem;
+    }
+
+    .field {
+      select,
+      [type='text'], [type='password'], [type='date'],
+      [type='datetime'], [type='datetime-local'], [type='month'],
+      [type='week'], [type='email'], [type='number'], [type='search'],
+      [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+        margin: 0;
+
+        &.large {
+          font-size: rem-calc(24);
+          height: 4rem;
+        }
+      }
+
+      .label-text {
+        abbr {
+          display: none;
+        }
+
+        ~ select,
+        ~ [type='text'], ~ [type='password'], ~ [type='date'], ~ [type='file'],
+        ~ [type='datetime'], ~ [type='datetime-local'], ~ [type='month'],
+        ~ [type='week'], ~ [type='email'], ~ [type='number'], ~ [type='search'],
+        ~ [type='tel'], ~ [type='time'], ~ [type='url'], ~ [type='color'],
+        ~ textarea,
+        ~ .fr-box,
+        ~ .input-group,
+        ~ .segmented-control,
+        ~ .switch-container,
+        ~ .input-with-icon,
+        ~ .selectize-control {
+          margin-top: .5rem;
+        }
+      }
+
+      .form-error,
+      .help-text {
+        margin: 0;
+        line-height: 1.75;
+        font-weight: 500;
+      }
+
+      .input-group {
+        margin-bottom: 0;
+      }
+
+      .input-with-icon {
+        position: relative;
+
+        &.left-icon {
+          .input-icon {
+            left: 1rem;
+          }
+        }
+
+        &.right-icon {
+          .input-icon {
+            right: 1rem;
+          }
+        }
+
+        .input-icon {
+          position: absolute;
+          top: calc(50% - .75rem);
+          color: $light-gray;
+          font-size: 1.5rem;
+          transition: color .25s ease;
+          cursor: pointer;
+
+          &:hover {
+            color: $color-green;
+          }
+        }
+
+        input {
+          &:hover,
+          &:focus {
+            ~ .input-icon {
+              color: $color-green;
+            }
+          }
+        }
+      }
+    }
+
+    .inline {
+      margin-bottom: 2rem;
+
+      .field,
+      .input-group,
+      .button,
+      .form-error,
+      .help-text {
+        margin-bottom: 0;
+      }
+
+      select,
+      [type='text'], ~ [type='password'], ~ [type='date'], ~ [type='file'],
+      [type='datetime'], ~ [type='datetime-local'], ~ [type='month'],
+      [type='week'], ~ [type='email'], ~ [type='number'], ~ [type='search'],
+      [type='tel'], ~ [type='time'], ~ [type='url'], ~ [type='color'],
+      textarea,
+      .fr-box,
+      .input-group,
+      .segmented-control,
+      .switch-container,
+      .input-with-icon,
+      .selectize-control {
+        margin-top: 0 !important;
+      }
+    }
+
+    .card {
+      .card-divider {
+        .field {
+          width: 100%;
+
+          [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+            border-color: $medium-gray;
+          }
+        }
+      }
+    }
+
+    .fields-box {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: $light-gray;
+      border-radius: 12px 12px 12px 0;
+
+      label {
+        color: $dark-gray;
+      }
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .horizontal-spacer {
+      display: inline-block;
+      width: 6px;
+    }
+
+    .is-invalid-input {
+      &:not(:focus) {
+        &::placeholder {
+          color: mix($input-background-invalid, $white, 50%);
+        }
+      }
+    }
+
+    div.boolean,
+    div.check_boxes,
+    div.radio_buttons {
+      label {
+        line-height: 1.6;
+      }
+
+      > label {
+        margin-bottom: .5rem;
+      }
+
+      .label-text {
+        abbr {
+          display: none;
+        }
+      }
+    }
+
+    div.boolean,
+    div.check_boxes {
+      label {
+        input {
+          position: absolute;
+          left: -9999em;
+        }
+
+        .custom-checkbox {
+          position: relative;
+          display: inline-block;
+        }
+
+        input + .custom-checkbox:before {
+          content: '';
+          background: $white;
+          border-radius: $global-radius;
+          border: 1px solid $medium-gray;
+          display: inline-block;
+          vertical-align: middle;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-right: .75rem;
+          transition: all .25s ease;
+          cursor: pointer;
+        }
+
+        input:checked + .custom-checkbox:before {
+          background: $color-green;
+          border-color: $color-green;
+        }
+
+        input:checked + .custom-checkbox:after {
+          content: '';
+          position: absolute;
+          padding: .15rem;
+          width: 1px;
+          height: .7rem;
+          border: solid $white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          top: .25rem;
+          left: .5rem;
+        }
+
+        .help-text {
+          margin: 0;
+        }
+
+        .label-text {
+          cursor: pointer;
+
+          &.not-selected {
+            opacity: .65;
+          }
+
+          a {
+            cursor: default;
+          }
+
+          small {
+            font-weight: $global-weight-normal;
+          }
+        }
+      }
+    }
+
+    div.radio_buttons {
+      > label {
+        margin-bottom: .5rem;
+      }
+
+      div.radio {
+        label {
+          font-weight: $global-weight-normal;
+        }
+
+        input:checked,
+        input:not(:checked) {
+          position: absolute;
+          left: -9999rem;
+        }
+
+        input:checked + label,
+        input:not(:checked) + label
+        {
+          position: relative;
+          margin-bottom: 1rem;
+          margin-left: 0;
+          padding-left: 2.3rem;
+          cursor: pointer;
+          line-height: 1.6;
+          display: inline-block;
+        }
+
+        input:checked + label:before,
+        input:not(:checked) + label:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 1.5rem;
+          height: 1.5rem;
+          border: 1px solid $light-gray;
+          border-radius: 100%;
+          background: $white;
+        }
+
+        input:checked + label:after,
+        input:not(:checked) + label:after {
+          content: '';
+          width: 1rem;
+          height: 1rem;
+          background: $color-green;
+          position: absolute;
+          top: .25rem;
+          left: .25rem;
+          border-radius: 100%;
+          transition: all .3s ease;
+        }
+
+        input:not(:checked) + label:after {
+          opacity: 0;
+          transform: scale(0);
+        }
+
+        input:checked + label:after {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

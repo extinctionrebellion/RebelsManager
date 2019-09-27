@@ -21,6 +21,8 @@
 #  status                     :string
 #  source                     :string
 #  willingness_to_be_arrested :boolean
+#  token                      :string
+#  self_updated_at            :datetime
 #
 
 class Rebel < ApplicationRecord
@@ -49,5 +51,10 @@ class Rebel < ApplicationRecord
 
   def has_secure_email?
     email.include?("protonmail.") || email.include?("tutanota.")
+  end
+
+  # Public profile url for this rebel
+  def profile_url
+    "#{ENV['APP_URL']}/public/rebels/#{id}/edit?a=#{created_at.to_i}&b=#{email}&c=#{token}"
   end
 end

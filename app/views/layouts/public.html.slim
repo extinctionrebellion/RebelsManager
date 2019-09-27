@@ -6,8 +6,7 @@ html(lang="en")
     title = yield :page_title
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'public', 'data-turbolinks-track': 'reload'
   body
     .grid-container
       .grid-x
@@ -20,7 +19,7 @@ html(lang="en")
 
           = yield :header
 
-          = render "layouts/components/messages"
+          = render "layouts/public/components/messages"
 
           = yield
           .spacer-3

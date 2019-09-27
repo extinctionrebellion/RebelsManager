@@ -18,6 +18,7 @@ rails db:migrate
 ## ENV variables
 
 - ALLOWED_ORIGINS (eg. "extinctionrebellion.be,www.extinctionrebellion.be")
+- APP_URL (eg. "https://rebels.extinctionrebellion.be")
 - POSTGRES_USER
 - POSTGRES_PASSWORD
 - POSTGRES_HOST

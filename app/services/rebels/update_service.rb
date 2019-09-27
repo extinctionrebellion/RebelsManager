@@ -65,6 +65,7 @@ module Rebels
           "MERGE_LOCAL_GROUP": @rebel.local_group&.name,
           "MERGE_LANGUAGE": @rebel.language,
           "MERGE_POSTCODE": @rebel.postcode,
+          "MERGE_PROFILE_URL": @rebel.profile_url,
           "FORCE_SUBSCRIBE": "yes",
           "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
         }

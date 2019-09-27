@@ -2,6 +2,7 @@ class BaseController < ActionController::Base
   layout "application"
 
   before_action :authenticate_user!
+  before_action :set_locale
 
   def render *args
     set_presenters
@@ -16,5 +17,9 @@ class BaseController < ActionController::Base
     else
       flash.now[:error] = object.errors.messages.values.flatten.join("<br>")
     end
+  end
+
+  def set_locale
+    I18n.locale = :en
   end
 end

@@ -129,7 +129,7 @@ module Rebels
         true # email is valid
       else
         raise PreconditionFailedError,
-              "Please double check the email address provided."
+              _("Please double check the email address provided.")
       end
     end
   end

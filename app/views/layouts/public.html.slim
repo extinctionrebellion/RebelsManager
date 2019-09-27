@@ -13,9 +13,18 @@ html(lang="#{I18n.locale}")
       .grid-x
         .cell.small-12.medium-8.large-6.medium-offset-2.large-offset-3
           .spacer-2
-          .grid-x
+          .grid-x.align-middle
             .cell.small-4
               = image_tag "extinction-rebellion-belgium.svg"
+            .cell.auto
+            .cell.shrink
+              = select_tag "locale",
+                           options_for_select([\
+                             ['English', 'en', { 'data-url' => url_for(params_plus(locale: "en")) }],
+                             ['Français', 'fr', { 'data-url' => url_for(params_plus(locale: "fr")) }],
+                             ['Nederlands', 'nl', { 'data-url' => url_for(params_plus(locale: "nl")) }] \
+                           ], FastGettext.locale),
+                           onchange: "window.location=this.selectedOptions[0].getAttribute('data-url');"
           .spacer-2
 
           = yield :header

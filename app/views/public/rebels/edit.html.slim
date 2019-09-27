@@ -8,9 +8,9 @@
   = render "layouts/public/components/form_errors", object: f.object
 
   = f.input :name,
-            label: "#{_("Name or nickname")} *",
+            label: _("Name or nickname"),
             placeholder: _("Name or nickname"),
-            required: true
+            required: false
 
   = f.input :local_group_id,
             as: :select,

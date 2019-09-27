@@ -37,15 +37,13 @@ class Rebel < ApplicationRecord
 
   attr_accessor :redirect
 
-  validates :name,
-            presence: { message: "Please provide a name or nickname" }
   validates :email,
-            presence: { message: "Please provide an email address" },
-            uniqueness: { message: "This email address is already linked to a rebel" }
+            presence: { message: _("Please provide an email address") },
+            uniqueness: { message: _("This email address is already linked to a rebel") }
   validates :consent,
             inclusion: {
               in: [true],
-              message: "Your consent about data usage is required"
+              message: _("Your consent about data usage is required")
             },
             on: :create
 

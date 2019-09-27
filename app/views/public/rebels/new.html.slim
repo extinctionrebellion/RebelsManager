@@ -14,9 +14,9 @@ p
                   url: public_rebels_path do |f|
 
   = f.input :name,
-            label: "#{_("Name or nickname")} *",
+            label: _("Name or nickname"),
             placeholder: _("Name or nickname"),
-            required: true
+            required: false
 
   = f.input :local_group_id,
             as: :select,

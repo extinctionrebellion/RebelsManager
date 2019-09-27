@@ -24,6 +24,7 @@ module Rebels
 
     def run!(params = {})
       @rebel.source = @source
+      @rebel.language ||= ENV['XR_BRANCH_DEFAULT_LANGUAGE']
       case @source
       when "admin"
         @rebel.consent = true

@@ -27,6 +27,7 @@ rails db:migrate
 - MAILTRAIN_REBELS_LIST_ID
 - MAILTRAIN_API_TOKEN
 - MAILTRAIN_API_ENDPOINT (eg. "https://lists.extinctionrebellion.be/api")
+- XR_BRANCH_DEFAULT_LANGUAGE (eg. "en")
 - XR_BRANCH_TIMEZONE (eg. "Europe/Tallinn", "PST" or "UTC")
 
 ## Tests

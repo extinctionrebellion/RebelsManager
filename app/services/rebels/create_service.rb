@@ -68,7 +68,6 @@ module Rebels
           :local_group_id,
           :name,
           :notes,
-          :on_basecamp,
           :phone,
           :postcode,
           :status,

@@ -81,13 +81,6 @@
 
     p These information are not shared with the rebel.
 
-    - if f.object.new_record? or f.object.local_group&.has_basecamp?
-      = f.input :on_basecamp,
-                as: :boolean,
-                label: "This rebel has a Basecamp account",
-                hint: "Relevant if the local group uses Basecamp",
-                wrapper: :foundation_checkbox
-
     = f.input :irl,
               as: :boolean,
               label: "This rebel has attended an XR event",

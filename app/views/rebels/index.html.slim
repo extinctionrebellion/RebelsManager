@@ -27,7 +27,6 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
           th(data-exportable) Status
           th(title="Willingness to be arrested") Arrest?
           th(title="We met in real life") IRL
-          th Basecamp?
           th(data-exportable) Postcode
           th(data-exportable data-sortable="false") WG
           th(data-exportable data-sortable="false") Tags
@@ -64,10 +63,6 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
               - if rebel.irl?
                 .inline-icon
                   = render "layouts/icons/like_bubble"
-            td(style="width: 10rem")
-              - if rebel.local_group&.has_basecamp? && rebel.on_basecamp?
-                .inline-icon
-                  = render "layouts/icons/basecamp"
             td
               = rebel.postcode
             td

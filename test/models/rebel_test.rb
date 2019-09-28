@@ -7,7 +7,6 @@
 #  email                      :string
 #  phone                      :string
 #  notes                      :text
-#  on_basecamp                :boolean
 #  created_at                 :datetime         not null
 #  updated_at                 :datetime         not null
 #  irl                        :boolean

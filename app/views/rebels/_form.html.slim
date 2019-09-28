@@ -1,0 +1,125 @@
+= section_heading heading: "Profile",
+                  spacing: false
+
+- if !f.object.new_record?
+  p
+    | These details can be updated by the rebel. Provide this private link:
+    br
+    = link_to @rebel.profile_url, @rebel.profile_url
+
+.grid-x
+  .cell.small-12.medium-8.large-6
+    .card
+      .card-section
+        = f.input :email,
+                  as: :email,
+                  label: "Email address *",
+                  placeholder: "Email address",
+                  required: true
+
+        - if !current_user.local_group
+          = f.input :local_group_id,
+                    as: :select,
+                    label: "Local Group *",
+                    collection: LocalGroup.all.order(:name),
+                    prompt: "Select a local group",
+                    required: false
+
+        = f.input :language,
+                  label: "Preferred language *",
+                  collection: [["Français", "fr"], ["Nederlands", "nl"], ["English", "en"]],
+                  required: true
+
+    = f.input :name,
+              label: "Name or nickname",
+              placeholder: "Name or nickname",
+              required: false
+
+    = f.input :phone,
+              label: "Mobile phone",
+              placeholder: "Mobile phone",
+              required: false,
+              hint: "We may send text messages about public actions"
+
+    = f.input :postcode,
+              label: "Postcode",
+              placeholder: "Postcode",
+              hint: "A postcode is better than a city name",
+              required: false
+
+    = f.input :willingness_to_be_arrested,
+              as: :boolean,
+              wrapper: :foundation_checkbox,
+              label: "Willingness to be arrested during an action",
+              required: false
+
+    = f.input :skill_ids,
+              as: :check_boxes,
+              label: "Areas of interest",
+              wrapper: :foundation_radio_buttons,
+              collection: Skill.all.order(:name)
+
+    = f.input :notes,
+              as: :text,
+              input_html: { rows: 5 },
+              label: "Specific skills/experience/resources OR thoughts/questions",
+              required: false
+
+    - if f.object.local_group&.working_groups&.any?
+      = section_heading heading: "Working Groups",
+                        spacing: :spacer
+
+      = f.input :working_group_ids,
+                as: :check_boxes,
+                wrapper: :foundation_radio_buttons,
+                collection: f.object.local_group&.working_groups,
+                label: ""
+
+
+    = section_heading heading: "Management",
+                    spacing: :spacer
+
+    p These information are not shared with the rebel.
+
+    - if f.object.new_record? or f.object.local_group&.has_basecamp?
+      = f.input :on_basecamp,
+                as: :boolean,
+                label: "This rebel has a Basecamp account",
+                hint: "Relevant if the local group uses Basecamp",
+                wrapper: :foundation_checkbox
+
+    = f.input :irl,
+              as: :boolean,
+              label: "This rebel has attended an XR event",
+              hint: "We have met this rebel in real life",
+              wrapper: :foundation_checkbox
+
+    = f.input :tag_list,
+              as: :text,
+              label: "Tags",
+              hint: "Separate tags with a comma (,)",
+              input_html: { rows: 2 }
+
+    = f.input :internal_notes,
+              as: :text,
+              input_html: { rows: 3 },
+              label: "Notes about this rebel",
+              required: false
+
+    = f.input :interests,
+              as: :text,
+              input_html: { rows: 5 },
+              label: "Working Group interests",
+              hint: "Legacy data",
+              required: false
+
+    = f.input :status,
+              label: "Activity status",
+              as: :radio_buttons,
+              wrapper: :foundation_radio_buttons,
+              collection: [ \
+                ["💥  Active rebel", "active"],
+                ["⏸  Paused rebel", "paused"],
+                ["🛑  Inactive rebel", "inactive"] \
+              ]
+    .spacer-2

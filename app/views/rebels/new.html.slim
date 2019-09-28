@@ -4,35 +4,8 @@
 
 = simple_form_for @rebel,
                   url: rebels_path do |f|
-  - if f.object.errors.any?
-    .warning.callout
-      | Oups, impossible d'enregistrer vos infos pour les raisons suivantes:
-      br
-      ul
-      - f.object.errors.messages.values.flatten.each do |msg|
-        li = msg
-
-  .grid-x.grid-padding-x
-    .cell.small-12.medium-6.large-4
-      = section_heading heading: "Details",
-                        spacing: false
-
-      = render 'rebels/form/details', f: f
-    .cell.small-12.medium-6.large-8
-      = section_heading heading: "Skills",
-                        spacing: :spacer
-
-      = render 'rebels/form/skills', f: f
-
-      = section_heading heading: "Notes",
-                        spacing: false
-
-      = render 'rebels/form/notes', f: f
-
-      = section_heading heading: "Tags",
-                        spacing: :spacer
-
-      = render 'rebels/form/tags', f: f
+  = render "layouts/components/form_errors", object: f.object
+  = render "form", f: f
 
   = f.button :submit,
              "Save"

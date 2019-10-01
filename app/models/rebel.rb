@@ -29,9 +29,9 @@ class Rebel < ApplicationRecord
 
   belongs_to :local_group, optional: true
 
-  has_many :working_group_enrollments
+  has_many :working_group_enrollments, dependent: :destroy
   has_many :working_groups, through: :working_group_enrollments
-  has_many :rebel_skills
+  has_many :rebel_skills, dependent: :destroy
   has_many :skills, through: :rebel_skills
 
   attr_accessor :redirect

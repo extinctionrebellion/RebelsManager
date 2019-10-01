@@ -8,3 +8,4 @@ _site/
 .bundle/
 vendor/
 
+.tool-versions

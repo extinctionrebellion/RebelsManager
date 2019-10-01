@@ -1,4 +1,57 @@
 ---
 ---
 
+$header-bg-color: #C70083 !default;
+$header-bg-color-secondary: #000000 !default;
+
+$section-headings-color: #000000 !default;
+$body-text-color: #1E3141 !default;
+$body-link-color: #75D1F1 !default;
+$blockquote-text-color: #51535A !default;
+
+$code-bg-color: #F2F2F2 !default;
+$code-text-color: #16A938 !default;
+
 @import "{{ site.theme }}";
+
+@font-face {
+  font-family: 'Fucxed';
+  src: url('../fonts/Fucxed/fucxedcaps-v2-webfont.woff2') format('woff2'),
+       url('../fonts/Fucxed/fucxedcaps-v2-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Crimson Text';
+  src: url('../fonts/Crimson-Text/crimson-text-v10-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Crimson Text Regular'), local('CrimsonText-Regular'),
+          url('../fonts/Crimson-Text/crimson-text-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('../fonts/Crimson-Text/crimson-text-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+          url('../fonts/Crimson-Text/crimson-text-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
+          url('../fonts/Crimson-Text/crimson-text-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+          url('../fonts/Crimson-Text/crimson-text-v10-latin-regular.svg#CrimsonText') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  font-family: 'Crimson Text';
+    // font-size: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Fucxed;
+}
+
+.page-header {
+  h1.project-name {
+
+  }
+
+  h2.project-tagline {
+    margin-top: 0;
+    font-family: 'Crimson Text';
+    font-size: 2rem;
+  }
+}

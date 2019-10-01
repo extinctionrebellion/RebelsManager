@@ -18,12 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Rebels Manager - Extinction Rebellion
+title: Rebels Manager
 email: it@extinctionrebellion.be
 description: >- # this means to ignore newlines until "baseurl:"
-  The Rebels Manager is a CRM project for Extinction Rebellion. We are looking
-  for programmers, sysadmins and security experts to join our team and provide
-  an awesome tool to all national branches of Extinction Rebellion.
+  Empowering Rebels with code - The Playbook
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  extinctionrebellion
@@ -31,7 +29,7 @@ github_username:  extinctionrebellion
 # Build settings
 theme: jekyll-theme-cayman
 plugins:
-  - jekyll-feed
+  - jekyll-github-metadata
 
 # Exclude from processing.
 # The following items will not be processed, by default.

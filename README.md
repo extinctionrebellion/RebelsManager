@@ -6,16 +6,16 @@ This app is currently used by XR Belgium. You can start using it for our own nat
 
 Table of Contents
 =================
-      * [Ruby version](#ruby-version)
-      * [Database setup (PostgreSQL)](#database-setup-postgresql)
-      * [ENV variables](#env-variables)
-      * [Tests](#tests)
-      * [Additional information](#additional-information)
-         * [Built With](#built-with)
-         * [Contributing](#contributing)
-            * [They contributed already <g-emoji class="g-emoji" alias="pray" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f64f.png">🙏</g-emoji>](#they-contributed-already-)
-         * [License](#license)
-         * [Dedication](#dedication)
+* [Ruby version](#ruby-version)
+* [Database setup (PostgreSQL)](#database-setup-postgresql)
+* [ENV variables](#env-variables)
+* [Tests](#tests)
+* [Additional information](#additional-information)
+  * [Built With](#built-with)
+  * [Contributing](#contributing)
+    * [They contributed already <g-emoji class="g-emoji" alias="pray" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f64f.png">🙏</g-emoji>](#they-contributed-already-)
+  * [License](#license)
+  * [Dedication](#dedication)
 
 ## Ruby version
 

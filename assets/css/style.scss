@@ -1,8 +1,9 @@
 ---
 ---
 
-$header-bg-color: #C70083 !default;
-$header-bg-color-secondary: #000000 !default;
+$header-heading-color: #000 !default;
+$header-bg-color: #75D1F1 !default;
+$header-bg-color-secondary: #75D1F1 !default;
 
 $section-headings-color: #000000 !default;
 $body-text-color: #1E3141 !default;
@@ -36,22 +37,53 @@ $code-text-color: #16A938 !default;
 }
 
 body {
-  font-family: 'Crimson Text';
-    // font-size: 1.5rem;
+  // font-family: 'Crimson Text';
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: Fucxed;
 }
 
-.page-header {
-  h1.project-name {
+h1, h2, h3, h4, h5, h6 {
+  // font-family: Fucxed;
+  font-family: 'Crimson Text';
+}
 
+p,
+li {
+  font-size: .9rem;
+}
+
+a#skip-to-content {
+  display: none;
+}
+
+.page-header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  #logo {
+    img {
+      width: 10rem;
+    }
+  }
+
+  h1.project-name {
+    font-family: Fucxed;
+
+    a {
+      color: $header-heading-color;
+    }
   }
 
   h2.project-tagline {
     margin-top: 0;
     font-family: 'Crimson Text';
     font-size: 2rem;
+  }
+
+  .btn {
+    color: #3760AA;
+    border-color: #3760AA;
   }
 }

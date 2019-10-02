@@ -1,0 +1,11 @@
+docs_list_title: Rebels Manager
+docs:
+
+- title: Project Overview
+  url: /
+
+- title: Features
+  url: /features
+
+- title: Security
+  url: /security

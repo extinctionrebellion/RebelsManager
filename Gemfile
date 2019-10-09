@@ -76,3 +76,5 @@ require 'rbconfig'
 if RbConfig::CONFIG['target_os'] =~ /(?i-mx:bsd|dragonfly)/
   gem 'rb-kqueue', '>= 0.2'
 end
+gem 'symmetric-encryption'
+gem 'devise-2fa'

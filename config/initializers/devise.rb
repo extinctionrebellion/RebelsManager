@@ -296,4 +296,34 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
+  # ==> Devise TwoFactor Extension
+  # Configure OTP extension for devise
+
+  # OTP is mandatory, users are going to be asked to
+  # enroll OTP the next time they sign in, before they can successfully complete the session establishment.
+  # This is the global value, can also be set on each user.
+  #config.otp_mandatory = true
+
+  # Drift: a window which provides allowance for drift between a user's token device clock
+  # (and therefore their OTP tokens) and the authentication server's clock.
+  # Expressed in minutes centered at the current time. (Note: it's a number, *NOT* 3.minutes )
+  #config.otp_drift_window = 3
+
+  # Users that have logged in longer than this time ago, are going to be asked their password
+  # (and an OTP challenge, if enabled) before they can see or change their otp informations.
+  #config.otp_credentials_refresh = 15.minutes
+
+  # Users are given a list of one-time recovery tokens, for emergency access
+  # set to false to disable giving recovery tokens.
+  #config.otp_recovery_tokens = 10
+
+  # The user is allowed to set his browser as "trusted", no more OTP challenges will be
+  # asked for that browser, for a limited time.
+  # set to false to disable setting the browser as trusted
+  #config.otp_trust_persistence = 1.month
+
+  # The name of the token issuer, to be added to the provisioning
+  # url. Display will vary based on token application. (defaults to the Rails application class)
+  #config.otp_issuer = 'my_application'
 end

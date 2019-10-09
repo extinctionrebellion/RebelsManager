@@ -4,6 +4,19 @@
 
 This app is currently used by XR Belgium. You can start using it for our own national branch or even at a local group level, but the app allows to manage multiple local groups.
 
+Table of Contents
+=================
+* [Ruby version](#ruby-version)
+* [Database setup (PostgreSQL)](#database-setup-postgresql)
+* [ENV variables](#env-variables)
+* [Tests](#tests)
+* [Additional information](#additional-information)
+  * [Built With](#built-with)
+  * [Contributing](#contributing)
+    * [They contributed already <g-emoji class="g-emoji" alias="pray" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f64f.png">🙏</g-emoji>](#they-contributed-already-)
+  * [License](#license)
+  * [Dedication](#dedication)
+
 ## Ruby version
 
 2.6.3

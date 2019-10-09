@@ -22,6 +22,7 @@
 #  willingness_to_be_arrested :boolean
 #  token                      :string
 #  self_updated_at            :datetime
+#  availability               :string
 #
 
 class Rebel < ApplicationRecord

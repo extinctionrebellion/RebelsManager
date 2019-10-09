@@ -73,6 +73,7 @@ module Rebels
           :status,
           :tag_list,
           :willingness_to_be_arrested,
+          :availability,
           skill_ids: [],
           working_group_ids: []
         )
@@ -91,6 +92,7 @@ module Rebels
         :redirect,
         :willingness_to_be_arrested,
         :tag_list,
+        :availability,
         skill_ids: []
       )
     end

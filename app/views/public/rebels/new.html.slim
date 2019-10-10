@@ -74,6 +74,17 @@ p
             hint: _("Feel free to let us know about anything that can help Extinction Rebellion."),
             required: false
 
+  = f.input :availability,
+            label: "My availability for Extinction Rebellion",
+            as: :radio_buttons,
+            wrapper: :foundation_radio_buttons,
+            collection: [ \
+              ["I am currently unavailable, you have all my support!", 'unavailable'],
+              ["A few hours a month", 'few_hours_a_month'],
+              ["A couple of hours a week", 'few_hours_a_week'],
+              ["More than 10 hours a week", '10_hours_a_week'] \
+            ]
+
   = f.input :consent,
             as: :boolean,
             wrapper: :foundation_checkbox,

@@ -60,6 +60,7 @@ module Rebels
       params
         .require(:rebel)
         .permit(
+          :availability,
           :email,
           :interests,
           :internal_notes,
@@ -73,7 +74,6 @@ module Rebels
           :status,
           :tag_list,
           :willingness_to_be_arrested,
-          :availability,
           skill_ids: [],
           working_group_ids: []
         )
@@ -81,18 +81,18 @@ module Rebels
 
     def rebel_public_params(params)
       params.require(:rebel).permit(
+        :availability,
         :consent,
-        :name,
         :email,
         :language,
         :local_group_id,
+        :name,
         :notes,
         :phone,
         :postcode,
         :redirect,
-        :willingness_to_be_arrested,
         :tag_list,
-        :availability,
+        :willingness_to_be_arrested,
         skill_ids: []
       )
     end

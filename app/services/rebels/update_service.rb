@@ -76,6 +76,7 @@ module Rebels
       params
         .require(:rebel)
         .permit(
+          :availability,
           :email,
           :interests,
           :internal_notes,

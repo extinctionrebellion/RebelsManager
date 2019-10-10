@@ -34,7 +34,7 @@ gem 'gettext_i18n_rails'
 gem 'rack-cors'
 gem 'rest-client'
 gem 'sentry-raven'
-gem 'simple_form', '~> 4.1'
+gem 'simple_form', '~> 5.0'
 gem 'slim', '~> 4.0'
 gem 'validates_email_format_of'
 

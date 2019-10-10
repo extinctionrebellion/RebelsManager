@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include DecoratorHelpers
+
   layout :layout_by_resource
 
   before_action :set_raven_context

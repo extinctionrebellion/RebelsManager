@@ -10,7 +10,7 @@ class RebelsController < BaseController
   end
 
   def show
-    @rebel = Rebel.find(params[:id])
+    @rebel = RebelDecorator.new(Rebel.find(params[:id]))
     @mailtrain_lists = MailtrainService.instance
       .get_subscriptions(@rebel.email)
   end

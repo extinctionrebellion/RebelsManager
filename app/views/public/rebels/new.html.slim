@@ -5,7 +5,7 @@
 
 p
   = _("By answering the following questions, you will be listed in our secure Rebels database.")
-  ==< _("Your data can be deleted anytime by sending an email to %{email}." % { email: mail_to("recruitment@extinctionrebellion.be") })
+  ==< _("Your data can be deleted anytime by sending an email to %{email}.") % { email: mail_to("recruitment@extinctionrebellion.be") }
 
 p
   = _("Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you.")
@@ -73,6 +73,17 @@ p
             label: _("What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"),
             hint: _("Feel free to let us know about anything that can help Extinction Rebellion."),
             required: false
+
+  = f.input :availability,
+            label: _("My availability for Extinction Rebellion"),
+            as: :radio_buttons,
+            wrapper: :foundation_radio_buttons,
+            collection: [ \
+              [_("I am currently unavailable, you have all my support!"), 'unavailable'],
+              [_("A few hours a month"), 'few_hours_a_month'],
+              [_("A couple of hours a week"), 'few_hours_a_week'],
+              [_("More than 10 hours a week"), '10_hours_a_week'] \
+            ]
 
   = f.input :consent,
             as: :boolean,

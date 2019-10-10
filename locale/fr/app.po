@@ -115,3 +115,43 @@ msgstr "De quelles compétences/expériences/ressources disposez-vous? Avez-vous
 msgid "Yes, I am willing to be arrested during an action"
 msgstr "Oui, je suis prêt à me faire arrêter durant une action"
 
+#: 
+msgid "A couple of hours a week"
+msgstr "Quelques heures par semaine"
+
+#: 
+msgid "A few hours a month"
+msgstr "Quelques heures par mois"
+
+#: 
+msgid "More than 10 hours a week"
+msgstr "Plus de 10 heures par semaine"
+
+#: 
+msgid "Please double check the email address provided."
+msgstr "Veuillez vérifier le format de l'adresse email renseignée."
+
+#: 
+msgid "Please provide an email address"
+msgstr "Veuillez renseigner une adresse email."
+
+#: 
+msgid "This email address is already linked to a rebel"
+msgstr "Cette adresse email est déjà liée à un.e rebelle."
+
+#: 
+msgid "Your consent about data usage is required"
+msgstr "Votre consentement concernant l'usage de vos données est requis."
+
+#: 
+msgid "I am currently unavailable, you have all my support!"
+msgstr "Je suis indisponible pour le moment, vous avez tout mon soutien!"
+
+#: 
+msgid "My availability for Extinction Rebellion"
+msgstr "Ma disponibilité pour Extinction Rebellion"
+
+#: 
+msgid "Your data can be deleted anytime by sending an email to %{email}."
+msgstr "Vos données peuvent être supprimées à tout moment en envoyant un email à %{email}."
+

@@ -1,7 +1,8 @@
 module DecoratorHelpers
   def self.included(controller)
     helpers = [
-      :foo_decorator
+      :decorate,
+      :rebel_decorator
     ]
 
     if controller.respond_to?(:helper_method)
@@ -32,7 +33,7 @@ module DecoratorHelpers
     model
   end
 
-  def foo_decorator(reload: false)
-    decorate(@foo, cache: true, reload: reload)
+  def rebel_decorator(reload: false)
+    decorate(@rebel, cache: true, reload: reload)
   end
 end

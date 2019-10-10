@@ -115,4 +115,16 @@
                 ["⏸  Paused rebel", "paused"],
                 ["🛑  Inactive rebel", "inactive"] \
               ]
+
+    = f.input :availability,
+              label: "Availability",
+              as: :radio_buttons,
+              wrapper: :foundation_radio_buttons,
+              collection: [ \
+                ["I am currently unavailable, you have all my support!", 'unavailable'],
+                ["A few hours a month", 'few_hours_a_month'],
+                ["A couple of hours a week", 'few_hours_a_week'],
+                ["More than 10 hours a week", '10_hours_a_week'] \
+              ]
+
     .spacer-2

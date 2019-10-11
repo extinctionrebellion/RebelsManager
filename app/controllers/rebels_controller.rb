@@ -30,6 +30,7 @@ class RebelsController < BaseController
     else
       @rebel = service.rebel
       flash.now[:error] = service.error_message unless !@rebel.valid?
+      @existing_rebel = existing_rebel_when_present(@rebel)
       render :new
     end
   end
@@ -60,6 +61,13 @@ class RebelsController < BaseController
   end
 
   private
+
+  def existing_rebel_when_present(rebel)
+    email_error = rebel.errors.details[:email]
+    if email_error.any? && email_error.first[:error] == :taken
+      Rebel.find_by(email: @rebel.email)
+    end
+  end
 
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(

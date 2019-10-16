@@ -53,6 +53,11 @@
               label: "Willingness to be arrested during an action",
               required: false
 
+    = f.input :number_of_arrests,
+              label: "Number of times arrested",
+              as: :integer,
+              required: false
+
     = f.input :skill_ids,
               as: :check_boxes,
               label: "Areas of interest",

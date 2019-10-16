@@ -11,7 +11,13 @@ if User.none?
 end
 
 if Rebel.none?
+  local_group = LocalGroup.find_or_create_by(name: 'Example Group')
+
   5.times do
-    Rebel.create(name: FFaker::Name.unique.name, email: FFaker::Internet.unique.email, consent: true)
+    Rebel.create(name: FFaker::Name.unique.name,
+                 email: FFaker::Internet.unique.email,
+                 consent: true,
+                 language: 'en',
+                 local_group: local_group)
   end
 end

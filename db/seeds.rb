@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+if User.none?
+  User.create(email: 'admin@example.com', password: 'admin123', admin: true)
+end
+
+if Rebel.none?
+  5.times do
+    Rebel.create(name: FFaker::Name.unique.name, email: FFaker::Internet.unique.email, consent: true)
+  end
+end

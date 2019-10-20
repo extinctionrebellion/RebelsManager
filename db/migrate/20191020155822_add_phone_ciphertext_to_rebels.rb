@@ -1,4 +1,4 @@
-class AddPhoneCiphertextToRebels < ActiveRecord::Migration[5.2]
+class AddPhoneCiphertextToRebels < ActiveRecord::Migration[6.0]
   def change
     # encrypted data
     add_column :rebels, :phone_ciphertext, :string

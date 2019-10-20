@@ -28,5 +28,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :recoverable,
          :lockable, :trackable, :timeoutable
 
+  encrypts :email, migrating: true
+  blind_index :email, migrating: true
+
   belongs_to :local_group, optional: true
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_155612) do
+ActiveRecord::Schema.define(version: 2019_10_20_155822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,8 +86,11 @@ ActiveRecord::Schema.define(version: 2019_10_20_155612) do
     t.string "availability"
     t.string "email_ciphertext"
     t.string "email_bidx"
+    t.string "phone_ciphertext"
+    t.string "phone_bidx"
     t.index ["email_bidx"], name: "index_rebels_on_email_bidx", unique: true
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
+    t.index ["phone_bidx"], name: "index_rebels_on_phone_bidx", unique: true
   end
 
   create_table "skills", force: :cascade do |t|

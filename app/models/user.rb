@@ -32,7 +32,4 @@ class User < ApplicationRecord
   blind_index :email
 
   belongs_to :local_group, optional: true
-
-  # @TODO: Remove this line after dropping email column
-  self.ignored_columns = ['email']
 end

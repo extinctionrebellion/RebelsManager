@@ -61,7 +61,4 @@ class Rebel < ApplicationRecord
   def profile_url
     "#{ENV['APP_URL']}/public/rebels/#{id}/edit?a=#{created_at.to_i}&b=#{email}&c=#{token}"
   end
-
-  # @TODO: Remove this lines after dropping email & phone columns
-  self.ignored_columns = ['email', 'phone']
 end

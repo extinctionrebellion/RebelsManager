@@ -26,6 +26,7 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
           th(data-exportable) Joined
           th(data-exportable) Status
           th(title="Willingness to be arrested") Arrest?
+          th(title="Number of arrests") #&nbsp;Arrests
           th(title="We met in real life") IRL
           th(data-exportable) Postcode
           th(data-exportable data-sortable="false") WG
@@ -33,6 +34,7 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
           th.hide(data-exportable) Phone
           th.hide(data-exportable) IRL
           th.hide(data-exportable) Willingness to be arrested
+          th.hide(data-exportable) Number of arrests
           th.hide(data-exportable) Email
           th.hide(data-exportable) Secure Email
           th.hide(data-exportable) WG
@@ -42,7 +44,7 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
           tr(id="selected-id-#{rebel.id}" data-object-id="#{rebel.id}" data-rebel-name="#{rebel.name}")
             td
             td
-              => link_to (rebel.name.present? ? rebel.name : "-"),
+              => link_to (rebel.name.presence || "-"),
                         rebel_path(rebel)
               - if rebel.notes.present?
                 small(data-tooltip title="#{rebel.notes}")
@@ -54,12 +56,14 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
             td(data-sort="#{rebel.created_at.iso8601}" style="width: 8rem")
               = l(rebel.created_at.to_date)
             td
-              = rebel.status.present? ? rebel.status : "-"
+              = rebel.status.presence || "-"
             td
               - if rebel.willingness_to_be_arrested?
                 .inline-icon
                   = render "layouts/icons/check_square"
-            td(style="width: 10rem")
+            td
+              = rebel.number_of_arrests.presence || "-"
+            td(style="width: 5rem")
               - if rebel.irl?
                 .inline-icon
                   = render "layouts/icons/like_bubble"
@@ -85,6 +89,8 @@ div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.son
               = rebel.irl? ? 'yes' : 'unknown'
             td.hide
               = rebel.willingness_to_be_arrested? ? 'yes' : 'unknown'
+            td.hide
+              = rebel.number_of_arrests.presence || 'unknown'
             td.hide
               = rebel.email
             td.hide

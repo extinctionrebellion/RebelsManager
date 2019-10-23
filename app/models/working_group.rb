@@ -3,11 +3,11 @@
 # Table name: working_groups
 #
 #  id             :bigint           not null, primary key
-#  local_group_id :bigint           not null
+#  color          :string
 #  name           :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  color          :string
+#  local_group_id :bigint           not null
 #
 
 class WorkingGroup < ApplicationRecord

@@ -35,11 +35,11 @@ class Rebel < ApplicationRecord
   has_many :rebel_skills, dependent: :destroy
   has_many :skills, through: :rebel_skills
 
-  encrypts :phone, migrating: true
-  blind_index :phone, migrating: true
+  encrypts :phone
+  blind_index :phone
 
-  encrypts :email, migrating: true
-  blind_index :email, migrating: true
+  encrypts :email
+  blind_index :email
 
   attr_accessor :redirect
 

@@ -5,6 +5,6 @@ class AddPhoneCiphertextToRebels < ActiveRecord::Migration[6.0]
 
     # blind index
     add_column :rebels, :phone_bidx, :string
-    add_index :rebels, :phone_bidx, unique: true
+    add_index :rebels, :phone_bidx, unique: false
   end
 end

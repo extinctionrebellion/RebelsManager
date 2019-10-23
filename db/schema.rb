@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_155822) do
     t.string "email_bidx"
     t.string "phone_ciphertext"
     t.string "phone_bidx"
+    t.integer "number_of_arrests"
     t.index ["email_bidx"], name: "index_rebels_on_email_bidx", unique: true
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
     t.index ["phone_bidx"], name: "index_rebels_on_phone_bidx", unique: true

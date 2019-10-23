@@ -99,7 +99,6 @@ module Rebels
         :local_group_id,
         :name,
         :notes,
-        :number_of_arrests,
         :phone,
         :postcode,
         :redirect,

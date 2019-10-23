@@ -11,13 +11,23 @@ if User.none?
 end
 
 if Rebel.none?
-  local_group = LocalGroup.find_or_create_by(name: 'Example Group')
+  local_group = LocalGroup.find_or_create_by(name: FFaker::Address.city)
 
-  5.times do
-    Rebel.create(name: FFaker::Name.unique.name,
-                 email: FFaker::Internet.unique.email,
-                 consent: true,
-                 language: 'en',
-                 local_group: local_group)
+  WorkingGroup.create(local_group: local_group, name: 'Action & Strategy', color: '#16A938')
+  WorkingGroup.create(local_group: local_group, name: 'Communication & IT', color: '#3760AA')
+  WorkingGroup.create(local_group: local_group, name: 'Outreach', color: '#985C9B')
+
+  tags = ['', 'safe-list', 'xr-cafe', 'local-group-coordinator']
+
+  20.times do
+    rebel = Rebel.create(
+      name: FFaker::Name.unique.name,
+      email: FFaker::Internet.unique.email,
+      consent: true,
+      language: 'en',
+      local_group: local_group,
+      tag_list: tags.sample,
+      working_groups: WorkingGroup.limit(1).order("RANDOM()")
+    )
   end
 end

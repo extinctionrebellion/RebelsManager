@@ -14,45 +14,22 @@ p
   |
     Tip: Filter rebels tagged 'awesome' by searching for <code>#awesome</code>.
 
-div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.song}")
+div(data-controller="datatable" data-datatable-source="#{rebels_path(format: :json)}" data-datatable-export-title="#{FFaker::Music.song}")
   .icons.icons--large
-    table(data-target="datatable.table")
+    table(data-target="datatable.table" data-items-count="#{@rebels_count}")
       thead
         tr
-          th.select-column
-          th(data-exportable) Name
-          th Email
-          th(data-exportable) Local Group
-          th(data-exportable) Joined
-          th(data-exportable) Status
-          th(title="Willingness to be arrested") Arrest?
-          th(title="Number of arrests") #&nbsp;Arrests
-          th(title="We met in real life") IRL
-          th(data-exportable) Postcode
-          th(data-exportable data-sortable="false") WG
-          th(data-exportable data-sortable="false") Tags
-          th.hide(data-exportable) Phone
-          th.hide(data-exportable) IRL
-          th.hide(data-exportable) Willingness to be arrested
-          th.hide(data-exportable) Number of arrests
-          th.hide(data-exportable) Email
-          th.hide(data-exportable) Secure Email
-          th.hide(data-exportable) WG
-          th.hide(data-exportable) Notes
+          th(data-column="name") Name
+          th(data-column="email") Email
+          th(data-column="local_group") Local Group
+          th(data-column="created_at") Joined
+          th(data-column="status") Status
+          th(data-column="postcode") Postcode
+          th(data-column="working_groups") WG
+          th(data-column="tags") Tags
       tbody
         - @rebels.each do |rebel|
-          tr(id="selected-id-#{rebel.id}" data-object-id="#{rebel.id}" data-rebel-name="#{rebel.name}")
-            td
-            td
-              => link_to (rebel.name.presence || "-"),
-                        rebel_path(rebel)
-              - if rebel.notes.present?
-                small(data-tooltip title="#{rebel.notes}")
-                  | 🗒
-            td
-              | #{rebel.email.split("@")&.first}@&hellip;
-            td(style="width: 10rem")
-              = rebel.local_group&.name
+          tr
             td(data-sort="#{rebel.created_at.iso8601}" style="width: 8rem")
               = l(rebel.created_at.to_date)
             td

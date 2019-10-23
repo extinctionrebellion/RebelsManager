@@ -7,6 +7,19 @@ class RebelsController < BaseController
     else
       @rebels = Rebel.all.order(created_at: :desc)
     end
+    respond_to do |format|
+      format.html do
+        @rebels_count = rebels.count
+      end
+      format.json do
+        render json:
+          RebelDatatable.new(
+            params,
+            view_context: view_context,
+            collection: rebels
+          )
+      end
+    end
   end
 
   def show

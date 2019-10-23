@@ -10,17 +10,15 @@ export default class extends Controller {
   initialize() {
     window.JSZip = jsZip
 
+    // set export file name
     var exportTitle = '*'
-    var pdfOrientation = 'portrait'
-    var pdfFooter = ''
-    var pdfHeader = null
-
     if (this.data.get('export-title')) {
       exportTitle = this.data.get('export-title')
     }
 
     window.selectedRows = new Map()
     $(this.tableTarget).DataTable({
+      ajax: this.data.get('source'),
       buttons: {
         buttons: [
           {
@@ -60,15 +58,18 @@ export default class extends Controller {
       ],
       dom: "<'datatable-header grid-x grid-padding-x'<'cell auto" +
         "'f><'cell small-12 medium-shrink'B>r>t",
-      info: false,
+      info: true,
       language: {
         search: ''
       },
-      paging: false,
+      pageLength: 100,
+      paging: true,
+      pagingType: 'numbers',
       order: [[4, 'desc']],
       select: {
         style: 'multi'
-      }
+      },
+      serverSide: true
     }).on('deselect', (e, dt, type, indexes) => {
       $.map(dt.rows(indexes).nodes().to$(), (val, i) => {
         window.selectedRows.delete($(val).attr('id'))

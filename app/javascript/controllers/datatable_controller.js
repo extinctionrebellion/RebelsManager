@@ -1,6 +1,4 @@
 import { Controller } from 'stimulus'
-import moment from 'moment'
-import jsZip from 'jszip'
 
 export default class extends Controller {
   static targets = [
@@ -8,78 +6,29 @@ export default class extends Controller {
   ]
 
   initialize() {
-    window.JSZip = jsZip
-
-    // set export file name
-    var exportTitle = '*'
-    if (this.data.get('export-title')) {
-      exportTitle = this.data.get('export-title')
-    }
-
-    window.selectedRows = new Map()
-    $(this.tableTarget).DataTable({
-      ajax: this.data.get('source'),
-      buttons: {
-        buttons: [
-          {
-            extend: 'collection',
-            text: 'Export',
-            autoClose: true,
-            background: false,
-            buttons: [
-              {
-                extend: 'copyHtml5',
-                exportOptions: {
-                  columns: '[data-exportable]'
-                }
-              },
-              {
-                extend: 'csvHtml5',
-                filename: exportTitle + ' - ' +
-                  moment().format('YYYY-MM-DD-hh-mm a'),
-                exportOptions: {
-                  columns: '[data-exportable]'
-                }
-              },
-              {
-                extend: 'excelHtml5',
-                filename: exportTitle + ' - ' +
-                  moment().format('YYYY-MM-DD-hh-mm a'),
-                exportOptions: {
-                  columns: '[data-exportable]'
-                }
-              }
-            ]
-          }
-        ]
-      },
-      columnDefs: [
-        { targets: 0, orderable: false, className: 'select-checkbox' }
+    var source = this.data.get('source')
+    var table = $(this.tableTarget)
+    table.DataTable({
+      ajax: source,
+      buttons: [],
+      // columns: table.find('th').map(th => { data: $(th).data('column') }),
+      columns: [
+        {data: 'name'},
+        {data: 'email'}
       ],
       dom: "<'datatable-header grid-x grid-padding-x'<'cell auto" +
-        "'f><'cell small-12 medium-shrink'B>r>t",
+        "'f><'cell small-12 medium-shrink'B>r>t" +
+        "<'datatable-footer grid-x grid-padding-x align-middle'<'cell small-12 medium-auto'i><'cell shrink'p>>",
       info: true,
       language: {
         search: ''
       },
-      pageLength: 100,
+      pageLength: 10,
       paging: true,
       pagingType: 'numbers',
-      order: [[4, 'desc']],
-      select: {
-        style: 'multi'
-      },
+      processing: true,
+      // order: [[4, 'desc']],
       serverSide: true
-    }).on('deselect', (e, dt, type, indexes) => {
-      $.map(dt.rows(indexes).nodes().to$(), (val, i) => {
-        window.selectedRows.delete($(val).attr('id'))
-      })
-    }).on('select', (e, dt, type, indexes) => {
-      $.map(dt.rows(indexes).nodes().to$(), (val, i) => {
-        if ($.inArray($(val).attr('id'), window.selectedRows) < 0) {
-          window.selectedRows.set($(val).attr('id'), $(val).data())
-        }
-      })
     })
   }
 }

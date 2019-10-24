@@ -1,7 +1,7 @@
 - content_for :page_header do
   = render 'layouts/components/page_header',
            title: 'Rebels',
-           count: @rebels.size,
+           count: @rebels_count,
            links: [ \
              link_to( \
                "Add Rebel",
@@ -10,69 +10,18 @@
              ) \
            ]
 
-p
-  |
-    Tip: Filter rebels tagged 'awesome' by searching for <code>#awesome</code>.
-
-div(data-controller="datatable" data-datatable-source="#{rebels_path(format: :json)}" data-datatable-export-title="#{FFaker::Music.song}")
+div(data-controller="datatable" data-datatable-source="#{rebels_path(format: :json)}")
   .icons.icons--large
     table(data-target="datatable.table" data-items-count="#{@rebels_count}")
       thead
         tr
           th(data-column="name") Name
           th(data-column="email") Email
-          th(data-column="local_group") Local Group
-          th(data-column="created_at") Joined
-          th(data-column="status") Status
-          th(data-column="postcode") Postcode
-          th(data-column="working_groups") WG
-          th(data-column="tags") Tags
+          / th(data-column="local_group") Local Group
+          / th(data-column="created_at") Joined
+          / th(data-column="status") Status
+          / th(data-column="postcode") Postcode
+          / th(data-column="working_groups") WG
+          / th(data-column="tags") Tags
+          / th(data-column="number_of_arrests" data-visible="false")
       tbody
-        - @rebels.each do |rebel|
-          tr
-            td(data-sort="#{rebel.created_at.iso8601}" style="width: 8rem")
-              = l(rebel.created_at.to_date)
-            td
-              = rebel.status.presence || "-"
-            td
-              - if rebel.willingness_to_be_arrested?
-                .inline-icon
-                  = render "layouts/icons/check_square"
-            td
-              = rebel.number_of_arrests.presence || "-"
-            td(style="width: 5rem")
-              - if rebel.irl?
-                .inline-icon
-                  = render "layouts/icons/like_bubble"
-            td
-              = rebel.postcode
-            td
-              - rebel.working_groups.each_with_index do |working_group, index|
-                = render "working_groups/colored_circle", working_group: working_group
-                - if index < rebel.working_groups.size - 1
-                  span.hide ,
-            td
-              - rebel.tags.each_with_index do |tag, index|
-                span.primary.label =< "##{tag.name}"
-                - if index < rebel.tags.size - 1
-                  span.hide ,
-            / Below, export-only columns
-            td.hide
-              - if rebel.phone.present?
-                | #{rebel.phone[0..6]}...
-              - else
-                | -
-            td.hide
-              = rebel.irl? ? 'yes' : 'unknown'
-            td.hide
-              = rebel.willingness_to_be_arrested? ? 'yes' : 'unknown'
-            td.hide
-              = rebel.number_of_arrests.presence || 'unknown'
-            td.hide
-              = rebel.email
-            td.hide
-              = rebel.has_secure_email? ? 'yes' : 'no'
-            td.hide
-              = rebel.working_groups.pluck(:name).join(', ')
-            td.hide
-              = rebel.notes

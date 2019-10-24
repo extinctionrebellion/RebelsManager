@@ -7,15 +7,10 @@ export default class extends Controller {
 
   initialize() {
     var source = this.data.get('source')
-    var table = $(this.tableTarget)
-    table.DataTable({
+    $(this.tableTarget).DataTable({
       ajax: source,
       buttons: [],
-      // columns: table.find('th').map(th => { data: $(th).data('column') }),
-      columns: [
-        {data: 'name'},
-        {data: 'email'}
-      ],
+      columns: this.columns(),
       dom: "<'datatable-header grid-x grid-padding-x'<'cell auto" +
         "'f><'cell small-12 medium-shrink'B>r>t" +
         "<'datatable-footer grid-x grid-padding-x align-middle'<'cell small-12 medium-auto'i><'cell shrink'p>>",
@@ -23,12 +18,19 @@ export default class extends Controller {
       language: {
         search: ''
       },
-      pageLength: 10,
+      pageLength: 100,
       paging: true,
       pagingType: 'numbers',
       processing: true,
       // order: [[4, 'desc']],
       serverSide: true
+    })
+  }
+
+  columns() {
+    var tableHeaders = this.tableTarget.querySelectorAll('th')
+    return Array.prototype.map.call(tableHeaders, function(th) {
+      return { data: th.dataset.column }
     })
   }
 }

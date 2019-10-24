@@ -1,18 +1,15 @@
 class RebelDatatable < ApplicationDatatable
-  # extend Forwardable
+  extend Forwardable
 
   # def_delegator :@view, :l
-  # def_delegator :@view, :link_to
-  # def_delegator :@view, :check_box_tag
+  def_delegator :@view, :link_to
   # def_delegator :@view, :content_tag
-  # def_delegator :@view, :rebel_path
-  # def_delegator :@view, :raw
+  def_delegator :@view, :rebel_path
+  def_delegator :@view, :raw
   # def_delegator :@view, :truncate
 
   def initialize(params, opts = {})
-  #   @user = opts[:user]
     @view = opts[:view_context]
-  #   # @options = opts
     super
   end
 
@@ -22,10 +19,8 @@ class RebelDatatable < ApplicationDatatable
 
   def view_columns
     @view_columns ||= {
-      name:               { source: "Rebel.name" },
-      email:              { source: "Rebel.email" }
-      # name:               { source: "Rebel.name", cond: whitespaced_start_with },
-      # email:              { source: "Rebel.email", cond: :start_with }
+      name:               { source: "Rebel.name", cond: whitespaced_start_with },
+      email:              { source: "Rebel.email", cond: :start_with }
       # local_group:        { source: "Local_group.name", cond: :starts_with },
       # created_at:         { source: "Rebel.created_at" },
       # status:             { source: "Rebel.status", cond: :starts_with },
@@ -43,8 +38,8 @@ class RebelDatatable < ApplicationDatatable
       {
         # id:                 "",
         # object_id:          rebel.id,
-        name:               rebel.name, #cell_name(rebel),
-        email:              rebel.email, #cell_email(rebel),
+        name:               cell_name(rebel),
+        email:              cell_email(rebel),
         # local_group:        cell_local_group(rebel),
         # created_at:         cell_created_at(rebel),
         # status:             rebel.status.presence || "-",

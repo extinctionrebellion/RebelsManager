@@ -1,26 +1,15 @@
 class RebelsController < BaseController
   def index
-    # if current_user.local_group
-    #   rebels = Rebel
-    #     .where(local_group: current_user.local_group)
-    #     .order(created_at: :desc)
-    # else
-    #   rebels = Rebel.all
-    #     .order(created_at: :desc)
-    #     .includes(:local_group, :working_groups)
-    #     .references(:local_group)
-    # end
     respond_to do |format|
       format.html do
         @rebels_count = Rebel.all.count
       end
       format.json do
-        render json: RebelDatatable.new(params, view_context: view_context, user: current_user)
-          #   # params,
-          #   # view_context: view_context,
-          #   user: current_user
-          #   # collection: rebels
-          # )
+        render json: RebelDatatable.new(
+          params,
+          view_context: view_context,
+          user: current_user
+        )
       end
     end
   end

@@ -6,6 +6,8 @@
 #  availability               :string
 #  consent                    :boolean
 #  email                      :string
+#  email_bidx                 :string
+#  email_ciphertext           :string
 #  interests                  :string
 #  internal_notes             :text
 #  irl                        :boolean
@@ -14,6 +16,8 @@
 #  notes                      :text
 #  number_of_arrests          :integer
 #  phone                      :string
+#  phone_bidx                 :string
+#  phone_ciphertext           :string
 #  postcode                   :string
 #  self_updated_at            :datetime
 #  source                     :string

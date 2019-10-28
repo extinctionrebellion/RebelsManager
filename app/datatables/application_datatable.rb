@@ -21,14 +21,6 @@ class ApplicationDatatable < AjaxDatatablesRails::ActiveRecord
     }
   end
 
-  def filter_digits_in_string
-    ->(column, _value) {
-      ::Arel::Nodes::SqlLiteral.new(
-        "regexp_replace(#{column.field}, '\\\D', '', 'g')"
-      ).matches("%#{ column.search.value }%")
-    }
-  end
-
   def get_raw_records
     collection
   end

@@ -6,14 +6,78 @@ export default class extends Controller {
   ]
 
   initialize() {
-    var source = this.data.get('source')
-    $(this.tableTarget).DataTable({
-      ajax: source,
+    // initialize dataTable
+    this.dataTable
+    // set up search with delay
+    this.delaySearch()
+  }
+
+  delaySearch() {
+    var queryInput = $(this.tableTarget)
+      .parents('.dataTables_wrapper')
+      .find('.dataTables_filter input')
+    var typingTimer = null
+    var doneTypingInterval = 500
+    var doneTyping = () => {
+      if (this.query != queryInput.val()) {
+        this.query = queryInput.val()
+        this.dataTable.search(this.query).draw()
+      }
+    }
+    queryInput.unbind()
+    queryInput.on('input', () => {
+      if (queryInput.val() == '') {
+        // input has been cleared
+        queryInput.trigger('keyup')
+      }
+    })
+    queryInput.on('keyup', () => {
+      clearTimeout(typingTimer)
+      typingTimer = setTimeout(doneTyping, doneTypingInterval)
+    })
+    queryInput.on('keydown', (event) => {
+      clearTimeout(typingTimer)
+      if (event.keyCode == 13) {
+        // don't submit forms, user wants to search
+        event.preventDefault()
+        return false
+      }
+    })
+  }
+
+  get columns() {
+    // get values for <th data-column="...">
+    var tableHeaders = this.tableTarget.querySelectorAll('th')
+    return Array.prototype.map.call(tableHeaders, function(th) {
+      return { data: th.dataset.column }
+    })
+  }
+
+  get dataTable() {
+    var _this = this
+    if (this._dataTable == undefined) {
+      this._dataTable =
+        $(this.tableTarget).DataTable(this.options)
+        .on('draw.dt', () => {
+            $(_this.tableTarget).foundation()
+          }
+        ).on('processing.dt', (e, settings, processing) => {
+            $(_this.tableTarget).find('.dataTables_filter input').toggleClass('processing', processing)
+          }
+        )
+    }
+    return this._dataTable
+  }
+
+  get options() {
+    return {
+      ajax: this.data.get('source'),
       buttons: [],
-      columns: this.columns(),
+      columns: this.columns,
       dom: "<'datatable-header grid-x grid-padding-x'<'cell auto" +
         "'f><'cell small-12 medium-shrink'B>r>t" +
-        "<'datatable-footer grid-x grid-padding-x align-middle'<'cell small-12 medium-auto'i><'cell shrink'p>>",
+        "<'datatable-footer grid-x grid-padding-x align-middle'" +
+        "<'cell small-12 medium-auto'i><'cell shrink'p>>",
       info: true,
       language: {
         search: ''
@@ -22,15 +86,16 @@ export default class extends Controller {
       paging: true,
       pagingType: 'numbers',
       processing: true,
-      // order: [[4, 'desc']],
+      order: [[3, 'desc']], // order by rebel.created_at
       serverSide: true
-    })
+    }
   }
 
-  columns() {
-    var tableHeaders = this.tableTarget.querySelectorAll('th')
-    return Array.prototype.map.call(tableHeaders, function(th) {
-      return { data: th.dataset.column }
-    })
+  get query() {
+    return this.data.get('query')
+  }
+
+  set query(value) {
+    this.data.set('query', value)
   }
 }

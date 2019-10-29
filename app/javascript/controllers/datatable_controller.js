@@ -13,23 +13,20 @@ export default class extends Controller {
   }
 
   delaySearch() {
-    var queryInput = $(this.tableTarget)
-      .parents('.dataTables_wrapper')
-      .find('.dataTables_filter input')
+    const doneTypingInterval = 500
     var typingTimer = null
-    var doneTypingInterval = 500
     var doneTyping = () => {
       if (this.query != queryInput.val()) {
         this.query = queryInput.val()
         this.dataTable.search(this.query).draw()
       }
     }
+    var queryInput = $(this.tableTarget)
+      .parents('.dataTables_wrapper').find('.dataTables_filter input')
     queryInput.unbind()
     queryInput.on('input', () => {
-      if (queryInput.val() == '') {
-        // input has been cleared
-        queryInput.trigger('keyup')
-      }
+      // input has been cleared
+      if (queryInput.val() == '') queryInput.trigger('keyup')
     })
     queryInput.on('keyup', () => {
       clearTimeout(typingTimer)
@@ -37,11 +34,8 @@ export default class extends Controller {
     })
     queryInput.on('keydown', (event) => {
       clearTimeout(typingTimer)
-      if (event.keyCode == 13) {
-        // don't submit forms, user wants to search
-        event.preventDefault()
-        return false
-      }
+      // don't submit forms, user wants to search
+      if (event.keyCode == 13) { event.preventDefault(); return false }
     })
   }
 

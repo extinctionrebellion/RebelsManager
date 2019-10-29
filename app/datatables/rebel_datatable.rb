@@ -23,9 +23,10 @@ class RebelDatatable < ApplicationDatatable
       local_group:        { source: "LocalGroup.name", cond: :start_with },
       created_at:         { source: "Rebel.created_at" },
       status:             { source: "Rebel.status", cond: :start_with },
-      postcode:           { source: "Rebel.postcode", cond: :start_with },
+      postcode:           { source: "Rebel.postcode", cond: whitespaced_start_with },
       working_groups:     { source: "WorkingGroup.name", cond: :start_with },
       tags:               { source: "ActsAsTaggableOn::Tag.name", cond: whitespaced_start_with },
+      notes:              { source: "Rebel.notes", cond: whitespaced_start_with }
     }
   end
 
@@ -42,6 +43,7 @@ class RebelDatatable < ApplicationDatatable
         postcode:           rebel.postcode.presence || "-",
         working_groups:     cell_working_groups(rebel),
         tags:               cell_tags(rebel),
+        notes:              rebel.notes.presence || "-",
         DT_RowId:           "selected-id-#{rebel.email}"
       }
     end

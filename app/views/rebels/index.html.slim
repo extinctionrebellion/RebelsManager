@@ -4,9 +4,14 @@
            count: @rebels_count,
            links: [ \
              link_to( \
+               "Download CSV",
+               rebels_path(format: :csv),
+               class: "small primary hollow button show-for-large" \
+             ),
+             link_to( \
                "Add Rebel",
                new_rebel_path,
-               class: "primary button show-for-large" \
+               class: "small primary button show-for-large" \
              ) \
            ]
 

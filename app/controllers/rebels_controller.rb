@@ -1,6 +1,11 @@
 class RebelsController < BaseController
+  include Exportable
+
   def index
     respond_to do |format|
+      format.csv do
+        respond_to_csv_for_rebels
+      end
       format.html do
         @rebels_count = Rebel.all.count
       end

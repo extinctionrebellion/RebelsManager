@@ -14,11 +14,11 @@ module Exportable
     if current_user.local_group
       Rebel
         .where(local_group: current_user.local_group)
-        .includes(:local_group, :tags, :working_groups)
+        .includes(:local_group, :skills, :tags, :working_groups)
         .references(:local_group)
     else
       Rebel.all
-        .includes(:local_group, :tags, :working_groups)
+        .includes(:local_group, :skills, :tags, :working_groups)
         .references(:local_group)
     end
   end

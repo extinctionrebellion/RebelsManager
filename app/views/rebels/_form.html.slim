@@ -53,6 +53,13 @@
               label: "Willingness to be arrested during an action",
               required: false
 
+    .grid-x
+      .cell.small-6.medium-4.large-3
+        = f.input :number_of_arrests,
+                  label: "Number of arrests",
+                  as: :integer,
+                  required: false
+
     = f.input :skill_ids,
               as: :check_boxes,
               label: "Areas of interest",
@@ -65,16 +72,15 @@
               label: "Specific skills/experience/resources OR thoughts/questions",
               required: false
 
-    - if f.object.local_group&.working_groups&.any?
+    - if current_user.local_group&.working_groups&.any?
       = section_heading heading: "Working Groups",
                         spacing: :spacer
 
       = f.input :working_group_ids,
                 as: :check_boxes,
                 wrapper: :foundation_radio_buttons,
-                collection: f.object.local_group&.working_groups,
+                collection: current_user.local_group.working_groups,
                 label: ""
-
 
     = section_heading heading: "Management",
                     spacing: :spacer

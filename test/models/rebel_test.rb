@@ -3,26 +3,31 @@
 # Table name: rebels
 #
 #  id                         :bigint           not null, primary key
-#  name                       :string
-#  email                      :string
-#  phone                      :string
-#  notes                      :text
-#  created_at                 :datetime         not null
-#  updated_at                 :datetime         not null
-#  irl                        :boolean
-#  local_group_id             :bigint
+#  availability               :string
 #  consent                    :boolean
-#  tags                       :text
-#  language                   :string
-#  postcode                   :string
+#  email                      :string
+#  email_bidx                 :string
+#  email_ciphertext           :string
 #  interests                  :string
 #  internal_notes             :text
-#  status                     :string
-#  source                     :string
-#  willingness_to_be_arrested :boolean
-#  token                      :string
+#  irl                        :boolean
+#  language                   :string
+#  name                       :string
+#  notes                      :text
+#  number_of_arrests          :integer
+#  phone                      :string
+#  phone_bidx                 :string
+#  phone_ciphertext           :string
+#  postcode                   :string
 #  self_updated_at            :datetime
-#  availability               :string
+#  source                     :string
+#  status                     :string
+#  tags                       :text
+#  token                      :string
+#  willingness_to_be_arrested :boolean
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  local_group_id             :bigint
 #
 
 require 'test_helper'

@@ -6,6 +6,8 @@
 #  availability               :string
 #  consent                    :boolean
 #  email                      :string
+#  email_bidx                 :string
+#  email_ciphertext           :string
 #  interests                  :string
 #  internal_notes             :text
 #  irl                        :boolean
@@ -14,6 +16,8 @@
 #  notes                      :text
 #  number_of_arrests          :integer
 #  phone                      :string
+#  phone_bidx                 :string
+#  phone_ciphertext           :string
 #  postcode                   :string
 #  self_updated_at            :datetime
 #  source                     :string
@@ -35,6 +39,12 @@ class Rebel < ApplicationRecord
   has_many :working_groups, through: :working_group_enrollments
   has_many :rebel_skills, dependent: :destroy
   has_many :skills, through: :rebel_skills
+
+  encrypts :phone, migrating: true
+  blind_index :phone, migrating: true
+
+  encrypts :email, migrating: true
+  blind_index :email, migrating: true
 
   attr_accessor :redirect
 

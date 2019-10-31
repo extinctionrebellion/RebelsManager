@@ -7,6 +7,8 @@
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :inet
 #  email                  :string           default(""), not null
+#  email_bidx             :string
+#  email_ciphertext       :string
 #  encrypted_password     :string           default(""), not null
 #  failed_attempts        :integer          default(0), not null
 #  last_sign_in_at        :datetime
@@ -27,6 +29,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :recoverable,
          :lockable, :trackable, :timeoutable
+
+  encrypts :email, migrating: true
+  blind_index :email, migrating: true
 
   belongs_to :local_group, optional: true
 end

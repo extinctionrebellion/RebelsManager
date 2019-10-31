@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'image_processing', '~> 1.2'
 
 gem 'acts-as-taggable-on', '~> 6.0', github: 'spark-solutions/acts-as-taggable-on', branch: 'fix/rails-6-and-failing-specs'
+gem 'ajax-datatables-rails'
 gem 'annotate'
 gem 'awesome_print'
 gem 'devise', '~> 4.7'

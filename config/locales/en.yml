@@ -30,4 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  date:
+    formats:
+      default: "%b %-d, %Y"
+      long: "%B %-d, %Y"
+      short: "%B %-d"
+      shorter_with_year: "%b %-d, %Y"
+      shorter: "%b %-d"

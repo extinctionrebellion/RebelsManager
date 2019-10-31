@@ -17,6 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
+msgid "A couple of hours a week"
+msgstr ""
+
+msgid "A few hours a month"
+msgstr ""
+
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 msgstr ""
 
@@ -27,6 +33,9 @@ msgid "Email address"
 msgstr ""
 
 msgid "Feel free to let us know about anything that can help Extinction Rebellion."
+msgstr ""
+
+msgid "I am currently unavailable, you have all my support!"
 msgstr ""
 
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
@@ -50,7 +59,13 @@ msgstr ""
 msgid "Mobile phone"
 msgstr ""
 
+msgid "More than 10 hours a week"
+msgstr ""
+
 msgid "My Rebel Profile"
+msgstr ""
+
+msgid "My availability for Extinction Rebellion"
 msgstr ""
 
 msgid "Name or nickname"
@@ -60,6 +75,12 @@ msgid "No local group (yet) next to you? Please select the one that makes the mo
 msgstr ""
 
 msgid "Of course, your opinion can change over time, depending on the action"
+msgstr ""
+
+msgid "Please double check the email address provided."
+msgstr ""
+
+msgid "Please provide an email address"
 msgstr ""
 
 msgid "Please select a language"
@@ -80,6 +101,9 @@ msgstr ""
 msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr ""
 
+msgid "This email address is already linked to a rebel"
+msgstr ""
+
 msgid "Update"
 msgstr ""
 
@@ -96,4 +120,10 @@ msgid "What specific skills/experience/resources do you have? Do you have any th
 msgstr ""
 
 msgid "Yes, I am willing to be arrested during an action"
+msgstr ""
+
+msgid "Your consent about data usage is required"
+msgstr ""
+
+msgid "Your data can be deleted anytime by sending an email to %{email}."
 msgstr ""

@@ -76,6 +76,7 @@ module Rebels
       params
         .require(:rebel)
         .permit(
+          :availability,
           :email,
           :interests,
           :internal_notes,
@@ -84,6 +85,7 @@ module Rebels
           :local_group_id,
           :name,
           :notes,
+          :number_of_arrests,
           :phone,
           :postcode,
           :status,

@@ -35,6 +35,7 @@ module Rebels
       end
       validate_email_format! if @rebel.valid?
       generate_token
+      delete_existing_rebel_if_no_local_group(@rebel.email)
       @rebel.save!
       subscribe_to_rebels_list
       subscribe_to_rebels_local_list
@@ -52,6 +53,15 @@ module Rebels
 
     private
 
+    # We prefer a new and clean signup than keeping an old record that is not
+    # linked to a local group
+    def delete_existing_rebel_if_no_local_group(email)
+      existing_rebel = Rebel.where(email: email, local_group_id: nil)&.take
+      if existing_rebel
+        Rebels::DeleteService.new(rebel: existing_rebel).run!
+      end
+    end
+
     def generate_token
       @rebel.token = SecureRandom.hex(16).to_i(16).to_s(36)
     end
@@ -60,6 +70,7 @@ module Rebels
       params
         .require(:rebel)
         .permit(
+          :availability,
           :email,
           :interests,
           :internal_notes,
@@ -68,6 +79,7 @@ module Rebels
           :local_group_id,
           :name,
           :notes,
+          :number_of_arrests,
           :phone,
           :postcode,
           :status,
@@ -80,17 +92,18 @@ module Rebels
 
     def rebel_public_params(params)
       params.require(:rebel).permit(
+        :availability,
         :consent,
-        :name,
         :email,
         :language,
         :local_group_id,
+        :name,
         :notes,
         :phone,
         :postcode,
         :redirect,
-        :willingness_to_be_arrested,
         :tag_list,
+        :willingness_to_be_arrested,
         skill_ids: []
       )
     end

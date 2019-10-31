@@ -1,95 +1,32 @@
 - content_for :page_header do
   = render 'layouts/components/page_header',
            title: 'Rebels',
-           count: @rebels.size,
+           count: @rebels_count,
            links: [ \
+             link_to( \
+               "Download CSV",
+               rebels_path(format: :csv),
+               class: "small primary hollow button show-for-large" \
+             ),
              link_to( \
                "Add Rebel",
                new_rebel_path,
-               class: "primary button show-for-large" \
+               class: "small primary button show-for-large" \
              ) \
            ]
 
-p
-  |
-    Tip: Filter rebels tagged 'awesome' by searching for <code>#awesome</code>.
-
-div(data-controller="datatable" data-datatable-export-title="#{FFaker::Music.song}")
+div(data-controller="datatable" data-datatable-source="#{rebels_path(format: :json)}")
   .icons.icons--large
-    table(data-target="datatable.table")
+    table(data-target="datatable.table" data-items-count="#{@rebels_count}")
       thead
         tr
-          th.select-column
-          th(data-exportable) Name
-          th Email
-          th(data-exportable) Local Group
-          th(data-exportable) Joined
-          th(data-exportable) Status
-          th(title="Willingness to be arrested") Arrest?
-          th(title="We met in real life") IRL
-          th(data-exportable) Postcode
-          th(data-exportable data-sortable="false") WG
-          th(data-exportable data-sortable="false") Tags
-          th.hide(data-exportable) Phone
-          th.hide(data-exportable) IRL
-          th.hide(data-exportable) Willingness to be arrested
-          th.hide(data-exportable) Email
-          th.hide(data-exportable) Secure Email
-          th.hide(data-exportable) WG
-          th.hide(data-exportable) Notes
+          th(data-column="name") Name
+          th(data-column="email") Email
+          th(data-column="local_group") Local Group
+          th(data-column="created_at") Joined
+          th(data-column="status") Status
+          th(data-column="postcode") Postcode
+          th(data-column="working_groups") WG
+          th(data-column="tags") Tags
+          th(data-column="notes" data-visible="false") Notes
       tbody
-        - @rebels.each do |rebel|
-          tr(id="selected-id-#{rebel.id}" data-object-id="#{rebel.id}" data-rebel-name="#{rebel.name}")
-            td
-            td
-              => link_to (rebel.name.present? ? rebel.name : "-"),
-                        rebel_path(rebel)
-              - if rebel.notes.present?
-                small(data-tooltip title="#{rebel.notes}")
-                  | 🗒
-            td
-              | #{rebel.email.split("@")&.first}@&hellip;
-            td(style="width: 10rem")
-              = rebel.local_group&.name
-            td(data-sort="#{rebel.created_at.iso8601}" style="width: 8rem")
-              = l(rebel.created_at.to_date)
-            td
-              = rebel.status.present? ? rebel.status : "-"
-            td
-              - if rebel.willingness_to_be_arrested?
-                .inline-icon
-                  = render "layouts/icons/check_square"
-            td(style="width: 10rem")
-              - if rebel.irl?
-                .inline-icon
-                  = render "layouts/icons/like_bubble"
-            td
-              = rebel.postcode
-            td
-              - rebel.working_groups.each_with_index do |working_group, index|
-                = render "working_groups/colored_circle", working_group: working_group
-                - if index < rebel.working_groups.size - 1
-                  span.hide ,
-            td
-              - rebel.tags.each_with_index do |tag, index|
-                span.primary.label =< "##{tag.name}"
-                - if index < rebel.tags.size - 1
-                  span.hide ,
-            / Below, export-only columns
-            td.hide
-              - if rebel.phone.present?
-                | #{rebel.phone[0..6]}...
-              - else
-                | -
-            td.hide
-              = rebel.irl? ? 'yes' : 'unknown'
-            td.hide
-              = rebel.willingness_to_be_arrested? ? 'yes' : 'unknown'
-            td.hide
-              = rebel.email
-            td.hide
-              = rebel.has_secure_email? ? 'yes' : 'no'
-            td.hide
-              = rebel.working_groups.pluck(:name).join(', ')
-            td.hide
-              = rebel.notes

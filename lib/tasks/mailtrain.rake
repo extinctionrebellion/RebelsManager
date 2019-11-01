@@ -11,9 +11,30 @@ namespace :mailtrain do
           "MERGE_LANGUAGE": rebel.language,
           "MERGE_POSTCODE": rebel.postcode,
           "MERGE_PROFILE_URL": rebel.profile_url,
+          "MERGE_TAGS": rebel.tag_list,
+          "MERGE_SKILLS": rebel.skills&.pluck(:name)&.join("|"),
+          "MERGE_WORKING_GROUPS": rebel.working_groups&.pluck(:name)&.join("|"),
           "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
         }
       )
+
+      if rebel.local_group && !rebel.local_group&.mailtrain_list_id.nil?
+        MailtrainService.instance.add_subscription(
+          rebel.local_group.mailtrain_list_id,
+          {
+            "EMAIL": rebel.email,
+            "MERGE_NAME": rebel.name,
+            "MERGE_STATUS": rebel.status,
+            "MERGE_POSTCODE": rebel.postcode,
+            "MERGE_PROFILE_URL": rebel.profile_url,
+            "MERGE_TAGS": rebel.tag_list,
+            "MERGE_SKILLS": rebel.skills&.pluck(:name)&.join("|"),
+            "MERGE_WORKING_GROUPS": rebel.working_groups&.pluck(:name)&.join("|"),
+            "FORCE_SUBSCRIBE": "yes",
+            "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
+          }
+        )
+      end
     end
   end
 end

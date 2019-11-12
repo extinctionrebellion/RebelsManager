@@ -1,7 +1,7 @@
 namespace :mailtrain do
   desc "Update rebels list subscriptions"
   task update_subscriptions: :environment do
-    Rebel.all.
+    Rebel.all
       .include(:skills, :working_groups)
       .find_each do |rebel|
       MailtrainService.instance.add_subscription(

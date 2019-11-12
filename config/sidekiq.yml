@@ -1,0 +1,8 @@
+---
+:concurrency: 2
+:logfile: ./log/sidekiq.log
+:timeout: 6
+:queues:
+  - default
+production:
+  :concurrency: 2

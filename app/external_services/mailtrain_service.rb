@@ -68,5 +68,6 @@ class MailtrainService
     end
   rescue => e
     Raven.capture_exception(e)
+    []
   end
 end

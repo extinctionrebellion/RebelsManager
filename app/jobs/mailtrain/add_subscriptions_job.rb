@@ -1,4 +1,4 @@
-class Mailtrain::AddSubscriptionJob < ActiveJob::Base
+class Mailtrain::AddSubscriptionsJob < ActiveJob::Base
   queue_as :default
 
   def perform(rebel)

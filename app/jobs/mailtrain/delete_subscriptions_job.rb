@@ -1,4 +1,4 @@
-class Mailtrain::DeleteSubscriptionJob < ActiveJob::Base
+class Mailtrain::DeleteSubscriptionsJob < ActiveJob::Base
   queue_as :default
 
   def perform(email, local_group_id)

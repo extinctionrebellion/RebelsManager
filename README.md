@@ -4,6 +4,16 @@
 
 You can start using the Rebels Manager for our own national branch or even at a local group/chapter level, but the app allows to manage multiple local groups/chapters. Please have a look at [our wiki](https://github.com/extinctionrebellion/RebelsManager/wiki) for more details, including a demo and screenshots.
 
+The Rebels Manager wiki
+=======================
+
+We do our best to keep our wiki up-to-date with relevant information for national branches interested in using the Rebels Manager.
+
+* [Wiki homepage](https://github.com/extinctionrebellion/RebelsManager/wiki)
+* [Roadmap](https://github.com/extinctionrebellion/RebelsManager/wiki/Roadmap)
+* [Demo and screenshots 📸](https://github.com/extinctionrebellion/RebelsManager/wiki/Demo-and-Screenshots)
+* [Wanna contribute?](https://github.com/extinctionrebellion/RebelsManager/wiki/Wanna-contribute%3F)
+
 Table of Contents
 =================
 * [Ruby version](#ruby-version)

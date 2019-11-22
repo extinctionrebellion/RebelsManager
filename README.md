@@ -1,6 +1,6 @@
 # README
 
-![Depfu](https://img.shields.io/depfu/extinctionrebellion/RebelsManager) [![Build Status](https://travis-ci.org/extinctionrebellion/RebelsManager.svg?branch=master)](https://travis-ci.org/extinctionrebellion/RebelsManager)
+![Depfu](https://img.shields.io/depfu/extinctionrebellion/RebelsManager) [![Build Status](https://travis-ci.org/extinctionrebellion/RebelsManager.svg?branch=master)](https://travis-ci.org/extinctionrebellion/RebelsManager) [![Test Coverage](https://api.codeclimate.com/v1/badges/0072c11011f025abdd37/test_coverage)](https://codeclimate.com/github/extinctionrebellion/RebelsManager/test_coverage)
 
 You can start using the Rebels Manager for our own national branch or even at a local group/chapter level, but the app allows to manage multiple local groups/chapters. Please have a look at [our wiki](https://github.com/extinctionrebellion/RebelsManager/wiki) for more details, including a demo and screenshots.
 

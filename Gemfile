@@ -55,10 +55,15 @@ gem 'logstop'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'database_cleaner'
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'ffaker'
+  gem 'rspec-rails'
 end
 
 group :development do
+  gem 'better_errors'
   # Find translations or build .mo files
   gem 'gettext', '>=3.0.2', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.

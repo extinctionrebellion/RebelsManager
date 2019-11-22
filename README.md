@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://cloud.extinctionrebellion.be/index.php/apps/files_sharing/publicpreview/2aTae6w9SegctmQ?x=1463&y=1314&a=true&file=readme-rebels-manager.png&scalingup=0" width="239" alt="Rebels Manager">
   <br>
+  <br>
   <img src="https://img.shields.io/depfu/extinctionrebellion/RebelsManager" alt="Depfu">
   <a href="https://travis-ci.org/extinctionrebellion/RebelsManager"><img src="https://travis-ci.org/extinctionrebellion/RebelsManager.svg?branch=master" alt="Build Status"></a>
   <a href="https://codeclimate.com/github/extinctionrebellion/RebelsManager/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0072c11011f025abdd37/test_coverage" alt="Test coverage (Code Climate)"></a>

@@ -7,7 +7,7 @@ class RebelsController < BaseController
         respond_to_csv_for_rebels
       end
       format.html do
-        @rebels_count = Rebel.all.count
+        @rebels_index_presenter = RebelsIndexPresenter.new(user: current_user)
       end
       format.json do
         render json: RebelDatatable.new(

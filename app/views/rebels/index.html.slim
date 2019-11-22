@@ -1,7 +1,7 @@
 - content_for :page_header do
   = render 'layouts/components/page_header',
            title: 'Rebels',
-           count: @rebels_count,
+           count: @rebels_index_presenter.rebels_count,
            links: [ \
              link_to( \
                "Download CSV",

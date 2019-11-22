@@ -1,5 +1,9 @@
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - bundle exec rails db:reset
 language: ruby
-addons:
-  postgresql: "11.5"
 rvm:
   - 2.6.3
+services:
+  - postgresql

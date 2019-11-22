@@ -1,4 +1,4 @@
-# README
+![Rebels Manager](https://cloud.extinctionrebellion.be/index.php/apps/files_sharing/publicpreview/2aTae6w9SegctmQ?x=1463&y=1314&a=true&file=readme-rebels-manager.png&scalingup=0)
 
 ![Depfu](https://img.shields.io/depfu/extinctionrebellion/RebelsManager) [![Build Status](https://travis-ci.org/extinctionrebellion/RebelsManager.svg?branch=master)](https://travis-ci.org/extinctionrebellion/RebelsManager) [![Test Coverage](https://api.codeclimate.com/v1/badges/0072c11011f025abdd37/test_coverage)](https://codeclimate.com/github/extinctionrebellion/RebelsManager/test_coverage)
 

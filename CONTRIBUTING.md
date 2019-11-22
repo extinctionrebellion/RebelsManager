@@ -1,9 +1,11 @@
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. Ping us at it@extinctionrebellion.be and we'll provide you a link to our Mattermost channel.
+We want to start off by saying thank you for contributing to the Rebels Manager 🙏 This project is a labor of love, and we appreciate all of the rebels that take care of new features, catch bugs, make performance improvements, and help with documentation. Every contribution is meaningful, so thank you for participating. That being said, here are a few guidelines that we ask you to follow so we can successfully address your issue.
 
-Please note we have a code of conduct, please follow it in all your interactions with the project.
+When contributing to this repository, please first discuss the change you wish to make via issue,
+email, or any other method with the owners of this repository before making a change. Ping us at rebelsmanager@gmail.com and we'll provide you a link to our Mattermost channel.
+
+Please note we have a [Code of Conduct](https://github.com/extinctionrebellion/RebelsManager/blob/master/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 
 ## Pull Request Process
 
@@ -15,5 +17,3 @@ Please note we have a code of conduct, please follow it in all your interactions
    Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
 4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
    do not have permission to do that, you may request the second reviewer to merge it for you.
-
-Please also read our [Code of Conduct](https://github.com/extinctionrebellion/RebelsManager/blob/master/CODE_OF_CONDUCT.md).

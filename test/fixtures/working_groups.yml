@@ -3,6 +3,7 @@
 # Table name: working_groups
 #
 #  id             :bigint           not null, primary key
+#  code           :string
 #  color          :string
 #  name           :string
 #  created_at     :datetime         not null

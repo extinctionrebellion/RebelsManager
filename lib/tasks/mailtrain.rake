@@ -14,8 +14,8 @@ namespace :mailtrain do
           "MERGE_POSTCODE": rebel.postcode,
           "MERGE_PROFILE_URL": rebel.profile_url,
           "MERGE_TAGS": rebel.tag_list,
-          "MERGE_SKILLS": rebel.skills&.pluck(:name)&.join("|"),
-          "MERGE_WORKING_GROUPS": rebel.working_groups&.pluck(:name)&.join("|"),
+          "MERGE_SKILLS": rebel.skills&.pluck(:code)&.join("|"),
+          "MERGE_WORKING_GROUPS": rebel.working_groups&.pluck(:code)&.join("|"),
           "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
         }
       )
@@ -30,8 +30,8 @@ namespace :mailtrain do
             "MERGE_POSTCODE": rebel.postcode,
             "MERGE_PROFILE_URL": rebel.profile_url,
             "MERGE_TAGS": rebel.tag_list,
-            "MERGE_SKILLS": rebel.skills&.pluck(:name)&.join("|"),
-            "MERGE_WORKING_GROUPS": rebel.working_groups&.pluck(:name)&.join("|"),
+            "MERGE_SKILLS": rebel.skills&.pluck(:code)&.join("|"),
+            "MERGE_WORKING_GROUPS": rebel.working_groups&.pluck(:code)&.join("|"),
             "FORCE_SUBSCRIBE": "yes",
             "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
           }

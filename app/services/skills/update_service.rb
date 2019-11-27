@@ -1,9 +1,9 @@
-module WorkingGroups
+module Skills
   class UpdateService < ServiceBase
-    attr_reader :working_group
+    attr_reader :skill
 
-    def initialize(working_group:)
-      @working_group = working_group
+    def initialize(skill:)
+      @skill = skill
       @report_errors = true
     end
 
@@ -18,20 +18,19 @@ module WorkingGroups
     end
 
     def run!(params = {})
-      working_group.attributes = working_group_params(params)
-      working_group.code.upcase!
-      working_group.save!
+      skill.attributes = skill_params(params)
+      skill.code.upcase!
+      skill.save!
       true
     end
 
     private
 
-    def working_group_params(params)
+    def skill_params(params)
       params
-        .require(:working_group)
+        .require(:skill)
         .permit(
-          :color,
-          :local_group_id,
+          :description,
           :name,
           :code
         )

@@ -19,7 +19,6 @@ class RebelDatatable < ApplicationDatatable
   def view_columns
     @view_columns ||= {
       name:               { source: "Rebel.name", cond: whitespaced_start_with },
-      email:              { source: "Rebel.email", cond: :start_with },
       local_group:        { source: "LocalGroup.name", cond: :start_with },
       created_at:         { source: "Rebel.created_at" },
       status:             { source: "Rebel.status", cond: :start_with },

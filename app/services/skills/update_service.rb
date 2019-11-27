@@ -19,7 +19,7 @@ module Skills
 
     def run!(params = {})
       skill.attributes = skill_params(params)
-      skill.code.&upcase!
+      skill.code&.upcase!
       skill.save!
 
       # update all subscriptions

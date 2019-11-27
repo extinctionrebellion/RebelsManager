@@ -21,6 +21,13 @@ module Skills
       skill.attributes = skill_params(params)
       skill.code.upcase!
       skill.save!
+
+      # update all subscriptions
+      skill.rebels.each do |rebel|
+        Mailtrain::DeleteSubscriptionsJob.perform_later(rebel.email, rebel.local_group&.id)
+        Mailtrain::AddSubscriptionsJob.perform_later(rebel)
+      end
+
       true
     end
 

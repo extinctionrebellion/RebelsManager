@@ -21,6 +21,13 @@ module WorkingGroups
       working_group.attributes = working_group_params(params)
       working_group.code.upcase!
       working_group.save!
+
+      # update all subscriptions
+      working_group.rebels.each do |rebel|
+        Mailtrain::DeleteSubscriptionsJob.perform_later(rebel.email, rebel.local_group&.id)
+        Mailtrain::AddSubscriptionsJob.perform_later(rebel)
+      end
+
       true
     end
 

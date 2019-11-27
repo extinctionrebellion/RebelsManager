@@ -40,13 +40,13 @@ class SkillsController < BaseController
   end
 
   def destroy
-    @skill = Skill.find(params[:id])
-    if @skill.destroy
+    service = Skills::DeleteService.new(skill: @skill)
+    if service.run!
       redirect_to skills_path,
                   notice: "The skill has been deleted."
     else
-      flash.now[:alert] = "We're sorry but this skill cannot be deleted."
-      render :show
+      redirect_to skill_path(service.skill),
+                  alert: "We're sorry but this skill cannot be deleted."
     end
   end
 

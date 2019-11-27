@@ -24,5 +24,8 @@ table
           | /
           =< link_to working_group.name,
                     working_group_path(working_group)
+          - if working_group.code.present?
+            small
+              |  (#{working_group.code})
         td
           = working_group.rebels.size

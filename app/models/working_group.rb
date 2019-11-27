@@ -16,4 +16,9 @@ class WorkingGroup < ApplicationRecord
 
   has_many :working_group_enrollments
   has_many :rebels, through: :working_group_enrollments
+
+  validates :code, uniqueness: {
+    scope: :local_group_id,
+    message: "This code has already been used, please use another."
+  }
 end

@@ -1,10 +1,11 @@
 class WorkingGroupsController < BaseController
+  before_action :get_working_group, only: [:show, :edit, :update, :destroy]
+
   def index
     @working_groups = WorkingGroup.all.order(:local_group_id)
   end
 
   def show
-    @working_group = WorkingGroup.find(params[:id])
   end
 
   def new
@@ -12,42 +13,43 @@ class WorkingGroupsController < BaseController
   end
 
   def create
-    @working_group = WorkingGroup.new(working_group_params)
-    if @working_group.save
-      redirect_to working_group_path(@working_group),
+    service = WorkingGroups::CreateService.new
+    if service.run(params)
+      redirect_to working_group_path(service.working_group),
                   notice: "Congrats, we have a new working group!"
     else
+      @working_group = service.working_group
+      set_error_flash(service.working_group, service.error_message)
       render :new
     end
   end
 
   def edit
-    @working_group = WorkingGroup.find(params[:id])
   end
 
   def update
-    @working_group = WorkingGroup.find(params[:id])
-    if @working_group.update(working_group_params)
-      redirect_to working_group_path(@working_group),
+    service = WorkingGroups::UpdateService.new(
+      working_group: @working_group
+    )
+    if service.run(params)
+      redirect_to working_group_path(service.working_group),
                   notice: "The working group has been updated."
     else
+      @working_group = service.working_group
+      set_error_flash(service.working_group, service.error_message)
       render :edit
     end
   end
 
   private
 
+  def get_working_group
+    @working_group = WorkingGroup.find(params[:id])
+  end
+
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
       active_primary: 'working_groups'
-    )
-  end
-
-  def working_group_params
-    params.require(:working_group).permit(
-      :color,
-      :local_group_id,
-      :name
     )
   end
 end

@@ -14,7 +14,7 @@ class Skill < ApplicationRecord
   has_many :rebel_skills
   has_many :rebels, through: :rebel_skills
 
-  validates :code, uniqueness: {
+  validates :code, presence: true, uniqueness: {
     message: "This code has already been used, please use another."
   }
 end

@@ -19,7 +19,7 @@ module WorkingGroups
 
     def run!(params = {})
       working_group.attributes = working_group_params(params)
-      working_group.code.upcase!
+      working_group.code&.upcase!
       working_group.save!
       true
     end

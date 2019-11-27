@@ -3,6 +3,7 @@
 # Table name: working_groups
 #
 #  id             :bigint           not null, primary key
+#  code           :string
 #  color          :string
 #  name           :string
 #  created_at     :datetime         not null
@@ -15,4 +16,9 @@ class WorkingGroup < ApplicationRecord
 
   has_many :working_group_enrollments
   has_many :rebels, through: :working_group_enrollments
+
+  validates :code, presence: true, uniqueness: {
+    scope: :local_group_id,
+    message: "This code has already been used, please use another."
+  }
 end

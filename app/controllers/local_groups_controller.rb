@@ -30,7 +30,7 @@ class LocalGroupsController < BaseController
 
   def update
     service = LocalGroups::UpdateService.new(
-      local_group: LocalGroup.find(params[:id])
+      local_group: @local_group
     )
     if service.run(params)
       redirect_to local_group_path(service.local_group),
@@ -54,13 +54,13 @@ class LocalGroupsController < BaseController
 
   private
 
+  def get_local_group
+    @local_group = LocalGroup.find(params[:id])
+  end
+
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
       active_primary: "local_groups"
     )
-  end
-
-  def get_local_group
-    @local_group = LocalGroup.find(params[:id])
   end
 end

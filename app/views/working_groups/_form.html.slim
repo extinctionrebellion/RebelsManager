@@ -15,3 +15,9 @@
 = f.input :color,
           label: "Color",
           hint: "eg. #CC1234"
+
+= f.input :code,
+          label: "Code",
+          hint: "3 characters, required for creating segments on Mailtrain",
+          required: true,
+          input_html: { pattern: "^[a-zA-Z0-9]{3}$", class: "uppercase" }

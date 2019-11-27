@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_052405) do
+ActiveRecord::Schema.define(version: 2019_11_27_043415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,11 +82,11 @@ ActiveRecord::Schema.define(version: 2019_10_23_052405) do
     t.string "token"
     t.datetime "self_updated_at"
     t.string "availability"
+    t.integer "number_of_arrests"
     t.string "email_ciphertext"
     t.string "email_bidx"
     t.string "phone_ciphertext"
     t.string "phone_bidx"
-    t.integer "number_of_arrests"
     t.index ["email_bidx"], name: "index_rebels_on_email_bidx", unique: true
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
     t.index ["phone_bidx"], name: "index_rebels_on_phone_bidx"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_052405) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "code"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -143,10 +144,22 @@ ActiveRecord::Schema.define(version: 2019_10_23_052405) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "local_group_id"
     t.boolean "admin"
+    t.string "otp_auth_secret"
+    t.string "otp_recovery_secret"
+    t.boolean "otp_enabled", default: false, null: false
+    t.boolean "otp_mandatory", default: false, null: false
+    t.datetime "otp_enabled_on"
+    t.integer "otp_failed_attempts", default: 0, null: false
+    t.integer "otp_recovery_counter", default: 0, null: false
+    t.string "otp_persistence_seed"
+    t.string "otp_session_challenge"
+    t.datetime "otp_challenge_expires"
     t.string "email_ciphertext"
     t.string "email_bidx"
     t.index ["email_bidx"], name: "index_users_on_email_bidx", unique: true
     t.index ["local_group_id"], name: "index_users_on_local_group_id"
+    t.index ["otp_challenge_expires"], name: "index_users_on_otp_challenge_expires"
+    t.index ["otp_session_challenge"], name: "index_users_on_otp_session_challenge", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
@@ -166,6 +179,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_052405) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "color"
+    t.string "code"
     t.index ["local_group_id"], name: "index_working_groups_on_local_group_id"
   end
 

@@ -54,6 +54,10 @@
           font-size: rem-calc(24);
           height: 4rem;
         }
+
+        &.uppercase {
+          text-transform: uppercase;
+        }
       }
 
       .label-text {

@@ -29,12 +29,12 @@ if Rebel.none?
   )
 
   # Working groups for both local groups
-  WorkingGroup.create(local_group: local_group, name: 'Action & Strategy', color: '#16A938')
-  WorkingGroup.create(local_group: local_group, name: 'Communication & IT', color: '#3760AA')
-  WorkingGroup.create(local_group: local_group, name: 'Outreach', color: '#985C9B')
-  WorkingGroup.create(local_group: local_group2, name: 'Action & Strategy', color: '#16A938')
-  WorkingGroup.create(local_group: local_group2, name: 'Communication & IT', color: '#3760AA')
-  WorkingGroup.create(local_group: local_group2, name: 'Outreach', color: '#985C9B')
+  WorkingGroup.create(local_group: local_group, name: 'Action & Strategy', color: '#16A938', code: 'ACT')
+  WorkingGroup.create(local_group: local_group, name: 'Communication & IT', color: '#3760AA', code: 'CIT')
+  WorkingGroup.create(local_group: local_group, name: 'Outreach', color: '#985C9B', code: 'OUT')
+  WorkingGroup.create(local_group: local_group2, name: 'Action & Strategy', color: '#16A938', code: 'ACT')
+  WorkingGroup.create(local_group: local_group2, name: 'Communication & IT', color: '#3760AA', code: 'CIT')
+  WorkingGroup.create(local_group: local_group2, name: 'Outreach', color: '#985C9B', code: 'OUT')
 
   # Meaningful tags
   tags = ['', 'safe-list', 'xr-cafe', 'coordinator']

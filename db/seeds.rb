@@ -43,7 +43,7 @@ if Rebel.none?
   statuses = ['active', 'paused', 'inactive']
 
   # Create rebels
-  1254.times do
+  125.times do
     rebel = Rebel.create(
       name: FFaker::Name.unique.name,
       email: FFaker::Internet.unique.email,

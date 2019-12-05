@@ -7,8 +7,6 @@ email, or any other method with the owners of this repository before making a ch
 
 Please note we have a [Code of Conduct](https://github.com/extinctionrebellion/RebelsManager/blob/master/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 
-## Pull Request Process
-
 1. If you have any questions about the Rebels Manager, search [the wiki](https://github.com/extinctionrebellion/RebelsManager/wiki) first.
 
 2. If you find a security bug, DO NOT submit an issue here. Please send an e-mail to rebelsmanager@gmail.com instead.

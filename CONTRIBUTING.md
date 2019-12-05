@@ -9,11 +9,12 @@ Please note we have a [Code of Conduct](https://github.com/extinctionrebellion/R
 
 ## Pull Request Process
 
-1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
-   build.
-2. Update the README.md with details of changes to the interface, this includes new environment 
-   variables, exposed ports, useful file locations and container parameters.
-3. Increase the version numbers in any examples files and the README.md to the new version that this
-   Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
-   do not have permission to do that, you may request the second reviewer to merge it for you.
+1. If you have any questions about the Rebels Manager, search [the wiki](https://github.com/extinctionrebellion/RebelsManager/wiki) first.
+
+2. If you find a security bug, DO NOT submit an issue here. Please send an e-mail to rebelsmanager@gmail.com instead.
+
+3. Do a small search on the issues tracker before submitting your issue to see if it was already reported or fixed. In case it was not, create a bug report. If you are getting exceptions, please include the full backtrace.
+
+That's it! The more information you give, the more easy it becomes for us to track it down and fix it. Ideal scenario would be adding the issue to the Rebels Manager test suite or to a sample application.
+
+Thanks!

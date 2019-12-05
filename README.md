@@ -65,7 +65,9 @@ rails db:create db:migrate db:seed
 
 ## Tests
 
-No tests yet. [RSpec setup](https://github.com/extinctionrebellion/RebelsManager/issues/80) ready soon.
+```
+bundle exec rspec
+```
 
 ## Additional information
 

@@ -55,11 +55,10 @@ $ cp .env.example .env
 - set your POSTGRES_USER in the .env
 - run the following commands:
 ```
-$ rails db:create db:migrate
 $ rails c
-  // use the output to set your LOCKBOX_MASTER_KEY env variable
+  // use the generated key to set your LOCKBOX_MASTER_KEY env variable
   irb> Lockbox.generate_key
-$ rails db:seed
+$ rails db:create db:migrate db:seed
 ```
 
 ## ENV variables

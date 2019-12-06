@@ -42,11 +42,23 @@ Table of Contents
 
 2.6.3
 
-## Database setup (PostgreSQL)
+## setup
 
+- clone repo
 ```
-rails db:create db:migrate db:seed
+$ rbenv local 2.6.3
+$ bundle install
+$ yarn
+$ cp .env.example .env
 ```
+- set your POSTGRES_USER in the .env
+```
+$ rails db:create db:migrate
+$ rails c
+  irb> Lockbox.generate_key
+  // use the output to set your LOCKBOX_MASTER_KEY env variable
+$ rails db:seed
+``
 
 ## ENV variables
 

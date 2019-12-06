@@ -51,7 +51,6 @@ FROM ruby:2.6.3-alpine
 LABEL maintainer="rebelsmanager@gmail.com"
 
 ARG ADDITIONAL_PACKAGES
-ARG EXECJS_RUNTIME
 
 # Add Alpine packages
 RUN apk add --update --no-cache \
@@ -73,7 +72,6 @@ COPY --from=Builder --chown=app:app /app /app
 # Set Rails env
 ENV RAILS_LOG_TO_STDOUT true
 ENV RAILS_SERVE_STATIC_FILES true
-ENV EXECJS_RUNTIME $EXECJS_RUNTIME
 
 WORKDIR /app
 
@@ -85,11 +83,3 @@ RUN date -u > BUILD_TIME
 
 # Start up
 CMD ["docker/startup.sh"]
-
-# COPY Gemfile* ./
-# RUN bundle install
-
-# COPY . .
-
-# ENV PATH=./bin:$PATH
-# CMD ["rails", "console"]

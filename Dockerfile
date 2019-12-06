@@ -1,6 +1,6 @@
 ######################
 # Stage: Builder
-FROM ruby:2.6.3-alpine as Builder
+FROM ruby:2.6.5-alpine as Builder
 
 ARG FOLDERS_TO_REMOVE
 ARG BUNDLE_WITHOUT
@@ -12,28 +12,27 @@ ENV SECRET_KEY_BASE=foo
 ENV RAILS_SERVE_STATIC_FILES=true
 
 RUN apk add --update --no-cache \
-  build-base \
-  postgresql-dev \
-  git \
-  nodejs \
-  yarn \
-  tzdata
+    build-base \
+    postgresql-dev \
+    git \
+    imagemagick \
+    nodejs \
+    yarn \
+    tzdata
 
 WORKDIR /app
 
 # Install gems
-Add Gemfile* /app/
-
-RUN gem install bundler:2.0.2
+ADD Gemfile* /app/
 RUN bundle config --global frozen 1 \
- && bundle install -j4 --retry 3 --binstubs \
+ && bundle install -j4 --retry 3 \
  # Remove unneeded files (cached *.gem, *.o, *.c)
  && rm -rf /usr/local/bundle/cache/*.gem \
  && find /usr/local/bundle/gems/ -name "*.c" -delete \
  && find /usr/local/bundle/gems/ -name "*.o" -delete
 
 # Install yarn packages
-COPY package.json yarn.lock /app/
+COPY package.json yarn.lock .yarnclean /app/
 RUN yarn install
 
 # Add the Rails app
@@ -42,13 +41,13 @@ ADD . /app
 # Precompile assets
 RUN bundle exec rake assets:precompile
 
-# Remove folders not needed in resulting images
+# Remove folders not needed in resulting image
 RUN rm -rf $FOLDERS_TO_REMOVE
 
 ###############################
 # Stage Final
-FROM ruby:2.6.3-alpine
-LABEL maintainer="rebelsmanager@gmail.com"
+FROM ruby:2.6.5-alpine
+LABEL maintainer="mail@georg-ledermann.de"
 
 ARG ADDITIONAL_PACKAGES
 

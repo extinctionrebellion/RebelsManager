@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.4'
 
 services:
   app: &app_base
@@ -6,8 +6,7 @@ services:
     build:
       context: .
       args:
-        - ADDITIONAL_PACKAGES=nodejs yarn build-base git
-        - EXECJS_RUNTIME=Node
+        - ADDITIONAL_PACKAGES=nodejs yarn python2 build-base git
         - RAILS_ENV=development
     environment:
       - APP_URL=http://localhost:3000
@@ -17,9 +16,9 @@ services:
       - POSTGRES_PASSWORD=postgres
       - RAILS_ENV=development
       - RAILS_MAX_THREADS
+      - REDIS_SIDEKIQ_URL=redis://redis:6379/0
       - REDIS_CABLE_URL=redis://redis:6379/1
       - REDIS_CACHE_URL=redis://redis:6379/2
-      - REDIS_SIDEKIQ_URL=redis://redis:6379/0
       - XR_BRANCH_DEFAULT_LANGUAGE=en
       - XR_BRANCH_TIMEZONE=Europe/Brussels
       - SECRET_KEY_BASE=86f2848eba353044ea0902245d52c8d53c535c1529299a6ca4e528cb275201672ff80d90611d46c617f8cffbf4562e936e55e135a74170526629305422c2210e
@@ -28,10 +27,8 @@ services:
       - redis
     volumes:
       - ./:/app
-      - gems:/usr/local/bundle
-      - node-modules:/app/node_modules
     ports:
-      - 3000:3000
+      - "3000"
 
   db:
     image: postgres:11.6-alpine
@@ -51,6 +48,6 @@ services:
       - app
 
 volumes:
-  gems:
+  # gems:
   db-data:
-  node-modules:
+  # node-modules:

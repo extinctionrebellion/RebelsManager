@@ -1,9 +1,9 @@
-version: '3.7'
+version: '3.4'
 
 services:
   db:
     environment:
-      - POSTGRES_PASSWORD=production-pg-password
+      - POSTGRES_PASSWORD=[production-pg-password]
     # hostname: db.docker-rails.my-site.com
     image: postgres:11.6-alpine
     ports:
@@ -15,23 +15,22 @@ services:
       timeout: 30s
       retries: 3
     volumes:
-      - /my-volumes/docker-rails/postgresql:/var/lib/postgresql/data
+      - /my-volumes/rebelsmanager/postgresql:/var/lib/postgresql/data
 
   redis:
     # hostname: redis.docker-rails.my-site.com
     image: redis:alpine
     restart: always
     volumes:
-      - /my-volumes/docker-rails/redis:/data
+      - /my-volumes/rebelsmanager/redis:/data
 
   app: &app_base
     image: rebelsmanager_app_production
     build:
       context: .
       args:
-        - FOLDERS_TO_REMOVE=spec node_modules app/assets vendor/assets lib/assets tmp/cache
+        - FOLDERS_TO_REMOVE=spec node_modules vendor/assets vendor/bundle lib/assets tmp/cache
         - BUNDLE_WITHOUT=development:test
-        - EXECJS_RUNTIME=Disabled
         - RAILS_ENV=production
     environment:
       - ALLOWED_ORIGINS=rebels-docker.extinctionrebellion.be
@@ -53,8 +52,8 @@ services:
       - REDIS_CACHE_URL=redis://redis:6379/2
       - SECRET_KEY_BASE=[my-secret-access-key]
       - MAILTRAIN_API_ENDPOINT=https://lists.extinctionrebellion.be/api
-      - MAILTRAIN_API_TOKEN=[paste-token-here]
-      - MAILTRAIN_REBELS_LIST_ID=[paste-main-list-id-here]
+      - MAILTRAIN_API_TOKEN=[paste-mailtrain-token-here]
+      - MAILTRAIN_REBELS_LIST_ID=[paste-mailtrain-main-list-id-here]
     hostname: rebels-docker.extinctionrebellion.be
     links:
       - db

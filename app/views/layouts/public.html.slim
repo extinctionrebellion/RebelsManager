@@ -22,7 +22,8 @@ html(lang="#{I18n.locale}")
                            options_for_select([\
                              ['English', 'en', { 'data-url' => url_for(params_plus(locale: "en")) }],
                              ['Français', 'fr', { 'data-url' => url_for(params_plus(locale: "fr")) }],
-                             ['Nederlands', 'nl', { 'data-url' => url_for(params_plus(locale: "nl")) }] \
+                             ['Nederlands', 'nl', { 'data-url' => url_for(params_plus(locale: "nl")) }],
+                             ['Deutsch', 'de', { 'data-url' => url_for(params_plus(locale: "de")) }] \
                            ], FastGettext.locale),
                            onchange: "window.location=this.selectedOptions[0].getAttribute('data-url');"
           .spacer-2

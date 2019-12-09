@@ -2,7 +2,7 @@ class UsersController < BaseController
   before_action :redirect_unless_admin
 
   def index
-    @users = User.all.order(:email)
+    @users = User.all.order(:local_group_id)
   end
 
   def show

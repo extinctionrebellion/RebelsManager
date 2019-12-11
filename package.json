@@ -17,6 +17,7 @@
     "jquery": "^3.3.1",
     "jszip": "^3.2.1",
     "moment": "^2.24.0",
+    "serialize-javascript": "^2.1.1",
     "stimulus": "^1.1.1",
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0"

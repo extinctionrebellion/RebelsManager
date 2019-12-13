@@ -1,0 +1,34 @@
+= f.input :name,
+          label: "Name",
+          required: true,
+          placeholder: "Event name"
+
+= f.input :local_group_id,
+          as: :select,
+          label: "Local Group (none for national events)",
+          collection: LocalGroup.all.order(:name),
+          prompt: "Select a local group",
+          required: false
+
+= f.input :start_at,
+          label: "Starts",
+          placeholder: "Start date"
+
+= f.input :end_at,
+          label: "Ends",
+          placeholder: "End date"
+
+= f.input :description,
+          as: :text,
+          input_html: { rows: 3 },
+          label: "Description",
+          required: true,
+          placeholder: "Event description"
+
+= f.input :facebook_url,
+          label: "Facebook event",
+          required: true,
+          placeholder: "https://..."
+
+
+

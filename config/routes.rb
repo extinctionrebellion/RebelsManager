@@ -11,6 +11,7 @@ Rails.application.routes.draw do
              path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', unlock: 'unlock' }
 
   resources :local_groups
+  resources :events
   resources :rebels
   resources :skills
   resources :tags

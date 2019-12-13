@@ -127,6 +127,11 @@ class Components::MenuPresenter < PresenterBase
         active: @active_primary == 'working_groups'
       },
       {
+        body: 'Events',
+        url: events_path,
+        active: @active_primary == 'events'
+      },
+      {
         body: 'Tags',
         url: tags_path,
         active: @active_primary == 'tags'

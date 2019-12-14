@@ -508,11 +508,11 @@
       }
     }
 
-    &.no-footer {
-      .datatable-footer {
-        display: none;
-      }
-    }
+    // &.no-footer {
+    //   .datatable-footer {
+    //     display: none;
+    //   }
+    // }
 
     &.searchable-buttons {
       * { border: 1px solid red; }

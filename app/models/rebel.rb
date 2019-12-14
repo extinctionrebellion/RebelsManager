@@ -3,25 +3,29 @@
 # Table name: rebels
 #
 #  id                         :bigint           not null, primary key
-#  name                       :string
-#  email                      :string
-#  phone                      :string
-#  notes                      :text
-#  created_at                 :datetime         not null
-#  updated_at                 :datetime         not null
-#  irl                        :boolean
-#  local_group_id             :bigint
+#  availability               :string
 #  consent                    :boolean
-#  tags                       :text
-#  language                   :string
-#  postcode                   :string
+#  email_bidx                 :string
+#  email_ciphertext           :string
 #  interests                  :string
 #  internal_notes             :text
-#  status                     :string
-#  source                     :string
-#  willingness_to_be_arrested :boolean
-#  token                      :string
+#  irl                        :boolean
+#  language                   :string
+#  name                       :string
+#  notes                      :text
+#  number_of_arrests          :integer
+#  phone_bidx                 :string
+#  phone_ciphertext           :string
+#  postcode                   :string
 #  self_updated_at            :datetime
+#  source                     :string
+#  status                     :string
+#  tags                       :text
+#  token                      :string
+#  willingness_to_be_arrested :boolean
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  local_group_id             :bigint
 #
 
 class Rebel < ApplicationRecord
@@ -33,6 +37,12 @@ class Rebel < ApplicationRecord
   has_many :working_groups, through: :working_group_enrollments
   has_many :rebel_skills, dependent: :destroy
   has_many :skills, through: :rebel_skills
+
+  encrypts :phone
+  blind_index :phone
+
+  encrypts :email
+  blind_index :email
 
   attr_accessor :redirect
 
@@ -54,4 +64,7 @@ class Rebel < ApplicationRecord
   def profile_url
     "#{ENV['APP_URL']}/public/rebels/#{id}/edit?a=#{created_at.to_i}&b=#{email}&c=#{token}"
   end
+
+  # @TODO: Remove this lines after dropping email & phone columns
+  self.ignored_columns = ['email', 'phone']
 end

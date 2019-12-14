@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'image_processing', '~> 1.2'
 
 gem 'acts-as-taggable-on', '~> 6.0', github: 'spark-solutions/acts-as-taggable-on', branch: 'fix/rails-6-and-failing-specs'
+gem 'ajax-datatables-rails'
 gem 'annotate'
 gem 'awesome_print'
 gem 'devise', '~> 4.7'
@@ -34,20 +35,35 @@ gem 'gettext_i18n_rails'
 gem 'rack-cors'
 gem 'rest-client'
 gem 'sentry-raven'
-gem 'simple_form', '~> 4.1'
+gem 'sidekiq', '5.2.7'
+gem 'simple_form', '~> 5.0'
 gem 'slim', '~> 4.0'
 gem 'validates_email_format_of'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Modern encryption for Rails
+gem 'lockbox'
+
+# Securely search encrypted database fields
+gem 'blind_index'
+
+# Keep personally identifiable information (PII) out of logs
+gem 'logstop'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'database_cleaner'
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'ffaker'
+  gem 'rspec-rails'
 end
 
 group :development do
+  gem 'better_errors'
   # Find translations or build .mo files
   gem 'gettext', '>=3.0.2', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -64,6 +80,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end

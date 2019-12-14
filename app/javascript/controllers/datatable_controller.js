@@ -1,6 +1,4 @@
 import { Controller } from 'stimulus'
-import moment from 'moment'
-import jsZip from 'jszip'
 
 export default class extends Controller {
   static targets = [
@@ -8,77 +6,90 @@ export default class extends Controller {
   ]
 
   initialize() {
-    window.JSZip = jsZip
+    // initialize dataTable
+    this.dataTable
+    // set up search with delay
+    this.delaySearch()
+  }
 
-    var exportTitle = '*'
-    var pdfOrientation = 'portrait'
-    var pdfFooter = ''
-    var pdfHeader = null
-
-    if (this.data.get('export-title')) {
-      exportTitle = this.data.get('export-title')
+  delaySearch() {
+    const doneTypingInterval = 500
+    var typingTimer = null
+    var doneTyping = () => {
+      if (this.query != queryInput.val()) {
+        this.query = queryInput.val()
+        this.dataTable.search(this.query).draw()
+      }
     }
+    var queryInput = $(this.tableTarget)
+      .parents('.dataTables_wrapper').find('.dataTables_filter input')
+    queryInput.unbind()
+    queryInput.on('input', () => {
+      // input has been cleared
+      if (queryInput.val() == '') queryInput.trigger('keyup')
+    })
+    queryInput.on('keyup', () => {
+      clearTimeout(typingTimer)
+      typingTimer = setTimeout(doneTyping, doneTypingInterval)
+    })
+    queryInput.on('keydown', (event) => {
+      clearTimeout(typingTimer)
+      // don't submit forms, user wants to search
+      if (event.keyCode == 13) { event.preventDefault(); return false }
+    })
+  }
 
-    window.selectedRows = new Map()
-    $(this.tableTarget).DataTable({
-      buttons: {
-        buttons: [
-          {
-            extend: 'collection',
-            text: 'Export',
-            autoClose: true,
-            background: false,
-            buttons: [
-              {
-                extend: 'copyHtml5',
-                exportOptions: {
-                  columns: '[data-exportable]'
-                }
-              },
-              {
-                extend: 'csvHtml5',
-                filename: exportTitle + ' - ' +
-                  moment().format('YYYY-MM-DD-hh-mm a'),
-                exportOptions: {
-                  columns: '[data-exportable]'
-                }
-              },
-              {
-                extend: 'excelHtml5',
-                filename: exportTitle + ' - ' +
-                  moment().format('YYYY-MM-DD-hh-mm a'),
-                exportOptions: {
-                  columns: '[data-exportable]'
-                }
-              }
-            ]
+  get columns() {
+    // get values for <th data-column="...">
+    var tableHeaders = this.tableTarget.querySelectorAll('th')
+    return Array.prototype.map.call(tableHeaders, function(th) {
+      return { data: th.dataset.column }
+    })
+  }
+
+  get dataTable() {
+    var _this = this
+    if (this._dataTable == undefined) {
+      this._dataTable =
+        $(this.tableTarget).DataTable(this.options)
+        .on('draw.dt', () => {
+            $(_this.tableTarget).foundation()
           }
-        ]
-      },
-      columnDefs: [
-        { targets: 0, orderable: false, className: 'select-checkbox' }
-      ],
+        ).on('processing.dt', (e, settings, processing) => {
+            $(_this.tableTarget).find('.dataTables_filter input').toggleClass('processing', processing)
+          }
+        )
+    }
+    return this._dataTable
+  }
+
+  get options() {
+    return {
+      ajax: this.data.get('source'),
+      buttons: [],
+      columns: this.columns,
       dom: "<'datatable-header grid-x grid-padding-x'<'cell auto" +
-        "'f><'cell small-12 medium-shrink'B>r>t",
-      info: false,
+        "'f><'cell small-12 medium-shrink'B>r>t" +
+        "<'datatable-footer grid-x grid-padding-x align-middle'" +
+        "<'cell small-12 medium-auto'i><'cell shrink'p>>",
+      info: true,
       language: {
         search: ''
       },
-      paging: false,
-      order: [[4, 'desc']],
-      select: {
-        style: 'multi'
-      }
-    }).on('deselect', (e, dt, type, indexes) => {
-      $.map(dt.rows(indexes).nodes().to$(), (val, i) => {
-        window.selectedRows.delete($(val).attr('id'))
-      })
-    }).on('select', (e, dt, type, indexes) => {
-      $.map(dt.rows(indexes).nodes().to$(), (val, i) => {
-        if ($.inArray($(val).attr('id'), window.selectedRows) < 0) {
-          window.selectedRows.set($(val).attr('id'), $(val).data())
-        }
-      })
-    })
+      pageLength: 100,
+      paging: true,
+      pagingType: 'numbers',
+      processing: true,
+      order: [[3, 'desc']], // order by rebel.created_at
+      serverSide: true
+    }
+  }
+
+  get query() {
+    return this.data.get('query')
+  }
+
+  set query(value) {
+    this.data.set('query', value)
   }
 }

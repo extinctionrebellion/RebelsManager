@@ -5,6 +5,25 @@
 = simple_form_for @rebel,
                   url: rebels_path do |f|
   = render "layouts/components/form_errors", object: f.object
+
+  - if @existing_rebel
+    .info.callout
+      h4 This rebel has already joined the rebellion
+
+      p
+        |
+          This rebel is linked to a local group (<strong>#{@existing_rebel.local_group.name}</strong>)
+          and should update their profile in order to join another local group.
+          We suggest that they update their profile by themselves but you could
+          also take the decision to do it for them.
+
+      p
+        |
+          The profile can be updated by following this link, which can be
+          provided to the rebel:
+
+      p = link_to @existing_rebel.profile_url, @existing_rebel.profile_url
+
   = render "form", f: f
 
   = f.button :submit,

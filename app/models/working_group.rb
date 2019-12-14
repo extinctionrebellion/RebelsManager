@@ -3,11 +3,12 @@
 # Table name: working_groups
 #
 #  id             :bigint           not null, primary key
-#  local_group_id :bigint           not null
+#  code           :string
+#  color          :string
 #  name           :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  color          :string
+#  local_group_id :bigint           not null
 #
 
 class WorkingGroup < ApplicationRecord
@@ -15,4 +16,9 @@ class WorkingGroup < ApplicationRecord
 
   has_many :working_group_enrollments
   has_many :rebels, through: :working_group_enrollments
+
+  validates :code, presence: true, uniqueness: {
+    scope: :local_group_id,
+    message: "This code has already been used, please use another."
+  }
 end

@@ -1,16 +1,26 @@
 class RebelsController < BaseController
+  include Exportable
+
   def index
-    if current_user.local_group
-      @rebels = Rebel
-        .where(local_group: current_user.local_group)
-        .order(created_at: :desc)
-    else
-      @rebels = Rebel.all.order(created_at: :desc)
+    respond_to do |format|
+      format.csv do
+        respond_to_csv_for_rebels
+      end
+      format.html do
+        @rebels_index_presenter = RebelsIndexPresenter.new(user: current_user)
+      end
+      format.json do
+        render json: RebelDatatable.new(
+          params,
+          view_context: view_context,
+          user: current_user
+        )
+      end
     end
   end
 
   def show
-    @rebel = Rebel.find(params[:id])
+    @rebel = RebelDecorator.new(Rebel.find(params[:id]))
     @mailtrain_lists = MailtrainService.instance
       .get_subscriptions(@rebel.email)
   end
@@ -30,6 +40,7 @@ class RebelsController < BaseController
     else
       @rebel = service.rebel
       flash.now[:error] = service.error_message unless !@rebel.valid?
+      @existing_rebel = existing_rebel_when_present(@rebel)
       render :new
     end
   end
@@ -60,6 +71,13 @@ class RebelsController < BaseController
   end
 
   private
+
+  def existing_rebel_when_present(rebel)
+    email_error = rebel.errors.details[:email]
+    if email_error.any? && email_error.first[:error] == :taken
+      Rebel.find_by(email: @rebel.email)
+    end
+  end
 
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(

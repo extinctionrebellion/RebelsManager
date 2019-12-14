@@ -70,12 +70,18 @@
   .cell.small-6.medium-8
     = @rebel.willingness_to_be_arrested? ? '✓' : 'NO'
 
+  .cell.small-6.medium-4
+    p
+      strong Number of arrests
+  .cell.small-6.medium-8
+    = @rebel.number_of_arrests.presence || "-"
+
 .grid-x.grid-padding-x
   .cell.small-6.medium-4
     p
       strong Notes added when signing up
   .cell.small-6.medium-8
-    = @rebel.notes.present? ? @rebel.notes : "-"
+    = @rebel.notes.presence || "-"
 
 .spacer-2
 
@@ -119,6 +125,13 @@
   .cell.small-6.medium-8
     = @rebel.status.present? ? @rebel.status : "-"
 
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Availability
+  .cell.small-6.medium-8
+    = @rebel.availability
+
 / Skills
 
 = section_heading heading: "Skills",
@@ -149,7 +162,7 @@
 = section_heading heading: "Subscriptions on Mailtrain",
                   spacing: :spacer
 
-- if @mailtrain_lists
+- if @mailtrain_lists.any?
   p
     strong This rebel is subscribed to:
 

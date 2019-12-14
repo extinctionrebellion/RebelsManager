@@ -32,6 +32,7 @@ module Rebels
       params
         .require(:rebel)
         .permit(
+          :availability,
           :email,
           :interests,
           :language,

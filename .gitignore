@@ -35,5 +35,6 @@ yarn-debug.log*
 
 .env
 .DS_Store
+coverage
 
 /vendor/bundle

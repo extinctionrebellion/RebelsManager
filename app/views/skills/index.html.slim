@@ -21,5 +21,8 @@ table
         td
           = link_to skill.name,
                     skill_path(skill)
+          - if skill.code.present?
+            small
+              |  (#{skill.code})
         td
           = skill.rebels.size

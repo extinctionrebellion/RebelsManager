@@ -21,8 +21,10 @@ table
     - @users.each do |user|
       tr
         td
-          = link_to user.email,
+          => link_to user.email,
                     user_path(user)
+          - if user.admin?
+            span.label ADMIN
         td
           - if user.local_group
             = link_to user.local_group.name,

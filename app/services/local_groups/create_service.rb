@@ -7,7 +7,6 @@ module LocalGroups
       @report_errors = true
     end
 
-
     def run(params = {})
       context = {
         params: params

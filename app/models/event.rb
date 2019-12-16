@@ -10,7 +10,10 @@ class Event < ApplicationRecord
   validates :start_at,
             presence: { message: 'Please provide a start date for this event' }
 
-  validates :start_at,
+  validates :end_at,
             presence: { message: 'Please provide an end date for this event' }
 
+  def destroyable_by?(user)
+    user.admin?
+  end
 end

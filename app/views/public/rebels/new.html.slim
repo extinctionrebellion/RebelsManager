@@ -93,8 +93,7 @@ p
 
   =  f.input :agree_with_principles,
              as: :boolean,
-             label: _("I've read and I agree with the principles and values of Extinction Rebellion (#{ link_to 'open in a new tab',
-               ENV['XR_BRANCH_AGREEMENT_URL'], target: :blank })".html_safe),
+             label: raw(_("I've read and I agree with the principles and values of Extinction Rebellion") + "<br>" + link_to(_("Open principles and values in a new tab"), ENV['XR_BRANCH_AGREEMENT_URL'], target: "_blank").html_safe),
              wrapper: :foundation_checkbox,
              required: true
 

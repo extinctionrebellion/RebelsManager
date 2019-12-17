@@ -31,6 +31,9 @@ msgstr ""
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 msgstr "Ik geef toestemming aan Extinction Rebellion Belgium om me te contacteren via de data die ik ingevuld heb in dit formulier. "
 
+msgid "I've read and I agree with the principles and values of Extinction Rebellion"
+msgstr ""
+
 msgid "In which areas would you like to participate?"
 msgstr "In welke gebieden wil je graag deelnemen? "
 
@@ -66,6 +69,9 @@ msgstr "(Nog) geen lokale groep in je buurt? Duid de meest logische keuze voor j
 
 msgid "Of course, your opinion can change over time, depending on the action"
 msgstr "Je mening kan natuurlijk veranderen, afhankelijk van de actie"
+
+msgid "Open principles and values in a new tab"
+msgstr ""
 
 msgid "Please double check the email address provided."
 msgstr ""

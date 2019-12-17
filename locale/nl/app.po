@@ -7,113 +7,159 @@ msgstr ""
 "Project-Id-Version: Rebels Manager\n"
 "Language: nl\n"
 
-msgid "A couple of hours a week"
-msgstr ""
-
-msgid "A few hours a month"
-msgstr ""
-
+#: 
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 msgstr "De coördinatoren van zowel Extinction Rebellion Belgium als je lokale groep zullen ingelicht worden van je inschrijving en zullen er zijn om je te ondersteunen."
 
+#: 
 msgid "By answering the following questions, you will be listed in our secure Rebels database."
 msgstr "Door de volgende vragen te beantwoorden zal je opgenomen worden in onze database met rebellen."
 
+#: 
 msgid "Email address"
 msgstr "Email-adres"
 
+#: 
 msgid "Feel free to let us know about anything that can help Extinction Rebellion."
 msgstr "Voel je vrij om ons eender wat te laten weten dat Extinction Rebellion kan helpen. "
 
-msgid "I am currently unavailable, you have all my support!"
-msgstr ""
-
+#: 
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 msgstr "Ik geef toestemming aan Extinction Rebellion Belgium om me te contacteren via de data die ik ingevuld heb in dit formulier. "
 
+#: 
 msgid "In which areas would you like to participate?"
 msgstr "In welke gebieden wil je graag deelnemen? "
 
+#: 
 msgid "Join the Rebellion"
 msgstr "Sluit je aan bij de rebellie"
 
+#: 
 msgid "Join the Rebellion!"
 msgstr "Sluit je aan bij de rebellie!"
 
+#: 
 msgid "Join us!"
 msgstr "Doe met ons mee!"
 
+#: 
 msgid "Local group"
 msgstr "Lokale groep"
 
+#: 
 msgid "Mobile phone"
 msgstr "GSM"
 
-msgid "More than 10 hours a week"
-msgstr ""
-
+#: 
 msgid "My Rebel Profile"
 msgstr "Mijn profiel als rebel"
 
-msgid "My availability for Extinction Rebellion"
-msgstr ""
-
+#: 
 msgid "Name or nickname"
 msgstr "Naam of alias"
 
+#: 
 msgid "No local group (yet) next to you? Please select the one that makes the more sense to you."
 msgstr "(Nog) geen lokale groep in je buurt? Duid de meest logische keuze voor jou aan. "
 
+#: 
 msgid "Of course, your opinion can change over time, depending on the action"
 msgstr "Je mening kan natuurlijk veranderen, afhankelijk van de actie"
 
-msgid "Please double check the email address provided."
-msgstr ""
-
-msgid "Please provide an email address"
-msgstr ""
-
+#: 
 msgid "Please select a language"
 msgstr "Selecteer alsjeblieft een taal"
 
+#: 
 msgid "Postcode"
 msgstr "Postcode"
 
+#: 
 msgid "Preferred language"
 msgstr "Taal die je voorkeur geniet"
 
+#: 
 msgid "Select a local group"
 msgstr "Selecteer een lokale groep"
 
+#: 
 msgid "Sorry, can't save this record:"
 msgstr "Sorry, kan dit formulier niet opslaan"
 
+#: 
 msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr "Erg bedankt! Je profiel als rebel is nu actueel."
 
-msgid "This email address is already linked to a rebel"
-msgstr ""
-
+#: 
 msgid "Update"
 msgstr "Update"
 
+#: 
 msgid "We may send text messages about public actions."
 msgstr "We kunnen mogelijks sms'en verzenden over publieke acties."
 
+#: 
 msgid "We recommend that you select a maximum of 2 answers."
 msgstr "We raden aan om maximum 2 antwoorden aan te duiden"
 
+#: 
 msgid "Welcome to the Rebellion!"
 msgstr "Welkom bij de rebellie!"
 
+#: 
 msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
 msgstr "Welke specifieke vaardigheden/ervaringen/middelen heb je? Heb je nog gedachten of vragen die je graag deelt? "
 
+#: 
 msgid "Yes, I am willing to be arrested during an action"
 msgstr "Ja, ik ben bereid me te laten arresteren tijdens een actie"
 
-msgid "Your consent about data usage is required"
-msgstr ""
+#: 
+msgid "A couple of hours a week"
+msgstr "Enkele uren per week"
 
+#: 
+msgid "A few hours a month"
+msgstr "Een paar uur per maand"
+
+#: 
+msgid "More than 10 hours a week"
+msgstr "Meer dan 10 uur per week"
+
+#: 
+msgid "Please double check the email address provided."
+msgstr "Gelieve het opgegeven e-mailadres te controleren."
+
+#: 
+msgid "Please provide an email address"
+msgstr "Gelieve een e-mailadres op te geven"
+
+#: 
+msgid "This email address is already linked to a rebel"
+msgstr "Dit e-mail adres is al gekoppeld aan een rebel"
+
+#: 
+msgid "Your consent about data usage is required"
+msgstr "Uw toestemming voor het gebruik van de gegevens is vereist"
+
+#: 
+msgid "I am currently unavailable, you have all my support!"
+msgstr "Ik ben momenteel niet beschikbaar, je hebt al mijn steun!"
+
+#: 
+msgid "My availability for Extinction Rebellion"
+msgstr "Mijn beschikbaarheid voor Extinction Rebellion"
+
+#: 
 msgid "Your data can be deleted anytime by sending an email to %{email}."
-msgstr ""
+msgstr "Uw gegevens kunnen te allen tijde worden verwijderd door een e-mail te sturen naar %{email}."
+
+#: 
+msgid "I've read and I agree with the principles and values of Extinction Rebellion"
+msgstr "Ik heb gelezen en ik ben het eens met de principes en waarden van de Extinction Rebellion"
+
+#: 
+msgid "Open principles and values in a new tab"
+msgstr "Open principes en waarden in een nieuw tab"
+

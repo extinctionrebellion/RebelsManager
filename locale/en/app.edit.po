@@ -41,6 +41,9 @@ msgstr ""
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 msgstr ""
 
+msgid "I've read and I agree with the principles and values of Extinction Rebellion"
+msgstr ""
+
 msgid "In which areas would you like to participate?"
 msgstr ""
 
@@ -75,6 +78,9 @@ msgid "No local group (yet) next to you? Please select the one that makes the mo
 msgstr ""
 
 msgid "Of course, your opinion can change over time, depending on the action"
+msgstr ""
+
+msgid "Open principles and values in a new tab"
 msgstr ""
 
 msgid "Please double check the email address provided."

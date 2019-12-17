@@ -155,3 +155,11 @@ msgstr "Ma disponibilité pour Extinction Rebellion"
 msgid "Your data can be deleted anytime by sending an email to %{email}."
 msgstr "Vos données peuvent être supprimées à tout moment en envoyant un email à %{email}."
 
+#: 
+msgid "I've read and I agree with the principles and values of Extinction Rebellion"
+msgstr "J'ai lu et je marque mon accord avec les principes et valeurs d'Extinction Rebellion"
+
+#: 
+msgid "Open principles and values in a new tab"
+msgstr "Ouvrir les principes et valeurs dans un nouvel onglet"
+

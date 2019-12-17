@@ -8,10 +8,10 @@ msgstr ""
 "Language: fr\n"
 
 msgid "A couple of hours a week"
-msgstr ""
+msgstr "Quelques heures par semaine"
 
 msgid "A few hours a month"
-msgstr ""
+msgstr "Quelques heures par mois"
 
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 msgstr "Extinction Rebellion Belgium et les coordinateurs de votre groupe local seront notifiés de votre inscription et seront disponibles pour vous assister."
@@ -26,10 +26,13 @@ msgid "Feel free to let us know about anything that can help Extinction Rebellio
 msgstr "Laissez libre court à votre imagination - comment pouvez-vous aider Extinction Rebellion?"
 
 msgid "I am currently unavailable, you have all my support!"
-msgstr ""
+msgstr "Je suis indisponible pour le moment, vous avez tout mon soutien!"
 
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 msgstr "Je donne la permission à Extinction Rebellion Belgium de me contacter en utilisant les données fournies dans ce formulaire"
+
+msgid "I've read and I agree with the principles and values of Extinction Rebellion"
+msgstr ""
 
 msgid "In which areas would you like to participate?"
 msgstr "Dans quel(s) domaine(s) souhaitez-vous vous impliquer?"
@@ -50,13 +53,13 @@ msgid "Mobile phone"
 msgstr "GSM"
 
 msgid "More than 10 hours a week"
-msgstr ""
+msgstr "Plus de 10 heures par semaine"
 
 msgid "My Rebel Profile"
 msgstr "Mon profil rebelle"
 
 msgid "My availability for Extinction Rebellion"
-msgstr ""
+msgstr "Ma disponibilité pour Extinction Rebellion"
 
 msgid "Name or nickname"
 msgstr "Nom ou pseudo"
@@ -67,11 +70,14 @@ msgstr "Pas (encore) de groupe local près de chez vous? Merci de sélectionner 
 msgid "Of course, your opinion can change over time, depending on the action"
 msgstr "Bien entendu, votre choix peut évoluer avec le temps et en fonction de l'action"
 
-msgid "Please double check the email address provided."
+msgid "Open principles and values in a new tab"
 msgstr ""
 
+msgid "Please double check the email address provided."
+msgstr "Veuillez vérifier le format de l'adresse email renseignée."
+
 msgid "Please provide an email address"
-msgstr ""
+msgstr "Veuillez renseigner une adresse email."
 
 msgid "Please select a language"
 msgstr "Veuillez sélectionner une langue"
@@ -92,7 +98,7 @@ msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr "Merci beaucoup! Votre profil est désormais à jour."
 
 msgid "This email address is already linked to a rebel"
-msgstr ""
+msgstr "Cette adresse email est déjà liée à un.e rebelle."
 
 msgid "Update"
 msgstr "Mettre à jour"
@@ -113,7 +119,7 @@ msgid "Yes, I am willing to be arrested during an action"
 msgstr "Oui, je suis prêt à me faire arrêter durant une action"
 
 msgid "Your consent about data usage is required"
-msgstr ""
+msgstr "Votre consentement concernant l'usage de vos données est requis."
 
 msgid "Your data can be deleted anytime by sending an email to %{email}."
-msgstr ""
+msgstr "Vos données peuvent être supprimées à tout moment en envoyant un email à %{email}."

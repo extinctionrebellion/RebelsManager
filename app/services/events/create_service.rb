@@ -32,8 +32,8 @@ module Events
           :name,
           :description,
           :local_group_id,
-          :start_at,
-          :end_at,
+          :starts_at,
+          :ends_at,
           :facebook_url,
         )
     end

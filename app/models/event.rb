@@ -4,10 +4,10 @@
 #
 #  id             :bigint           not null, primary key
 #  description    :text
-#  end_at         :string
+#  ends_at         :string
 #  facebook_url   :string
 #  name           :string
-#  start_at       :string
+#  starts_at       :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  local_group_id :bigint
@@ -22,10 +22,10 @@ class Event < ApplicationRecord
   validates :description,
             presence: { message: 'Please provide a description for this event' }
 
-  validates :start_at,
+  validates :starts_at,
             presence: { message: 'Please provide a start date for this event' }
 
-  validates :end_at,
+  validates :ends_at,
             presence: { message: 'Please provide an end date for this event' }
 
   def destroyable_by?(user)

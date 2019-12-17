@@ -7,8 +7,7 @@
           as: :select,
           label: "Local Group (none for national events)",
           collection: LocalGroup.all.order(:name),
-          prompt: "Select a local group",
-          required: false
+          prompt: "Select a local group"
 
 = f.input :start_at,
           label: "Starts",
@@ -27,7 +26,6 @@
 
 = f.input :facebook_url,
           label: "Facebook event",
-          required: true,
           placeholder: "https://..."
 
 

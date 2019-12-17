@@ -31,6 +31,6 @@ table
         td
           = event.end_at
         td
-          = link_to event.facebook_url
+          = event.facebook_url.nil? ? '-' : link_to(event.facebook_url)
         td
           = event.local_group_id.present? ? link_to(event.local_group.name, local_group_path(event.local_group_id)) : '-'

@@ -103,7 +103,8 @@ module Rebels
         :redirect,
         :tag_list,
         :willingness_to_be_arrested,
-        skill_ids: []
+        :agree_with_principles,
+        skill_ids: [],
       )
     end
 

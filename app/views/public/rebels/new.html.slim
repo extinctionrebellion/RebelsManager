@@ -91,5 +91,11 @@ p
             label: _("I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"),
             required: true
 
+  =  f.input :agree_with_principles,
+             as: :boolean,
+             label: raw(_("I've read and I agree with the principles and values of Extinction Rebellion") + "<br>" + link_to(_("Open principles and values in a new tab"), ENV['XR_BRANCH_AGREEMENT_URL'], target: "_blank").html_safe),
+             wrapper: :foundation_checkbox,
+             required: true
+
   = f.button :submit,
              _("Join the Rebellion!")

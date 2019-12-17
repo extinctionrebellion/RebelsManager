@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id             :bigint           not null, primary key
+#  description    :text
+#  end_at         :string
+#  facebook_url   :string
+#  name           :string
+#  start_at       :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  local_group_id :bigint
+#
+
 class Event < ApplicationRecord
   belongs_to :local_group, optional: true
 

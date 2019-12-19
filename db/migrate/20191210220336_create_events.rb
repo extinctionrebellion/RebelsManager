@@ -3,8 +3,8 @@ class CreateEvents < ActiveRecord::Migration[6.0]
     create_table :events do |t|
       t.string :name
       t.text :description
-      t.string :starts_at
-      t.string :ends_at
+      t.datetime :starts_at
+      t.datetime :ends_at
       t.string :facebook_url
       t.references :local_group
 

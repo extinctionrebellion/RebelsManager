@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 2019_12_15_071230) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "starts_at"
-    t.string "ends_at"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
     t.string "facebook_url"
     t.bigint "local_group_id"
     t.datetime "created_at", precision: 6, null: false

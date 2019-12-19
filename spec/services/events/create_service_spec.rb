@@ -8,8 +8,8 @@ RSpec.describe Events::CreateService, '#run' do
         event: {
           name: 'Standup',
           description: 'A standup about ecology',
-          starts_at: '19/12/2020',
-          ends_at: '21/12/2020',
+          starts_at_date: '19/12/2020',
+          ends_at_date: '21/12/2020',
           facebook_url: 'https://facebook.com',
         }
       })
@@ -26,8 +26,8 @@ RSpec.describe Events::CreateService, '#run' do
       params = ActionController::Parameters.new({
         event: {
           name: 'Standup',
-          starts_at: '19/12/2020',
-          ends_at: '21/12/2020',
+          starts_at_date: '19/12/2020',
+          ends_at_date: '21/12/2020',
           facebook_url: 'https://facebook.com',
         }
       })

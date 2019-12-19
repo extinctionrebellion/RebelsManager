@@ -2,7 +2,7 @@ class EventsController < BaseController
   before_action :get_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.all.order(:name)
+    @events = Event.all.order(starts_at: :desc)
   end
 
   def show

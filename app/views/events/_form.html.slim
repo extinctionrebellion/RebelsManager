@@ -5,17 +5,54 @@
 
 = f.input :local_group_id,
           as: :select,
-          label: 'Local Group (none for national events)',
+          label: 'Local Group',
+          hint: 'Select none for national events',
           collection: LocalGroup.all.order(:name),
           prompt: 'Select a local group'
 
-= f.input :starts_at,
-          label: 'Starts',
-          placeholder: 'Start date'
+.grid-x.grid-padding-x
+  .cell.small-8.medium-8.large-6
+    = f.input :starts_at_date,
+              as: :date_picker,
+              wrapper: :foundation_pickadate,
+              label: "Happening from",
+              required: true,
+              error: "Please provide a date",
+              input_html: { \
+                value: (f.object.starts_at_date.present? ? l(f.object.starts_at_date.to_date, format: :long) : nil) \
+              }
+  .cell.small-4.medium-4.large-3
+    = f.input :starts_at_time,
+              label: "What time?",
+              as: :time_picker,
+              wrapper: :foundation_pickadate,
+              required: true,
+              error: "Please provide a time",
+              input_html: { \
+                value: (f.object.starts_at_time.present? ? l(f.object.starts_at_time.to_time, format: time_format) : nil) \
+              }
 
-= f.input :ends_at,
-          label: 'Ends',
-          placeholder: 'End date'
+.grid-x.grid-padding-x
+  .cell.small-8.medium-8.large-6
+    = f.input :ends_at_date,
+              as: :date_picker,
+              wrapper: :foundation_pickadate,
+              label: "To",
+              required: true,
+              error: "Please provide a date",
+              input_html: { \
+                value: (f.object.ends_at_date.present? ? l(f.object.ends_at_date.to_date, format: :long) : nil) \
+              }
+  .cell.small-4.medium-4.large-3
+    = f.input :ends_at_time,
+              label: "What time?",
+              as: :time_picker,
+              wrapper: :foundation_pickadate,
+              required: true,
+              error: "Please provide a time",
+              input_html: { \
+                value: (f.object.ends_at_time.present? ? l(f.object.ends_at_time.to_time, format: time_format) : nil) \
+              }
 
 = f.input :description,
           as: :text,
@@ -27,6 +64,3 @@
 = f.input :facebook_url,
           label: 'Facebook event',
           placeholder: 'https://...'
-
-
-

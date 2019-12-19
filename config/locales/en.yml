@@ -32,6 +32,7 @@
 en:
   date:
     formats:
+      datepicker: "%b %-d, %Y"
       default: "%b %-d, %Y"
       long: "%B %-d, %Y"
       short: "%B %-d"

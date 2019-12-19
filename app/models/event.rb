@@ -28,6 +28,8 @@ class Event < ApplicationRecord
   validates :ends_at,
             presence: { message: 'Please provide an end date for this event' }
 
+  attr_accessor :starts_at_date, :starts_at_time, :ends_at_date, :ends_at_time
+
   def destroyable_by?(user)
     user.admin?
   end

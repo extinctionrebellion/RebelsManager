@@ -24,3 +24,7 @@ import 'datatables.net-buttons-zf'
 import 'datatables.net-buttons/js/buttons.html5'
 import 'datatables.net-select-zf'
 import 'datatables.net-zf'
+
+import 'pickadate/lib/compressed/picker'
+import 'pickadate/lib/compressed/picker.date'
+import 'pickadate/lib/compressed/picker.time'

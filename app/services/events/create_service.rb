@@ -19,6 +19,8 @@ module Events
 
     def run!(params = {})
       @event.attributes = event_params(params)
+      @event.starts_at = set_starts_at
+      @event.ends_at = set_ends_at
       @event.save!
       true
     end
@@ -32,10 +34,20 @@ module Events
           :name,
           :description,
           :local_group_id,
-          :starts_at,
-          :ends_at,
+          :starts_at_date,
+          :starts_at_time,
+          :ends_at_date,
+          :ends_at_time,
           :facebook_url,
         )
+    end
+
+    def set_starts_at
+      Time.zone.parse("#{@event.starts_at_date} #{@event.starts_at_time}")
+    end
+
+    def set_ends_at
+      Time.zone.parse("#{@event.ends_at_date} #{@event.ends_at_time}")
     end
   end
 end

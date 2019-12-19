@@ -1,0 +1,48 @@
+@mixin xr-datepicker {
+  .field {
+    &.date_picker {
+      label {
+        input {
+          background: $white;
+          cursor: pointer;
+
+          &.picker__input--active {
+            ~ .input-icon {
+              color: $color-green;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .picker__year {
+    font-style: normal;
+    font-size: inherit;
+  }
+
+  table.picker__table {
+    thead {
+      border: 0;
+
+      .picker__weekday {
+        padding: .25rem 0;
+        text-align: center;
+        text-transform: none;
+        font-weight: 400;
+      }
+    }
+
+    tbody {
+      .picker__day {
+        font-size: $small-font-size;
+      }
+    }
+  }
+
+  @media (pointer: fine) {
+    .picker__holder {
+      outline: 0;
+    }
+  }
+}

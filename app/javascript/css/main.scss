@@ -4,6 +4,8 @@
 
 @import '~animate.css/animate';
 @import '~trix/dist/trix';
+@import './vendor/pickadate-classic--no-touch';
+@import './vendor/pickadate-default--touch';
 
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
@@ -49,21 +51,25 @@
 @import './components/callout';
 @import './components/compose';
 @import './components/datatable';
+@import './components/datepicker';
 @import './components/icon';
 @import './components/form';
 @import './components/page_header';
 @import './components/reveal';
 @import './components/rich_text';
 @import './components/spacer';
+@import './components/timepicker';
 @import './components/topbar';
 
 @include xr-callout;
 @include xr-compose;
 @include xr-datatable;
+@include xr-datepicker;
 @include xr-icon;
 @include xr-form;
 @include xr-page-header;
 @include xr-reveal;
 @include xr-rich-text;
 @include xr-spacer;
+@include xr-timepicker;
 @include xr-topbar;

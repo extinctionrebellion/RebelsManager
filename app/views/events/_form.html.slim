@@ -19,7 +19,7 @@
               required: true,
               error: "Please provide a date",
               input_html: { \
-                value: (f.object.starts_at_date.present? ? l(f.object.starts_at_date.to_date, format: :long) : nil) \
+                value: (f.object.starts_at.present? ? l(f.object.starts_at.to_date, format: :long) : nil) \
               }
   .cell.small-4.medium-4.large-3
     = f.input :starts_at_time,
@@ -29,7 +29,7 @@
               required: true,
               error: "Please provide a time",
               input_html: { \
-                value: (f.object.starts_at_time.present? ? l(f.object.starts_at_time.to_time, format: time_format) : nil) \
+                value: (f.object.starts_at.present? ? l(f.object.starts_at.to_time, format: :twenty_four_hour) : nil) \
               }
 
 .grid-x.grid-padding-x
@@ -41,7 +41,7 @@
               required: true,
               error: "Please provide a date",
               input_html: { \
-                value: (f.object.ends_at_date.present? ? l(f.object.ends_at_date.to_date, format: :long) : nil) \
+                value: (f.object.ends_at.present? ? l(f.object.ends_at.to_date, format: :long) : nil) \
               }
   .cell.small-4.medium-4.large-3
     = f.input :ends_at_time,
@@ -51,7 +51,7 @@
               required: true,
               error: "Please provide a time",
               input_html: { \
-                value: (f.object.ends_at_time.present? ? l(f.object.ends_at_time.to_time, format: time_format) : nil) \
+                value: (f.object.ends_at.present? ? l(f.object.ends_at.to_time, format: :twenty_four_hour) : nil) \
               }
 
 = f.input :description,

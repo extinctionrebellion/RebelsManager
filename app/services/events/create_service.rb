@@ -18,10 +18,10 @@ module Events
     end
 
     def run!(params = {})
-      @event.attributes = event_params(params)
-      @event.starts_at = set_starts_at
-      @event.ends_at = set_ends_at
-      @event.save!
+      event.attributes = event_params(params)
+      event.starts_at = set_starts_at
+      event.ends_at = set_ends_at
+      event.save!
       true
     end
 
@@ -43,11 +43,11 @@ module Events
     end
 
     def set_starts_at
-      Time.zone.parse("#{@event.starts_at_date} #{@event.starts_at_time}")
+      Time.zone.parse("#{event.starts_at_date} #{event.starts_at_time}")
     end
 
     def set_ends_at
-      Time.zone.parse("#{@event.ends_at_date} #{@event.ends_at_time}")
+      Time.zone.parse("#{event.ends_at_date} #{event.ends_at_time}")
     end
   end
 end

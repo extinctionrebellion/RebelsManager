@@ -22,10 +22,10 @@ class Event < ApplicationRecord
   validates :description,
             presence: { message: 'Please provide a description for this event' }
 
-  validates :starts_at,
+  validates :starts_at_date,
             presence: { message: 'Please provide a start date for this event' }
 
-  validates :ends_at,
+  validates :ends_at_date,
             presence: { message: 'Please provide an end date for this event' }
 
   attr_accessor :starts_at_date, :starts_at_time, :ends_at_date, :ends_at_time

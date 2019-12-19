@@ -1,5 +1,5 @@
 = f.input :name,
-          label: 'Name',
+          label: 'Name *',
           required: true,
           placeholder: 'Event name'
 
@@ -10,12 +10,16 @@
           collection: LocalGroup.all.order(:name),
           prompt: 'Select a local group'
 
+= callout :info,
+          content: "All-day events: only set the date, and don't set time"
+          tiny: true
+
 .grid-x.grid-padding-x
   .cell.small-8.medium-8.large-6
     = f.input :starts_at_date,
               as: :date_picker,
               wrapper: :foundation_pickadate,
-              label: "Happening from",
+              label: "Happening from *",
               required: true,
               error: "Please provide a date",
               input_html: { \
@@ -37,7 +41,7 @@
     = f.input :ends_at_date,
               as: :date_picker,
               wrapper: :foundation_pickadate,
-              label: "To",
+              label: "To *",
               required: true,
               error: "Please provide a date",
               input_html: { \
@@ -57,10 +61,10 @@
 = f.input :description,
           as: :text,
           input_html: { rows: 3 },
-          label: 'Description',
+          label: 'Description *',
           required: true,
           placeholder: 'Event description'
 
 = f.input :facebook_url,
-          label: 'Facebook event',
+          label: 'Event on Facebook',
           placeholder: 'https://...'

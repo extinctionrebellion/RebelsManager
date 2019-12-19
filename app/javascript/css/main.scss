@@ -54,6 +54,7 @@
 @import './components/datepicker';
 @import './components/icon';
 @import './components/form';
+@import './components/label';
 @import './components/page_header';
 @import './components/reveal';
 @import './components/rich_text';
@@ -67,6 +68,7 @@
 @include xr-datepicker;
 @include xr-icon;
 @include xr-form;
+@include xr-label;
 @include xr-page-header;
 @include xr-reveal;
 @include xr-rich-text;

@@ -12,6 +12,16 @@
 
 .grid-x.grid-padding-x
   .cell.auto
+    - if @event.local_group.nil?
+      = callout :info,
+                content: "This is a national event",
+                tiny: true
+    - else
+      p
+        strong Local Group
+        br
+        = filtered_link(@event.local_group)
+
     p
       strong Description
       br
@@ -20,19 +30,14 @@
     p
       strong Start date
       br
-      = @event.starts_at
+      = l(@event.starts_at, format: :long)
 
     p
       strong End date
       br
-      = @event.ends_at
+      = l(@event.ends_at, format: :long)
 
     p
       strong Facebook URL
       br
-      = @event.facebook_url
-
-    p
-      strong Local Group
-      br
-      = @event.local_group_id.present? ? filtered_link(@event.local_group) : '-'
+      = @event.facebook_url.present? ? link_to(@event.facebook_url, @event.facebook_url) : "-"

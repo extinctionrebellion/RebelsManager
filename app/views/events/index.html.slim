@@ -13,24 +13,24 @@
 table
   thead
     tr
-      th Name
-      th Description
-      th Start Date
-      th End Date
-      th Facebook Url
       th Local Group
+      th Name
+      th Starts
+      th Ends
+      th Facebook
   tbody
     - @events.each do |event|
       tr
         td
+          - if event.local_group.nil?
+            span.label.label--warm-yellow NATIONAL EVENT
+          - else
+            = filtered_link(event.local_group)
+        td
           = link_to(event.name, event_path(event))
         td
-          = event.description
+          = l(event.starts_at, format: :long)
         td
-          = event.starts_at
+          = l(event.ends_at, format: :long)
         td
-          = event.ends_at
-        td
-          = event.facebook_url.nil? ? '-' : link_to(event.facebook_url)
-        td
-          = event.local_group_id.present? ? filtered_link(event.local_group) : '-'
+          = event.facebook_url.nil? ? '-' : link_to("On Facebook", event.facebook_url)

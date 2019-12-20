@@ -1,0 +1,43 @@
+- content_for :page_header do
+  = render 'layouts/components/page_header',
+           title: @event.name,
+           links: [ \
+             link_to( \
+               'Edit',
+               edit_event_path(@event),
+               class: 'secondary button' \
+             ),
+             delete_link(@event) \
+           ].compact
+
+.grid-x.grid-padding-x
+  .cell.auto
+    - if @event.local_group.nil?
+      = callout :info,
+                content: "This is a national event",
+                tiny: true
+    - else
+      p
+        strong Local Group
+        br
+        = filtered_link(@event.local_group)
+
+    p
+      strong Description
+      br
+      = simple_format @event.description
+
+    p
+      strong Start date
+      br
+      = l(@event.starts_at, format: :long)
+
+    p
+      strong End date
+      br
+      = l(@event.ends_at, format: :long)
+
+    p
+      strong Facebook URL
+      br
+      = @event.facebook_url.present? ? sanitize(link_to(@event.facebook_url, @event.facebook_url)) : "-"

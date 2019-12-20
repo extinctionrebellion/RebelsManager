@@ -1,0 +1,12 @@
+- content_for :page_header do
+  = render 'layouts/components/page_header',
+           title: "Edit: #{@event.name}"
+
+= simple_form_for @event,
+                  url: event_path(@event) do |f|
+  .grid-x.grid-padding-x
+    .cell.small-12.medium-8.large-6
+      = render 'form', f: f
+
+      = f.button :submit,
+                 'Save'

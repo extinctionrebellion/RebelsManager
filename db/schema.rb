@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 2019_12_15_071230) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.string "facebook_url"
+    t.bigint "local_group_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["local_group_id"], name: "index_events_on_local_group_id"
+  end
+
   create_table "local_groups", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false

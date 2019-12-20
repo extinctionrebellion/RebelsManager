@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: working_groups
+#
+#  id             :bigint           not null, primary key
+#  code           :string
+#  color          :string
+#  name           :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  local_group_id :bigint           not null
+#
+
 require "rails_helper"
 
 RSpec.describe WorkingGroup, "validations" do

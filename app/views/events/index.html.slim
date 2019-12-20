@@ -1,0 +1,36 @@
+- content_for :page_header do
+  = render 'layouts/components/page_header',
+           title: 'Events',
+           count: @events.size,
+           links: [ \
+             link_to( \
+               'Add Event',
+               new_event_path,
+               class: 'primary button show-for-large' \
+             ) \
+           ]
+
+table
+  thead
+    tr
+      th Local Group
+      th Name
+      th Starts
+      th Ends
+      th Facebook
+  tbody
+    - @events.each do |event|
+      tr
+        td
+          - if event.local_group.nil?
+            span.label.label--warm-yellow NATIONAL EVENT
+          - else
+            = filtered_link(event.local_group)
+        td
+          = link_to(event.name, event_path(event))
+        td
+          = l(event.starts_at, format: :long)
+        td
+          = l(event.ends_at, format: :long)
+        td
+          = event.facebook_url.present? ? sanitize(link_to("On Facebook", event.facebook_url)) : '-'

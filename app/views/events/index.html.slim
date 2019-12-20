@@ -33,4 +33,4 @@ table
         td
           = l(event.ends_at, format: :long)
         td
-          = event.facebook_url.nil? ? '-' : link_to("On Facebook", event.facebook_url)
+          = event.facebook_url.present? ? sanitize(link_to("On Facebook", event.facebook_url)) : '-'

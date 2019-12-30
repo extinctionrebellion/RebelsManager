@@ -19,7 +19,7 @@ module Extinctionrebellion
     config.time_zone = ENV['XR_BRANCH_TIMEZONE'] || 'London'
     config.active_record.default_timezone = :utc
 
-    config.hosts.push(*ENV['ALLOWED_ORIGINS'].split(","))
+    config.hosts.push(*ENV['ALLOWED_ORIGINS'].split(",")) if ENV['ALLOWED_ORIGINS'].present?
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

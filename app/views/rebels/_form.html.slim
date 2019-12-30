@@ -87,11 +87,19 @@
 
     p These information are not shared with the rebel.
 
-    = f.input :irl,
-              as: :boolean,
-              label: "This rebel has attended an XR event",
-              hint: "We have met this rebel in real life",
-              wrapper: :foundation_checkbox
+    .grid-x
+      .cell.small-12.medium-6.large-6
+        = f.input :irl,
+          as: :boolean,
+          label: "This rebel has attended an XR event",
+          hint: "We have met this rebel in real life",
+          wrapper: :foundation_checkbox
+      .cell.small-12.medium-6.large-6
+          = f.input :regular_volunteer,
+            as: :boolean,
+            label: "This rebel is a regular volunteer",
+            hint: "XR International Support Team wants to know how many regular volunteers are involved for each national group",
+            wrapper: :foundation_checkbox
 
     = f.input :tag_list,
               as: :text,

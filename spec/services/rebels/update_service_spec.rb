@@ -1,26 +1,10 @@
 require "rails_helper"
 
-RSpec.describe Rebels::CreateService, "#run" do
-  describe "When email format is not valid" do
-    it "doesn't create the rebel" do
-      base_params_hash = valid_params.to_unsafe_hash
-      invalid_params_hash = base_params_hash.deep_merge(rebel: {
-        email: "badly_formatted_email@provider",
-      })
-      invalid_params = ActionController::Parameters.new(invalid_params_hash)
+RSpec.describe Rebels::UpdateService, "#run" do
 
-      service = Rebels::CreateService.new(source: "admin")
-
-      expect {
-        service.run(invalid_params)
-      }.not_to change{ Rebel.count }
-    end
-  end
-
-  describe "When the rebel has been created" do
+  describe "When updating details" do
 
     it "has the expected details" do
-      core = valid_params.to_unsafe_h
 
       details = {
         "availability" => FFaker::Lorem.sentence,
@@ -45,15 +29,15 @@ RSpec.describe Rebels::CreateService, "#run" do
         "working_group_ids" => create_list(:working_group, 2).map(&:id),
       }
 
-      params_hash = core
-                      .deep_merge(rebel: details)
-                      .deep_merge(rebel: association_ids)
 
+      params_hash = {
+        rebel: details.merge(association_ids)
+      }
       params = ActionController::Parameters.new(params_hash)
-      service = Rebels::CreateService.new(source: "admin")
-      service.run(params)
 
-      rebel = service.rebel
+      subject.run(params)
+
+      rebel = subject.rebel
       expect(rebel).to be_persisted
 
       # strange behaviour about tag_list : we assign a word but get back an array
@@ -67,27 +51,8 @@ RSpec.describe Rebels::CreateService, "#run" do
 
     end
 
-    it "has a token" do
-      service = Rebels::CreateService.new(source: "admin")
-      service.run(valid_params)
-
-      rebel = service.rebel
-      expect(rebel).to be_persisted
-      expect(rebel.token).to be_truthy
-    end
-
   end
 
-  subject { Rebels::CreateService.new(source: "admin") }
-
-  let(:valid_params) do
-    ActionController::Parameters.new(
-      {
-        "rebel" => {
-          "email" => FFaker::Internet.safe_email,
-          "language" => "en"
-        }
-      }
-    )
-  end
+  let!(:rebel){ create(:rebel) }
+  subject { described_class.new(rebel: rebel) }
 end

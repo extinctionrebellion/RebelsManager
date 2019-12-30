@@ -19,9 +19,12 @@ module Extinctionrebellion
     config.time_zone = ENV['XR_BRANCH_TIMEZONE'] || 'London'
     config.active_record.default_timezone = :utc
 
+    config.hosts.push(*ENV['ALLOWED_ORIGINS'].split(","))
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
   end
 end

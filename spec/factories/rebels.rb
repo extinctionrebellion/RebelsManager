@@ -30,40 +30,10 @@
 #  local_group_id             :bigint
 #
 
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-alice:
-  name: Alice
-  email: alice@example.org
-  phone: 11223344
-  notes: Alice is the first rebel
-  on_basecamp: true
-  local_group: liege
-  language: fr
-
-bob:
-  name: Bob
-  email: bob@example.org
-  phone: 12341234
-  notes: Bob is a friend of Anne
-  on_basecamp: false
-  local_group: liege
-  language: fr
-
-carol:
-  name: Carol
-  email: carol@example.org
-  phone: 43214321
-  notes: Carol likes chocolate
-  on_basecamp: false
-  local_group: namur
-  language: fr
-
-dan:
-  name: Dan
-  email: dan@example.org
-  phone: 43214321
-  notes: Dan dances daily
-  on_basecamp: false
-  local_group: namur
-  language: fr
+FactoryBot.define do
+  factory :rebel do
+    email { FFaker::Internet.safe_email }
+    language { "en" }
+    consent { true }
+  end
+end

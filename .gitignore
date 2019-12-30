@@ -34,7 +34,11 @@ yarn-debug.log*
 .yarn-integrity
 
 .env
+*.local
 .DS_Store
 coverage
 
 /vendor/bundle
+
+# IDE and editor config
+.idea

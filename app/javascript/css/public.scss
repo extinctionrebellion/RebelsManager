@@ -13,7 +13,7 @@
 @include foundation-breadcrumbs;
 // @include foundation-button-group;
 @include foundation-callout;
-// @include foundation-card;
+@include foundation-card;
 // @include foundation-close-button;
 @include foundation-menu;
 // @include foundation-menu-icon;
@@ -41,10 +41,16 @@
 // @include foundation-float-classes;
 @include foundation-flex-classes;
 
+@import './public/components/button';
 @import './public/components/form';
+@import './public/components/icon';
+@import './public/components/label';
 @import './public/components/spacer';
 
+@include xr-public-button;
 @include xr-public-form;
+@include xr-public-icon;
+@include xr-public-label;
 @include xr-public-spacer;
 
 body {

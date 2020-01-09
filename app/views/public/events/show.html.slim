@@ -1,0 +1,39 @@
+- content_for :page_title, @event.name
+
+- content_for :header do
+  h1
+    small = link_to _("← All events"), public_events_path
+    br
+    = @event.name
+
+.grid-x.grid-margin-x
+  .cell.auto
+    - if @event.local_group.nil?
+      p
+        span.label.label--warm-yellow = _("NATIONAL EVENT")
+    - else
+      p
+        strong = _("This event is coordinated by")
+        br
+        span.lead = @event.local_group.name
+
+    .grid-x.grid-margin-x
+      .cell.small-6
+        p
+          strong = _("Starts")
+          br
+          span.lead = @event.starts_at
+      .cell.small-6
+        p
+          strong = _("Ends")
+          br
+          span.lead = @event.ends_at
+
+    - if @event.facebook_url.presence
+      p
+        = sanitize(@event.facebook_button)
+
+    - if @event.description.presence
+      .card
+        .card-section
+          == Rinku.auto_link(simple_format(@event.description), :all, 'target="_blank"')

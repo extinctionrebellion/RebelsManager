@@ -2,6 +2,7 @@ module DecoratorHelpers
   def self.included(controller)
     helpers = [
       :decorate,
+      :event_decorator,
       :rebel_decorator
     ]
 
@@ -31,6 +32,10 @@ module DecoratorHelpers
     end
 
     model
+  end
+
+  def event_decorator(reload: false)
+    decorate(@event, cache: true, reload: reload)
   end
 
   def rebel_decorator(reload: false)

@@ -1,0 +1,154 @@
+@mixin tiny-xr-public-button {
+  min-width: 1.8rem;
+  padding: .5rem;
+  font-weight: $global-weight-bold;
+
+  .inline-icon,
+  svg {
+    height: .8rem;
+  }
+}
+
+@mixin small-xr-public-button {
+  padding: rem-calc(12) 1rem;
+  font-weight: $global-weight-bold;
+
+  svg {
+    top: calc(50% - .6rem);
+    height: 1.2rem;
+    left: .75rem;
+  }
+
+  &.ladda-button {
+    svg {
+      left: 0;
+    }
+  }
+
+  &.button--dropdown {
+    svg {
+      top: calc(50% - .3rem);
+      height: .8rem !important;
+      stroke-width: 3px;
+
+      ~ span {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  &.icon-right {
+    svg {
+      left: auto;
+      right: .75rem;
+    }
+  }
+}
+
+@mixin xr-public-button {
+  .button {
+    // workaround for Foundation issue:
+    // https://github.com/zurb/foundation-sites/issues/11396
+    @each $size in $breakpoint-classes {
+      @include breakpoint($size only) {
+        &.#{$size}-only-expanded {
+          @include button-expand;
+        }
+      }
+      @if $size != $-zf-zero-breakpoint {
+        @include breakpoint($size down) {
+          &.#{$size}-down-expanded {
+            @include button-expand;
+          }
+        }
+
+        @include breakpoint($size) {
+          &.#{$size}-expanded {
+            @include button-expand;
+          }
+        }
+      }
+    }
+
+    position: relative;
+
+    &.hollow {
+      color: $black !important;
+
+      &.warning {
+        color: darken($color-warning, 25%) !important;
+      }
+    }
+
+    &.dropdown {
+      &::after {
+        @include breakpoint(small only) {
+          margin-left: .5rem;
+        }
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: calc(50% - .75rem);
+      left: 1.75rem;
+      height: 1.5rem;
+      stroke: currentColor;
+
+      ~ span {
+        margin-left: 1.75rem;
+      }
+    }
+
+    &.icon-right {
+      svg {
+        left: auto;
+        right: 1rem;
+      }
+
+      > span {
+        margin-left: 0;
+        margin-right: 1.5rem;
+      }
+    }
+
+    .ladda-label {
+      svg {
+        left: -1rem;
+      }
+    }
+
+    &.small {
+      @include small-xr-public-button;
+    }
+
+    &.tiny {
+      @include tiny-xr-public-button;
+    }
+  }
+
+  .button-group {
+    &.tiny {
+      .button {
+        @include tiny-xr-public-button;
+
+        @include breakpoint(medium down) {
+          margin-bottom: .25rem !important;
+        }
+      }
+    }
+
+    &.small {
+      .button {
+        @include small-xr-public-button;
+      }
+    }
+
+    &__label {
+      @include button-base;
+      cursor: auto;
+      background: none !important;
+      color: $dark-gray !important;
+    }
+  }
+}

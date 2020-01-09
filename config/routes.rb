@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :working_groups
 
   namespace :public do
+    resources :events, only: [:index, :show]
     resources :rebels, only: [:new, :create, :edit, :update]
   end
   get '/join', to: 'public/rebels#new'

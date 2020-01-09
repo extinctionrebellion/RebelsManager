@@ -7,6 +7,7 @@
 #  ends_at        :datetime
 #  facebook_url   :string
 #  name           :string
+#  slug           :string
 #  starts_at      :datetime
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
@@ -14,6 +15,9 @@
 #
 
 class Event < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   belongs_to :local_group, optional: true
 
   validates :name,

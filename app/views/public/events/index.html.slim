@@ -1,0 +1,26 @@
+- content_for :page_title, _("Events")
+
+- content_for :header do
+  h1 = _("Events")
+
+- if @events.any?
+  - @events.each do |event|
+    .card
+      .card-section
+        .grid-x.grid-margin-x
+          .cell.auto
+            h3
+              = link_to event.name, public_event_path(event)
+              br
+              small = event.starts_at(date_only: true)
+          - if event.facebook_url.presence
+            .cell.shrink
+              = sanitize(event.facebook_button)
+
+        - if event.description.presence
+          p
+            small
+              = event.excerpt
+    .spacer-1
+- else
+  p = _("No event planned.")

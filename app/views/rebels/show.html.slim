@@ -25,6 +25,11 @@
     = simple_format @rebel.internal_notes
   .spacer-2
 
+- if @rebel.regular_volunteer?
+  = callout :info,
+            content: "This rebel is marked as regular volunteer",
+            tiny: true
+
 .grid-x.grid-padding-x
   .cell.small-6.medium-4
     p

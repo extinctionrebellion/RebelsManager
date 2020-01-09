@@ -2,7 +2,11 @@
 
 - content_for :header do
   h1
-    small = link_to _("← All events"), public_events_path
+    small
+      - if @event[:ends_at] < Time.now
+        = link_to _("← All past events"), public_events_path(scope: "past")
+      - else
+        = link_to _("← All upcoming events"), public_events_path
     br
     = @event.name
 

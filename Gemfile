@@ -29,6 +29,7 @@ gem 'acts-as-taggable-on', '~> 6.0', github: 'spark-solutions/acts-as-taggable-o
 gem 'ajax-datatables-rails'
 gem 'annotate'
 gem 'awesome_print'
+gem 'by_star'
 gem 'devise', '~> 4.7'
 gem 'ffaker'
 gem 'friendly_id', '~> 5.2.4'

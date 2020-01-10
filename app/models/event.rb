@@ -34,6 +34,9 @@ class Event < ApplicationRecord
 
   attr_accessor :starts_at_date, :starts_at_time, :ends_at_date, :ends_at_time
 
+  scope :past, -> { before(Time.now, field: :ends_at).order(ends_at: :desc) }
+  scope :upcoming, -> { after(Time.now, field: :starts_at).order(starts_at: :desc) }
+
   def destroyable_by?(user)
     user.admin?
   end

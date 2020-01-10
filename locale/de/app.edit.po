@@ -32,7 +32,7 @@ msgid "I give consent for Extinction Rebellion Belgium to contact me using the d
 msgstr "Ich bin damit einverstanden, dass Extinction Rebellion die Daten nutzt, die ich in diesem Formular angegeben habe."
 
 msgid "I've read and I agree with the principles and values of Extinction Rebellion"
-msgstr ""
+msgstr "Ich habe gelesen und stimme den Prinzipien und Werten der Extinction Rebellion zu"
 
 msgid "In which areas would you like to participate?"
 msgstr "In welchen Bereichen möchtest Du mitmachen?"
@@ -71,7 +71,7 @@ msgid "Of course, your opinion can change over time, depending on the action"
 msgstr "Deine Meinung darf sich natürlich mit der Zeit verändern, entsprechend der jeweiligen Aktion."
 
 msgid "Open principles and values in a new tab"
-msgstr ""
+msgstr "Öffnen Sie Prinzipien und Werte in einer neuen tab"
 
 msgid "Please double check the email address provided."
 msgstr "Bitte überprüfe die angegebene Email-Adresse."
@@ -109,7 +109,8 @@ msgstr "Wir dürfen Dir SMS-Nachrichten zu öffentlichen Aktionen schicken."
 msgid "We recommend that you select a maximum of 2 answers."
 msgstr "Wir empfehlen, maximal 2 Antworten auszusuchen."
 
-msgid "Welcome to the Rebellion!"
+#, fuzzy
+msgid "Welcome to the Rebellion! 🙌 You will receive an email from us with a few links. Then please keep your rebel profile up-to-date (we suggest that you bookmark this page, or that you follow the link you'll find at the bottom of our newsletters)."
 msgstr "Willkommen beim Aufstand gegen das Aussterben !"
 
 msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
@@ -123,3 +124,6 @@ msgstr "Deine Einwilligung zur Datennutzung ist erforderlich."
 
 msgid "Your data can be deleted anytime by sending an email to %{email}."
 msgstr "Falls Du Deine Daten löschen lassen möchtest, kannst Du jederzeit eine email an %{email} senden."
+
+#~ msgid "Welcome to the Rebellion!"
+#~ msgstr "Willkommen beim Aufstand gegen das Aussterben !"

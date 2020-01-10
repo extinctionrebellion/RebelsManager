@@ -7,159 +7,120 @@ msgstr ""
 "Project-Id-Version: Rebels Manager\n"
 "Language: en\n"
 
-#: 
-msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
-msgstr "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
-
-#: 
-msgid "By answering the following questions, you will be listed in our secure Rebels database."
-msgstr "By answering the following questions, you will be listed in our secure Rebels database."
-
-#: 
-msgid "Email address"
-msgstr "Email address"
-
-#: 
-msgid "Feel free to let us know about anything that can help Extinction Rebellion."
-msgstr "Feel free to let us know about anything that can help Extinction Rebellion."
-
-#: 
-msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
-msgstr "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
-
-#: 
-msgid "In which areas would you like to participate?"
-msgstr "In which areas would you like to participate?"
-
-#: 
-msgid "Join the Rebellion"
-msgstr "Join the Rebellion"
-
-#: 
-msgid "Join the Rebellion!"
-msgstr "Join the Rebellion!"
-
-#: 
-msgid "Join us!"
-msgstr "Join us!"
-
-#: 
-msgid "Local group"
-msgstr "Local group"
-
-#: 
-msgid "Mobile phone"
-msgstr "Mobile phone"
-
-#: 
-msgid "My Rebel Profile"
-msgstr "My Rebel Profile"
-
-#: 
-msgid "Name or nickname"
-msgstr "Name or nickname"
-
-#: 
-msgid "No local group (yet) next to you? Please select the one that makes the more sense to you."
-msgstr "No local group (yet) next to you? Please select the one that makes the more sense to you."
-
-#: 
-msgid "Of course, your opinion can change over time, depending on the action"
-msgstr "Of course, your opinion can change over time, depending on the action"
-
-#: 
-msgid "Please select a language"
-msgstr "Please select a language"
-
-#: 
-msgid "Postcode"
-msgstr "Postcode"
-
-#: 
-msgid "Preferred language"
-msgstr "Preferred language"
-
-#: 
-msgid "Select a local group"
-msgstr "Select a local group"
-
-#: 
-msgid "Sorry, can't save this record:"
-msgstr "Sorry, can't save this record:"
-
-#: 
-msgid "Thanks a lot! Your rebel profile is now up-to-date."
-msgstr "Thanks a lot! Your rebel profile is now up-to-date."
-
-#: 
-msgid "Update"
-msgstr "Update"
-
-#: 
-msgid "We may send text messages about public actions."
-msgstr "We may send text messages about public actions."
-
-#: 
-msgid "We recommend that you select a maximum of 2 answers."
-msgstr "We recommend that you select a maximum of 2 answers."
-
-#: 
-msgid "Welcome to the Rebellion!"
-msgstr "Welcome to the Rebellion!"
-
-#: 
-msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
-msgstr "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
-
-#: 
-msgid "Yes, I am willing to be arrested during an action"
-msgstr "Yes, I am willing to be arrested during an action"
-
-#: 
 msgid "A couple of hours a week"
 msgstr "A couple of hours a week"
 
-#: 
 msgid "A few hours a month"
 msgstr "A few hours a month"
 
-#: 
-msgid "More than 10 hours a week"
-msgstr "More than 10 hours a week"
+msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
+msgstr "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 
-#: 
-msgid "Please double check the email address provided."
-msgstr "Please double check the email address provided."
+msgid "By answering the following questions, you will be listed in our secure Rebels database."
+msgstr "By answering the following questions, you will be listed in our secure Rebels database."
 
-#: 
-msgid "Please provide an email address"
-msgstr "Please provide an email address"
+msgid "Email address"
+msgstr "Email address"
 
-#: 
-msgid "This email address is already linked to a rebel"
-msgstr "This email address is already linked to a rebel"
+msgid "Feel free to let us know about anything that can help Extinction Rebellion."
+msgstr "Feel free to let us know about anything that can help Extinction Rebellion."
 
-#: 
-msgid "Your consent about data usage is required"
-msgstr "Your consent about data usage is required"
-
-#: 
 msgid "I am currently unavailable, you have all my support!"
 msgstr "I am currently unavailable, you have all my support!"
 
-#: 
-msgid "My availability for Extinction Rebellion"
-msgstr "My availability for Extinction Rebellion"
+msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
+msgstr "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 
-#: 
-msgid "Your data can be deleted anytime by sending an email to %{email}."
-msgstr "Your data can be deleted anytime by sending an email to %{email}."
-
-#: 
 msgid "I've read and I agree with the principles and values of Extinction Rebellion"
 msgstr "I've read and I agree with the principles and values of Extinction Rebellion"
 
-#: 
+msgid "In which areas would you like to participate?"
+msgstr "In which areas would you like to participate?"
+
+msgid "Join the Rebellion"
+msgstr "Join the Rebellion"
+
+msgid "Join the Rebellion!"
+msgstr "Join the Rebellion!"
+
+msgid "Join us!"
+msgstr "Join us!"
+
+msgid "Local group"
+msgstr "Local group"
+
+msgid "Mobile phone"
+msgstr "Mobile phone"
+
+msgid "More than 10 hours a week"
+msgstr "More than 10 hours a week"
+
+msgid "My Rebel Profile"
+msgstr "My Rebel Profile"
+
+msgid "My availability for Extinction Rebellion"
+msgstr "My availability for Extinction Rebellion"
+
+msgid "Name or nickname"
+msgstr "Name or nickname"
+
+msgid "No local group (yet) next to you? Please select the one that makes the more sense to you."
+msgstr "No local group (yet) next to you? Please select the one that makes the more sense to you."
+
+msgid "Of course, your opinion can change over time, depending on the action"
+msgstr "Of course, your opinion can change over time, depending on the action"
+
 msgid "Open principles and values in a new tab"
 msgstr "Open principles and values in a new tab"
 
+msgid "Please double check the email address provided."
+msgstr "Please double check the email address provided."
+
+msgid "Please provide an email address"
+msgstr "Please provide an email address"
+
+msgid "Please select a language"
+msgstr "Please select a language"
+
+msgid "Postcode"
+msgstr "Postcode"
+
+msgid "Preferred language"
+msgstr "Preferred language"
+
+msgid "Select a local group"
+msgstr "Select a local group"
+
+msgid "Sorry, can't save this record:"
+msgstr "Sorry, can't save this record:"
+
+msgid "Thanks a lot! Your rebel profile is now up-to-date."
+msgstr "Thanks a lot! Your rebel profile is now up-to-date."
+
+msgid "This email address is already linked to a rebel"
+msgstr "This email address is already linked to a rebel"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "We may send text messages about public actions."
+msgstr "We may send text messages about public actions."
+
+msgid "We recommend that you select a maximum of 2 answers."
+msgstr "We recommend that you select a maximum of 2 answers."
+
+#, fuzzy
+msgid "Welcome to the Rebellion! 🙌 You will receive an email from us with a few links. Then please keep your rebel profile up-to-date (we suggest that you bookmark this page, or that you follow the link you'll find at the bottom of our newsletters)."
+msgstr "Welcome to the Rebellion!"
+
+msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
+msgstr "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
+
+msgid "Yes, I am willing to be arrested during an action"
+msgstr "Yes, I am willing to be arrested during an action"
+
+msgid "Your consent about data usage is required"
+msgstr "Your consent about data usage is required"
+
+msgid "Your data can be deleted anytime by sending an email to %{email}."
+msgstr "Your data can be deleted anytime by sending an email to %{email}."

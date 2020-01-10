@@ -46,7 +46,7 @@ module Rebels
       when "admin"
         @rebel
       when "public"
-        rebel.redirect || "https://www.extinctionrebellion.be/thank-you.html"
+        rebel.redirect || rebel.profile_url
       end
     end
 

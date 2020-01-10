@@ -1,0 +1,8 @@
+- if params[:scope] == "past"
+  = link_to _("Upcoming events"),
+            public_events_path(local_group_id: params[:local_group_id]),
+            class: "expanded secondary button"
+- else
+  = link_to _("Past events"),
+            public_events_path(scope: "past", local_group_id: params[:local_group_id]),
+            class: "expanded secondary button"

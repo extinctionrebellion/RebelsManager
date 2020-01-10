@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Line" viewBox="0 0 100 112">
+    <defs>
+        <style>.cls-1{fill:none;stroke:#985C9B;stroke-linecap:round;stroke-linejoin:round;}</style>
+    </defs>
+    <title>03- calendar</title>
+    <g id="Icons">
+        <path class="cls-1" d="M89.86,97.79H10.14A5.15,5.15,0,0,1,5,92.64V27.07a5.14,5.14,0,0,1,5.14-5.14H89.86A5.14,5.14,0,0,1,95,27.07V92.64A5.15,5.15,0,0,1,89.86,97.79Z"></path>
+        <path class="cls-1" d="M95,60.5V92.64a5.15,5.15,0,0,1-5.14,5.15h-36S74.43,91.36,95,60.5Z"></path>
+        <path class="cls-1" d="M95,45.07H5v-18a5.14,5.14,0,0,1,5.14-5.14H89.86A5.14,5.14,0,0,1,95,27.07Z"></path>
+        <path class="cls-1" d="M24.29,29.64A7.72,7.72,0,1,1,32,21.93"></path>
+        <path class="cls-1" d="M51.29,29.64A7.72,7.72,0,1,1,59,21.93"></path>
+        <path class="cls-1" d="M78.29,29.64A7.72,7.72,0,1,1,86,21.93"></path>
+        <line class="cls-1" x1="5" y1="57.93" x2="95" y2="57.93"></line>
+        <line class="cls-1" x1="5" y1="70.79" x2="58.79" y2="70.79"></line>
+        <line class="cls-1" x1="5" y1="83.64" x2="58.79" y2="83.64"></line>
+        <line class="cls-1" x1="23" y1="45.07" x2="23" y2="97.79"></line>
+        <line class="cls-1" x1="41" y1="45.07" x2="41" y2="97.79"></line>
+        <line class="cls-1" x1="59" y1="45.07" x2="59" y2="62.52"></line>
+        <line class="cls-1" x1="77" y1="45.07" x2="77" y2="64.87"></line>
+        <rect class="cls-1" x="5" y="57.93" width="18" height="12.86"></rect>
+        <rect class="cls-1" x="23" y="83.64" width="18" height="14.14"></rect>
+        <rect class="cls-1" x="41" y="45.07" width="18" height="12.86"></rect>
+        <path class="cls-1" d="M95,60.5C74.43,91.36,53.86,97.79,53.86,97.79s9.61-14.46,3.25-34.05a1.06,1.06,0,0,1,1.27-1.38C64.32,64,82.24,68,95,60.5Z"></path>
+        <line class="cls-1" x1="37.14" y1="37.36" x2="62.86" y2="37.36"></line>
+        <line class="cls-1" x1="77" y1="37.36" x2="87.29" y2="37.36"></line>
+        <line class="cls-1" x1="23" y1="37.36" x2="12.71" y2="37.36"></line>
+    </g>
+</svg>

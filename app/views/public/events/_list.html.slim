@@ -1,0 +1,33 @@
+- if events.any?
+  - events.each do |event|
+    .card
+      .card-section
+        .grid-x.grid-margin-x
+          .cell.auto
+            h3
+              = link_to event.name, public_event_path(event)
+              br
+              small
+                span.inline-icon
+                  = render "layouts/icons/calendar"
+                =<> event.starts_at(date_only: true)
+                - if event.local_group
+                  span.inline-icon
+                    = render "layouts/icons/compass_arrow"
+                  =< event.local_group.name
+                - else
+                  span.label.label--warm-yellow = _("NATIONAL EVENT")
+
+          - if event.facebook_url.presence
+            .cell.shrink
+              = sanitize(event.facebook_button)
+
+        - if event.description.presence
+          p
+            small
+              = event.excerpt
+    .spacer-1
+- else
+  = render "public/shared/no_data",
+           primary: _("No event planned."),
+           image_src: "streamline/ux/calendar.svg"

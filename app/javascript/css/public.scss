@@ -45,12 +45,14 @@
 @import './public/components/form';
 @import './public/components/icon';
 @import './public/components/label';
+@import './public/components/no_data';
 @import './public/components/spacer';
 
 @include xr-public-button;
 @include xr-public-form;
 @include xr-public-icon;
 @include xr-public-label;
+@include xr-public-no-data;
 @include xr-public-spacer;
 
 body {

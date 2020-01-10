@@ -2,21 +2,23 @@ class Public::EventsController < Public::BaseController
   layout "public"
 
   def index
+    events = Event.all
     if params[:scope] == "past"
-      @events = Event.all
-        .before(Date.today.beginning_of_day, field: :ends_at)
-        .order(starts_at: :desc).map(&method(:decorate))
+      events = events
+        .before(Time.now, field: :ends_at)
+        .order(ends_at: :desc)
     else
-      @events = Event.all
-        .after(Date.today.beginning_of_day, field: :starts_at)
-        .order(starts_at: :desc).map(&method(:decorate))
+      events = events
+        .after(Time.now, field: :starts_at)
+        .order(starts_at: :desc)
     end
+    if params[:local_group_id]
+      events = events.where(local_group_id: params[:local_group_id])
+    end
+    @events = events.map(&method(:decorate))
   end
 
   def show
     @event = EventDecorator.new(Event.friendly.find(params[:id]))
   end
-
-  private
-
 end

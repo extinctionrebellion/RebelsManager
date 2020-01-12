@@ -85,5 +85,12 @@
              wrapper: :foundation_checkbox,
              required: true
 
+  = f.input :active,
+        label: _("How do you want to get involved?"),
+        wrapper: :segmented_selector,
+        as: :segmented_radio_buttons,
+        collection: [[_("Being an active rebel"), true], [_("Supporting Extinction Rebellion"), false]],
+        required: true
+
   = f.button :submit,
              _("Update")

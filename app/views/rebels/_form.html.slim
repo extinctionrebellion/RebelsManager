@@ -141,4 +141,11 @@
                 ["More than 10 hours a week", '10_hours_a_week'] \
               ]
 
+    = f.input :active,
+          label: _("How do you want to get involved?"),
+          wrapper: :segmented_selector,
+          as: :segmented_radio_buttons,
+          collection: [[_("Being an active rebel"), true], [_("Supporting Extinction Rebellion"), false]],
+          required: true
+
     .spacer-2

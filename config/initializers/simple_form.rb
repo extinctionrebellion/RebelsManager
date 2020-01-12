@@ -332,4 +332,19 @@ SimpleForm.setup do |config|
     b.use :input
     b.use :error, wrap_with: { tag: :small, class: 'form-error animated fadeInDown' }
   end
+
+  config.wrappers :segmented_selector, class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.optional :readonly
+
+    b.wrapper tag: :label do |ba|
+      ba.use :label_text, wrap_with: { tag: :span, class: 'label-text' }
+      ba.wrapper tag: :ul, class: 'segmented-control' do |segmented_control|
+        segmented_control.use :input
+      end
+      ba.use :error, wrap_with: { tag: :small, class: 'form-error animated fadeInDown' }
+      ba.use :hint, wrap_with: { tag: :p, class: 'help-text' }
+    end
+  end
 end

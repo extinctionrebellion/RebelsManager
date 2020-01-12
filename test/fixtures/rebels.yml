@@ -3,6 +3,7 @@
 # Table name: rebels
 #
 #  id                         :bigint           not null, primary key
+#  active                     :boolean
 #  agree_with_principles      :boolean
 #  availability               :string
 #  consent                    :boolean
@@ -40,6 +41,7 @@ alice:
   on_basecamp: true
   local_group: liege
   language: fr
+  active: true
 
 bob:
   name: Bob
@@ -49,6 +51,7 @@ bob:
   on_basecamp: false
   local_group: liege
   language: fr
+  active: false
 
 carol:
   name: Carol
@@ -58,6 +61,7 @@ carol:
   on_basecamp: false
   local_group: namur
   language: fr
+  active: false
 
 dan:
   name: Dan
@@ -67,3 +71,4 @@ dan:
   on_basecamp: false
   local_group: namur
   language: fr
+  active: true

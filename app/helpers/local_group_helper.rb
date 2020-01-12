@@ -1,10 +1,9 @@
 module LocalGroupHelper
-  def delete_link(local_group)
-    return unless local_group.destroyable_by?(current_user)
-    link_to "Delete",
-            local_group_path(local_group),
-            method: :delete,
-            data: { confirm: 'Are you sure?' },
-            class: 'secondary button'
+  def filtered_link(local_group)
+    if current_user.admin?
+      link_to(local_group.name, local_group_path(local_group.id))
+    else
+      local_group.name
+    end
   end
 end

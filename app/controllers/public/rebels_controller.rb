@@ -13,7 +13,7 @@ class Public::RebelsController < Public::BaseController
     )
     if service.run(params)
       redirect_to service.redirect_url,
-                  notice: _("Welcome to the Rebellion!")
+                  notice: _("Welcome to the Rebellion! 🙌 You will receive an email from us with a few links. Then please keep your rebel profile up-to-date (we suggest that you bookmark this page, or that you follow the link you'll find at the bottom of our newsletters).")
     else
       @rebel = service.rebel
       set_error_flash(service.rebel, service.error_message)

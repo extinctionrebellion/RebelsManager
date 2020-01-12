@@ -25,6 +25,11 @@
     = simple_format @rebel.internal_notes
   .spacer-2
 
+- if @rebel.regular_volunteer?
+  = callout :info,
+            content: "This rebel is marked as regular volunteer",
+            tiny: true
+
 .grid-x.grid-padding-x
   .cell.small-6.medium-4
     p
@@ -70,6 +75,7 @@
   .cell.small-6.medium-8
     = @rebel.willingness_to_be_arrested? ? '✓' : 'NO'
 
+.grid-x.grid-padding-x
   .cell.small-6.medium-4
     p
       strong Number of arrests
@@ -82,6 +88,13 @@
       strong Notes added when signing up
   .cell.small-6.medium-8
     = @rebel.notes.presence || "-"
+
+.grid-x.grid-padding-x
+  .cell.small-6.medium-4
+    p
+      strong Agreed to XR principles and values
+  .cell.small-6.medium-8
+    = @rebel.agree_with_principles? ? '✓' : "Didn't confirm yet"
 
 .spacer-2
 

@@ -79,5 +79,11 @@
               [_("More than 10 hours a week"), '10_hours_a_week'] \
             ]
 
+  =  f.input :agree_with_principles,
+             as: :boolean,
+             label: raw(_("I've read and I agree with the principles and values of Extinction Rebellion") + "<br>" + link_to(_("Open principles and values in a new tab"), ENV['XR_BRANCH_AGREEMENT_URL'], target: "_blank").html_safe),
+             wrapper: :foundation_checkbox,
+             required: true
+
   = f.button :submit,
              _("Update")

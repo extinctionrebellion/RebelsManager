@@ -155,3 +155,47 @@ msgstr "Ma disponibilité pour Extinction Rebellion"
 msgid "Your data can be deleted anytime by sending an email to %{email}."
 msgstr "Vos données peuvent être supprimées à tout moment en envoyant un email à %{email}."
 
+#: 
+msgid "I've read and I agree with the principles and values of Extinction Rebellion"
+msgstr "J'ai lu et je marque mon accord avec les principes et valeurs d'Extinction Rebellion"
+
+#: 
+msgid "Open principles and values in a new tab"
+msgstr "Ouvrir les principes et valeurs dans un nouvel onglet"
+
+#: 
+msgid "Ends"
+msgstr "Termine le"
+
+#: 
+msgid "Events"
+msgstr "Événements"
+
+#: 
+msgid "NATIONAL EVENT"
+msgstr "ÉVÉNEMENT NATIONAL"
+
+#: 
+msgid "No event planned."
+msgstr "Aucun événement planifié."
+
+#: 
+msgid "See details on Facebook"
+msgstr "Voir les détails sur Facebook"
+
+#: 
+msgid "Starts"
+msgstr "Débute le"
+
+#: 
+msgid "This event is coordinated by"
+msgstr "Cet événement est coordonné par"
+
+#: 
+msgid "← All events"
+msgstr "← Tous les événements"
+
+#: 
+msgid "Welcome to the Rebellion! 🙌 You will receive an email from us with a few links. Then please keep your rebel profile up-to-date (we suggest that you bookmark this page, or that you follow the link you'll find at the bottom of our newsletters)."
+msgstr "Bienvenue dans la rébellion! 🙌 Vous allez recevoir un email de notre part avec quelques liens. Ensuite, conservez votre profil rebelle à jour (nous vous suggérons de mettre cette page en favori, ou de suivre le lien présent au bas de chacune de nos newsletters)."
+

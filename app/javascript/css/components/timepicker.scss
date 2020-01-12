@@ -1,0 +1,24 @@
+@mixin xr-timepicker {
+  .field {
+    &.time_picker {
+      label {
+        input {
+          background: $white;
+          cursor: pointer;
+
+          &.picker__input--active {
+            ~ .input-icon {
+              color: $color-green;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (pointer: fine) {
+    .picker__holder {
+      outline: 0;
+    }
+  }
+}

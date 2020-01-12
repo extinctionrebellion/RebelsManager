@@ -8,10 +8,10 @@ msgstr ""
 "Language: nl\n"
 
 msgid "A couple of hours a week"
-msgstr ""
+msgstr "Enkele uren per week"
 
 msgid "A few hours a month"
-msgstr ""
+msgstr "Een paar uur per maand"
 
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 msgstr "De coördinatoren van zowel Extinction Rebellion Belgium als je lokale groep zullen ingelicht worden van je inschrijving en zullen er zijn om je te ondersteunen."
@@ -26,10 +26,13 @@ msgid "Feel free to let us know about anything that can help Extinction Rebellio
 msgstr "Voel je vrij om ons eender wat te laten weten dat Extinction Rebellion kan helpen. "
 
 msgid "I am currently unavailable, you have all my support!"
-msgstr ""
+msgstr "Ik ben momenteel niet beschikbaar, je hebt al mijn steun!"
 
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 msgstr "Ik geef toestemming aan Extinction Rebellion Belgium om me te contacteren via de data die ik ingevuld heb in dit formulier. "
+
+msgid "I've read and I agree with the principles and values of Extinction Rebellion"
+msgstr "Ik heb gelezen en ik ben het eens met de principes en waarden van de Extinction Rebellion"
 
 msgid "In which areas would you like to participate?"
 msgstr "In welke gebieden wil je graag deelnemen? "
@@ -50,13 +53,13 @@ msgid "Mobile phone"
 msgstr "GSM"
 
 msgid "More than 10 hours a week"
-msgstr ""
+msgstr "Meer dan 10 uur per week"
 
 msgid "My Rebel Profile"
 msgstr "Mijn profiel als rebel"
 
 msgid "My availability for Extinction Rebellion"
-msgstr ""
+msgstr "Mijn beschikbaarheid voor Extinction Rebellion"
 
 msgid "Name or nickname"
 msgstr "Naam of alias"
@@ -67,11 +70,14 @@ msgstr "(Nog) geen lokale groep in je buurt? Duid de meest logische keuze voor j
 msgid "Of course, your opinion can change over time, depending on the action"
 msgstr "Je mening kan natuurlijk veranderen, afhankelijk van de actie"
 
+msgid "Open principles and values in a new tab"
+msgstr "Open principes en waarden in een nieuw tab"
+
 msgid "Please double check the email address provided."
-msgstr ""
+msgstr "Gelieve het opgegeven e-mailadres te controleren."
 
 msgid "Please provide an email address"
-msgstr ""
+msgstr "Gelieve een e-mailadres op te geven"
 
 msgid "Please select a language"
 msgstr "Selecteer alsjeblieft een taal"
@@ -92,7 +98,7 @@ msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr "Erg bedankt! Je profiel als rebel is nu actueel."
 
 msgid "This email address is already linked to a rebel"
-msgstr ""
+msgstr "Dit e-mail adres is al gekoppeld aan een rebel"
 
 msgid "Update"
 msgstr "Update"
@@ -103,7 +109,8 @@ msgstr "We kunnen mogelijks sms'en verzenden over publieke acties."
 msgid "We recommend that you select a maximum of 2 answers."
 msgstr "We raden aan om maximum 2 antwoorden aan te duiden"
 
-msgid "Welcome to the Rebellion!"
+#, fuzzy
+msgid "Welcome to the Rebellion! 🙌 You will receive an email from us with a few links. Then please keep your rebel profile up-to-date (we suggest that you bookmark this page, or that you follow the link you'll find at the bottom of our newsletters)."
 msgstr "Welkom bij de rebellie!"
 
 msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
@@ -113,7 +120,10 @@ msgid "Yes, I am willing to be arrested during an action"
 msgstr "Ja, ik ben bereid me te laten arresteren tijdens een actie"
 
 msgid "Your consent about data usage is required"
-msgstr ""
+msgstr "Uw toestemming voor het gebruik van de gegevens is vereist"
 
 msgid "Your data can be deleted anytime by sending an email to %{email}."
-msgstr ""
+msgstr "Uw gegevens kunnen te allen tijde worden verwijderd door een e-mail te sturen naar %{email}."
+
+#~ msgid "Welcome to the Rebellion!"
+#~ msgstr "Welkom bij de rebellie!"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_043415) do
+ActiveRecord::Schema.define(version: 2019_12_30_105826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,18 @@ ActiveRecord::Schema.define(version: 2019_11_27_043415) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.string "facebook_url"
+    t.bigint "local_group_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["local_group_id"], name: "index_events_on_local_group_id"
   end
 
   create_table "local_groups", force: :cascade do |t|
@@ -87,6 +99,8 @@ ActiveRecord::Schema.define(version: 2019_11_27_043415) do
     t.string "email_bidx"
     t.string "phone_ciphertext"
     t.string "phone_bidx"
+    t.boolean "agree_with_principles"
+    t.boolean "regular_volunteer", default: false
     t.index ["email_bidx"], name: "index_rebels_on_email_bidx", unique: true
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
     t.index ["phone_bidx"], name: "index_rebels_on_phone_bidx"

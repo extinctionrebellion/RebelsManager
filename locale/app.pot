@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-10 06:28+0200\n"
-"PO-Revision-Date: 2019-10-10 06:28+0200\n"
+"POT-Creation-Date: 2020-01-10 13:57+0100\n"
+"PO-Revision-Date: 2020-01-10 13:57+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -40,6 +40,9 @@ msgid "I am currently unavailable, you have all my support!"
 msgstr ""
 
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
+msgstr ""
+
+msgid "I've read and I agree with the principles and values of Extinction Rebellion"
 msgstr ""
 
 msgid "In which areas would you like to participate?"
@@ -78,6 +81,9 @@ msgstr ""
 msgid "Of course, your opinion can change over time, depending on the action"
 msgstr ""
 
+msgid "Open principles and values in a new tab"
+msgstr ""
+
 msgid "Please double check the email address provided."
 msgstr ""
 
@@ -114,7 +120,7 @@ msgstr ""
 msgid "We recommend that you select a maximum of 2 answers."
 msgstr ""
 
-msgid "Welcome to the Rebellion!"
+msgid "Welcome to the Rebellion! 🙌 You will receive an email from us with a few links. Then please keep your rebel profile up-to-date (we suggest that you bookmark this page, or that you follow the link you'll find at the bottom of our newsletters)."
 msgstr ""
 
 msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"

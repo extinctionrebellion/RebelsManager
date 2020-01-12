@@ -1,0 +1,57 @@
+- content_for :page_header do
+  = render 'layouts/components/page_header',
+           title: 'Events',
+           count: @events.size,
+           links: [ \
+             link_to( \
+               'Add Event',
+               new_event_path,
+               class: 'primary button show-for-large' \
+             ) \
+           ]
+
+.warning.callout
+  h4 Events are coming!
+
+  .grid-x.grid-padding-x
+    .cell.small-12.medium-4
+      p
+        |
+          Events are a <strong>new feature</strong> of the Rebels Manager. All events that you save here
+          will be shared on a public page soon, and this will replace our current <a href="https://calendar.extinctionrebellion.be" target="_blank">online calendar</a>.
+
+    .cell.small-12.medium-4
+      p
+        |
+          Events can be <strong>actions, outreach events, Heading for Extinction talks, NVDA/other trainings, working group meetings, etc.</strong>
+          Only add events that can be PUBLICLY available.
+
+    .cell.small-12.medium-4
+      p
+        |
+          The <strong>next step</strong> will be to manage events registrations, with multilingual form templates.
+
+table
+  thead
+    tr
+      th Local Group
+      th Name
+      th Starts
+      th Ends
+      th Facebook
+  tbody
+    - @events.each do |event|
+      tr
+        td
+          - if event.local_group.nil?
+            span.label.label--warm-yellow NATIONAL EVENT
+          - else
+            = filtered_link(event.local_group)
+        td
+          = link_to(event.name, event_path(event))
+        td
+          = l(event.starts_at, format: :long)
+        td
+          = l(event.ends_at, format: :long)
+        td
+          = event.facebook_url.present? ? sanitize(link_to("On Facebook", event.facebook_url)) : '-'

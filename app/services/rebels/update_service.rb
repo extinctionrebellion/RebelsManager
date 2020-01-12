@@ -47,6 +47,7 @@ module Rebels
           :number_of_arrests,
           :phone,
           :postcode,
+          :regular_volunteer,
           :status,
           :tag_list,
           :willingness_to_be_arrested,

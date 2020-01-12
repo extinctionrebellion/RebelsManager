@@ -46,7 +46,7 @@ module Rebels
       when "admin"
         @rebel
       when "public"
-        rebel.redirect || "https://www.extinctionrebellion.be/thank-you.html"
+        rebel.redirect || rebel.profile_url
       end
     end
 
@@ -81,6 +81,7 @@ module Rebels
           :number_of_arrests,
           :phone,
           :postcode,
+          :regular_volunteer,
           :status,
           :tag_list,
           :willingness_to_be_arrested,
@@ -103,7 +104,8 @@ module Rebels
         :redirect,
         :tag_list,
         :willingness_to_be_arrested,
-        skill_ids: []
+        :agree_with_principles,
+        skill_ids: [],
       )
     end
 

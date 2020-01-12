@@ -3,6 +3,7 @@
 # Table name: rebels
 #
 #  id                         :bigint           not null, primary key
+#  agree_with_principles      :boolean
 #  availability               :string
 #  consent                    :boolean
 #  email_bidx                 :string
@@ -17,6 +18,7 @@
 #  phone_bidx                 :string
 #  phone_ciphertext           :string
 #  postcode                   :string
+#  regular_volunteer          :boolean          default(FALSE)
 #  self_updated_at            :datetime
 #  source                     :string
 #  status                     :string

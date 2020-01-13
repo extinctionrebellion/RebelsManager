@@ -2,8 +2,7 @@ module Api
   module Private
     class StatsController < BaseController
       def show
-        head 200
-        # @TODO: build stats hash and return a json
+        render json: { total: Rebel.count }
       end
     end
   end

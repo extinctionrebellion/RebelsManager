@@ -11,4 +11,12 @@ module ApplicationHelper
             data: { confirm: 'Are you sure?' },
             class: 'secondary button'
   end
+
+  def data_purpose(purpose)
+    return {} unless Rails.env.test? || Rails.env.development?
+
+    {
+      'data-purpose': purpose.to_s
+    }
+  end
 end

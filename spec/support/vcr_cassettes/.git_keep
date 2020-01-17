@@ -1,0 +1,6 @@
+This directory is used to automatically stored vcr cassettes of scenario tagged with `:vcr`.
+
+The first time the scenario is run, the external calls will be sent and their respective responses will
+be stored in a cassette. Then the the consequent run of the scenario will use the previsouly stored cassette.
+
+One can always delete the cassette in order to regenerate it when the scenario will be next run.

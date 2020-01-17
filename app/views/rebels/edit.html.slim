@@ -8,5 +8,6 @@
   = render "layouts/components/form_errors", object: f.object
   = render "form", f: f
 
-  = f.button :submit,
-             "Save"
+  = f.button(:submit,
+    "Save",
+    **data_purpose(:save_button))

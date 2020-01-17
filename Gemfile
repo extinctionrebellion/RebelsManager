@@ -55,7 +55,6 @@ gem 'logstop'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'database_cleaner'
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'ffaker'
@@ -78,9 +77,14 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara', '~> 3.30', require: false
+  gem 'capybara-screenshot', require: false
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
+  gem 'site_prism', '~> 3.0.2', require: false
+  gem 'test-prof' , '~> 0.7.5', require: false
+  gem 'vcr', '~> 4.0.0', require: false
+  gem 'webmock', '~> 3.5.1', require: false
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end

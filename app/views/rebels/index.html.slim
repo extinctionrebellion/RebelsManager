@@ -1,21 +1,28 @@
 - content_for :page_header do
-  = render 'layouts/components/page_header',
-           title: 'Rebels',
-           count: @rebels_index_presenter.rebels_count,
-           links: [ \
-             link_to( \
-               "Download CSV",
-               rebels_path(format: :csv),
-               class: "small primary hollow button show-for-large" \
-             ),
-             link_to( \
-               "Add Rebel",
-               new_rebel_path,
-               class: "small primary button show-for-large" \
-             ) \
-           ]
+  ruby:
+    download_link = link_to(
+      "Download CSV",
+      rebels_path(format: :csv),
+      class: "small primary hollow button show-for-large"
+    )
+    add_link = link_to(
+      "Add Rebel",
+      new_rebel_path,
+      class: "small primary button show-for-large",
+      **data_purpose(:add_new_rebel_link)
+    )
 
-div(data-controller="datatable" data-datatable-source="#{rebels_path(format: :json)}")
+
+  = render 'layouts/components/page_header',
+    title: 'Rebels',
+    count: @rebels_index_presenter.rebels_count,
+    links: [download_link, add_link]
+
+div(
+  data-controller="datatable"
+  data-datatable-source="#{rebels_path(format: :json)}"
+  *data_purpose(:rebels_datatable)
+)
   .icons.icons--large
     table(data-target="datatable.table" data-items-count="#{@rebels_count}")
       thead

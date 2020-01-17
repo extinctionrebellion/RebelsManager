@@ -92,3 +92,9 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 end
+
+require 'active_support'
+require 'active_support/core_ext'
+require 'active_support/dependencies'
+
+ActiveSupport::Dependencies.autoload_paths << File.join(File.dirname(__FILE__), 'support', 'lib')

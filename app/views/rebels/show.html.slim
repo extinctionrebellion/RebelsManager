@@ -1,20 +1,22 @@
 - content_for :page_header do
+  ruby:
+    delete_link = link_to(
+      "Delete",
+      rebel_path(@rebel),
+      method: :delete,
+      data: { confirm: 'Are you sure?' },
+      class: 'secondary button'
+    )
+    edit_link = link_to(
+      "Edit",
+      edit_rebel_path(@rebel),
+      class: 'secondary button',
+      **data_purpose(:edit_link)
+    )
+
   = render 'layouts/components/page_header',
-           title: @rebel.name,
-           links: [ \
-             link_to( \
-               "Delete",
-               rebel_path(@rebel),
-               method: :delete,
-               data: { confirm: 'Are you sure?' },
-               class: 'secondary button' \
-             ),
-             link_to( \
-               "Edit",
-               edit_rebel_path(@rebel),
-               class: 'secondary button' \
-             ) \
-           ]
+    title: @rebel.name,
+    links: [delete_link, edit_link]
 
 / Notes
 
@@ -27,8 +29,8 @@
 
 - if @rebel.regular_volunteer?
   = callout :info,
-            content: "This rebel is marked as regular volunteer",
-            tiny: true
+    content: "This rebel is marked as regular volunteer",
+    tiny: true
 
 .grid-x.grid-padding-x
   .cell.small-6.medium-4
@@ -148,7 +150,7 @@
 / Skills
 
 = section_heading heading: "Skills",
-                  spacing: :spacer
+  spacing: :spacer
 
 - if @rebel.skills.any?
   ul
@@ -160,20 +162,20 @@
 / Working groups
 
 = section_heading heading: "Working Groups",
-                  spacing: :spacer
+  spacing: :spacer
 
 - if @rebel.working_groups.any?
   ul
     - @rebel.working_groups.each do |working_group|
       li = link_to working_group.name,
-                   working_group_path(working_group)
+        working_group_path(working_group)
 - else
   p This rebel didn't join a working group.
 
 / Subscriptions
 
 = section_heading heading: "Subscriptions on Mailtrain",
-                  spacing: :spacer
+  spacing: :spacer
 
 - if @mailtrain_lists.any?
   p

@@ -43,7 +43,12 @@ export default class extends Controller {
     // get values for <th data-column="...">
     var tableHeaders = this.tableTarget.querySelectorAll('th')
     return Array.prototype.map.call(tableHeaders, function(th) {
-      return { data: th.dataset.column }
+      return {
+        data: th.dataset.column,
+        createdCell: function (td, cellData, rowData, row, col) {
+          td.setAttribute('data-purpose', th.dataset.column)
+        }
+      }
     })
   }
 

@@ -1,22 +1,3 @@
-
-module Pages
-  class Page < SitePrism::Page
-    extend ::SitePrismExtension
-    include ResourcesHelper
-    include Capybara::AliasHelper
-    include Capybara::ComplexInputsHelper
-  end
-
-  class Section < SitePrism::Section
-    extend SitePrismExtension
-    include ResourcesHelper
-    include Capybara::AliasHelper
-    include Capybara::ComplexInputsHelper
-  end
-end
-
-
-
 RSpec.configure do |c|
   c.include ::Rails.application.routes.url_helpers
   c.include Capybara::AliasHelper

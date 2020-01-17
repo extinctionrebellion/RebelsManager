@@ -1,5 +1,5 @@
 = section_heading heading: "Profile",
-                  spacing: false
+  spacing: false
 
 - if !f.object.new_record?
   p
@@ -12,78 +12,83 @@
     .card
       .card-section
         = f.input :email,
-                  as: :email,
-                  label: "Email address *",
-                  placeholder: "Email address",
-                  required: true
+          as: :email,
+          label: "Email address *",
+          placeholder: "Email address",
+          required: true,
+          input_html: data_purpose(:email_input)
+
 
         - if !current_user.local_group
           = f.input :local_group_id,
-                    as: :select,
-                    label: "Local Group *",
-                    collection: LocalGroup.all.order(:name),
-                    prompt: "Select a local group",
-                    required: false
+            as: :select,
+            label: "Local Group *",
+            collection: LocalGroup.all.order(:name),
+            prompt: "Select a local group",
+            required: false
 
         = f.input :language,
-                  label: "Preferred language *",
-                  collection: [["Français", "fr"], ["Nederlands", "nl"], ["English", "en"]],
-                  required: true
+          label: "Preferred language *",
+          collection: [["Français", "fr"], ["Nederlands", "nl"], ["English", "en"]],
+          required: true,
+          input_html: data_purpose(:language_select)
 
     = f.input :name,
-              label: "Name or nickname",
-              placeholder: "Name or nickname",
-              required: false
+      label: "Name or nickname",
+      placeholder: "Name or nickname",
+      required: false,
+      input_html: data_purpose(:name_input)
 
     = f.input :phone,
-              label: "Mobile phone",
-              placeholder: "Mobile phone",
-              required: false,
-              hint: "We may send text messages about public actions"
+      label: "Mobile phone",
+      placeholder: "Mobile phone",
+      required: false,
+      hint: "We may send text messages about public actions",
+      input_html: data_purpose(:phone_input)
 
     = f.input :postcode,
-              label: "Postcode",
-              placeholder: "Postcode",
-              hint: "A postcode is better than a city name",
-              required: false
+      label: "Postcode",
+      placeholder: "Postcode",
+      hint: "A postcode is better than a city name",
+      required: false
 
     = f.input :willingness_to_be_arrested,
-              as: :boolean,
-              wrapper: :foundation_checkbox,
-              label: "Willingness to be arrested during an action",
-              required: false
+      as: :boolean,
+      wrapper: :foundation_checkbox,
+      label: "Willingness to be arrested during an action",
+      required: false
 
     .grid-x
       .cell.small-6.medium-4.large-3
         = f.input :number_of_arrests,
-                  label: "Number of arrests",
-                  as: :integer,
-                  required: false
+          label: "Number of arrests",
+          as: :integer,
+          required: false
 
     = f.input :skill_ids,
-              as: :check_boxes,
-              label: "Areas of interest",
-              wrapper: :foundation_radio_buttons,
-              collection: Skill.all.order(:name)
+      as: :check_boxes,
+      label: "Areas of interest",
+      wrapper: :foundation_radio_buttons,
+      collection: Skill.all.order(:name)
 
     = f.input :notes,
-              as: :text,
-              input_html: { rows: 5 },
-              label: "Specific skills/experience/resources OR thoughts/questions",
-              required: false
+      as: :text,
+      input_html: { rows: 5 },
+      label: "Specific skills/experience/resources OR thoughts/questions",
+      required: false
 
     - if current_user.local_group&.working_groups&.any?
       = section_heading heading: "Working Groups",
-                        spacing: :spacer
+        spacing: :spacer
 
       = f.input :working_group_ids,
-                as: :check_boxes,
-                wrapper: :foundation_radio_buttons,
-                collection: current_user.local_group.working_groups,
-                label: ""
+        as: :check_boxes,
+        wrapper: :foundation_radio_buttons,
+        collection: current_user.local_group.working_groups,
+        label: ""
 
     = section_heading heading: "Management",
-                    spacing: :spacer
+      spacing: :spacer
 
     p These information are not shared with the rebel.
 
@@ -95,50 +100,50 @@
           hint: "We have met this rebel in real life",
           wrapper: :foundation_checkbox
       .cell.small-12.medium-6.large-6
-          = f.input :regular_volunteer,
-            as: :boolean,
-            label: "This rebel is a regular volunteer",
-            hint: "XR International Support Team wants to know how many regular volunteers are involved for each national group",
-            wrapper: :foundation_checkbox
+        = f.input :regular_volunteer,
+          as: :boolean,
+          label: "This rebel is a regular volunteer",
+          hint: "XR International Support Team wants to know how many regular volunteers are involved for each national group",
+          wrapper: :foundation_checkbox
 
     = f.input :tag_list,
-              as: :text,
-              label: "Tags",
-              hint: "Separate tags with a comma (,)",
-              input_html: { rows: 2 }
+      as: :text,
+      label: "Tags",
+      hint: "Separate tags with a comma (,)",
+      input_html: { rows: 2 }
 
     = f.input :internal_notes,
-              as: :text,
-              input_html: { rows: 3 },
-              label: "Notes about this rebel",
-              required: false
+      as: :text,
+      input_html: { rows: 3 },
+      label: "Notes about this rebel",
+      required: false
 
     = f.input :interests,
-              as: :text,
-              input_html: { rows: 5 },
-              label: "Working Group interests",
-              hint: "Legacy data",
-              required: false
+      as: :text,
+      input_html: { rows: 5 },
+      label: "Working Group interests",
+      hint: "Legacy data",
+      required: false
 
     = f.input :status,
-              label: "Activity status",
-              as: :radio_buttons,
-              wrapper: :foundation_radio_buttons,
-              collection: [ \
+      label: "Activity status",
+      as: :radio_buttons,
+      wrapper: :foundation_radio_buttons,
+      collection: [\
                 ["💥  Active rebel", "active"],
-                ["⏸  Paused rebel", "paused"],
-                ["🛑  Inactive rebel", "inactive"] \
+        ["⏸  Paused rebel", "paused"],
+        ["🛑  Inactive rebel", "inactive"] \
               ]
 
     = f.input :availability,
-              label: "Availability",
-              as: :radio_buttons,
-              wrapper: :foundation_radio_buttons,
-              collection: [ \
+      label: "Availability",
+      as: :radio_buttons,
+      wrapper: :foundation_radio_buttons,
+      collection: [\
                 ["I am currently unavailable, you have all my support!", 'unavailable'],
-                ["A few hours a month", 'few_hours_a_month'],
-                ["A couple of hours a week", 'few_hours_a_week'],
-                ["More than 10 hours a week", '10_hours_a_week'] \
+        ["A few hours a month", 'few_hours_a_month'],
+        ["A couple of hours a week", 'few_hours_a_week'],
+        ["More than 10 hours a week", '10_hours_a_week'] \
               ]
 
     .spacer-2

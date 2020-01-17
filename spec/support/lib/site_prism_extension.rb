@@ -30,9 +30,12 @@ module SitePrismExtension
     section purpose, section_class, css_purpose_selector_for(purpose)
   end
 
-  def purpose_sections(purpose, section_class = nil, elements_name = purpose.to_s.pluralize)
+  def purpose_sections(purpose, element_selector = nil, section_class = nil)
+    element_selector ||= css_purpose_selector_for(purpose)
     section_class ||= self.const_get(purpose.to_s.camelize)
-    sections elements_name, section_class, css_purpose_selector_for(purpose)
+
+    elements_name = purpose.to_s.pluralize
+    sections elements_name, section_class, element_selector
 
     define_method("#{purpose}_with") do |identifier_hash|
 
@@ -59,10 +62,6 @@ module SitePrismExtension
 
     define_method("has_#{purpose}_with?") do |identifier_hash|
       self.send("#{purpose}_with", identifier_hash).present?
-    end
-
-    define_method("has_no_#{purpose}_with?") do |identifier_hash|
-      self.send("#{purpose}_with", identifier_hash).nil?
     end
 
   end
@@ -117,6 +116,15 @@ module SitePrismExtension
     purpose = "#{field_name}_check_boxes_wrapper"
     define_setter(field_name, purpose, options) do |element, value|
       choose_from_checkboxes(value, element)
+    end
+  end
+
+  def purpose_datatable_search(resource_name)
+    purpose = "#{resource_name}_datatable"
+    purpose_element(purpose)
+    define_method("search_#{resource_name}") do |query|
+      element = public_send(purpose)
+      search_datatable(element, query)
     end
   end
 

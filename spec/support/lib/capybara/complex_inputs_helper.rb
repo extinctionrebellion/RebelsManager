@@ -35,6 +35,11 @@
 #
 module Capybara::ComplexInputsHelper
 
+  def search_datatable(datatable_wrapper, value)
+    search_input = datatable_wrapper.find('.datatable-header input[type="search"]')
+    search_input.set(value)
+  end
+
   def choose_from_radios(value, radio_buttons_wrapper)
     if Capybara.current_driver == :rack_test
       radio_buttons_wrapper.find(:radio, value).set(true)

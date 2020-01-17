@@ -44,14 +44,6 @@ Capybara.register_driver :selenium_chrome_headless do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options, driver_opts: driver_opts)
 end
 
-
-
-Capybara.always_include_port = true
-# Capybara.server_port = 3001
-# Capybara.app_host = "http://#{Rails.application.secrets.host_name}"
-# Capybara.asset_host = 'http://test.lvh.me:3000'
-
-
 Capybara.configure do |config|
   config.default_selector = :css
   config.default_max_wait_time= 10

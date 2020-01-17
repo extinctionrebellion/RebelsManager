@@ -1,9 +1,8 @@
 module Pages
   module App
-    class Dashboard < SitePrism::Page
+    class Dashboard < BasePage
 
-      set_url '/app'
-
+      set_url '/'
 
     end
   end

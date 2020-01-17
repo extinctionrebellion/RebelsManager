@@ -7,4 +7,9 @@ VCR.configure do |config|
 
 end
 
-WebMock.disable_net_connect!(allow_localhost: true)
+
+driver_urls = Webdrivers::Common.subclasses.map(&:base_url)
+driver_hosts = driver_urls.map{|uri| URI(uri).host }
+
+VCR.configure { |config| config.ignore_hosts(*driver_hosts) }
+WebMock.disable_net_connect!(allow_localhost: true, allow: driver_urls)

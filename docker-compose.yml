@@ -1,30 +1,53 @@
-version: '3.7'
+version: '3.4'
 
 services:
-  web:
-    image: jahmali/rebels_manager:v1
-    command: bin/rails server -b 0.0.0.0
+  app: &app_base
+    image: rebelsmanager_app_development
+    build:
+      context: .
+      args:
+        - ADDITIONAL_PACKAGES=nodejs yarn python2 build-base git
+        - RAILS_ENV=development
     environment:
-      - POSTGRES_HOST=${POSTGRES_HOST}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - RAILS_ENV
+      - APP_URL=http://localhost:3000
+      - LOCKBOX_MASTER_KEY=a99f1102dc6752a4f6ec3f817e42c19d2677c04a0133993b5baab19671e55651
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - RAILS_ENV=development
+      - RAILS_MAX_THREADS
+      - REDIS_SIDEKIQ_URL=redis://redis:6379/0
+      - REDIS_CABLE_URL=redis://redis:6379/1
+      - REDIS_CACHE_URL=redis://redis:6379/2
+      - XR_BRANCH_DEFAULT_LANGUAGE=en
+      - XR_BRANCH_TIMEZONE=Europe/Brussels
+      - SECRET_KEY_BASE=86f2848eba353044ea0902245d52c8d53c535c1529299a6ca4e528cb275201672ff80d90611d46c617f8cffbf4562e936e55e135a74170526629305422c2210e
+    links:
+      - db
+      - redis
     volumes:
-      - ./:/usr/src/app
-      - gems:/usr/local/bundle
-      - node-modules:/usr/src/app/node_modules
+      - ./:/app
     ports:
-      - 3000:3000
+      - "3000"
 
-  pg:
-    image: postgres:10.8-alpine
+  db:
+    image: postgres:11.6-alpine
     environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD
     volumes:
-      - pg-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:alpine
+
+  worker:
+    <<: *app_base
+    command: bundle exec sidekiq
+    ports: []
+    depends_on:
+      - app
 
 volumes:
-  gems:
-  pg-data:
-  node-modules:
+  # gems:
+  db-data:
+  # node-modules:

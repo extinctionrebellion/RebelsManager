@@ -38,8 +38,10 @@
       }
     }
 
+    input[type="submit"],
     button[type="submit"] {
       margin-top: 2rem;
+      font-weight: $global-weight-bold;
     }
 
     .field {

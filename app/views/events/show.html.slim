@@ -25,7 +25,7 @@
     p
       strong Description
       br
-      = simple_format @event.description
+      = simple_format strip_tags(@event.description)
 
     p
       strong Start date
@@ -40,4 +40,4 @@
     p
       strong Facebook URL
       br
-      = @event.facebook_url.present? ? sanitize(link_to(@event.facebook_url, @event.facebook_url)) : "-"
+      = @event.facebook_url.presence ? sanitize(link_to(@event.facebook_url, @event.facebook_url)) : "-"

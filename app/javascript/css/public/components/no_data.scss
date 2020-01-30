@@ -1,0 +1,41 @@
+@mixin xr-public-no-data {
+  .no-data {
+    margin-bottom: 1rem;
+    padding: 2rem;
+    background-image: repeating-linear-gradient(45deg,
+      $color-extra-light-gray, $color-extra-light-gray 10px,
+      $white 10px, $white 20px);
+    color: $dark-gray;
+    text-align: center;
+
+    .no-data-image {
+      margin-bottom: 1rem;
+
+      img {
+        max-width: 10rem;
+      }
+    }
+
+    .no-data-notice {
+      line-height: 1.2;
+
+      small {
+        display: block;
+        margin-top: .5rem;
+      }
+    }
+
+    &--smaller {
+      padding: 1rem 2rem;
+      text-align: left;
+
+      .no-data-image {
+        margin-bottom: 0;
+
+        img {
+          height: 5rem;
+        }
+      }
+    }
+  }
+}

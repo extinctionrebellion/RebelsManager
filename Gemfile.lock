@@ -87,6 +87,8 @@ GEM
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.4)
+    by_star (3.0.0)
+      activesupport (> 3)
     byebug (11.0.1)
     capybara (3.30.0)
       addressable
@@ -130,6 +132,8 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    friendly_id (5.2.5)
+      activerecord (>= 4.0.0)
     gettext (3.2.9)
       locale (>= 2.0.5)
       text (>= 1.3.0)
@@ -226,6 +230,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rinku (2.0.6)
     rspec-core (3.8.2)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.4)
@@ -339,6 +344,7 @@ DEPENDENCIES
   better_errors
   blind_index
   bootsnap (>= 1.4.2)
+  by_star
   byebug
   capybara (>= 2.15)
   database_cleaner
@@ -346,6 +352,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   ffaker
+  friendly_id (~> 5.2.4)
   gettext (>= 3.0.2)
   gettext_i18n_rails
   jbuilder (~> 2.5)
@@ -357,6 +364,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.0.0)
   rest-client
+  rinku
   rspec-rails
   ruby_parser
   sass-rails (~> 5)

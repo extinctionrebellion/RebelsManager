@@ -1,0 +1,19 @@
+@mixin xr-public-label {
+  .label {
+    font-weight: 600;
+    font-size: rem-calc(12);
+
+    + .label {
+      margin-left: .25rem;
+    }
+
+    &--transparent {
+      opacity: .8;
+    }
+
+    &--warm-yellow {
+      background: $color-warm-yellow;
+      color: $color-black;
+    }
+  }
+}

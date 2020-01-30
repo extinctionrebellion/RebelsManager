@@ -1,0 +1,11 @@
+.no-data
+  - if local_assigns[:image_src]
+    .no-data-image
+      = image_tag image_src, alt: ""
+  .no-data-notice
+    - if local_assigns[:primary]
+      strong = primary
+    - if local_assigns[:primary] and local_assigns[:secondary]
+      br
+    - if local_assigns[:secondary]
+      small = secondary

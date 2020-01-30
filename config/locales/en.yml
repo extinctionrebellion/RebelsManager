@@ -40,4 +40,6 @@ en:
       shorter: "%b %-d"
   time:
     formats:
+      default: "%A, %d. %B %Y, %H:%M Uhr"
+      long: "%A, %d. %B %Y, %H:%M Uhr"
       twenty_four_hour: "%k:%M"

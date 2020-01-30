@@ -1,0 +1,29 @@
+- content_for :page_title do
+  - if params[:scope] == "past"
+    = _("Past events")
+  - else
+    = _("Upcoming events")
+
+- content_for :header do
+  h1
+    - if params[:scope] == "past"
+      = _("Past events")
+    - else
+      = _("Upcoming events")
+
+.grid-x.grid-margin-x
+  .cell.small-12.medium-auto
+    = select_tag :local_group_id,
+                 options_for_select( \
+                   LocalGroup.all.order("LOWER(name)").map { |lg| [ lg.name, lg.id, { 'data-url': url_for(params_for_events.merge(local_group_id: lg.id)) } ] },
+                   params[:local_group_id] \
+                 ),
+                 include_blank: _("All local groups and national events"),
+                 onchange: "if (this.value) { window.location.href=this.options[this.selectedIndex].getAttribute('data-url') } else { window.location.href='#{url_for(params_for_events.merge(local_group_id: nil))}' }"
+  .cell.hide-for-small-only.medium-shrink
+    = render "public/events/list_link"
+
+= render partial: "public/events/list", locals: { events: @events }
+
+.show-for-small-only
+  = render "public/events/list_link"

@@ -22,5 +22,15 @@ FactoryBot.define do
     starts_at_date { '19/12/2020' }
     ends_at_date { '21/12/2020' }
     facebook_url { 'https://facebook.com' }
+
+    trait :past do
+      starts_at { FFaker::Time.between(Time.now.beginning_of_day - 100.days, Time.now.beginning_of_day) }
+      ends_at { starts_at - 2.hours }
+    end
+
+    trait :upcoming do
+      starts_at { Time.now + 10.days }
+      ends_at { Time.now + 10.days + 2.hours }
+    end
   end
 end

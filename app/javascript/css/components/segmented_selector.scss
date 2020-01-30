@@ -21,7 +21,7 @@
         text-align: center;
         cursor: pointer;
         color: $color-dark-gray;
-        font-weight: 500;
+        font-weight: $global-weight-bold;
         transition: all 0.25s ease-in-out;
 
         svg {

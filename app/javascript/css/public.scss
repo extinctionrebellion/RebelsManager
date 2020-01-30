@@ -2,6 +2,8 @@
 @import './foundation-settings';
 @import '~foundation-sites/scss/foundation';
 
+@import '~animate.css/animate';
+
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
 @include foundation-typography;
@@ -13,7 +15,7 @@
 @include foundation-breadcrumbs;
 // @include foundation-button-group;
 @include foundation-callout;
-// @include foundation-card;
+@include foundation-card;
 // @include foundation-close-button;
 @include foundation-menu;
 // @include foundation-menu-icon;

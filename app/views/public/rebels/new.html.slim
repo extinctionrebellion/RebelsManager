@@ -52,7 +52,7 @@ p
           required: true,
           input_html: { data: { action: "registration-form#toggleInvolvement" }}
 
-  div(data-target="registration-form.activeRebelFields")
+  div(data-target="registration-form.activeRebelFields" class="#{f.object.active? ? nil : "hide"}")
     .card
       .card-section
         .grid-x

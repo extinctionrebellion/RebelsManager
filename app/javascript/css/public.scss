@@ -45,11 +45,11 @@
 
 @import './public/components/form';
 @import './public/components/spacer';
-@import './components/segmented_selector';
+@import './public/components/segmented_selector';
 
 @include xr-public-form;
 @include xr-public-spacer;
-@include xr-segmented-selector;
+@include xr-public-segmented-selector;
 
 body {
   padding: $global-padding 0;

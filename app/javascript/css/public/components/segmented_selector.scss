@@ -1,0 +1,83 @@
+@mixin xr-public-segmented-selector {
+  .segmented-control {
+    display: table;
+    margin: 0 0 2rem;
+    padding: 0;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.07);
+    border: 1px solid $color-light-gray;
+    border-radius: 1rem;
+
+    .segmented-control-item {
+      display: table-cell;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      label {
+        position: relative;
+        display: block !important;
+        margin: -1px 0;
+        padding: 1em 2rem;
+        text-align: center;
+        cursor: pointer;
+        color: $color-dark-gray;
+        font-weight: $global-weight-bold;
+        transition: all 0.25s ease-in-out;
+
+        svg {
+          position: absolute;
+          height: 1.5rem;
+          top: calc(50% - 0.75rem);
+          stroke: $dark-gray;
+
+          ~ span {
+            margin-left: 2rem;
+          }
+        }
+
+        &:hover {
+          color: $white;
+          background: $color-dark-gray;
+
+          svg {
+            stroke: $white;
+          }
+        }
+      }
+
+      &:not(:first-of-type) {
+        border-left: 1px solid $color-light-gray;
+      }
+
+      &:first-of-type {
+        label {
+          margin-left: -1px;
+          border-radius: 1rem 0 0 1rem;
+        }
+      }
+
+      &:last-of-type {
+        label {
+          margin-right: -1px;
+          border-radius: 0 1rem 1rem 0;
+        }
+      }
+
+      input {
+        position: absolute;
+        visibility: hidden;
+
+        &:checked {
+          + label {
+            background: $black;
+            color: $white;
+
+            svg {
+              stroke: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

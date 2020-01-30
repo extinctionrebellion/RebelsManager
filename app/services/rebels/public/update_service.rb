@@ -41,7 +41,8 @@ module Rebels
           :notes,
           :phone,
           :postcode,
-          :agree_with_principles
+          :agree_with_principles,
+          :active
         )
     end
   end

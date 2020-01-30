@@ -11,4 +11,5 @@ require("turbolinks").start()
 import $ from 'jquery'
 window.$ = $
 
+import 'controllers'
 import 'foundation-sites'

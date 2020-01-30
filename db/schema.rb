@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_30_105826) do
+ActiveRecord::Schema.define(version: 2020_01_12_111825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 2019_12_30_105826) do
     t.string "phone_bidx"
     t.boolean "agree_with_principles"
     t.boolean "regular_volunteer", default: false
+    t.boolean "active", default: true
     t.index ["email_bidx"], name: "index_rebels_on_email_bidx", unique: true
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
     t.index ["phone_bidx"], name: "index_rebels_on_phone_bidx"

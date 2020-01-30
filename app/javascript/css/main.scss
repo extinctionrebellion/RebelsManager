@@ -61,6 +61,7 @@
 @import './components/spacer';
 @import './components/timepicker';
 @import './components/topbar';
+@import './components/segmented_selector';
 
 @include xr-callout;
 @include xr-compose;
@@ -75,3 +76,4 @@
 @include xr-spacer;
 @include xr-timepicker;
 @include xr-topbar;
+@include xr-segmented-selector;

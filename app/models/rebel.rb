@@ -3,6 +3,7 @@
 # Table name: rebels
 #
 #  id                         :bigint           not null, primary key
+#  active                     :boolean
 #  agree_with_principles      :boolean
 #  availability               :string
 #  consent                    :boolean

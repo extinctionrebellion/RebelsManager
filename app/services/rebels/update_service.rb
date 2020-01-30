@@ -51,6 +51,7 @@ module Rebels
           :status,
           :tag_list,
           :willingness_to_be_arrested,
+          :active,
           skill_ids: [],
           working_group_ids: []
         )

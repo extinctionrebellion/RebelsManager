@@ -35,6 +35,13 @@
               placeholder: "Name or nickname",
               required: false
 
+    = f.input :active,
+              label: _("How do you want to get involved?"),
+              wrapper: :segmented_selector,
+              as: :segmented_radio_buttons,
+              collection: [[_("Being an active rebel"), true], [_("Supporting Extinction Rebellion"), false]],
+              required: true
+
     = f.input :phone,
               label: "Mobile phone",
               placeholder: "Mobile phone",
@@ -87,19 +94,17 @@
 
     p These information are not shared with the rebel.
 
-    .grid-x
-      .cell.small-12.medium-6.large-6
-        = f.input :irl,
-          as: :boolean,
-          label: "This rebel has attended an XR event",
-          hint: "We have met this rebel in real life",
-          wrapper: :foundation_checkbox
-      .cell.small-12.medium-6.large-6
-          = f.input :regular_volunteer,
-            as: :boolean,
-            label: "This rebel is a regular volunteer",
-            hint: "XR International Support Team wants to know how many regular volunteers are involved for each national group",
-            wrapper: :foundation_checkbox
+    = f.input :irl,
+      as: :boolean,
+      label: "This rebel has attended an XR event",
+      hint: "We have met this rebel in real life",
+      wrapper: :foundation_checkbox
+
+    = f.input :regular_volunteer,
+      as: :boolean,
+      label: "This rebel is a regular volunteer",
+      hint: "XR International Support Team wants to know how many regular volunteers are involved for each national group",
+      wrapper: :foundation_checkbox
 
     = f.input :tag_list,
               as: :text,
@@ -135,7 +140,6 @@
               as: :radio_buttons,
               wrapper: :foundation_radio_buttons,
               collection: [ \
-                ["I am currently unavailable, you have all my support!", 'unavailable'],
                 ["A few hours a month", 'few_hours_a_month'],
                 ["A couple of hours a week", 'few_hours_a_week'],
                 ["More than 10 hours a week", '10_hours_a_week'] \

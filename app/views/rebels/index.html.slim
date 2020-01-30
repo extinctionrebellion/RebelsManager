@@ -24,9 +24,13 @@ div(data-controller="datatable" data-datatable-source="#{rebels_path(format: :js
           th(data-column="email") Email
           th(data-column="local_group") Local Group
           th(data-column="created_at") Joined
-          th(data-column="status") Status
+          th(data-column="active")
+            span(data-tooltip title="Rebels can now define themselves if they are active or just supporting the movement") Involvement
+          th(data-column="status")
+            span(data-tooltip title="You can set this status when editing the rebel profile") Status
           th(data-column="postcode") Postcode
-          th(data-column="working_groups") WG
+          th(data-column="working_groups")
+            span(data-tooltip title="Working Groups") WG
           th(data-column="tags") Tags
           th(data-column="notes" data-visible="false") Notes
       tbody

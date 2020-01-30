@@ -1,4 +1,8 @@
 class RebelDecorator < DecoratorBase
+  def active
+    target.active? ? "Active rebel" : "Supporting Extinction Rebellion"
+  end
+
   def availability
     case target.availability
     when "unavailable"

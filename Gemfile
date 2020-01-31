@@ -29,6 +29,7 @@ gem 'acts-as-taggable-on', '~> 6.0', github: 'spark-solutions/acts-as-taggable-o
 gem 'ajax-datatables-rails'
 gem 'annotate'
 gem 'awesome_print'
+gem 'blazer', '~> 2.2.1'
 gem 'devise', '~> 4.7'
 gem 'ffaker'
 gem 'gettext_i18n_rails'

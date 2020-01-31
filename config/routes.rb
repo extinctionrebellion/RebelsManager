@@ -26,4 +26,10 @@ Rails.application.routes.draw do
   namespace :rebels do
     resources :imports, only: [:new, :create]
   end
+
+  namespace :api do
+    namespace :private do
+      resource :stats, only: :show
+    end
+  end
 end

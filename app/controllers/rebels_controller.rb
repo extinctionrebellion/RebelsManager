@@ -55,6 +55,7 @@ class RebelsController < BaseController
       redirect_to rebel_path(service.rebel),
                   notice: "Rebel has been updated."
     else
+      @rebel = service.rebel
       render :edit
     end
   end

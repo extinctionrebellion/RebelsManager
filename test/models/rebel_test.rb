@@ -3,7 +3,7 @@
 # Table name: rebels
 #
 #  id                         :bigint           not null, primary key
-#  active                     :boolean
+#  active                     :boolean          default(TRUE)
 #  agree_with_principles      :boolean
 #  availability               :string
 #  consent                    :boolean
@@ -13,6 +13,8 @@
 #  internal_notes             :text
 #  irl                        :boolean
 #  language                   :string
+#  lat                        :decimal(10, 6)
+#  lon                        :decimal(10, 6)
 #  name                       :string
 #  notes                      :text
 #  number_of_arrests          :integer

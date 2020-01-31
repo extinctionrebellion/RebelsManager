@@ -38,6 +38,7 @@ module Rebels
       delete_existing_rebel_if_no_local_group(@rebel.email)
       @rebel.save!
       Mailtrain::AddSubscriptionsJob.perform_later(@rebel)
+      GeocodeRebelJob.perform_later(@rebel) if @rebel.postcode.present?
       true
     end
 

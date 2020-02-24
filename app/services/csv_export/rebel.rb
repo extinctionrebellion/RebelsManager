@@ -12,6 +12,7 @@ module CsvExport
         rebel.name,
         rebel.email,
         rebel.phone,
+        rebel.profile_url,
         rebel.language,
         rebel.status,
         rebel.postcode,

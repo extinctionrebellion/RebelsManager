@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_31_221940) do
+ActiveRecord::Schema.define(version: 2020_02_24_041822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -172,6 +172,7 @@ ActiveRecord::Schema.define(version: 2020_01_31_221940) do
     t.boolean "active", default: true
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "lon", precision: 10, scale: 6
+    t.integer "version"
     t.index ["email_bidx"], name: "index_rebels_on_email_bidx", unique: true
     t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
     t.index ["phone_bidx"], name: "index_rebels_on_phone_bidx"

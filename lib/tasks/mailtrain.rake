@@ -9,7 +9,7 @@ namespace :mailtrain do
         {
           "EMAIL": rebel.email,
           "MERGE_NAME": rebel.name,
-          "MERGE_SUBSCRIPTION_DATE": rebel.created_at.to_date.to_s,
+          "MERGE_SUBSCRIPTION_DATE": rebel.created_at.to_date.strftime("%d/%m/%Y"),
           "MERGE_LOCAL_GROUP": rebel.local_group&.name,
           "MERGE_LANGUAGE": rebel.language,
           "MERGE_POSTCODE": rebel.postcode,
@@ -17,6 +17,7 @@ namespace :mailtrain do
           "MERGE_TAGS": rebel.tags&.pluck(:name)&.join("|"),
           "MERGE_SKILLS": rebel.skills&.pluck(:code)&.join("|"),
           "MERGE_WORKING_GROUPS": rebel.working_groups&.pluck(:code)&.join("|"),
+          "MERGE_VERSION": rebel.version,
           "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
         }
       )

@@ -23,6 +23,7 @@ module Rebels
       current_local_group = rebel.local_group
       rebel.attributes = rebel_params(params)
       validate_email_format!
+      increment_version
       rebel.save!
       Mailtrain::DeleteSubscriptionsJob.perform_later(current_email, current_local_group&.id)
       Mailtrain::AddSubscriptionsJob.perform_later(rebel)
@@ -31,6 +32,10 @@ module Rebels
     end
 
     private
+
+    def increment_version
+      rebel.version += 1
+    end
 
     def rebel_params(params)
       params

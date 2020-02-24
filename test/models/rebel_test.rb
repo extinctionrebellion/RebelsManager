@@ -27,6 +27,7 @@
 #  status                     :string
 #  tags                       :text
 #  token                      :string
+#  version                    :integer
 #  willingness_to_be_arrested :boolean
 #  created_at                 :datetime         not null
 #  updated_at                 :datetime         not null

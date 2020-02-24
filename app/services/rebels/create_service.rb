@@ -35,6 +35,7 @@ module Rebels
       end
       validate_email_format! if @rebel.valid?
       generate_token
+      set_version
       delete_existing_rebel_if_no_local_group(@rebel.email)
       @rebel.save!
       Mailtrain::AddSubscriptionsJob.perform_later(@rebel)
@@ -110,6 +111,12 @@ module Rebels
         :active,
         skill_ids: [],
       )
+    end
+
+    def set_version
+      # we use this for solving the Mailtrain issue with welcome emails
+      # (welcome emails are sent to rebels with version == 1)
+      rebel.version = 1
     end
 
     def validate_email_format!

@@ -21,6 +21,7 @@ namespace :mailtrain do
           "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
         }
       )
+      sleep 0.5
 
       if rebel.local_group && !rebel.local_group&.mailtrain_list_id.nil?
         MailtrainService.instance.add_subscription(
@@ -38,6 +39,7 @@ namespace :mailtrain do
             "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
           }
         )
+        sleep 0.5
       end
     end
   end

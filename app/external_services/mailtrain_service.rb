@@ -19,7 +19,8 @@ class MailtrainService
       when 200
         JSON.parse(response)
       else
-        response.return!(request, result, &block)
+        response.return!(&block)
+        # response.return!(request, result, &block)
       end
     end
   rescue => e

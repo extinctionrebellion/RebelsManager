@@ -4,4 +4,10 @@
       .footer__logo
         = image_pack_tag('media/images/xr/symbol.svg', alt: 'Extinction Rebellion')
     .cell.auto
-      | Love & Rage.
+      = link_to "Get help on #rebelsmanager",
+                 ENV['HELP_URL'],
+                 class: "small hollow button"
+      =< link_to "Read docs for coordinators",
+                 ENV['DOCS_URL'],
+                 class: "small hollow button"
+  .spacer-2

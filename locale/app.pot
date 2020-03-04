@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-10 13:57+0100\n"
-"PO-Revision-Date: 2020-01-10 13:57+0100\n"
+"POT-Creation-Date: 2020-03-04 07:09+0100\n"
+"PO-Revision-Date: 2020-03-04 07:09+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -24,6 +24,9 @@ msgstr ""
 msgid "A few hours a month"
 msgstr ""
 
+msgid "Being an active rebel"
+msgstr ""
+
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 msgstr ""
 
@@ -36,7 +39,7 @@ msgstr ""
 msgid "Feel free to let us know about anything that can help Extinction Rebellion."
 msgstr ""
 
-msgid "I am currently unavailable, you have all my support!"
+msgid "How do you want to get involved?"
 msgstr ""
 
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
@@ -105,13 +108,16 @@ msgstr ""
 msgid "Sorry, can't save this record:"
 msgstr ""
 
+msgid "Supporting Extinction Rebellion"
+msgstr ""
+
 msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr ""
 
 msgid "This email address is already linked to a rebel"
 msgstr ""
 
-msgid "Update"
+msgid "Update my Rebel Profile"
 msgstr ""
 
 msgid "We may send text messages about public actions."
@@ -126,7 +132,13 @@ msgstr ""
 msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
 msgstr ""
 
+msgid "What's next?"
+msgstr ""
+
 msgid "Yes, I am willing to be arrested during an action"
+msgstr ""
+
+msgid "You will receive a welcome email from Extinction Rebellion. This email includes links to useful documentation and websites for new rebels."
 msgstr ""
 
 msgid "Your consent about data usage is required"

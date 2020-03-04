@@ -182,7 +182,7 @@ GEM
     orm_adapter (0.5.0)
     pg (1.2.2)
     public_suffix (4.0.3)
-    puma (3.12.2)
+    puma (3.12.4)
     rack (2.1.2)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -361,7 +361,7 @@ DEPENDENCIES
   lockbox
   logstop
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 3.12)
   rack-cors
   rails (~> 6.0.0)
   rest-client

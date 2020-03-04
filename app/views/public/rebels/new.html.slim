@@ -69,7 +69,7 @@ p
       = f.input :skill_ids,
                 as: :check_boxes,
                 wrapper: :foundation_radio_buttons,
-                collection: Skill.all.order(:name).collect { |skill| ["#{skill.name}<br><small>#{skill.description}</small>", skill.id] },
+                collection: Skill.all.order(:name).collect { |skill| ["#{I18n.t("skills.#{skill.code.downcase}.label")}<br><small>#{I18n.t("skills.#{skill.code.downcase}.description")}</small>", skill.id] },
                 label: _("In which areas would you like to participate?"),
                 hint: _("We recommend that you select a maximum of 2 answers.")
 

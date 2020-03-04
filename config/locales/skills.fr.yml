@@ -1,0 +1,47 @@
+fr:
+  skills:
+    cre:
+      label: "Créativité"
+      description: "scénographie, peinture, travail du bois, musique, mise en spectacle, ..."
+    fin:
+      label: "Finance"
+      description: "comptabilité, excel, ..."
+    hea:
+      label: "Santé"
+      description: "premiers secours, infirmerie, soins, médecine, ..."
+    ico:
+      label: "Communications internes"
+      description: "flux internes de communication, IT"
+    isu:
+      label: "Coaching"
+      description: "pour les nouveaux rebelles, les groupes locaux, ..."
+    reg:
+      label: "Relationnel"
+      description: "culture régénérative, écoute, médiation, soin de soi"
+    xit:
+      label: "IT"
+      description: "sysadmin, programmation, bases de données, CMS"
+    leg:
+      label: "Juridique"
+      description: "compréhension des textes légaux et de la loi, maintien de contacts, ..."
+    log:
+      label: "Logistique"
+      description: "infrastructure, logistique durant les actions, ..."
+    mpm:
+      label: "Presse / Réseaux sociaux"
+      description: "rédaction, design, PR, réseaux sociaux, production de vidéos, ..."
+    oth:
+      label: "Autre"
+      description: "merci de préciser ci-dessous"
+    pub:
+      label: "Prise de parole en public"
+      description: "sessions d'information, formations, durant d'autres événements, ..."
+    res:
+      label: "Recherche"
+      description: "politique, science, écologie, ..."
+    str:
+      label: "Planification stratégique"
+      description: "pour les actions"
+    tra:
+      label: "Traduction"
+      description: "FR, EN, NL et autres langues"

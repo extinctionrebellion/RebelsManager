@@ -14,25 +14,18 @@ p
                   url: public_rebels_path,
                   html: { data: { controller: "registration-form" } } do |f|
 
-  = f.input :name,
-            label: _("Name or nickname"),
-            placeholder: _("Name or nickname"),
-            required: false
-
-  .grid-x
-    .cell.small-8.medium-7.large-6
-      = f.input :local_group_id,
-                as: :select,
-                label: "#{_("Local group")} *",
-                collection: LocalGroup.all.order(:name),
-                prompt: _("Select a local group"),
-                hint: _("No local group (yet) next to you? Please select the one that makes the more sense to you."),
-                required: true
-
   = f.input :email,
             as: :email,
             label: "#{_("Email address")} *",
             placeholder: _("Email address"),
+            required: true
+
+  = f.input :local_group_id,
+            as: :select,
+            label: "#{_("Local group")} *",
+            collection: LocalGroup.all.order(:name),
+            prompt: _("Select a local group"),
+            hint: _("No local group (yet) next to you? Please select the one that makes the more sense to you."),
             required: true
 
   .grid-x
@@ -41,71 +34,67 @@ p
                 label: "#{_("Preferred language")} *",
                 collection: [["English", "en"], ["Français", "fr"], ["Nederlands", "nl"]],
                 required: true,
-                prompt: _("Please select a language")
+                as: :radio_buttons,
+                wrapper: :foundation_radio_buttons
 
-  div(data-target="registration-form.involvementSelector")
-    = f.input :active,
-          label: _("How do you want to get involved?"),
-          wrapper: :segmented_selector,
-          as: :segmented_radio_buttons,
-          collection: [[_("Being an active rebel"), true], [_("Supporting Extinction Rebellion"), false]],
-          required: true,
-          input_html: { data: { action: "registration-form#toggleInvolvement" }}
+  .card
+    .card-section
+      .grid-x
+        .cell.small-12.medium-10.large-8
+          = f.input :name,
+                    label: _("Name or nickname"),
+                    placeholder: _("Name or nickname"),
+                    required: false
 
-  div(data-target="registration-form.activeRebelFields" class="#{f.object.active? ? nil : "hide"}")
-    .card
-      .card-section
-        .grid-x
-          .cell.small-12.medium-10.large-8
-            = f.input :phone,
-                      label: _("Mobile phone"),
-                      placeholder: _("Mobile phone"),
-                      required: false,
-                      hint: _("We may send text messages about public actions.")
+          = f.input :phone,
+                    label: _("Mobile phone"),
+                    placeholder: _("Mobile phone"),
+                    required: false,
+                    hint: _("We may send text messages about public actions.")
 
-        .grid-x
-          .cell.small-6.medium-4.large-3
-            = f.input :postcode,
-                      label: _("Postcode"),
-                      placeholder: _("Postcode"),
-                      required: false
+      .grid-x
+        .cell.small-6.medium-4.large-3
+          = f.input :postcode,
+                    label: _("Postcode"),
+                    placeholder: _("Postcode"),
+                    required: false
 
-        = f.input :willingness_to_be_arrested,
-                  as: :boolean,
-                  wrapper: :foundation_checkbox,
-                  label: _("Yes, I am willing to be arrested during an action"),
-                  hint: _("Of course, your opinion can change over time, depending on the action"),
-                  required: false
+      = f.input :willingness_to_be_arrested,
+                as: :boolean,
+                wrapper: :foundation_checkbox,
+                label: _("Yes, I am willing to be arrested during an action"),
+                hint: _("Of course, your opinion can change over time, depending on the action"),
+                required: false
 
-        = f.input :skill_ids,
-                  as: :check_boxes,
-                  wrapper: :foundation_radio_buttons,
-                  collection: Skill.all.order(:name).collect { |skill| ["#{skill.name}<br><small>#{skill.description}</small>", skill.id] },
-                  label: _("In which areas would you like to participate?"),
-                  hint: _("We recommend that you select a maximum of 2 answers.")
+      = f.input :skill_ids,
+                as: :check_boxes,
+                wrapper: :foundation_radio_buttons,
+                collection: Skill.all.order(:name).collect { |skill| ["#{skill.name}<br><small>#{skill.description}</small>", skill.id] },
+                label: _("In which areas would you like to participate?"),
+                hint: _("We recommend that you select a maximum of 2 answers.")
 
-        = f.input :notes,
-                  as: :text,
-                  input_html: { rows: 5 },
-                  label: _("What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"),
-                  hint: _("Feel free to let us know about anything that can help Extinction Rebellion."),
-                  required: false
+      = f.input :notes,
+                as: :text,
+                input_html: { rows: 5 },
+                label: _("What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"),
+                hint: _("Feel free to let us know about anything that can help Extinction Rebellion."),
+                required: false
 
-        = f.input :availability,
-                  label: _("My availability for Extinction Rebellion"),
-                  as: :radio_buttons,
-                  wrapper: :foundation_radio_buttons,
-                  collection: [ \
-                    [_("A few hours a month"), 'few_hours_a_month'],
-                    [_("A couple of hours a week"), 'few_hours_a_week'],
-                    [_("More than 10 hours a week"), '10_hours_a_week'] \
-                  ]
+      = f.input :availability,
+                label: _("My availability for Extinction Rebellion"),
+                as: :radio_buttons,
+                wrapper: :foundation_radio_buttons,
+                collection: [ \
+                  [_("A few hours a month"), 'few_hours_a_month'],
+                  [_("A couple of hours a week"), 'few_hours_a_week'],
+                  [_("More than 10 hours a week"), '10_hours_a_week'] \
+                ]
 
-        =  f.input :agree_with_principles,
-                   as: :boolean,
-                   label: raw(_("I've read and I agree with the principles and values of Extinction Rebellion") + "<br>" + link_to(_("Open principles and values in a new tab"), ENV['XR_BRANCH_AGREEMENT_URL'], target: "_blank").html_safe),
-                   wrapper: :foundation_checkbox,
-                   required: true
+      =  f.input :agree_with_principles,
+                 as: :boolean,
+                 label: raw(_("I've read and I agree with the principles and values of Extinction Rebellion") + "<br>" + link_to(_("Open principles and values in a new tab"), ENV['XR_BRANCH_AGREEMENT_URL'], target: "_blank").html_safe),
+                 wrapper: :foundation_checkbox,
+                 required: true
 
   .spacer-1
   = f.input :consent,

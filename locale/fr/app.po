@@ -7,195 +7,131 @@ msgstr ""
 "Project-Id-Version: Rebels Manager\n"
 "Language: fr\n"
 
-#: 
-msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
-msgstr "Extinction Rebellion Belgium et les coordinateurs de votre groupe local seront notifiés de votre inscription et seront disponibles pour vous assister."
-
-#: 
-msgid "By answering the following questions, you will be listed in our secure Rebels database."
-msgstr "En complétant ce formulaire, vous serez inscrit dans notre base de données de rebelles sécurisée."
-
-#: 
-msgid "Email address"
-msgstr "Adresse email"
-
-#: 
-msgid "Feel free to let us know about anything that can help Extinction Rebellion."
-msgstr "Laissez libre court à votre imagination - comment pouvez-vous aider Extinction Rebellion?"
-
-#: 
-msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
-msgstr "Je donne la permission à Extinction Rebellion Belgium de me contacter en utilisant les données fournies dans ce formulaire"
-
-#: 
-msgid "In which areas would you like to participate?"
-msgstr "Dans quel(s) domaine(s) souhaitez-vous vous impliquer?"
-
-#: 
-msgid "Join the Rebellion"
-msgstr "Rejoindre la rébellion"
-
-#: 
-msgid "Join the Rebellion!"
-msgstr "Rejoindre la rébellion!"
-
-#: 
-msgid "Join us!"
-msgstr "Rejoins-nous!"
-
-#: 
-msgid "Local group"
-msgstr "Groupe local"
-
-#: 
-msgid "Mobile phone"
-msgstr "GSM"
-
-#: 
-msgid "My Rebel Profile"
-msgstr "Mon profil rebelle"
-
-#: 
-msgid "Name or nickname"
-msgstr "Nom ou pseudo"
-
-#: 
-msgid "No local group (yet) next to you? Please select the one that makes the more sense to you."
-msgstr "Pas (encore) de groupe local près de chez vous? Merci de sélectionner celui qui fait le plus de sens en fonction de votre localisation."
-
-#: 
-msgid "Of course, your opinion can change over time, depending on the action"
-msgstr "Bien entendu, votre choix peut évoluer avec le temps et en fonction de l'action"
-
-#: 
-msgid "Please select a language"
-msgstr "Veuillez sélectionner une langue"
-
-#: 
-msgid "Postcode"
-msgstr "Code postal"
-
-#: 
-msgid "Preferred language"
-msgstr "Langue de préférence"
-
-#: 
-msgid "Select a local group"
-msgstr "Sélectionnez un groupe local"
-
-#: 
-msgid "Sorry, can't save this record:"
-msgstr "Désolé mais cet enregistrement ne peut pas être enregistré:"
-
-#: 
-msgid "Thanks a lot! Your rebel profile is now up-to-date."
-msgstr "Merci beaucoup! Votre profil est désormais à jour."
-
-#: 
-msgid "Update"
-msgstr "Mettre à jour"
-
-#: 
-msgid "We may send text messages about public actions."
-msgstr "Nous pourrions vous envoyer des SMS au sujet d'actions publiques"
-
-#: 
-msgid "We recommend that you select a maximum of 2 answers."
-msgstr "Nous vous recommandons de sélectionner au maximum 2 réponses"
-
-#: 
-msgid "Welcome to the Rebellion!"
-msgstr "Bienvenue dans la rébellion!"
-
-#: 
-msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
-msgstr "De quelles compétences/expériences/ressources disposez-vous? Avez-vous des remarques/questions que vous souhaitez partager?"
-
-#: 
-msgid "Yes, I am willing to be arrested during an action"
-msgstr "Oui, je suis prêt à me faire arrêter durant une action"
-
-#: 
 msgid "A couple of hours a week"
 msgstr "Quelques heures par semaine"
 
-#: 
 msgid "A few hours a month"
 msgstr "Quelques heures par mois"
 
-#: 
-msgid "More than 10 hours a week"
-msgstr "Plus de 10 heures par semaine"
+msgid "Being an active rebel"
+msgstr ""
 
-#: 
-msgid "Please double check the email address provided."
-msgstr "Veuillez vérifier le format de l'adresse email renseignée."
+msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
+msgstr "Extinction Rebellion Belgium et les coordinateurs de votre groupe local seront notifiés de votre inscription et seront disponibles pour vous assister."
 
-#: 
-msgid "Please provide an email address"
-msgstr "Veuillez renseigner une adresse email."
+msgid "By answering the following questions, you will be listed in our secure Rebels database."
+msgstr "En complétant ce formulaire, vous serez inscrit dans notre base de données de rebelles sécurisée."
 
-#: 
-msgid "This email address is already linked to a rebel"
-msgstr "Cette adresse email est déjà liée à un.e rebelle."
+msgid "Email address"
+msgstr "Adresse email"
 
-#: 
-msgid "Your consent about data usage is required"
-msgstr "Votre consentement concernant l'usage de vos données est requis."
+msgid "Feel free to let us know about anything that can help Extinction Rebellion."
+msgstr "Laissez libre court à votre imagination - comment pouvez-vous aider Extinction Rebellion?"
 
-#: 
-msgid "I am currently unavailable, you have all my support!"
-msgstr "Je suis indisponible pour le moment, vous avez tout mon soutien!"
+msgid "How do you want to get involved?"
+msgstr ""
 
-#: 
-msgid "My availability for Extinction Rebellion"
-msgstr "Ma disponibilité pour Extinction Rebellion"
+msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
+msgstr "Je donne la permission à Extinction Rebellion Belgium de me contacter en utilisant les données fournies dans ce formulaire"
 
-#: 
-msgid "Your data can be deleted anytime by sending an email to %{email}."
-msgstr "Vos données peuvent être supprimées à tout moment en envoyant un email à %{email}."
-
-#: 
 msgid "I've read and I agree with the principles and values of Extinction Rebellion"
 msgstr "J'ai lu et je marque mon accord avec les principes et valeurs d'Extinction Rebellion"
 
-#: 
+msgid "In which areas would you like to participate?"
+msgstr "Dans quel(s) domaine(s) souhaitez-vous vous impliquer?"
+
+msgid "Join the Rebellion"
+msgstr "Rejoindre la rébellion"
+
+msgid "Join the Rebellion!"
+msgstr "Rejoindre la rébellion!"
+
+msgid "Join us!"
+msgstr "Rejoins-nous!"
+
+msgid "Local group"
+msgstr "Groupe local"
+
+msgid "Mobile phone"
+msgstr "GSM"
+
+msgid "More than 10 hours a week"
+msgstr "Plus de 10 heures par semaine"
+
+msgid "My Rebel Profile"
+msgstr "Mon profil rebelle"
+
+msgid "My availability for Extinction Rebellion"
+msgstr "Ma disponibilité pour Extinction Rebellion"
+
+msgid "Name or nickname"
+msgstr "Nom ou pseudo"
+
+msgid "No local group (yet) next to you? Please select the one that makes the more sense to you."
+msgstr "Pas (encore) de groupe local près de chez vous? Merci de sélectionner celui qui fait le plus de sens en fonction de votre localisation."
+
+msgid "Of course, your opinion can change over time, depending on the action"
+msgstr "Bien entendu, votre choix peut évoluer avec le temps et en fonction de l'action"
+
 msgid "Open principles and values in a new tab"
 msgstr "Ouvrir les principes et valeurs dans un nouvel onglet"
 
-#: 
-msgid "Ends"
-msgstr "Termine le"
+msgid "Please double check the email address provided."
+msgstr "Veuillez vérifier le format de l'adresse email renseignée."
 
-#: 
-msgid "Events"
-msgstr "Événements"
+msgid "Please provide an email address"
+msgstr "Veuillez renseigner une adresse email."
 
-#: 
-msgid "NATIONAL EVENT"
-msgstr "ÉVÉNEMENT NATIONAL"
+msgid "Please select a language"
+msgstr "Veuillez sélectionner une langue"
 
-#: 
-msgid "No event planned."
-msgstr "Aucun événement planifié."
+msgid "Postcode"
+msgstr "Code postal"
 
-#: 
-msgid "See details on Facebook"
-msgstr "Voir les détails sur Facebook"
+msgid "Preferred language"
+msgstr "Langue de préférence"
 
-#: 
-msgid "Starts"
-msgstr "Débute le"
+msgid "Select a local group"
+msgstr "Sélectionnez un groupe local"
 
-#: 
-msgid "This event is coordinated by"
-msgstr "Cet événement est coordonné par"
+msgid "Sorry, can't save this record:"
+msgstr "Désolé mais cet enregistrement ne peut pas être enregistré:"
 
-#: 
-msgid "← All events"
-msgstr "← Tous les événements"
+msgid "Supporting Extinction Rebellion"
+msgstr ""
 
-#: 
+msgid "Thanks a lot! Your rebel profile is now up-to-date."
+msgstr "Merci beaucoup! Votre profil est désormais à jour."
+
+msgid "This email address is already linked to a rebel"
+msgstr "Cette adresse email est déjà liée à un.e rebelle."
+
+msgid "Update my Rebel Profile"
+msgstr "Mettre à jour mon profil rebelle"
+
+msgid "We may send text messages about public actions."
+msgstr "Nous pourrions vous envoyer des SMS au sujet d'actions publiques"
+
+msgid "We recommend that you select a maximum of 2 answers."
+msgstr "Nous vous recommandons de sélectionner au maximum 2 réponses"
+
 msgid "Welcome to the Rebellion! 🙌 You will receive an email from us with a few links. Then please keep your rebel profile up-to-date (we suggest that you bookmark this page, or that you follow the link you'll find at the bottom of our newsletters)."
 msgstr "Bienvenue dans la rébellion! 🙌 Vous allez recevoir un email de notre part avec quelques liens. Ensuite, conservez votre profil rebelle à jour (nous vous suggérons de mettre cette page en favori, ou de suivre le lien présent au bas de chacune de nos newsletters)."
 
+msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
+msgstr "De quelles compétences/expériences/ressources disposez-vous? Avez-vous des remarques/questions que vous souhaitez partager?"
+
+msgid "What's next?"
+msgstr "Que va-t-il se passer?"
+
+msgid "Yes, I am willing to be arrested during an action"
+msgstr "Oui, je suis prêt à me faire arrêter durant une action"
+
+msgid "You will receive a welcome email from Extinction Rebellion. This email includes links to useful documentation and websites for new rebels."
+msgstr "Vous allez recevoir un email de bienvenue de la part d'Extinction Rebellion. Cet email contient des liens vers de la documentation et des sites web utiles aux nouveaux rebelles."
+
+msgid "Your consent about data usage is required"
+msgstr "Votre consentement concernant l'usage de vos données est requis."
+
+msgid "Your data can be deleted anytime by sending an email to %{email}."
+msgstr "Vos données peuvent être supprimées à tout moment en envoyant un email à %{email}."

@@ -13,6 +13,9 @@ msgstr "Enkele uren per week"
 msgid "A few hours a month"
 msgstr "Een paar uur per maand"
 
+msgid "Being an active rebel"
+msgstr ""
+
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 msgstr "De coördinatoren van zowel Extinction Rebellion Belgium als je lokale groep zullen ingelicht worden van je inschrijving en zullen er zijn om je te ondersteunen."
 
@@ -25,8 +28,8 @@ msgstr "Email-adres"
 msgid "Feel free to let us know about anything that can help Extinction Rebellion."
 msgstr "Voel je vrij om ons eender wat te laten weten dat Extinction Rebellion kan helpen. "
 
-msgid "I am currently unavailable, you have all my support!"
-msgstr "Ik ben momenteel niet beschikbaar, je hebt al mijn steun!"
+msgid "How do you want to get involved?"
+msgstr ""
 
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 msgstr "Ik geef toestemming aan Extinction Rebellion Belgium om me te contacteren via de data die ik ingevuld heb in dit formulier. "
@@ -94,13 +97,17 @@ msgstr "Selecteer een lokale groep"
 msgid "Sorry, can't save this record:"
 msgstr "Sorry, kan dit formulier niet opslaan"
 
+msgid "Supporting Extinction Rebellion"
+msgstr ""
+
 msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr "Erg bedankt! Je profiel als rebel is nu actueel."
 
 msgid "This email address is already linked to a rebel"
 msgstr "Dit e-mail adres is al gekoppeld aan een rebel"
 
-msgid "Update"
+#, fuzzy
+msgid "Update my Rebel Profile"
 msgstr "Update"
 
 msgid "We may send text messages about public actions."
@@ -116,8 +123,14 @@ msgstr "Welkom bij de rebellie!"
 msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
 msgstr "Welke specifieke vaardigheden/ervaringen/middelen heb je? Heb je nog gedachten of vragen die je graag deelt? "
 
+msgid "What's next?"
+msgstr ""
+
 msgid "Yes, I am willing to be arrested during an action"
 msgstr "Ja, ik ben bereid me te laten arresteren tijdens een actie"
+
+msgid "You will receive a welcome email from Extinction Rebellion. This email includes links to useful documentation and websites for new rebels."
+msgstr ""
 
 msgid "Your consent about data usage is required"
 msgstr "Uw toestemming voor het gebruik van de gegevens is vereist"
@@ -125,5 +138,7 @@ msgstr "Uw toestemming voor het gebruik van de gegevens is vereist"
 msgid "Your data can be deleted anytime by sending an email to %{email}."
 msgstr "Uw gegevens kunnen te allen tijde worden verwijderd door een e-mail te sturen naar %{email}."
 
-#~ msgid "Welcome to the Rebellion!"
-#~ msgstr "Welkom bij de rebellie!"
+#~ msgid "I am currently unavailable, you have all my support!"
+#~ msgstr "Ik ben momenteel niet beschikbaar, je hebt al mijn steun!"
+#~ msgid "Update"
+#~ msgstr "Update"

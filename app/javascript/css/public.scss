@@ -53,4 +53,11 @@
 
 body {
   padding: $global-padding 0;
+
+  .text {
+    &--yellow {
+      padding: .5rem;
+      background: $color-lemon;
+    }
+  }
 }

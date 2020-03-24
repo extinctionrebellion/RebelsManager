@@ -13,6 +13,9 @@ msgstr "A couple of hours a week"
 msgid "A few hours a month"
 msgstr "A few hours a month"
 
+msgid "Being an active rebel"
+msgstr "Being an active rebel"
+
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 msgstr "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 
@@ -25,8 +28,8 @@ msgstr "Email address"
 msgid "Feel free to let us know about anything that can help Extinction Rebellion."
 msgstr "Feel free to let us know about anything that can help Extinction Rebellion."
 
-msgid "I am currently unavailable, you have all my support!"
-msgstr "I am currently unavailable, you have all my support!"
+msgid "How do you want to get involved?"
+msgstr "How do you want to get involved?"
 
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 msgstr "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
@@ -94,14 +97,17 @@ msgstr "Select a local group"
 msgid "Sorry, can't save this record:"
 msgstr "Sorry, can't save this record:"
 
+msgid "Supporting Extinction Rebellion"
+msgstr "Supporting Extinction Rebellion"
+
 msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr "Thanks a lot! Your rebel profile is now up-to-date."
 
 msgid "This email address is already linked to a rebel"
 msgstr "This email address is already linked to a rebel"
 
-msgid "Update"
-msgstr "Update"
+msgid "Update my Rebel Profile"
+msgstr "Update my Rebel Profile"
 
 msgid "We may send text messages about public actions."
 msgstr "We may send text messages about public actions."
@@ -116,14 +122,17 @@ msgstr "Welcome to the Rebellion!"
 msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
 msgstr "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
 
+msgid "What's next?"
+msgstr "What's next?"
+
 msgid "Yes, I am willing to be arrested during an action"
 msgstr "Yes, I am willing to be arrested during an action"
+
+msgid "You will receive a welcome email from Extinction Rebellion. This email includes links to useful documentation and websites for new rebels."
+msgstr "You will receive a welcome email from Extinction Rebellion. This email includes links to useful documentation and websites for new rebels."
 
 msgid "Your consent about data usage is required"
 msgstr "Your consent about data usage is required"
 
 msgid "Your data can be deleted anytime by sending an email to %{email}."
 msgstr "Your data can be deleted anytime by sending an email to %{email}."
-
-#~ msgid "Welcome to the Rebellion!"
-#~ msgstr "Welcome to the Rebellion!"

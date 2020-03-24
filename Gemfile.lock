@@ -132,7 +132,7 @@ GEM
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
     fast_gettext (2.0.1)
-    ffaker (2.13.0)
+    ffaker (2.14.0)
     ffi (1.12.1)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)

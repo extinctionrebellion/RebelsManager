@@ -1,0 +1,47 @@
+de:
+  skills:
+    cre:
+      label: "Kreativ"
+      description: "Szenographie, Malerei, Holzarbeiten, Musik, Aufführung, ..."
+    fin:
+      label: "Finanzen"
+      description: "Buchhaltung, Rechnungswesen, excel, ..."
+    hea:
+      label: "Gesundheit"
+      description: "Erste Hilfe, Sanitäter, Krankenschwester, Arzt, ..."
+    ico:
+      label: "Interne Kommunikation"
+      description: "interne Kommunikationsflüsse, IT"
+    isu:
+      label: "Interne Unterstützung"
+      description: "für neue Rebellen, für lokale Gruppen, ..."
+    reg:
+      label: "Zwischenmenschlich"
+      description: "regenerative Kultur, Zuhören, Mediation, Selbstfürsorge"
+    xit:
+      label: "IT"
+      description: "Systemadministrator, Programmierung, Datenbanken, CMS"
+    leg:
+      label: "Rechtliches"
+      description: "Rechtstexte, das Gesetz verstehen, Kontakte pflegen, ..."
+    log:
+      label: "Logistik"
+      description: "Infrastruktur, Logistik bei Aktionen"
+    mpm:
+      label: "Media, Press & Messaging"
+      description: "Schreiben, Design, PR, soziale Medien, Videoproduktion, ..."
+    oth:
+      label: "Andere"
+      description: "bitte unten angeben"
+    pub:
+      label: "Öffentliches Reden"
+      description: "Infositzungen, Schulungen, bei anderen Veranstaltungen, ..."
+    res:
+      label: "Forschung"
+      description: "Politik, Wissenschaft, Ökologie, ..."
+    str:
+      label: "Strategische Planung"
+      description: "für Aktionen"
+    tra:
+      label: "Übersetzen"
+      description: "FR, EN, NL & andere"

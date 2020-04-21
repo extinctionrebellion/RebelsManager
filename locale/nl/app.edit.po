@@ -14,7 +14,7 @@ msgid "A few hours a month"
 msgstr "Een paar uur per maand"
 
 msgid "Being an active rebel"
-msgstr ""
+msgstr "Een actieve rebel zijn"
 
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 msgstr "De coördinatoren van zowel Extinction Rebellion Belgium als je lokale groep zullen ingelicht worden van je inschrijving en zullen er zijn om je te ondersteunen."
@@ -29,7 +29,7 @@ msgid "Feel free to let us know about anything that can help Extinction Rebellio
 msgstr "Voel je vrij om ons eender wat te laten weten dat Extinction Rebellion kan helpen. "
 
 msgid "How do you want to get involved?"
-msgstr ""
+msgstr "Hoe wil je er bij betrokken raken?"
 
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 msgstr "Ik geef toestemming aan Extinction Rebellion Belgium om me te contacteren via de data die ik ingevuld heb in dit formulier. "
@@ -98,7 +98,7 @@ msgid "Sorry, can't save this record:"
 msgstr "Sorry, kan dit formulier niet opslaan"
 
 msgid "Supporting Extinction Rebellion"
-msgstr ""
+msgstr "Steun aan Extinction Rebellion"
 
 msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr "Erg bedankt! Je profiel als rebel is nu actueel."
@@ -106,9 +106,8 @@ msgstr "Erg bedankt! Je profiel als rebel is nu actueel."
 msgid "This email address is already linked to a rebel"
 msgstr "Dit e-mail adres is al gekoppeld aan een rebel"
 
-#, fuzzy
 msgid "Update my Rebel Profile"
-msgstr "Update"
+msgstr "Update mijn Rebel Profiel"
 
 msgid "We may send text messages about public actions."
 msgstr "We kunnen mogelijks sms'en verzenden over publieke acties."
@@ -116,29 +115,23 @@ msgstr "We kunnen mogelijks sms'en verzenden over publieke acties."
 msgid "We recommend that you select a maximum of 2 answers."
 msgstr "We raden aan om maximum 2 antwoorden aan te duiden"
 
-#, fuzzy
 msgid "Welcome to the Rebellion! 🙌 You will receive an email from us with a few links. Then please keep your rebel profile up-to-date (we suggest that you bookmark this page, or that you follow the link you'll find at the bottom of our newsletters)."
-msgstr "Welkom bij de rebellie!"
+msgstr "Welkom bij de rebellie! 🙌 Je zal een email van ons ontvangen met enkele handige links erin. Vervolgens vragen we om je rebellenprofiel up-to-date to houden. We raden aan om deze pagina op te slaan als 'bookmark', of dat je de link gebruikt die telkens aan het einde van elke nieuwsbrief verschijnt."
 
 msgid "What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"
 msgstr "Welke specifieke vaardigheden/ervaringen/middelen heb je? Heb je nog gedachten of vragen die je graag deelt? "
 
 msgid "What's next?"
-msgstr ""
+msgstr "Wat is het volgende?"
 
 msgid "Yes, I am willing to be arrested during an action"
 msgstr "Ja, ik ben bereid me te laten arresteren tijdens een actie"
 
 msgid "You will receive a welcome email from Extinction Rebellion. This email includes links to useful documentation and websites for new rebels."
-msgstr ""
+msgstr "U ontvangt een welkomstmail van Extinction Rebellion. Deze e-mail bevat links naar nuttige documentatie en websites voor nieuwe rebellen."
 
 msgid "Your consent about data usage is required"
 msgstr "Uw toestemming voor het gebruik van de gegevens is vereist"
 
 msgid "Your data can be deleted anytime by sending an email to %{email}."
 msgstr "Uw gegevens kunnen te allen tijde worden verwijderd door een e-mail te sturen naar %{email}."
-
-#~ msgid "I am currently unavailable, you have all my support!"
-#~ msgstr "Ik ben momenteel niet beschikbaar, je hebt al mijn steun!"
-#~ msgid "Update"
-#~ msgstr "Update"

@@ -1,0 +1,47 @@
+nl:
+  skills:
+    cre:
+      label: "Creatief"
+      description: "scenografie, schilderkunst, houtbewerking, muziek, performance, ..."
+    fin:
+      label: "Financiën"
+      description: "boekhouding, boekhouding, Excel, ..."
+    hea:
+      label: "Gezondheid"
+      description: "eerste hulp, dokter, verpleegster, ..."
+    ico:
+      label: "Interne communicatie"
+      description: "interne communicatiestromen, IT"
+    isu:
+      label: "Interne ondersteuning"
+      description: "voor nieuwe rebellen, voor lokale groepen, ..."
+    reg:
+      label: "Interpersoonlijk"
+      description: "regeneratieve cultuur, luisteren, bemiddeling, zelfzorg"
+    xit:
+      label: "IT"
+      description: "sysadmin, programming, databases, CMS"
+    leg:
+      label: "Legaal"
+      description: "het begrijpen van wetteksten, de wet, het onderhouden van contacten, ..."
+    log:
+      label: "Logistiek"
+      description: "infrastructuur, logistiek tijdens acties, ..."
+    mpm:
+      label: "Media, Press & Messaging"
+      description: "schrijven, ontwerpen, PR, social media, videoproductie, ..."
+    oth:
+      label: "Andere"
+      description: "gelieve hieronder te specificeren"
+    pub:
+      label: "Openbaar spreken"
+      description: "infosessies, trainingen, tijdens andere evenementen, ..."
+    res:
+      label: "Onderzoek"
+      description: "politiek, wetenschap, ecologie, ..."
+    str:
+      label: "Strategische planning"
+      description: "voor acties"
+    tra:
+      label: "Vertaling"
+      description: "FR, EN, NL & overige"

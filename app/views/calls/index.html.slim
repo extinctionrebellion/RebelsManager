@@ -1,0 +1,45 @@
+- content_for :page_header do
+  = render 'layouts/components/page_header',
+           title: 'Calls'
+
+table
+  thead
+    tr
+      th Phone number
+      th Language
+      th Local group
+      th Status
+      th Notes
+      th &nbsp;
+  tbody
+    - @rebels.each do |rebel|
+      = simple_form_for rebel, url: rebel_path(rebel), remote: true do |f|
+        tr.inline
+          td
+            = f.input :phone,
+                      label: ""
+          td
+            = f.input :language,
+                      label: "",
+                      collection: [["FR", "fr"], ["NL", "nl"], ["EN", "en"]]
+          td
+            = f.input :local_group_id,
+                      as: :select,
+                      label: "",
+                      collection: LocalGroup.all.order(:name),
+                      include_blank: "None"
+          td
+            = f.input :phone_campaign_status,
+                      as: :select,
+                      label: "",
+                      collection: [["Pending", "pending"], ["Not responding", "not_responding"], ["Called", "called"]]
+          td
+            = f.input :phone_campaign_notes,
+                      as: :text,
+                      label: "",
+                      input_html: { rows: 1 }
+          td.text-right
+            = f.button :submit,
+                       'Save',
+                       id: "rebel-#{rebel.id}-save-button",
+                       class: 'small button no-margin-bottom'

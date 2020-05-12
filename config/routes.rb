@@ -10,6 +10,7 @@ Rails.application.routes.draw do
              path: 'auth',
              path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', unlock: 'unlock' }
 
+  resources :calls, only: [:index]
   resources :local_groups
   resources :events
   resources :rebels

@@ -60,7 +60,8 @@ class UsersController < BaseController
 
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
-      active_primary: 'users'
+      active_primary: 'users',
+      user: current_user
     )
   end
 end

@@ -58,7 +58,8 @@ class SkillsController < BaseController
 
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
-      active_primary: "skills"
+      active_primary: "skills",
+      user: current_user
     )
   end
 end

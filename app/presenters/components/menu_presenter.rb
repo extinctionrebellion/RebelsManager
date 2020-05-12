@@ -1,7 +1,7 @@
 class Components::MenuPresenter < PresenterBase
   attr_reader :active_primary, :active_secondary, :active_tertiary,
     :primary_secondary_items, :object, :controller_name, :action_name,
-    :view_context
+    :view_context, :user
 
   def initialize(
     view_context: nil,
@@ -10,9 +10,11 @@ class Components::MenuPresenter < PresenterBase
     active_tertiary: nil,
     object: nil,
     controller_name: nil,
-    action_name: nil
+    action_name: nil,
+    user: nil
   )
     @view_context         = view_context
+    @user                 = user
 
     @active_primary       = active_primary
     @active_secondary     = active_secondary
@@ -119,22 +121,26 @@ class Components::MenuPresenter < PresenterBase
       {
         body: 'Rebels',
         url: rebels_path,
-        active: @active_primary == 'rebels'
+        active: @active_primary == 'rebels',
+        condition: !@user.ringer?
       },
       {
         body: 'Working Groups',
         url: working_groups_path,
-        active: @active_primary == 'working_groups'
+        active: @active_primary == 'working_groups',
+        condition: !@user.ringer?
       },
       {
         body: 'Events',
         url: events_path,
-        active: @active_primary == 'events'
+        active: @active_primary == 'events',
+        condition: !@user.ringer?
       },
       {
         body: 'Tags',
         url: tags_path,
-        active: @active_primary == 'tags'
+        active: @active_primary == 'tags',
+        condition: !@user.ringer?
       }
     ]
   end

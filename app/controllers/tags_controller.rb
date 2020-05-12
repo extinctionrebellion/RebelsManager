@@ -31,7 +31,8 @@ class TagsController < BaseController
 
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
-      active_primary: 'tags'
+      active_primary: 'tags',
+      user: current_user
     )
   end
 end

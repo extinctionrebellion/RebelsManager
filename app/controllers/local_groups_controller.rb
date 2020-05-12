@@ -60,7 +60,8 @@ class LocalGroupsController < BaseController
 
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
-      active_primary: "local_groups"
+      active_primary: "local_groups",
+      user: current_user
     )
   end
 end

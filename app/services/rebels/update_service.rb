@@ -52,6 +52,8 @@ module Rebels
           :notes,
           :number_of_arrests,
           :phone,
+          :phone_campaign_status,
+          :phone_campaign_notes,
           :postcode,
           :regular_volunteer,
           :status,

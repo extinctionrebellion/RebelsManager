@@ -22,7 +22,8 @@ class Rebels::ImportsController < BaseController
 
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
-      active_primary: 'rebels'
+      active_primary: 'rebels',
+      user: current_user
     )
   end
 end

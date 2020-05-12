@@ -49,7 +49,8 @@ class WorkingGroupsController < BaseController
 
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
-      active_primary: 'working_groups'
+      active_primary: 'working_groups',
+      user: current_user
     )
   end
 end

@@ -28,6 +28,14 @@ if Rebel.none?
     local_group: local_group2
   )
 
+  # Ringer account
+  User.create(
+    email: 'local-group-ringer@organise.earth',
+    password: 'admin123',
+    local_group: local_group,
+    role: 'ringer'
+  )
+
   # Working groups for both local groups
   WorkingGroup.create(local_group: local_group, name: 'Action & Strategy', color: '#16A938', code: 'ACT')
   WorkingGroup.create(local_group: local_group, name: 'Communication & IT', color: '#3760AA', code: 'CIT')
@@ -42,8 +50,23 @@ if Rebel.none?
   # Rebel statuses
   statuses = ['active', 'paused', 'inactive']
 
-  # Create rebels
-  125.times do
+  # Create rebels with a phone number
+  50.times do
+    rebel = Rebel.create(
+      name: FFaker::Name.unique.name,
+      email: FFaker::Internet.unique.email,
+      consent: true,
+      language: 'en',
+      status: statuses.sample,
+      tag_list: tags.sample,
+      phone: FFaker::PhoneNumber.short_phone_number,
+      local_group: LocalGroup.order("RANDOM()").take,
+      working_groups: WorkingGroup.limit(1).order("RANDOM()")
+    )
+  end
+
+  # Create rebels without a phone number
+  100.times do
     rebel = Rebel.create(
       name: FFaker::Name.unique.name,
       email: FFaker::Internet.unique.email,

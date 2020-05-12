@@ -52,11 +52,23 @@ class RebelsController < BaseController
   def update
     service = Rebels::UpdateService.new(rebel: Rebel.find(params[:id]))
     if service.run(params)
-      redirect_to rebel_path(service.rebel),
-                  notice: "Rebel has been updated."
+      respond_to do |format|
+        format.html {
+          redirect_to rebel_path(service.rebel),
+                      notice: "Rebel has been updated."
+        }
+        format.js {
+          @rebel = service.rebel
+        }
+      end
     else
       @rebel = service.rebel
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.js {
+          # TODO
+        }
+      end
     end
   end
 
@@ -82,7 +94,8 @@ class RebelsController < BaseController
 
   def set_presenters
     @menu_presenter = Components::MenuPresenter.new(
-      active_primary: 'rebels'
+      active_primary: 'rebels',
+      user: current_user
     )
   end
 end

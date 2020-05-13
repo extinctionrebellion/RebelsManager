@@ -33,7 +33,7 @@ table
               = f.input :phone_campaign_status,
                         as: :select,
                         label: "",
-                        collection: [["Pending", "pending"], ["Not responding", "not_responding"], ["Called", "called"]]
+                        collection: [["Pending", "pending"], ["Not responding", "not_responding"], ["Called", "called"], ["Don't call again", "do-not-call-again"]]
             td
               = f.input :phone_campaign_notes,
                         as: :text,

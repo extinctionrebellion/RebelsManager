@@ -14,6 +14,12 @@ table
   tbody
     - @rebels.each do |rebel|
       - if rebel.phone.present?
+        javascript:
+          $(document).on("turbolinks:load", function() {
+            $("#edit_rebel_#{rebel.id}").on("ajax:success", function (event) {
+              $('#rebel-#{rebel.id}-save-button').removeClass('hollow');
+            });
+          });
         = simple_form_for rebel, url: rebel_path(rebel), remote: true do |f|
           tr.form-line.inline
             td

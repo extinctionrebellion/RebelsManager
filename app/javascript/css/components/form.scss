@@ -352,4 +352,20 @@
       }
     }
   }
+
+  table {
+    tr.form-line {
+      td {
+        padding: .5rem;
+      }
+    }
+
+    td {
+      input,
+      select,
+      textarea {
+        margin: 0 !important;
+      }
+    }
+  }
 }

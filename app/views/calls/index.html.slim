@@ -15,32 +15,37 @@ table
     - @rebels.each do |rebel|
       - if rebel.phone.present?
         = simple_form_for rebel, url: rebel_path(rebel), remote: true do |f|
-          tr.inline
+          tr.form-line.inline
             td
               = f.input :phone,
-                        label: ""
+                        label: "",
+                        input_html: { id: "rebel_#{f.object.id}_phone", autocomplete: "off" }
             td
               = f.input :language,
                         label: "",
-                        collection: [["FR", "fr"], ["NL", "nl"], ["EN", "en"]]
+                        collection: [["FR", "fr"], ["NL", "nl"], ["EN", "en"]],
+                        input_html: { id: "rebel_#{f.object.id}_language", autocomplete: "off" }
             td
               = f.input :local_group_id,
                         as: :select,
                         label: "",
                         collection: LocalGroup.all.order(:name),
-                        include_blank: "None"
+                        include_blank: "None",
+                        input_html: { id: "rebel_#{f.object.id}_local_group_id", autocomplete: "off" }
             td
               = f.input :phone_campaign_status,
                         as: :select,
                         label: "",
-                        collection: [["Pending", "pending"], ["Not responding", "not_responding"], ["Called", "called"], ["Don't call again", "do-not-call-again"]]
+                        collection: [["Pending", "pending"], ["Not responding", "not_responding"], ["Called", "called"], ["Don't call again", "do-not-call-again"]],
+                        input_html: { id: "rebel_#{f.object.id}_phone_campaign_status", autocomplete: "off" }
             td
               = f.input :phone_campaign_notes,
                         as: :text,
                         label: "",
-                        input_html: { rows: 1 }
+                        input_html: { id: "rebel_#{f.object.id}_phone_campaign_notes", rows: 1, autocomplete: "off" }
             td.text-right
               = f.button :submit,
                          'Save',
                          id: "rebel-#{rebel.id}-save-button",
-                         class: 'small button no-margin-bottom'
+                         class: 'small hollow button no-margin-bottom',
+                         data: { "disable-with": "..." }

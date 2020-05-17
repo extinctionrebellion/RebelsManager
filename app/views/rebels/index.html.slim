@@ -3,11 +3,7 @@
            title: 'Rebels',
            count: @rebels_index_presenter.rebels_count,
            links: [ \
-             link_to( \
-               "Download CSV",
-               rebels_path(format: :csv),
-               class: "small primary hollow button show-for-large" \
-             ),
+             render("rebels/buttons/export", export_type: "rebels"),
              link_to( \
                "Add Rebel",
                new_rebel_path,

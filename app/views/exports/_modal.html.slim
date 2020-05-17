@@ -1,0 +1,10 @@
+#export-modal.small.reveal(data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out")
+  button(type="button" class="close-button" data-close aria-label="#{_("Close modal")}")
+    span(aria-hidden="true") &times;
+
+  .text-center
+    p
+      = _("We are exporting, it will take a couple of minutes. We will email you at %{email} once it's ready.") % { email: current_user.email }
+    .spacer-1
+    = button_tag _("OK, thanks!"),
+                 class: "hollow button", data: { close: "" }

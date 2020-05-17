@@ -1,0 +1,9 @@
+- capture_to_local tooltip_title=:tooltip_title
+  | What is a CSV file?
+- capture_to_local tooltip_content=:tooltip_content
+  |
+    CSV is short for ‘Comma Separated Value’. It’s the way we format information
+    we take out of Rebels Manager's database so it can be read and edited in normal
+    spreadsheet software like Excel or OpenOffice.
+span(data-tooltip data-allow-html="true" title="<strong>#{tooltip_title}</strong><br>#{tooltip_content}")
+  i.fa.fa-lg.fa-question-circle

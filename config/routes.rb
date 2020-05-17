@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :calls, only: [:index]
   resources :local_groups
   resources :events
+  resources :exports, only: [:show, :create]
   resources :rebels
   resources :skills
   resources :tags

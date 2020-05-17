@@ -1,0 +1,11 @@
+= simple_form_for Export.new(export_type: export_type),
+                  url: exports_path(params),
+                  method: :post,
+                  remote: true,
+                  html: { style: "display: inline-block" } do |f|
+  = f.input :export_type, as: :hidden
+
+  = f.button :button, class: "small hollow button no-margin-top" do
+    = _("Export as CSV")
+    =< render "help/csv"
+  = render "exports/modal"

@@ -35,18 +35,16 @@
               placeholder: "Name or nickname",
               required: false
 
-    = f.input :active,
-              label: _("How do you want to get involved?"),
-              wrapper: :segmented_selector,
-              as: :segmented_radio_buttons,
-              collection: [[_("Being an active rebel"), true], [_("Supporting Extinction Rebellion"), false]],
-              required: true
-
     = f.input :phone,
               label: "Mobile phone",
               placeholder: "Mobile phone",
               required: false,
               hint: "We may send text messages about public actions"
+
+    - if f.object.dont_call?
+      .warning.callout
+        span.label.label--warm-yellow DON'T CALL ME
+        span &nbsp;This rebel doesn't want to be called.
 
     = f.input :postcode,
               label: "Postcode",

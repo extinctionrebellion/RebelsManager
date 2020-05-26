@@ -37,15 +37,6 @@
                 required: true,
                 prompt: _("Please select a language")
 
-  div(data-target="registration-form.involvementSelector")
-    = f.input :active,
-          label: _("How do you want to get involved?"),
-          wrapper: :segmented_selector,
-          as: :segmented_radio_buttons,
-          collection: [[_("Being an active rebel"), true], [_("Supporting Extinction Rebellion"), false]],
-          required: true,
-          input_html: { data: { action: "registration-form#toggleInvolvement" }}
-
   div(data-target="registration-form.activeRebelFields" class="#{f.object.active? ? nil : "hide"}")
     .card
       .card-section
@@ -54,6 +45,13 @@
                   placeholder: _("Mobile phone"),
                   required: false,
                   hint: _("We may send text messages about public actions.")
+
+        = f.input :dont_call,
+                  as: :boolean,
+                  wrapper: :foundation_checkbox,
+                  label: _("Please don't call me on my mobile phone"),
+                  hint: _("We may call once a year to ask your opinion about upcoming actions"),
+                  required: false
 
         .grid-x
           .cell.small-6.medium-4.large-3

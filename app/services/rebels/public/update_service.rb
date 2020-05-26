@@ -33,6 +33,7 @@ module Rebels
         .require(:rebel)
         .permit(
           :availability,
+          :dont_call,
           :email,
           :interests,
           :language,

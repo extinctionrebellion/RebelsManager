@@ -41,7 +41,9 @@ module Rebels
       params
         .require(:rebel)
         .permit(
+          :agree_with_principles,
           :availability,
+          :dont_call,
           :email,
           :interests,
           :internal_notes,

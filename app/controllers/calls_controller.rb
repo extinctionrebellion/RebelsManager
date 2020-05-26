@@ -3,6 +3,7 @@ class CallsController < BaseController
     @rebels = Rebel
       .where(local_group: current_user.local_group)
       .where.not(phone: nil)
+      .where.not(dont_call: true)
       .order(:phone_campaign_status)
   end
 

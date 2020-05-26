@@ -60,6 +60,9 @@
       | #{@rebel.phone[0..6]}...
     - else
       | -
+    - if @rebel.dont_call?
+      | &nbsp;
+      span.label.label--warm-yellow ASKED NOT TO BE CALLED
 
 .grid-x.grid-padding-x
   .cell.small-6.medium-4

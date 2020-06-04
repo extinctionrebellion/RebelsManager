@@ -81,7 +81,7 @@ GEM
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
     bindex (0.8.1)
-    blazer (2.2.1)
+    blazer (2.2.5)
       activerecord (>= 5)
       chartkick (>= 3.2)
       railties (>= 5)

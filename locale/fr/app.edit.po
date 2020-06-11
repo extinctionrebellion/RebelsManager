@@ -13,9 +13,6 @@ msgstr "Quelques heures par semaine"
 msgid "A few hours a month"
 msgstr "Quelques heures par mois"
 
-msgid "Being an active rebel"
-msgstr "Être un rebelle actif"
-
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 msgstr "Extinction Rebellion Belgium et les coordinateurs de votre groupe local seront notifiés de votre inscription et seront disponibles pour vous assister."
 
@@ -28,11 +25,11 @@ msgstr "Adresse email"
 msgid "Feel free to let us know about anything that can help Extinction Rebellion."
 msgstr "Laissez libre court à votre imagination - comment pouvez-vous aider Extinction Rebellion?"
 
-msgid "How do you want to get involved?"
-msgstr "Comment souhaitez-vous vous impliquer?"
-
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 msgstr "Je donne la permission à Extinction Rebellion Belgium de me contacter en utilisant les données fournies dans ce formulaire"
+
+msgid "I have already joined an Extinction Rebellion action"
+msgstr "J'ai déjà participé à une action Extinction Rebellion"
 
 msgid "I've read and I agree with the principles and values of Extinction Rebellion"
 msgstr "J'ai lu et je marque mon accord avec les principes et valeurs d'Extinction Rebellion"
@@ -48,6 +45,9 @@ msgstr "Rejoindre la rébellion!"
 
 msgid "Join us!"
 msgstr "Rejoins-nous!"
+
+msgid "Let's start!"
+msgstr "C'est parti !"
 
 msgid "Local group"
 msgstr "Groupe local"
@@ -76,6 +76,9 @@ msgstr "Bien entendu, votre choix peut évoluer avec le temps et en fonction de 
 msgid "Open principles and values in a new tab"
 msgstr "Ouvrir les principes et valeurs dans un nouvel onglet"
 
+msgid "Please don't call me on my mobile phone"
+msgstr "Veuillez ne pas m'appeler sur mon téléphone mobile"
+
 msgid "Please double check the email address provided."
 msgstr "Veuillez vérifier le format de l'adresse email renseignée."
 
@@ -91,14 +94,14 @@ msgstr "Code postal"
 msgid "Preferred language"
 msgstr "Langue de préférence"
 
+msgid "Register now for this upcoming action."
+msgstr "Inscrivez-vous maintenant à cette action imminente."
+
 msgid "Select a local group"
 msgstr "Sélectionnez un groupe local"
 
 msgid "Sorry, can't save this record:"
 msgstr "Désolé mais cet enregistrement ne peut pas être enregistré:"
-
-msgid "Supporting Extinction Rebellion"
-msgstr "Soutenir Extinction Rebellion"
 
 msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr "Merci beaucoup! Votre profil est désormais à jour."
@@ -108,6 +111,9 @@ msgstr "Cette adresse email est déjà liée à un.e rebelle."
 
 msgid "Update my Rebel Profile"
 msgstr "Mettre à jour mon profil rebelle"
+
+msgid "We may call once a year to ask your opinion about upcoming actions"
+msgstr "Nous pourrions vous appeler une fois par an pour vous demander votre avis concernant de prochaines actions"
 
 msgid "We may send text messages about public actions."
 msgstr "Nous pourrions vous envoyer des SMS au sujet d'actions publiques"
@@ -127,6 +133,9 @@ msgstr "Que va-t-il se passer?"
 msgid "Yes, I am willing to be arrested during an action"
 msgstr "Oui, je suis prêt à me faire arrêter durant une action"
 
+msgid "You will receive a welcome email and then emails about upcoming actions"
+msgstr "Vous recevrez un email de bienvenue puis des emails concernant cette action"
+
 msgid "You will receive a welcome email from Extinction Rebellion. This email includes links to useful documentation and websites for new rebels."
 msgstr "Vous allez recevoir un email de bienvenue de la part d'Extinction Rebellion. Cet email contient des liens vers de la documentation et des sites web utiles aux nouveaux rebelles."
 
@@ -135,3 +144,138 @@ msgstr "Votre consentement concernant l'usage de vos données est requis."
 
 msgid "Your data can be deleted anytime by sending an email to %{email}."
 msgstr "Vos données peuvent être supprimées à tout moment en envoyant un email à %{email}."
+
+msgid "Your email address"
+msgstr "Votre adresse email"
+
+msgid "Your name or nickname"
+msgstr "Votre nom ou pseudo"
+
+#~ msgid "Being an active rebel"
+#~ msgstr "Être un rebelle actif"
+
+#~ msgid "How do you want to get involved?"
+#~ msgstr "Comment souhaitez-vous vous impliquer?"
+
+#~ msgid "Supporting Extinction Rebellion"
+#~ msgstr "Soutenir Extinction Rebellion"
+
+#~ msgctxt "\"skills\".\"cre\""
+#~ msgid "label"
+#~ msgstr "Créativité"
+
+#~ msgctxt "\"skills\".\"cre\""
+#~ msgid "description"
+#~ msgstr "scénographie, peinture, travail du bois, musique, mise en spectacle, ..."
+
+#~ msgctxt "\"skills\".\"fin\""
+#~ msgid "label"
+#~ msgstr "Finance"
+
+#~ msgctxt "\"skills\".\"fin\""
+#~ msgid "description"
+#~ msgstr "comptabilité, excel, ..."
+
+#~ msgctxt "\"skills\".\"hea\""
+#~ msgid "label"
+#~ msgstr "Santé"
+
+#~ msgctxt "\"skills\".\"hea\""
+#~ msgid "description"
+#~ msgstr "premiers secours, infirmerie, soins, médecine, ..."
+
+#~ msgctxt "\"skills\".\"ico\""
+#~ msgid "label"
+#~ msgstr "Communications internes"
+
+#~ msgctxt "\"skills\".\"ico\""
+#~ msgid "description"
+#~ msgstr "flux internes de communication, IT"
+
+#~ msgctxt "\"skills\".\"isu\""
+#~ msgid "label"
+#~ msgstr "Coaching"
+
+#~ msgctxt "\"skills\".\"isu\""
+#~ msgid "description"
+#~ msgstr "pour les nouveaux rebelles, les groupes locaux, ..."
+
+#~ msgctxt "\"skills\".\"reg\""
+#~ msgid "label"
+#~ msgstr "Relationnel"
+
+#~ msgctxt "\"skills\".\"reg\""
+#~ msgid "description"
+#~ msgstr "culture régénérative, écoute, médiation, soin de soi"
+
+#~ msgctxt "\"skills\".\"xit\""
+#~ msgid "label"
+#~ msgstr "IT"
+
+#~ msgctxt "\"skills\".\"xit\""
+#~ msgid "description"
+#~ msgstr "sysadmin, programmation, bases de données, CMS"
+
+#~ msgctxt "\"skills\".\"leg\""
+#~ msgid "label"
+#~ msgstr "Juridique"
+
+#~ msgctxt "\"skills\".\"leg\""
+#~ msgid "description"
+#~ msgstr "compréhension des textes légaux et de la loi, maintien de contacts, ..."
+
+#~ msgctxt "\"skills\".\"log\""
+#~ msgid "label"
+#~ msgstr "Logistique"
+
+#~ msgctxt "\"skills\".\"log\""
+#~ msgid "description"
+#~ msgstr "infrastructure, logistique durant les actions, ..."
+
+#~ msgctxt "\"skills\".\"mpm\""
+#~ msgid "label"
+#~ msgstr "Presse / Réseaux sociaux"
+
+#~ msgctxt "\"skills\".\"mpm\""
+#~ msgid "description"
+#~ msgstr "rédaction, design, PR, réseaux sociaux, production de vidéos, ..."
+
+#~ msgctxt "\"skills\".\"oth\""
+#~ msgid "label"
+#~ msgstr "Autre"
+
+#~ msgctxt "\"skills\".\"oth\""
+#~ msgid "description"
+#~ msgstr "merci de préciser ci-dessous"
+
+#~ msgctxt "\"skills\".\"pub\""
+#~ msgid "label"
+#~ msgstr "Prise de parole en public"
+
+#~ msgctxt "\"skills\".\"pub\""
+#~ msgid "description"
+#~ msgstr "sessions d'information, formations, durant d'autres événements, ..."
+
+#~ msgctxt "\"skills\".\"res\""
+#~ msgid "label"
+#~ msgstr "Recherche"
+
+#~ msgctxt "\"skills\".\"res\""
+#~ msgid "description"
+#~ msgstr "politique, science, écologie, ..."
+
+#~ msgctxt "\"skills\".\"str\""
+#~ msgid "label"
+#~ msgstr "Planification stratégique"
+
+#~ msgctxt "\"skills\".\"str\""
+#~ msgid "description"
+#~ msgstr "pour les actions"
+
+#~ msgctxt "\"skills\".\"tra\""
+#~ msgid "label"
+#~ msgstr "Traduction"
+
+#~ msgctxt "\"skills\".\"tra\""
+#~ msgid "description"
+#~ msgstr "FR, EN, NL et autres langues"

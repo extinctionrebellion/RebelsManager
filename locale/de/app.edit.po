@@ -13,9 +13,6 @@ msgstr "Ein paar Stunden pro Woche."
 msgid "A few hours a month"
 msgstr "Ein paar Stunden im Monat."
 
-msgid "Being an active rebel"
-msgstr "Ein aktiver Rebell sein"
-
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
 msgstr "Sowohl Extinction Rebellion als auch Deine Ortsgruppe werden über Deine Anmeldung informiert und sind bereit, Dich zu unterstützen."
 
@@ -28,11 +25,11 @@ msgstr "Email-Adresse."
 msgid "Feel free to let us know about anything that can help Extinction Rebellion."
 msgstr "Lass uns gerne wissen, wenn es etwas gibt von dem Du denkst, dass es Extinction Rebellion nutzen kann."
 
-msgid "How do you want to get involved?"
-msgstr "Wie wollen Sie sich beteiligen?"
-
 msgid "I give consent for Extinction Rebellion Belgium to contact me using the data I have provided in this form"
 msgstr "Ich bin damit einverstanden, dass Extinction Rebellion die Daten nutzt, die ich in diesem Formular angegeben habe."
+
+msgid "I have already joined an Extinction Rebellion action"
+msgstr ""
 
 msgid "I've read and I agree with the principles and values of Extinction Rebellion"
 msgstr "Ich habe gelesen und stimme den Prinzipien und Werten der Extinction Rebellion zu"
@@ -48,6 +45,9 @@ msgstr "Mach mit beim Aufstand gegen das Aussterben !"
 
 msgid "Join us!"
 msgstr "Schliess Dich uns an!"
+
+msgid "Let's start!"
+msgstr ""
 
 msgid "Local group"
 msgstr "Ortsgruppe"
@@ -76,6 +76,9 @@ msgstr "Deine Meinung darf sich natürlich mit der Zeit verändern, entsprechend
 msgid "Open principles and values in a new tab"
 msgstr "Öffnen Sie Prinzipien und Werte in einer neuen tab"
 
+msgid "Please don't call me on my mobile phone"
+msgstr ""
+
 msgid "Please double check the email address provided."
 msgstr "Bitte überprüfe die angegebene Email-Adresse."
 
@@ -91,14 +94,14 @@ msgstr "Postleitzahl"
 msgid "Preferred language"
 msgstr "Bevorzugte Sprache."
 
+msgid "Register now for this upcoming action."
+msgstr ""
+
 msgid "Select a local group"
 msgstr "Wähle eine Ortsgruppe aus."
 
 msgid "Sorry, can't save this record:"
 msgstr "Tut uns leid, dieser Eintrag kann nicht gespeichert werden !"
-
-msgid "Supporting Extinction Rebellion"
-msgstr "Extinction Rebellion unterstützt"
 
 msgid "Thanks a lot! Your rebel profile is now up-to-date."
 msgstr "Vielen Dank! Dein Rebell.inn.en-Profil ist jetzt vollständig."
@@ -108,6 +111,9 @@ msgstr "Diese Email-Adresse ist schon an einen Rebell/eine Rebellin vergeben."
 
 msgid "Update my Rebel Profile"
 msgstr "Mein Rebell Profil aktualisieren"
+
+msgid "We may call once a year to ask your opinion about upcoming actions"
+msgstr ""
 
 msgid "We may send text messages about public actions."
 msgstr "Wir dürfen Dir SMS-Nachrichten zu öffentlichen Aktionen schicken."
@@ -127,6 +133,9 @@ msgstr "Wie geht es weiter?"
 msgid "Yes, I am willing to be arrested during an action"
 msgstr "Ja, ich bin bereit bei einer Aktion festgenommen zu werden."
 
+msgid "You will receive a welcome email and then emails about upcoming actions"
+msgstr ""
+
 msgid "You will receive a welcome email from Extinction Rebellion. This email includes links to useful documentation and websites for new rebels."
 msgstr "Sie erhalten eine Begrüßungs-E-Mail von Extinction Rebellion. Diese E-Mail enthält Links zu nützlicher Dokumentation und Websites für neue Rebellen."
 
@@ -135,3 +144,18 @@ msgstr "Deine Einwilligung zur Datennutzung ist erforderlich."
 
 msgid "Your data can be deleted anytime by sending an email to %{email}."
 msgstr "Falls Du Deine Daten löschen lassen möchtest, kannst Du jederzeit eine email an %{email} senden."
+
+#, fuzzy
+msgid "Your email address"
+msgstr "Email-Adresse."
+
+#, fuzzy
+msgid "Your name or nickname"
+msgstr "Name oder Spitzname"
+
+#~ msgid "Being an active rebel"
+#~ msgstr "Ein aktiver Rebell sein"
+#~ msgid "How do you want to get involved?"
+#~ msgstr "Wie wollen Sie sich beteiligen?"
+#~ msgid "Supporting Extinction Rebellion"
+#~ msgstr "Extinction Rebellion unterstützt"

@@ -1,0 +1,23 @@
+= f.input :language,
+          input_html: { value: I18n.locale },
+          as: :hidden,
+          label: ""
+
+.grid-x
+  .cell.small-12.medium-8.large-6
+    = f.input :name,
+              label: _("Your name or nickname"),
+              required: true
+
+.grid-x
+  .cell.small-12
+    = f.input :email,
+              label: _("Your email address"),
+              hint: _("You will receive a welcome email and then emails about upcoming actions"),
+              required: true
+
+= f.input :participated_previously,
+          as: :boolean,
+          wrapper: :foundation_checkbox,
+          label: _("I have already joined an Extinction Rebellion action"),
+          required: false

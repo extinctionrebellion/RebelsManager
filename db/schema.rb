@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_202452) do
+ActiveRecord::Schema.define(version: 2020_06_11_112214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2020_05_26_202452) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
+
+  create_table "actions", force: :cascade do |t|
+    t.string "name"
+    t.string "mailtrain_list_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -181,6 +188,17 @@ ActiveRecord::Schema.define(version: 2020_05_26_202452) do
     t.index ["phone_bidx"], name: "index_rebels_on_phone_bidx"
   end
 
+  create_table "registrations", force: :cascade do |t|
+    t.bigint "action_id", null: false
+    t.string "name"
+    t.string "email"
+    t.string "language"
+    t.boolean "participated_previously"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["action_id"], name: "index_registrations_on_action_id"
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -277,6 +295,7 @@ ActiveRecord::Schema.define(version: 2020_05_26_202452) do
   add_foreign_key "rebel_skills", "rebels"
   add_foreign_key "rebel_skills", "skills"
   add_foreign_key "rebels", "local_groups"
+  add_foreign_key "registrations", "actions"
   add_foreign_key "taggings", "tags"
   add_foreign_key "users", "local_groups"
   add_foreign_key "working_group_enrollments", "rebels"

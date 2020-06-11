@@ -1,0 +1,14 @@
+- content_for :page_title, @action.name
+
+- content_for :header do
+  h1 = @action.name
+
+p = _("Register now for this upcoming action.")
+
+= simple_form_for @registration,
+                  url: public_action_registrations_path(@action.id) do |f|
+  = render 'form', f: f
+
+  = f.button :submit,
+             _("Let's start!"),
+             class: "expanded large button"

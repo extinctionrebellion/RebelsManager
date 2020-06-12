@@ -71,4 +71,28 @@ class MailtrainService
     Raven.capture_exception(e)
     []
   end
+
+  def send_transactional_email(template_id, params = {})
+    url = "#{ENV['MAILTRAIN_API_ENDPOINT']}/templates/#{template_id}/send?access_token=#{ENV['MAILTRAIN_API_TOKEN']}"
+    RestClient::Request.execute(
+      method:     :post,
+      url:        url,
+      payload:    params.merge({ "SEND_CONFIGURATION_ID": 2 }),
+      headers:    {
+                    accept: :json,
+                    params: params.merge({ "SEND_CONFIGURATION_ID": 2 })
+                  }
+    ) do |response, request, result, block|
+      case response.code
+      when 200
+        JSON.parse(response)
+      else
+        response.return!(&block)
+        # response.return!(request, result, &block)
+      end
+    end
+  rescue => e
+    Raven.capture_exception(e)
+    []
+  end
 end

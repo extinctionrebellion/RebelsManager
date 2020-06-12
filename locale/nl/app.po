@@ -14,10 +14,10 @@ msgid "A few hours a month"
 msgstr "Een paar uur per maand"
 
 msgid "Both Extinction Rebellion Belgium and your local group coordinators will be notified about your signup and will be there to support you."
-msgstr "De coördinatoren van zowel Extinction Rebellion Belgium als je lokale groep zullen ingelicht worden van je inschrijving en zullen er zijn om je te ondersteunen."
+msgstr "De coördinatoren van zowel Extinction Rebellion Belgium als van je lokale groep zullen op de hoogte gebracht worden van je inschrijving en zullen er zijn om je te ondersteunen."
 
 msgid "By answering the following questions, you will be listed in our secure Rebels database."
-msgstr "Door de volgende vragen te beantwoorden zal je opgenomen worden in onze database met rebellen."
+msgstr "Door de volgende vragen te beantwoorden zal je opgenomen worden in onze beveiligde database met rebellen."
 
 msgid "Email address"
 msgstr "Email-adres"
@@ -29,7 +29,7 @@ msgid "I give consent for Extinction Rebellion Belgium to contact me using the d
 msgstr "Ik geef toestemming aan Extinction Rebellion Belgium om me te contacteren via de data die ik ingevuld heb in dit formulier. "
 
 msgid "I have already joined an Extinction Rebellion action"
-msgstr ""
+msgstr "Ik nam reeds deel aan een actie van Extinction Rebellion"
 
 msgid "I've read and I agree with the principles and values of Extinction Rebellion"
 msgstr "Ik heb gelezen en ik ben het eens met de principes en waarden van de Extinction Rebellion"
@@ -47,7 +47,7 @@ msgid "Join us!"
 msgstr "Doe met ons mee!"
 
 msgid "Let's start!"
-msgstr ""
+msgstr "Later we erin vliegen! "
 
 msgid "Local group"
 msgstr "Lokale groep"
@@ -77,7 +77,7 @@ msgid "Open principles and values in a new tab"
 msgstr "Open principes en waarden in een nieuw tab"
 
 msgid "Please don't call me on my mobile phone"
-msgstr ""
+msgstr "Bel me alsjeblieft niet op mijn GSM "
 
 msgid "Please double check the email address provided."
 msgstr "Gelieve het opgegeven e-mailadres te controleren."
@@ -95,7 +95,7 @@ msgid "Preferred language"
 msgstr "Taal die je voorkeur geniet"
 
 msgid "Register now for this upcoming action."
-msgstr ""
+msgstr "Schrijf je nu in voor deze aankomende actie. "
 
 msgid "Select a local group"
 msgstr "Selecteer een lokale groep"
@@ -113,7 +113,7 @@ msgid "Update my Rebel Profile"
 msgstr "Update mijn Rebel Profiel"
 
 msgid "We may call once a year to ask your opinion about upcoming actions"
-msgstr ""
+msgstr "We bellen je mogelijks occassioneel om je mening te vragen over aankomende acties "
 
 msgid "We may send text messages about public actions."
 msgstr "We kunnen mogelijks sms'en verzenden over publieke acties."
@@ -134,7 +134,7 @@ msgid "Yes, I am willing to be arrested during an action"
 msgstr "Ja, ik ben bereid me te laten arresteren tijdens een actie"
 
 msgid "You will receive a welcome email and then emails about upcoming actions"
-msgstr ""
+msgstr "Je zal een verwelkomings-email ontvangen, en daarna emails over aankomende acties."
 
 msgid "You will receive a welcome email from Extinction Rebellion. This email includes links to useful documentation and websites for new rebels."
 msgstr "U ontvangt een welkomstmail van Extinction Rebellion. Deze e-mail bevat links naar nuttige documentatie en websites voor nieuwe rebellen."
@@ -145,10 +145,8 @@ msgstr "Uw toestemming voor het gebruik van de gegevens is vereist"
 msgid "Your data can be deleted anytime by sending an email to %{email}."
 msgstr "Uw gegevens kunnen te allen tijde worden verwijderd door een e-mail te sturen naar %{email}."
 
-#, fuzzy
 msgid "Your email address"
-msgstr "Email-adres"
+msgstr "Email adres"
 
-#, fuzzy
 msgid "Your name or nickname"
-msgstr "Naam of alias"
+msgstr "Naam of alias "

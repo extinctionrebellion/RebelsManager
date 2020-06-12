@@ -60,7 +60,7 @@ class Public::RebelsController < Public::BaseController
     raise "Rebel not found" if rebel.nil?
     if rebel&.created_at&.to_i != params[:a]&.to_i ||
         rebel.token != params[:c] ||
-          rebel.email != params[:b]
+          rebel.email.gsub(/\+/, " ") != params[:b]
       raise "Public params validation failed"
     end
   end

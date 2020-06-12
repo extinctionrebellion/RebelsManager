@@ -1,7 +1,14 @@
 - content_for :page_title, @action.name
 
 - content_for :header do
-  h1 = @action.name
+  h1
+    - case I18n.locale
+    - when :fr
+      | Notre avenir - Nos choix !
+    - when :de, :en
+      | Our Future - Our Choices!
+    - when :nl
+      | Onze Toekomst - Onze Keuzes!
 
 p = _("Register now for this upcoming action.")
 
@@ -12,3 +19,8 @@ p = _("Register now for this upcoming action.")
   = f.button :submit,
              _("Let's start!"),
              class: "expanded large button"
+
+  p.text-center
+    span.text--yellow
+      strong = _("What's next?")
+      =< _("You will be redirected to the action form and you will receive emails related to this action. You can always unsubscribe or update your email address by following links provided in any email.")

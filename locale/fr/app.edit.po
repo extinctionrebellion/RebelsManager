@@ -133,6 +133,9 @@ msgstr "Que va-t-il se passer?"
 msgid "Yes, I am willing to be arrested during an action"
 msgstr "Oui, je suis prêt à me faire arrêter durant une action"
 
+msgid "You will be redirected to the action form and you will receive emails related to this action. You can always unsubscribe or update your email address by following links provided in any email."
+msgstr "Vous allez être redirigé vers le formulaire complet de l'action, et recevrez les emails concernant cette action. Vous pouvez à tout moment vous désinscrire ou mettre à jour votre adresse email en suivant les liens disponibles au bas de chaque email reçu."
+
 msgid "You will receive a welcome email and then emails about upcoming actions"
 msgstr "Vous recevrez un email de bienvenue puis des emails concernant cette action"
 
@@ -153,97 +156,129 @@ msgstr "Votre nom ou pseudo"
 
 #~ msgid "Being an active rebel"
 #~ msgstr "Être un rebelle actif"
+
 #~ msgid "How do you want to get involved?"
 #~ msgstr "Comment souhaitez-vous vous impliquer?"
+
 #~ msgid "Supporting Extinction Rebellion"
 #~ msgstr "Soutenir Extinction Rebellion"
+
 #~ msgctxt "\"skills\".\"cre\""
 #~ msgid "label"
 #~ msgstr "Créativité"
+
 #~ msgctxt "\"skills\".\"cre\""
 #~ msgid "description"
 #~ msgstr "scénographie, peinture, travail du bois, musique, mise en spectacle, ..."
+
 #~ msgctxt "\"skills\".\"fin\""
 #~ msgid "label"
 #~ msgstr "Finance"
+
 #~ msgctxt "\"skills\".\"fin\""
 #~ msgid "description"
 #~ msgstr "comptabilité, excel, ..."
+
 #~ msgctxt "\"skills\".\"hea\""
 #~ msgid "label"
 #~ msgstr "Santé"
+
 #~ msgctxt "\"skills\".\"hea\""
 #~ msgid "description"
 #~ msgstr "premiers secours, infirmerie, soins, médecine, ..."
+
 #~ msgctxt "\"skills\".\"ico\""
 #~ msgid "label"
 #~ msgstr "Communications internes"
+
 #~ msgctxt "\"skills\".\"ico\""
 #~ msgid "description"
 #~ msgstr "flux internes de communication, IT"
+
 #~ msgctxt "\"skills\".\"isu\""
 #~ msgid "label"
 #~ msgstr "Coaching"
+
 #~ msgctxt "\"skills\".\"isu\""
 #~ msgid "description"
 #~ msgstr "pour les nouveaux rebelles, les groupes locaux, ..."
+
 #~ msgctxt "\"skills\".\"reg\""
 #~ msgid "label"
 #~ msgstr "Relationnel"
+
 #~ msgctxt "\"skills\".\"reg\""
 #~ msgid "description"
 #~ msgstr "culture régénérative, écoute, médiation, soin de soi"
+
 #~ msgctxt "\"skills\".\"xit\""
 #~ msgid "label"
 #~ msgstr "IT"
+
 #~ msgctxt "\"skills\".\"xit\""
 #~ msgid "description"
 #~ msgstr "sysadmin, programmation, bases de données, CMS"
+
 #~ msgctxt "\"skills\".\"leg\""
 #~ msgid "label"
 #~ msgstr "Juridique"
+
 #~ msgctxt "\"skills\".\"leg\""
 #~ msgid "description"
 #~ msgstr "compréhension des textes légaux et de la loi, maintien de contacts, ..."
+
 #~ msgctxt "\"skills\".\"log\""
 #~ msgid "label"
 #~ msgstr "Logistique"
+
 #~ msgctxt "\"skills\".\"log\""
 #~ msgid "description"
 #~ msgstr "infrastructure, logistique durant les actions, ..."
+
 #~ msgctxt "\"skills\".\"mpm\""
 #~ msgid "label"
 #~ msgstr "Presse / Réseaux sociaux"
+
 #~ msgctxt "\"skills\".\"mpm\""
 #~ msgid "description"
 #~ msgstr "rédaction, design, PR, réseaux sociaux, production de vidéos, ..."
+
 #~ msgctxt "\"skills\".\"oth\""
 #~ msgid "label"
 #~ msgstr "Autre"
+
 #~ msgctxt "\"skills\".\"oth\""
 #~ msgid "description"
 #~ msgstr "merci de préciser ci-dessous"
+
 #~ msgctxt "\"skills\".\"pub\""
 #~ msgid "label"
 #~ msgstr "Prise de parole en public"
+
 #~ msgctxt "\"skills\".\"pub\""
 #~ msgid "description"
 #~ msgstr "sessions d'information, formations, durant d'autres événements, ..."
+
 #~ msgctxt "\"skills\".\"res\""
 #~ msgid "label"
 #~ msgstr "Recherche"
+
 #~ msgctxt "\"skills\".\"res\""
 #~ msgid "description"
 #~ msgstr "politique, science, écologie, ..."
+
 #~ msgctxt "\"skills\".\"str\""
 #~ msgid "label"
 #~ msgstr "Planification stratégique"
+
 #~ msgctxt "\"skills\".\"str\""
 #~ msgid "description"
 #~ msgstr "pour les actions"
+
 #~ msgctxt "\"skills\".\"tra\""
 #~ msgid "label"
 #~ msgstr "Traduction"
+
 #~ msgctxt "\"skills\".\"tra\""
 #~ msgid "description"
 #~ msgstr "FR, EN, NL et autres langues"

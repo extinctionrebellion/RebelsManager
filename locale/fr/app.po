@@ -133,6 +133,9 @@ msgstr "Que va-t-il se passer?"
 msgid "Yes, I am willing to be arrested during an action"
 msgstr "Oui, je suis prêt à me faire arrêter durant une action"
 
+msgid "You will be redirected to the action form and you will receive emails related to this action. You can always unsubscribe or update your email address by following links provided in any email."
+msgstr "Vous allez être redirigé vers le formulaire complet de l'action, et recevrez les emails concernant cette action. Vous pouvez à tout moment vous désinscrire ou mettre à jour votre adresse email en suivant les liens disponibles au bas de chaque email reçu."
+
 msgid "You will receive a welcome email and then emails about upcoming actions"
 msgstr "Vous recevrez un email de bienvenue puis des emails concernant cette action"
 

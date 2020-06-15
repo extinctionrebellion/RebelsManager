@@ -134,6 +134,9 @@ msgstr "What's next?"
 msgid "Yes, I am willing to be arrested during an action"
 msgstr "Yes, I am willing to be arrested during an action"
 
+msgid "You will be redirected to the action form and you will receive emails related to this action. You can always unsubscribe or update your email address by following links provided in any email."
+msgstr ""
+
 msgid "You will receive a welcome email and then emails about upcoming actions"
 msgstr ""
 

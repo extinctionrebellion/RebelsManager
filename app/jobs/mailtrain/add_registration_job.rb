@@ -15,11 +15,13 @@ class Mailtrain::AddRegistrationJob < ActiveJob::Base
       template_id = 56
       subject = "Prépare-toi aux 14 jours de Rébellion // Notre Avenir - Nos Choix !"
     when "en"
+      template_id = 55
       subject = "Prepare yourself for the 14 days of Rebellion // Our Future - Our Choices!"
     when "fr"
       template_id = 56
       subject = "Prépare-toi aux 14 jours de Rébellion // Notre Avenir - Nos Choix !"
     when "nl"
+      template_id = 58
       subject = "Bereid je voor op de 14 dagen van de opstand // Onze Toekomst - Onze Keuzes!"
     end
     if !template_id.nil?

@@ -37,64 +37,39 @@ p
                 as: :radio_buttons,
                 wrapper: :foundation_radio_buttons
 
-  .card
-    .card-section
-      .grid-x
-        .cell.small-12.medium-10.large-8
-          = f.input :name,
-                    label: _("Name or nickname"),
-                    placeholder: _("Name or nickname"),
-                    required: false
-
-          = f.input :phone,
-                    label: _("Mobile phone"),
-                    placeholder: _("Mobile phone"),
-                    required: false,
-                    hint: _("We may send text messages about public actions.")
-
-      .grid-x
-        .cell.small-6.medium-4.large-3
-          = f.input :postcode,
-                    label: _("Postcode"),
-                    placeholder: _("Postcode"),
-                    required: false
-
-      = f.input :willingness_to_be_arrested,
-                as: :boolean,
-                wrapper: :foundation_checkbox,
-                label: _("Yes, I am willing to be arrested during an action"),
-                hint: _("Of course, your opinion can change over time, depending on the action"),
+  .grid-x
+    .cell.small-12.medium-10.large-8
+      = f.input :name,
+                label: _("Name or nickname"),
+                placeholder: _("Name or nickname"),
                 required: false
 
-      = f.input :skill_ids,
-                as: :check_boxes,
-                wrapper: :foundation_radio_buttons,
-                collection: Skill.all.order(:name).collect { |skill| ["#{I18n.t("skills.#{skill.code.downcase}.label")}<br><small>#{I18n.t("skills.#{skill.code.downcase}.description")}</small>", skill.id] },
-                label: _("In which areas would you like to participate?"),
-                hint: _("We recommend that you select a maximum of 2 answers.")
+      = f.input :phone,
+                label: _("Mobile phone"),
+                placeholder: _("Mobile phone"),
+                required: false,
+                hint: _("We may send text messages about public actions.")
 
-      = f.input :notes,
-                as: :text,
-                input_html: { rows: 5 },
-                label: _("What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"),
-                hint: _("Feel free to let us know about anything that can help Extinction Rebellion."),
+  .grid-x
+    .cell.small-6.medium-4.large-3
+      = f.input :postcode,
+                label: _("Postcode"),
+                placeholder: _("Postcode"),
                 required: false
 
-      = f.input :availability,
-                label: _("My availability for Extinction Rebellion"),
-                as: :radio_buttons,
-                wrapper: :foundation_radio_buttons,
-                collection: [ \
-                  [_("A few hours a month"), 'few_hours_a_month'],
-                  [_("A couple of hours a week"), 'few_hours_a_week'],
-                  [_("More than 10 hours a week"), '10_hours_a_week'] \
-                ]
+  = f.input :skill_ids,
+            as: :check_boxes,
+            wrapper: :foundation_radio_buttons,
+            collection: Skill.all.order(:name).collect { |skill| ["#{I18n.t("skills.#{skill.code.downcase}.label")}<br><small>#{I18n.t("skills.#{skill.code.downcase}.description")}</small>", skill.id] },
+            label: _("In which areas would you like to participate?"),
+            hint: _("We recommend that you select a maximum of 2 answers.")
 
-      =  f.input :agree_with_principles,
-                 as: :boolean,
-                 label: raw(_("I've read and I agree with the principles and values of Extinction Rebellion") + "<br>" + link_to(_("Open principles and values in a new tab"), ENV['XR_BRANCH_AGREEMENT_URL'], target: "_blank").html_safe),
-                 wrapper: :foundation_checkbox,
-                 required: true
+  = f.input :notes,
+            as: :text,
+            input_html: { rows: 5 },
+            label: _("What specific skills/experience/resources do you have? Do you have any thoughts/questions you would like to share?"),
+            hint: _("Feel free to let us know about anything that can help Extinction Rebellion."),
+            required: false
 
   .spacer-1
   = f.input :consent,

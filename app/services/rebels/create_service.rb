@@ -48,11 +48,24 @@ module Rebels
       when "admin"
         @rebel
       when "public"
-        rebel.redirect || rebel.profile_url
+        rebel.redirect || confirmation_page
       end
     end
 
     private
+
+    def confirmation_page
+      case @rebel.language
+      when "en"
+        "https://www.extinctionrebellion.be/en/thank-you"
+      when "fr"
+        "https://www.extinctionrebellion.be/fr/merci"
+      when "nl"
+        "https://www.extinctionrebellion.be/nl/bedankt"
+      when "de"
+        "https://www.extinctionrebellion.be/fr/merci"
+      end
+    end
 
     # We prefer a new and clean signup than keeping an old record that is not
     # linked to a local group

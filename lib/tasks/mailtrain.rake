@@ -104,7 +104,7 @@ namespace :mailtrain do
       MailtrainService.instance.create_field(
         local_group.mailtrain_list_id,
         {
-          "NAME": "Version"
+          "NAME": "Version",
           "TYPE": "text",
           "VISIBLE": "no"
         }

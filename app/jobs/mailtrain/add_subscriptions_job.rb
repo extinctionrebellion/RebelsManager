@@ -42,6 +42,7 @@ class Mailtrain::AddSubscriptionsJob < ActiveJob::Base
         "MERGE_TAGS": rebel.tags&.pluck(:name)&.join("|"),
         "MERGE_SKILLS": rebel.skills&.pluck(:code)&.join("|"),
         "MERGE_WORKING_GROUPS": rebel.working_groups&.pluck(:code)&.join("|"),
+        "MERGE_VERSION": rebel.version,
         "FORCE_SUBSCRIBE": "yes",
         "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
       }

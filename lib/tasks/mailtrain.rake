@@ -97,4 +97,18 @@ namespace :mailtrain do
       end
     end
   end
+
+  desc "Add the 'version' custom field to local groups lists"
+  task add_version_field_to_local_groups_lists: :environment do
+    LocalGroup.where.not(mailtrain_list_id: nil).each do |local_group|
+      MailtrainService.instance.create_field(
+        local_group.mailtrain_list_id,
+        {
+          "NAME": "Version"
+          "TYPE": "text",
+          "VISIBLE": "no"
+        }
+      )
+    end
+  end
 end

@@ -130,12 +130,12 @@ class Components::MenuPresenter < PresenterBase
         active: @active_primary == 'working_groups',
         condition: !@user.ringer?
       },
-      {
-        body: 'Events',
-        url: events_path,
-        active: @active_primary == 'events',
-        condition: !@user.ringer?
-      },
+      # {
+      #   body: 'Events',
+      #   url: events_path,
+      #   active: @active_primary == 'events',
+      #   condition: !@user.ringer?
+      # },
       {
         body: 'Tags',
         url: tags_path,

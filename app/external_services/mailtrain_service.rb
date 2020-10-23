@@ -24,9 +24,7 @@ class MailtrainService
       end
     end
   rescue => e
-    Raven.extra_context(response: response) do
-      Raven.capture_exception(e)
-    end
+    Raven.capture_exception(e)
   end
 
   def create_field(list_id, params = {})
@@ -48,9 +46,7 @@ class MailtrainService
       end
     end
   rescue => e
-    Raven.extra_context(response: response) do
-      Raven.capture_exception(e)
-    end
+    Raven.capture_exception(e)
   end
 
   def delete_subscription(list_id, params = {})
@@ -73,9 +69,7 @@ class MailtrainService
       end
     end
   rescue => e
-    Raven.extra_context(response: response) do
-      Raven.capture_exception(e)
-    end
+    Raven.capture_exception(e)
   end
 
   def get_subscriptions(email)
@@ -95,9 +89,7 @@ class MailtrainService
       end
     end
   rescue => e
-    Raven.extra_context(response: response) do
-      Raven.capture_exception(e)
-    end
+    Raven.capture_exception(e)
     []
   end
 
@@ -121,9 +113,7 @@ class MailtrainService
       end
     end
   rescue => e
-    Raven.extra_context(response: response) do
-      Raven.capture_exception(e)
-    end
+    Raven.capture_exception(e)
     []
   end
 end

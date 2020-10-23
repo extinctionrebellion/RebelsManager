@@ -45,6 +45,7 @@ namespace :mailtrain do
             "MERGE_TAGS": rebel.tags&.pluck(:name)&.join("|"),
             "MERGE_SKILLS": rebel.skills&.pluck(:code)&.join("|"),
             "MERGE_WORKING_GROUPS": rebel.working_groups&.pluck(:code)&.join("|"),
+            "MERGE_VERSION": rebel.version,
             "FORCE_SUBSCRIBE": "yes",
             "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
           }
@@ -89,6 +90,7 @@ namespace :mailtrain do
             "MERGE_TAGS": rebel.tags&.pluck(:name)&.join("|"),
             "MERGE_SKILLS": rebel.skills&.pluck(:code)&.join("|"),
             "MERGE_WORKING_GROUPS": rebel.working_groups&.pluck(:code)&.join("|"),
+            "MERGE_VERSION": rebel.version,
             "FORCE_SUBSCRIBE": "yes",
             "TIMEZONE": ENV['XR_BRANCH_TIMEZONE']
           }
@@ -98,13 +100,61 @@ namespace :mailtrain do
     end
   end
 
-  desc "Add the 'version' custom field to local groups lists"
-  task add_version_field_to_local_groups_lists: :environment do
+  desc "Add custom fields to local groups lists"
+  task add_custom_fields_to_local_groups_lists: :environment do
     LocalGroup.where.not(mailtrain_list_id: nil).each do |local_group|
       MailtrainService.instance.create_field(
         local_group.mailtrain_list_id,
         {
+          "NAME": "Postcode",
+          "TYPE": "text",
+          "VISIBLE": "yes"
+        }
+      )
+      MailtrainService.instance.create_field(
+        local_group.mailtrain_list_id,
+        {
+          "NAME": "Tags",
+          "TYPE": "text",
+          "VISIBLE": "yes"
+        }
+      )
+      MailtrainService.instance.create_field(
+        local_group.mailtrain_list_id,
+        {
+          "NAME": "Profile URL",
+          "TYPE": "text",
+          "VISIBLE": "no"
+        }
+      )
+      MailtrainService.instance.create_field(
+        local_group.mailtrain_list_id,
+        {
+          "NAME": "Skills",
+          "TYPE": "text",
+          "VISIBLE": "no"
+        }
+      )
+      MailtrainService.instance.create_field(
+        local_group.mailtrain_list_id,
+        {
+          "NAME": "Status",
+          "TYPE": "text",
+          "VISIBLE": "no"
+        }
+      )
+      MailtrainService.instance.create_field(
+        local_group.mailtrain_list_id,
+        {
           "NAME": "Version",
+          "TYPE": "text",
+          "VISIBLE": "no"
+        }
+      )
+      MailtrainService.instance.create_field(
+        local_group.mailtrain_list_id,
+        {
+          "NAME": "Working Groups",
           "TYPE": "text",
           "VISIBLE": "no"
         }

@@ -78,7 +78,7 @@ class RebelDatatable < ApplicationDatatable
   end
 
   def cell_tags(rebel)
-    rebel.tag_list
+    rebel.tags.join(", ")
   end
 
   def cell_working_groups(rebel)

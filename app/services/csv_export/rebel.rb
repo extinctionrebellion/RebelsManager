@@ -20,7 +20,7 @@ module CsvExport
         rebel.number_of_arrests,
         rebel.skills&.pluck(:name)&.join(", "),
         rebel.working_groups&.pluck(:name)&.join(", "),
-        rebel.tag_list,
+        rebel.tags&.join(", "),
         rebel.availability,
         rebel.irl,
         rebel.source,

@@ -3,7 +3,7 @@ class Email < ActiveRecord::Base
 
   attr_accessor :all_rebels, :rebel_ids, :subject, :message, :error_message
 
-  has_rich_text :message
+  # has_rich_text :message
 
   def valid?
     set_error_message_if_no_rebel unless rebel_ids&.any?

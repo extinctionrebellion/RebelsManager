@@ -10,9 +10,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-require("trix")
-require("@rails/actiontext")
-
 import $ from 'jquery'
 window.$ = $
 

@@ -103,62 +103,7 @@ namespace :mailtrain do
   desc "Add custom fields to local groups lists"
   task add_custom_fields_to_local_groups_lists: :environment do
     LocalGroup.where.not(mailtrain_list_id: nil).each do |local_group|
-      MailtrainService.instance.create_field(
-        local_group.mailtrain_list_id,
-        {
-          "NAME": "Postcode",
-          "TYPE": "text",
-          "VISIBLE": "yes"
-        }
-      )
-      MailtrainService.instance.create_field(
-        local_group.mailtrain_list_id,
-        {
-          "NAME": "Tags",
-          "TYPE": "text",
-          "VISIBLE": "yes"
-        }
-      )
-      MailtrainService.instance.create_field(
-        local_group.mailtrain_list_id,
-        {
-          "NAME": "Profile URL",
-          "TYPE": "text",
-          "VISIBLE": "no"
-        }
-      )
-      MailtrainService.instance.create_field(
-        local_group.mailtrain_list_id,
-        {
-          "NAME": "Skills",
-          "TYPE": "text",
-          "VISIBLE": "no"
-        }
-      )
-      MailtrainService.instance.create_field(
-        local_group.mailtrain_list_id,
-        {
-          "NAME": "Status",
-          "TYPE": "text",
-          "VISIBLE": "no"
-        }
-      )
-      MailtrainService.instance.create_field(
-        local_group.mailtrain_list_id,
-        {
-          "NAME": "Version",
-          "TYPE": "text",
-          "VISIBLE": "no"
-        }
-      )
-      MailtrainService.instance.create_field(
-        local_group.mailtrain_list_id,
-        {
-          "NAME": "Working Groups",
-          "TYPE": "text",
-          "VISIBLE": "no"
-        }
-      )
+      Mailtrain::CreateListFieldsJob.perform_now(local_group.mailtrain_list_id)
     end
   end
 end

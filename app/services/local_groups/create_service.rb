@@ -21,6 +21,8 @@ module LocalGroups
       @local_group.attributes = local_group_params(params)
       validate_email_format!
       @local_group.save!
+      create_list_on_mailtrain
+      create_list_fields_on_mailtrain
       subscribe_to_local_groups_list
       true
     end
@@ -35,6 +37,29 @@ module LocalGroups
           :mailtrain_list_id,
           :name
         )
+    end
+
+    def create_list_on_mailtrain
+      mailtrain_list_id = MailtrainService.instance.create_list(
+        {
+          "NAMESPACE": 1,
+          "UNSUBSCRIPTION_MODE": 0,
+          "NAME": @local_group.name,
+          "DESCRIPTION": "Rebels Manager auto generated",
+          "CONTACT_EMAIL": @local_group.email,
+          "HOMEPAGE": "https://www.extinctionrebellion.be",
+          "FIELDWIZARD": "full_name",
+          "SEND_CONFIGURATION": 2,
+          "PUBLIC_SUBSCRIBE": 0,
+          "LISTUNSUBSCRIBE_DISABLED": 0
+        }
+      )
+      @local_group.update_column(:mailtrain_list_id, mailtrain_list_id)
+    end
+
+    def create_list_fields_on_mailtrain
+      return unless @local_group.mailtrain_list_id.present?
+      Mailtrain::CreateListFieldsJob.perform_later(@local_group.mailtrain_list_id)
     end
 
     def subscribe_to_local_groups_list

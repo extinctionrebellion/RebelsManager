@@ -3,10 +3,9 @@
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.3",
-    "@rails/actiontext": "^6.0.3",
     "@rails/activestorage": "^6.0.3",
     "@rails/ujs": "^6.0.3",
-    "@rails/webpacker": "^4.0.2",
+    "@rails/webpacker": "^4.2.2",
     "animate.css": "^3.7.2",
     "datatables.net": "1.10.19",
     "datatables.net-buttons-zf": "1.5.6",

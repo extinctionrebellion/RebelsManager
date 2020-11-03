@@ -1,21 +1,25 @@
 - content_for :page_header do
   = render 'layouts/components/page_header',
-           title: 'Rebels',
-           count: @rebels_index_presenter.rebels_count,
+           title: _("Tag: %{tag_name}") % { tag_name: @tag.name },
            links: [ \
              link_to( \
-               "Download CSV",
-               rebels_path(format: :csv),
-               class: "small primary hollow button show-for-large" \
-             ),
-             link_to( \
-               "Add Rebel",
-               new_rebel_path,
-               class: "small primary button show-for-large" \
+               "Edit",
+               edit_tag_path(@tag),
+               class: 'secondary button' \
              ) \
            ]
 
-div(data-controller="datatable" data-datatable-source="#{rebels_path(format: :json)}" data-datatable-order="3" data-datatable-page-length="100")
+/ Rebels tagged with this tag
+
+= section_heading heading: "Tagged rebels",
+                  spacing: :spacer,
+                  count: @tagged_rebels_count
+
+- if current_user.local_group
+  .info.callout
+    = _("We only show rebels from your own local group in the table below.")
+
+div(data-controller="datatable" data-datatable-source="#{rebels_path(format: :json, tag_id: @tag.id)}" data-datatable-order="3" data-datatable-page-length="100")
   .icons.icons--large
     table(data-target="datatable.table" data-items-count="#{@rebels_count}")
       thead

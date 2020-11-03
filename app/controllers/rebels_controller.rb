@@ -13,7 +13,8 @@ class RebelsController < BaseController
         render json: RebelDatatable.new(
           params,
           view_context: view_context,
-          user: current_user
+          user: current_user,
+          tag_id: params.fetch(:tag_id, nil)
         )
       end
     end

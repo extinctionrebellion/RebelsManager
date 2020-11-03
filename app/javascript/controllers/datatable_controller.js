@@ -76,11 +76,11 @@ export default class extends Controller {
       language: {
         search: ''
       },
-      pageLength: 100,
+      pageLength: Number(this.data.get('page-length')),
       paging: true,
       pagingType: 'numbers',
       processing: true,
-      order: [[3, 'desc']], // order by rebel.created_at
+      order: [[Number(this.data.get('order')), 'desc']], // order by rebel.created_at
       serverSide: true
     }
   }

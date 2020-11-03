@@ -1,13 +1,13 @@
 .footer
   .grid-x.grid-margin-x.grid-padding-x.align-middle.small-margin-collapse
-    / .cell.shrink.hide-for-small-only
+    .cell.shrink.hide-for-small-only
       .footer__logo
-        = image_pack_tag('media/images/xr/symbol.svg', alt: 'Extinction Rebellion')
+        = image_tag('xr-symbol.svg', alt: 'Extinction Rebellion')
     .cell.auto
-      = link_to "Get help on #rebelsmanager",
+      = link_to "Get help on #support",
                  ENV['HELP_URL'],
-                 class: "small hollow button"
+                 class: "small hollow button no-margin-bottom"
       =< link_to "Read docs for coordinators",
                  ENV['DOCS_URL'],
-                 class: "small hollow button"
+                 class: "small hollow button no-margin-bottom"
   .spacer-2

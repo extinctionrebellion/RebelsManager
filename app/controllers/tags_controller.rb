@@ -1,10 +1,21 @@
 class TagsController < BaseController
   def index
-    @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc)
+    respond_to do |format|
+      format.html do
+        @tags_count = ActsAsTaggableOn::Tag.all.count
+      end
+      format.json do
+        render json: TagDatatable.new(
+          params,
+          view_context: view_context
+        )
+      end
+    end
   end
 
   def show
     @tag = ActsAsTaggableOn::Tag.find(params[:id])
+    @tagged_rebels_count = Rebel.tagged_with(@tag.name).count
   end
 
   def edit

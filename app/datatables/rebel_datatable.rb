@@ -98,14 +98,19 @@ class RebelDatatable < ApplicationDatatable
 
   def get_raw_records
     if user.local_group
-      Rebel
+      rebels = Rebel
         .where(local_group: user.local_group)
         .includes(:local_group, :tags, :working_groups)
         .references(:local_group)
     else
-      Rebel.all
+      rebels = Rebel.all
         .includes(:local_group, :tags, :working_groups)
         .references(:local_group)
     end
+    if options[:tag_id]
+      tag = ActsAsTaggableOn::Tag.find(options[:tag_id])
+      rebels = rebels.tagged_with(tag.name)
+    end
+    rebels
   end
 end

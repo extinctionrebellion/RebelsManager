@@ -1,18 +1,13 @@
 - content_for :page_header do
   = render 'layouts/components/page_header',
            title: 'Tags',
-           count: @tags.size
+           count: @tags_count
 
-table
-  thead
-    tr
-      th Tag
-      th Count
-  tbody
-    - @tags.each do |tag|
-      tr
-        td
-          = link_to tag.name,
-                    edit_tag_path(tag)
-        td
-          = tag.taggings_count
+div(data-controller="datatable" data-datatable-source="#{tags_path(format: :json)}" data-datatable-order="1" data-datatable-page-length="250")
+  .icons.icons--large
+    table(data-target="datatable.table" data-items-count="#{@tags_count}")
+      thead
+        tr
+          th(data-column="name") = _("Tag")
+          th(data-column="count") = _("# Rebels")
+      tbody

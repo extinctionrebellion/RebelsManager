@@ -114,7 +114,7 @@ class Components::MenuPresenter < PresenterBase
   def primary_left_items
     [
       {
-        body: 'XR',
+        body: ::ApplicationController.helpers.image_tag('xr-symbol.svg', alt: 'XR'),
         url: root_path,
         class: 'menu-text show-for-large'
       },

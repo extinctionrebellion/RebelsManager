@@ -10,22 +10,20 @@ class ExportRebelsJob < ApplicationJob
     else
       rebels = Rebel.all
     end
-    csv_string      = CsvReport.for_model(
+    csv_string      = CsvExport.for_model(
                         records: rebels,
                         records_class: Rebel,
                         context: {
-                          date_format: :day_month_year,
                           local_group: user.local_group
                         }
                       )
     filename        = "#{SecureRandom.urlsafe_base64}.#{export.format}"
     if upload_exported_file(csv_string, filename)
       export.update(
-        s3_key: filename,
-        status: "uploaded"
+        filename: filename,
+        status: "available"
       )
     end
-    UserMailer.download_export(export).deliver_later
     return csv_string
   end
 

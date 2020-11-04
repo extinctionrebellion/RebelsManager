@@ -1,7 +1,7 @@
 module CsvExport
   class Rebel < ExportGenerator
     def header
-      [ "ID", "Joined", "Local Group", "Name", "Email", "Phone", "Language", "Status", "Postcode", "Willingness to be arrested", "Arrests #", "Skills", "Working groups", "Tags", "Availability", "IRL", "Source", "Notes", "Internal notes", "Updated profile" ]
+      [ "ID", "Joined", "Local Group", "Name", "Email", "Phone", "Profile URL", "Language", "Status", "Postcode", "Willingness to be arrested", "Arrests #", "Skills", "Working groups", "Tags", "Availability", "IRL", "Source", "Notes", "Internal notes", "Updated profile" ]
     end
 
     def extract_info(rebel)

@@ -24,8 +24,8 @@ module CsvExport
         rebel.availability,
         rebel.irl,
         rebel.source,
-        rebel.notes&.gsub(/\r\n/, ' '),
-        rebel.internal_notes&.gsub(/\r\n/, ' '),
+        rebel.notes&.gsub(/\r\n/, ' ')&.gsub(/\n/, ' '),
+        rebel.internal_notes&.gsub(/\r\n/, ' ')&.gsub(/\n/, ' '),
         rebel.self_updated_at&.strftime("%b %d %Y")
       ]
     end

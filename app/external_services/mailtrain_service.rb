@@ -131,10 +131,10 @@ class MailtrainService
     RestClient::Request.execute(
       method:     :post,
       url:        url,
-      payload:    params.merge({ "SEND_CONFIGURATION_ID": 2 }),
+      payload:    params,
       headers:    {
                     accept: :json,
-                    params: params.merge({ "SEND_CONFIGURATION_ID": 2 })
+                    params: params
                   }
     ) do |response, request, result, block|
       case response.code

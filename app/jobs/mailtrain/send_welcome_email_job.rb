@@ -12,20 +12,24 @@ class Mailtrain::SendWelcomeEmailJob < ActiveJob::Base
     case rebel.language
     when "en"
       template_id = 77
-      subject = "Welcome to the rebellion! ⏳🌎"
+      subject = "Welcome to the rebellion!"
     when "fr"
       template_id = 76
-      subject = "Bienvenue dans la rébellion! ⏳🌎"
+      subject = "Bienvenue dans la rébellion!"
     when "nl"
       template_id = 78
-      subject = "Welkom bij de opstand! ⏳🌎"
+      subject = "Welkom bij de opstand!"
     end
     if !template_id.nil?
       MailtrainService.instance.send_transactional_email(
         template_id,
         {
           "EMAIL": rebel.email,
-          "SUBJECT": subject
+          "SUBJECT": subject,
+          "SEND_CONFIGURATION_ID": 4,
+          "TAGS": {
+            "MERGE_PROFILE_URL": rebel.profile_url
+          }
         }
       )
     end

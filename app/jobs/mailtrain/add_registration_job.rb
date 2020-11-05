@@ -29,7 +29,8 @@ class Mailtrain::AddRegistrationJob < ActiveJob::Base
         template_id,
         {
           "EMAIL": registration.email,
-          "SUBJECT": subject
+          "SUBJECT": subject,
+          "SEND_CONFIGURATION_ID": 2
         }
       )
     end

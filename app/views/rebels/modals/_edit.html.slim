@@ -1,0 +1,16 @@
+= close_modal_button
+= section_heading heading: "Edit: #{rebel.name}",
+                  spacing: false,
+                  extra: [ \
+                    link_to(_("Cancel"), rebel_path(rebel), remote: true, class: "tiny hollow secondary button") \
+                  ]
+
+= simple_form_for rebel,
+                  url: rebel_path(rebel),
+                  remote: true,
+                  data: { abide: true } do |f|
+  = render "layouts/components/form_errors", object: f.object
+  = render "form", f: f
+
+  = f.button :submit,
+             "Save"

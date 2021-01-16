@@ -64,7 +64,7 @@ class RebelDatatable < ApplicationDatatable
   end
 
   def cell_name(rebel)
-    cell_value = link_to((rebel.name.presence || "-"), rebel_path(rebel))
+    cell_value = link_to((rebel.name.presence || "-"), rebel_path(rebel), remote: true)
     if rebel.notes.present?
       cell_value << " "
       cell_value << content_tag(

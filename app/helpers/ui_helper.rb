@@ -21,6 +21,12 @@ module UiHelper
     out.html_safe
   end
 
+  def close_modal_button
+    content_tag(:button, "data-close": "", class: "close-button", "aria-label": "Close modal", type: "button") do
+      content_tag(:span, raw("&times;"), "aria-hidden": true)
+    end.html_safe
+  end
+
   def info_header(label)
     content_tag(:div, class: "info__header grid-x grid-padding-x") do
       content_tag(:div, class: "cell small-12") do
@@ -54,7 +60,7 @@ module UiHelper
         end
       end
     elsif spacing == :spacer
-      out << content_tag(:div, nil, class: "spacer--vertical spacer--vertical--3")
+      out << content_tag(:div, nil, class: "spacer--vertical spacer--vertical--2")
     end
     out << content_tag(:div, class: "grid-x section-heading align-middle") do
       heading_cell_classes = "cell small-12 large-auto"

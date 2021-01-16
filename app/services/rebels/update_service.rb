@@ -34,6 +34,9 @@ module Rebels
     private
 
     def increment_version
+      if rebel.version.nil?
+        rebel.version = 1
+      end
       rebel.version += 1
     end
 

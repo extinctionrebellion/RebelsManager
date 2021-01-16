@@ -24,6 +24,10 @@ class RebelsController < BaseController
     @rebel = RebelDecorator.new(Rebel.find(params[:id]))
     @mailtrain_lists = MailtrainService.instance
       .get_subscriptions(@rebel.email)
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def new
@@ -48,6 +52,10 @@ class RebelsController < BaseController
 
   def edit
     @rebel = Rebel.find(params[:id])
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def update

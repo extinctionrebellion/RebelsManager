@@ -15,6 +15,9 @@
              ) \
            ]
 
+
+#rebel-modal.reveal(data-reveal data-close-on-click="true" data-close-on-esc="true")
+
 div(data-controller="datatable" data-datatable-source="#{rebels_path(format: :json)}" data-datatable-order="3" data-datatable-page-length="100")
   .icons.icons--large
     table(data-target="datatable.table" data-items-count="#{@rebels_count}")

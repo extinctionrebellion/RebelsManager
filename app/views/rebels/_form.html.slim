@@ -5,10 +5,10 @@
   p
     | These details can be updated by the rebel. Provide this private link:
     br
-    = link_to @rebel.profile_url, @rebel.profile_url
+    = link_to f.object.profile_url, f.object.profile_url
 
 .grid-x
-  .cell.small-12.medium-8.large-6
+  .cell.small-12
     .card
       .card-section
         = f.input :email,

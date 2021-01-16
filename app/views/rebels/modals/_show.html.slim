@@ -1,0 +1,198 @@
+= close_modal_button
+= section_heading heading: rebel.name,
+                  spacing: false,
+                  extra: [ \
+                    link_to( \
+                      "Delete",
+                      rebel_path(rebel),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' },
+                      class: 'tiny secondary hollow button' \
+                    ),
+                    link_to( \
+                      "Edit",
+                      edit_rebel_path(rebel),
+                      remote: true,
+                      class: 'tiny secondary button' \
+                    ) \
+                  ]
+
+/ Notes
+
+- if rebel.internal_notes.present?
+  .secondary.callout
+    p
+      strong Internal notes
+    = simple_format rebel.internal_notes
+  .spacer-2
+
+- if rebel.regular_volunteer?
+  = callout :info,
+            content: "This rebel is marked as regular volunteer",
+            tiny: true
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Local Group
+  .cell.small-6.medium-8
+    = rebel.local_group&.name || "-"
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Involvement
+  .cell.small-6.medium-8
+    = rebel.active
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Email address
+  .cell.small-6.medium-8
+    = rebel.email
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Phone number
+  .cell.small-6.medium-8
+    - if rebel.phone.present?
+      | #{rebel.phone[0..6]}...
+    - else
+      | -
+    - if rebel.dont_call?
+      | &nbsp;
+      span.label.label--warm-yellow ASKED NOT TO BE CALLED
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Postcode
+  .cell.small-6.medium-8
+    = rebel.postcode
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Language
+  .cell.small-6.medium-8
+    = rebel.language&.upcase
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Willingness to be arrested
+  .cell.small-6.medium-8
+    = rebel.willingness_to_be_arrested? ? '✓' : 'NO'
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Number of arrests
+  .cell.small-6.medium-8
+    = rebel.number_of_arrests.presence || "-"
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Notes added when signing up
+  .cell.small-6.medium-8
+    = rebel.notes.presence || "-"
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Agreed to XR principles and values
+  .cell.small-6.medium-8
+    = rebel.agree_with_principles? ? '✓' : "Didn't confirm yet"
+
+.spacer-2
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Tags
+  .cell.small-6.medium-8
+    - if rebel.tags.any?
+      - rebel.tags.each do |tag|
+        span.primary.label =< tag.name
+    - else
+      | -
+
+- if rebel.interests.present?
+  .grid-x.grid-margin-x
+    .cell.small-6.medium-4
+      p
+        strong WG Interests (legacy)
+    .cell.small-6.medium-8
+      = rebel.interests
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Joined
+  .cell.small-6.medium-8
+    = l(rebel.created_at.to_date, format: :long)
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Source
+  .cell.small-6.medium-8
+    = rebel.source || "unknown source"
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Activity Status
+  .cell.small-6.medium-8
+    = rebel.status.present? ? rebel.status : "-"
+
+.grid-x.grid-margin-x
+  .cell.small-6.medium-4
+    p
+      strong Availability
+  .cell.small-6.medium-8
+    = rebel.availability
+
+/ Skills
+
+= section_heading heading: "Skills",
+                  spacing: :spacer
+
+- if rebel.skills.any?
+  ul
+    - rebel.skills.each do |skill|
+      li = skill.name
+- else
+  p This rebel has no skill defined yet.
+
+/ Working groups
+
+= section_heading heading: "Working Groups",
+                  spacing: :spacer
+
+- if rebel.working_groups.any?
+  ul
+    - rebel.working_groups.each do |working_group|
+      li = link_to working_group.name,
+                   working_group_path(working_group)
+- else
+  p This rebel didn't join a working group.
+
+/ Subscriptions
+
+= section_heading heading: "Subscriptions on Mailtrain",
+                  spacing: :spacer
+
+- if mailtrain_lists.any?
+  p
+    strong This rebel is subscribed to:
+
+  ul
+    - mailtrain_lists.each do |mailtrain_list|
+      li = mailtrain_list['name']
+- else
+  p
+    strong This rebel is not subscribed to any list.

@@ -21,7 +21,7 @@
           = f.input :local_group_id,
                     as: :select,
                     label: "Local Group *",
-                    collection: LocalGroup.all.order(:name),
+                    collection: LocalGroup.active.order(:name),
                     prompt: "Select a local group",
                     required: false
 

@@ -8,4 +8,10 @@
           label: "Email address",
           placeholder: "Email address"
 
+= f.input :active,
+          as: :boolean,
+          wrapper: :foundation_checkbox,
+          label: _("This local group is active"),
+          required: false
+
 p = _("The Mailtrain list and its custom fields will be created once the local group has been saved.")

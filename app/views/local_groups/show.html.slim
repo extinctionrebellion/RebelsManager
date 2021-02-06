@@ -10,6 +10,10 @@
              delete_link(@local_group) \
            ].compact
 
+- if !@local_group.active?
+  .warning.callout
+    | This local group is NOT active.
+
 .grid-x.grid-padding-x
   .cell.auto
     p

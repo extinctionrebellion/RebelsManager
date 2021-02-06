@@ -21,8 +21,10 @@ table
     - @local_groups.each do |local_group|
       tr
         td
-          = link_to local_group.name,
+          => link_to local_group.name,
                     local_group_path(local_group)
+          - if !local_group.active?
+            span.orange.label INACTIVE
         td
           = mail_to local_group.email,
                     local_group.email

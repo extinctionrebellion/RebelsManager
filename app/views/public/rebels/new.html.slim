@@ -23,7 +23,7 @@ p
   = f.input :local_group_id,
             as: :select,
             label: "#{_("Local group")} *",
-            collection: LocalGroup.all.order(:name),
+            collection: LocalGroup.active.order(:name),
             prompt: _("Select a local group"),
             hint: _("No local group (yet) next to you? Please select the one that makes the more sense to you."),
             required: true

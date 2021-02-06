@@ -33,6 +33,7 @@ module LocalGroups
       params
         .require(:local_group)
         .permit(
+          :active,
           :email,
           :mailtrain_list_id,
           :name

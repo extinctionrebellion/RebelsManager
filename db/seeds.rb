@@ -13,8 +13,14 @@ end
 
 if Rebel.none?
   # Local groups
-  local_group = LocalGroup.find_or_create_by(name: FFaker::Address.unique.city)
-  local_group2 = LocalGroup.find_or_create_by(name: FFaker::Address.unique.city)
+  local_group = LocalGroup.find_or_create_by(
+    name: FFaker::Address.unique.city,
+    email: FFaker::Internet.unique.email
+  )
+  local_group2 = LocalGroup.find_or_create_by(
+    name: FFaker::Address.unique.city,
+    email: FFaker::Internet.unique.email
+  )
 
   # Local group coordinators user accounts
   User.create(

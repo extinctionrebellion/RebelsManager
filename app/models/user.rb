@@ -37,13 +37,20 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :recoverable,
+  devise :two_factorable, :database_authenticatable, :recoverable,
          :lockable, :trackable, :timeoutable
 
   encrypts :email
   blind_index :email
 
   belongs_to :local_group, optional: true
+
+  # callbacks
+  before_save :enable_2fa_if_admin
+
+  def enable_2fa_if_admin
+    self.otp_mandatory = true if admin == true
+  end
 
   # @TODO: Remove this line after dropping email column
   self.ignored_columns = ['email']

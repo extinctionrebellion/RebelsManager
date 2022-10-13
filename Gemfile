@@ -29,7 +29,7 @@ gem 'acts-as-taggable-on', '~> 6.0', github: 'spark-solutions/acts-as-taggable-o
 gem 'ajax-datatables-rails'
 gem 'annotate'
 gem 'awesome_print'
-gem 'blazer', '~> 2.2.7'
+gem 'blazer', '~> 2.6.0'
 gem 'devise', '~> 4.7'
 gem 'ffaker'
 gem 'geocoder', '~> 1.6.1'

@@ -22,6 +22,7 @@ class RebelDatatable < ApplicationDatatable
       local_group:        { source: "LocalGroup.name", cond: :start_with },
       created_at:         { source: "Rebel.created_at" },
       active:             { source: "Rebel.active" },
+      email:              { source: "Rebel.id" },
       status:             { source: "Rebel.status", cond: :start_with },
       postcode:           { source: "Rebel.postcode", cond: whitespaced_start_with },
       working_groups:     { source: "WorkingGroup.name", cond: :start_with },

@@ -381,7 +381,7 @@ DEPENDENCIES
   ruby_parser
   sass-rails (~> 5)
   selenium-webdriver
-  sentry-raven
+  sentry-raven (~> 3.1.2)
   sidekiq (~> 6.4.0)
   simple_form (~> 5.0)
   simplecov

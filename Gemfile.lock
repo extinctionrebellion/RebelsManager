@@ -137,7 +137,7 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.1)
     fast_gettext (2.0.3)
-    ffaker (2.17.0)
+    ffaker (2.21.0)
     ffi (1.13.1)
     geocoder (1.6.7)
     gettext (3.3.7)

@@ -323,7 +323,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
-    validates_email_format_of (1.6.3)
+    validates_email_format_of (1.7.2)
       i18n
     warden (1.2.9)
       rack (>= 2.0.9)

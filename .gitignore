@@ -42,3 +42,5 @@ coverage
 
 # IDE and editor config
 .idea
+
+/db/*.sqlite3

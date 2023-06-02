@@ -1,0 +1,36 @@
+{
+    "name": "Rebels Manager",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+      "ghcr.io/devcontainers/features/ruby:1": {
+        "version": "2.7.6"
+      },
+      "ghcr.io/devcontainers/features/node:1": {
+        "version": "18"
+      }
+    },
+    "hostRequirements": {
+      "cpus": 2
+    },
+    "waitFor": "onCreateCommand",
+    "updateContentCommand": "bundle install && yarn install",
+    "postCreateCommand": "",
+    "postAttachCommand": {
+      "server": "rails server"
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "rebornix.Ruby",
+          "GitHub.copilot"
+        ]
+      }
+    },
+    "portsAttributes": {
+      "3000": {
+        "label": "Application",
+        "onAutoForward": "openPreview"
+      }
+    },
+    "forwardPorts": [3000]
+  }

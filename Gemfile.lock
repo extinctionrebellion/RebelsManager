@@ -200,7 +200,7 @@ GEM
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.2.3)
+    pg (1.5.3)
     prime (0.1.2)
       forwardable
       singleton

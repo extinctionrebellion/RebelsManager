@@ -3,6 +3,7 @@
 # Table name: local_groups
 #
 #  id                :bigint           not null, primary key
+#  active            :boolean          default(TRUE)
 #  email             :string
 #  name              :string
 #  created_at        :datetime         not null

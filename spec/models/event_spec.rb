@@ -7,7 +7,6 @@
 #  ends_at        :datetime
 #  facebook_url   :string
 #  name           :string
-#  slug           :string
 #  starts_at      :datetime
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null

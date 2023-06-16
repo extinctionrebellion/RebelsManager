@@ -20,16 +20,15 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.text "body"
     t.string "record_type", null: false
     t.bigint "record_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "actions", force: :cascade do |t|
     t.string "name"
     t.string "mailtrain_list_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -38,8 +37,6 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
   create_table "active_storage_blobs", force: :cascade do |t|
@@ -50,7 +47,6 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
     t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
   create_table "blazer_audits", force: :cascade do |t|
@@ -59,8 +55,6 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.text "statement"
     t.string "data_source"
     t.datetime "created_at"
-    t.index ["query_id"], name: "index_blazer_audits_on_query_id"
-    t.index ["user_id"], name: "index_blazer_audits_on_user_id"
   end
 
   create_table "blazer_checks", force: :cascade do |t|
@@ -73,28 +67,23 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.string "check_type"
     t.text "message"
     t.datetime "last_run_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["creator_id"], name: "index_blazer_checks_on_creator_id"
-    t.index ["query_id"], name: "index_blazer_checks_on_query_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "blazer_dashboard_queries", force: :cascade do |t|
     t.bigint "dashboard_id"
     t.bigint "query_id"
     t.integer "position"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["dashboard_id"], name: "index_blazer_dashboard_queries_on_dashboard_id"
-    t.index ["query_id"], name: "index_blazer_dashboard_queries_on_query_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "blazer_dashboards", force: :cascade do |t|
     t.bigint "creator_id"
     t.text "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["creator_id"], name: "index_blazer_dashboards_on_creator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "blazer_queries", force: :cascade do |t|
@@ -103,9 +92,8 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.text "description"
     t.text "statement"
     t.string "data_source"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["creator_id"], name: "index_blazer_queries_on_creator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -115,28 +103,14 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.datetime "ends_at"
     t.string "facebook_url"
     t.bigint "local_group_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "slug"
-    t.index ["local_group_id"], name: "index_events_on_local_group_id"
-    t.index ["slug"], name: "index_events_on_slug", unique: true
-  end
-
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string "slug", null: false
-    t.integer "sluggable_id", null: false
-    t.string "sluggable_type", limit: 50
-    t.string "scope"
-    t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "local_groups", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "email"
     t.string "mailtrain_list_id"
     t.boolean "active", default: true
@@ -145,17 +119,15 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
   create_table "rebel_skills", force: :cascade do |t|
     t.bigint "rebel_id", null: false
     t.bigint "skill_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["rebel_id"], name: "index_rebel_skills_on_rebel_id"
-    t.index ["skill_id"], name: "index_rebel_skills_on_skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rebels", force: :cascade do |t|
     t.string "name"
     t.text "notes"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "irl"
     t.bigint "local_group_id"
     t.boolean "consent"
@@ -180,13 +152,10 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.boolean "active", default: true
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "lon", precision: 10, scale: 6
-    t.integer "version"
+    t.integer "version", default: 1
     t.string "phone_campaign_status"
     t.text "phone_campaign_notes"
     t.boolean "dont_call"
-    t.index ["email_bidx"], name: "index_rebels_on_email_bidx", unique: true
-    t.index ["local_group_id"], name: "index_rebels_on_local_group_id"
-    t.index ["phone_bidx"], name: "index_rebels_on_phone_bidx"
   end
 
   create_table "registrations", force: :cascade do |t|
@@ -195,16 +164,15 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.string "email"
     t.string "language"
     t.boolean "participated_previously"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["action_id"], name: "index_registrations_on_action_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "skills", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "code"
   end
 
@@ -216,15 +184,6 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.integer "tagger_id"
     t.string "context", limit: 128
     t.datetime "created_at"
-    t.index ["context"], name: "index_taggings_on_context"
-    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-    t.index ["tag_id"], name: "index_taggings_on_tag_id"
-    t.index ["taggable_id", "taggable_type", "context"], name: "taggings_taggable_context_idx"
-    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
-    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
-    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
-    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
-    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
   create_table "tags", id: :serial, force: :cascade do |t|
@@ -232,7 +191,6 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "taggings_count", default: 0
-    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -248,58 +206,39 @@ ActiveRecord::Schema.define(version: 2021_02_06_215324) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "local_group_id"
     t.boolean "admin"
-    t.string "otp_auth_secret"
-    t.string "otp_recovery_secret"
-    t.boolean "otp_enabled", default: false, null: false
-    t.boolean "otp_mandatory", default: false, null: false
-    t.datetime "otp_enabled_on"
-    t.integer "otp_failed_attempts", default: 0, null: false
-    t.integer "otp_recovery_counter", default: 0, null: false
-    t.string "otp_persistence_seed"
-    t.string "otp_session_challenge"
-    t.datetime "otp_challenge_expires"
     t.string "email_ciphertext"
     t.string "email_bidx"
     t.string "role"
-    t.index ["email_bidx"], name: "index_users_on_email_bidx", unique: true
-    t.index ["local_group_id"], name: "index_users_on_local_group_id"
-    t.index ["otp_challenge_expires"], name: "index_users_on_otp_challenge_expires"
-    t.index ["otp_session_challenge"], name: "index_users_on_otp_session_challenge", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
   create_table "working_group_enrollments", force: :cascade do |t|
     t.bigint "rebel_id", null: false
     t.bigint "working_group_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["rebel_id"], name: "index_working_group_enrollments_on_rebel_id"
-    t.index ["working_group_id"], name: "index_working_group_enrollments_on_working_group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "working_groups", force: :cascade do |t|
     t.bigint "local_group_id", null: false
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "color"
     t.string "code"
-    t.index ["local_group_id"], name: "index_working_groups_on_local_group_id"
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "rebel_skills", "rebels"
-  add_foreign_key "rebel_skills", "skills"
-  add_foreign_key "rebels", "local_groups"
-  add_foreign_key "registrations", "actions"
-  add_foreign_key "taggings", "tags"
-  add_foreign_key "users", "local_groups"
-  add_foreign_key "working_group_enrollments", "rebels"
-  add_foreign_key "working_group_enrollments", "working_groups"
-  add_foreign_key "working_groups", "local_groups"
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id", name: "active_storage_attachments_blob_id_fkey"
+  add_foreign_key "rebel_skills", "rebels", name: "rebel_skills_rebel_id_fkey"
+  add_foreign_key "rebel_skills", "skills", name: "rebel_skills_skill_id_fkey"
+  add_foreign_key "rebels", "local_groups", name: "rebels_local_group_id_fkey"
+  add_foreign_key "registrations", "actions", name: "registrations_action_id_fkey"
+  add_foreign_key "taggings", "tags", name: "taggings_tag_id_fkey"
+  add_foreign_key "users", "local_groups", name: "users_local_group_id_fkey"
+  add_foreign_key "working_group_enrollments", "rebels", name: "working_group_enrollments_rebel_id_fkey"
+  add_foreign_key "working_group_enrollments", "working_groups", name: "working_group_enrollments_working_group_id_fkey"
+  add_foreign_key "working_groups", "local_groups", name: "working_groups_local_group_id_fkey"
 end

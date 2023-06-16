@@ -54,7 +54,8 @@ class UsersController < BaseController
     params.require(:user).permit(
       :email,
       :password,
-      :local_group_id
+      :local_group_id,
+      :role
     )
   end
 

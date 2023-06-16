@@ -15,3 +15,10 @@
           collection: LocalGroup.all.order(:name),
           prompt: "Select a local group",
           required: false
+
+= f.input :role,
+          as: :select,
+          label: "Role",
+          collection: [["Standard user", nil], ["Ringer", "ringer"]],
+          prompt: "Select a role",
+          required: false

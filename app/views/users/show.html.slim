@@ -24,6 +24,11 @@
       = @user.email
 
     p
+      strong Role
+      br
+      = @user.ringer? ? "Ringer" : "Standard user"
+
+    p
       strong Sign In Count
       br
       = @user.sign_in_count

@@ -205,7 +205,7 @@ GEM
       forwardable
       singleton
     public_suffix (5.0.0)
-    puma (4.3.12)
+    puma (5.6.7)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.7)
@@ -399,7 +399,7 @@ DEPENDENCIES
   lockbox
   logstop (~> 0.3.0)
   pg (>= 0.18, < 2.0)
-  puma (~> 4.3)
+  puma (~> 5.6)
   rack-cors
   rails (~> 6.0.0)
   rest-client
